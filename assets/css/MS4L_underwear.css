@@ -1,0 +1,21 @@
+:root{
+    --color-1: #f60543;
+    --color-2: #ff911e;
+    --color-3: #ffcb07;
+    --color-4: #d90896;
+    --color-5: #1d1a1b;
+    --black: #000000;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: var(--black);
+}
