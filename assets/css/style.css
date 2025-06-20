@@ -1,89 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Sora:wght@100..800&display=swap");
 
-:root{
-    --font_1: "Work Sans", sans-serif;
-    --max_width: 1200px;
-    --color_1: #1d1a1b;
+:root {
+  --font_1: "Cinzel", serif;
+  --font_2: "Sora", sans-serif;
+  --color_main: #ff911e;
+  --color_main_2: #f60543;
+  --color_accent: #ffcb67;
+  --color_minor: #d90896;
+  --color_dark: #1d1a1b;
+  --color_light: #d3d3d3;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    max-width: var(--max_width);
-    font-family: var(--font_1);
-    height: 100vh;
-    background-image: url(./IMAGES/bgd_1.jpeg);
-    background-position: center center;
-    background-repeat: no-repeat;
+body {
+  height: 100vh;
+  font-family: var(--font_1);
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-nav{
-    max-width: var(--max_width);
-    position: relative;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 80px;
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #fff;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
-.logo img{
-    width: 120px;
+.menu ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 1rem;
 }
 
-.nav_links{
-    position: absolute;
-    list-style: none;
-    right: 0;
-    top: 80px;
-    width: 100%;
-    flex-direction: column;
-    padding: .5rem;
-    gap: .5rem;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, .1);
-    /* opacity: 0.1; */
-    /* display: none; */
+.menu li {
+  margin-bottom: 15px;
+  padding: 1rem 0;
 }
 
-.open{
-    display: flex;
+.menu a {
+  text-decoration: none;
+  color: var(--color_dark);
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-family: var(--font_1);
+  border-bottom: 4px solid transparent;
 }
 
-.nav_links .link{
-    font-size: 1.25rem;
-    color: var(--color_1);
-    text-align: center;
-    width: 100%;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: 0.3s;
+.menu a:hover {
+  border-color: var(--color_dark);
+  transition: 0.5s;
 }
 
-.nav_links .link:hover{
-    background-color: rgba(255, 255, 255, .1);
+.menu.active {
+  transform: translateX(0);
+  opacity: 1;
 }
 
-.menu_btn{
-    color: var(--color_1);
-    display: block;
-    font-size: 2rem;
-    padding-right: .5rem;
+.nav_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px #1d1a1b;
+  z-index: 999;
 }
 
-@media (min-width: 768ox){
-    body{
-        background: linear-gradient(160deg, #ff911e 0%, #ff911e 20%, #fb4a32 50%,  #f60543 80%, #f60543 100%);
+.logo img {
+  width: 110px;
+}
 
-    }
-} 
+.toggle_icon {
+  font-weight: 700;
+  color: var(--color_dark);
+}
+
+.home {
+  background-color: var(--color_light);
+  overflow: hidden;
+}
+
+.home_contain {
+  position: relative;
+  margin: 20px;
+  top: 60px;
+  height: 530px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.home_new {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.home_title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.home_desc {
+  font-size: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color_dark);
+  color: #fff;
+  font-weight: 600;
+  padding: 1.125rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-0.25rem);
+}
