@@ -6,7 +6,19 @@ Each image has a unique text
 CATEGORIES
 Underwear:lingerie,bra,pants,shapers,boxers,singlets
 Materials:kaftan,wrappers,crepe
-Wears:night wears,gym wears,lounge wears
+Leisurewear:night wears,gym wears,lounge wears
+
+BRAND COLOURS
+#ff911e - main
+#f60543 - main_2
+#ffcb67 - accent
+#d90896 - minor
+#1d1a1b - dark
+
+TYPOGRAPHY
+Google Fonts:
+- Cinzel
+- Sora
 
 .menu {
     position: fixed;
@@ -90,3 +102,5 @@ JavaScript
           toggleButton.classList.add("ri-menu-line");
         }
       });
+
+      <i class="ri-grid-fill"></i>
