@@ -58,12 +58,13 @@ a {
   font-weight: 700;
   font-size: 1.3rem;
   font-family: var(--font_1);
-  border-bottom: 4px solid transparent;
+  border-bottom: 1px solid #1d1a1b;
 }
 
 .menu a:hover {
+  border-bottom: 3px solid;
   border-color: var(--color_dark);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .menu.active {
@@ -141,4 +142,16 @@ a {
 
 .button:hover {
   transform: translateY(-0.25rem);
+}
+@media (min-width: 768px) {
+  .home {
+    overflow: hidden;
+    margin-top: 80px;
+    background-color: var(--color_light);
+  }
+
+  .main {
+    margin: 0 auto;
+    max-width: 1090px;
+  }
 }
