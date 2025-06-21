@@ -117,6 +117,7 @@ a {
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 0.75rem;
+  border-bottom: 1px solid #1d1a1b;
 }
 
 .home_title {
@@ -148,6 +149,22 @@ a {
     overflow: hidden;
     margin-top: 80px;
     background-color: var(--color_light);
+  }
+
+  .home_new{
+    font-size: 1.5rem;
+    border-bottom: 1px solid #1d1a1b;
+  }
+
+  .home_title{
+    font-size: 6rem;
+    font-weight: 800;
+    margin:3rem 2rem 0 0;
+  }
+
+  .home_desc{
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .main {
