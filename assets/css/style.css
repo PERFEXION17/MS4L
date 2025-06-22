@@ -18,12 +18,20 @@
 }
 
 body {
+  width: 100%;
   height: 100vh;
   font-family: var(--font_1);
 }
 
 a {
   text-decoration: none;
+}
+
+h2{
+  font-size: 1.75rem;
+  text-align: center;
+  border-bottom: 1px solid #1d1a1b;
+  margin: 2rem 4rem;
 }
 
 .menu {
@@ -144,25 +152,84 @@ a {
 .button:hover {
   transform: translateY(-0.25rem);
 }
+
+.arrival_con{
+  position: relative;
+  margin: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: .75rem;
+}
+
+.bgd{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--color_light);
+  border-radius: 100%;
+  z-index: -1;
+}
+
+
+.arrival_box{
+  margin: 2rem 0 0 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.button_s{
+  display: inline-block;
+  background-color: var(--color_dark);
+  color: #fff;
+  margin: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.button_s:hover{
+  transform: translateY(-0.25rem);
+}
+
+
+
 @media (min-width: 768px) {
+  header{
+    display: flex;
+  }
+  
+  .nav_container{
+    display: flex;
+    height: 60px;
+  }
+
+  .toggle_icon{
+    display: none;
+  }
+
   .home {
     overflow: hidden;
     margin-top: 80px;
     background-color: var(--color_light);
   }
 
-  .home_new{
+  .home_new {
     font-size: 1.5rem;
     border-bottom: 1px solid #1d1a1b;
   }
 
-  .home_title{
+  .home_title {
     font-size: 6rem;
     font-weight: 800;
-    margin:3rem 2rem 0 0;
+    margin: 3rem 2rem 0 0;
   }
 
-  .home_desc{
+  .home_desc {
     font-size: 1.5rem;
     font-weight: 500;
   }
@@ -171,4 +238,15 @@ a {
     margin: 0 auto;
     max-width: 1090px;
   }
+
+  .arrival_con{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    gap: 1rem;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+  
 }
+
