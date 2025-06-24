@@ -19,6 +19,11 @@ TYPOGRAPHY
 Google Fonts:
 - Cinzel
 - Sora
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Sora:wght@100..800&display=swap");
+
+GRADIENT COLOR
+background: linear-gradient(160deg, #ff911e 0%, #ff911e 20%, #fb4a32 50%,  #f60543 80%, #f60543 100%);
+
 
 .menu {
     position: fixed;
