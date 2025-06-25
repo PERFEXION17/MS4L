@@ -148,7 +148,7 @@ h2 {
   transform: translateY(-0.25rem);
 }
 
-.arrival_con {
+.item_con {
   position: relative;
   margin: 2rem 1.5rem;
   display: flex;
@@ -166,7 +166,7 @@ h2 {
   z-index: -1;
 }
 
-.arrival_box {
+.item_box {
   margin: 2rem 0 0 0;
   display: flex;
   align-items: center;
@@ -195,7 +195,7 @@ h2 {
   margin-right: auto;
   /* width: 90%; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   border-radius: .5rem;
   background-color: var(--color_light);
@@ -252,7 +252,6 @@ h2 {
     box-shadow: none;
     padding-top: .5rem;
     gap: 1rem;
-    /* background-color: brown; */
   }
 
   #menu-toggle {
