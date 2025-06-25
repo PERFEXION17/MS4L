@@ -99,6 +99,20 @@ h2 {
   color: var(--color_dark);
 }
 
+.main {
+  margin: 0 auto;
+  max-width: 1090px;
+  margin-top: 6rem;
+  border-bottom: 1px solid #1d1a1b;
+}
+
+.main h3{
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #1d1a1b;
+  margin: 3rem 4rem;
+}
+
 .home {
   background-color: var(--color_light);
   overflow: hidden;
@@ -207,7 +221,6 @@ h2 {
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 1rem;
   margin: 1rem;
   gap: .5rem;
 }
@@ -238,7 +251,7 @@ h2 {
     justify-content: space-between;
   }
 
-.menu {
+  .menu {
     position: absolute;
     max-width: fit-content;
     min-width: 70%;
@@ -307,6 +320,8 @@ h2 {
   .main {
     margin: 0 auto;
     max-width: 1090px;
+    margin-top: 6rem;
+    border-bottom: 1px solid #1d1a1b;
   }
 
   .arrival_con {
