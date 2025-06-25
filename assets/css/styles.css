@@ -173,8 +173,8 @@ h2 {
 
 .bgd {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: var(--color_light);
   border-radius: 100%;
   z-index: -1;
