@@ -106,7 +106,7 @@ h2 {
   border-bottom: 1px solid #1d1a1b;
 }
 
-.main h3{
+.main h3 {
   font-size: 1.2rem;
   text-align: center;
   border-bottom: 1px solid #1d1a1b;
@@ -165,7 +165,9 @@ h2 {
 .item_con {
   position: relative;
   margin: 2rem 1.5rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
   align-items: center;
   justify-content: space-between;
   border-radius: 0.75rem;
@@ -203,7 +205,7 @@ h2 {
   transform: translateY(-0.25rem);
 }
 
-.footer_con{
+.footer_con {
   margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -211,41 +213,41 @@ h2 {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background-color: var(--color_light);
 }
 
-.footer_box{
+.footer_box {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
   margin: 1rem;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
-.footer_box a, p{
+.footer_box a,
+p {
   color: var(--color_dark);
   font-size: 1.75rem;
   font-weight: 500;
 }
 
-.footer_box h3{
+.footer_box h3 {
   border-bottom: 1px solid #1d1a1b;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.footer_box img{
+.footer_box img {
   width: 110px;
   height: auto;
   border-bottom: none;
 }
 
 @media (min-width: 768px) {
-
-  .nav_container{
+  .nav_container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -263,7 +265,7 @@ h2 {
     padding: 0;
     margin-right: 2em;
     box-shadow: none;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
     gap: 1rem;
   }
 
@@ -276,7 +278,7 @@ h2 {
     padding: 0;
     margin: 0;
   }
-  
+
   .menu li {
     margin-bottom: 0;
     padding: 0;
@@ -289,10 +291,10 @@ h2 {
     font-size: 1rem;
     font-family: var(--font_1);
   }
-  
-  .menu a:hover{
+
+  .menu a:hover {
     border-bottom: 1px solid #1d1a1b;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .home {
@@ -326,14 +328,14 @@ h2 {
 
   .item_con {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: auto;
     gap: 1rem;
     align-content: center;
     justify-content: space-evenly;
   }
 
-  .footer_box h3{
+  .footer_box h3 {
     border-bottom: 1px solid #1d1a1b;
     font-size: 2rem;
     font-weight: 700;

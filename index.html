@@ -1,132 +1,222 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="./assets/css/styles.css" />
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-      />
-      <link rel="shortcut icon" href="assets/img/MS4L_logo.png" type="image/x-icon">
-      <title>MS4L</title>
-    </head>
-    <body>
-      <header>
-        <nav class="nav_container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/img/MS4L_logo.png"
+      type="image/x-icon"
+    />
+    <title>MS4L</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_container">
+        <div class="logo">
+          <a href="#"><img src="./assets/img/MS4L_logo.png" alt="" /></a>
+        </div>
+        <div class="toggle_icon">
+          <i
+            id="menu-toggle"
+            class="ri-grid-fill"
+            style="font-size: 24px; cursor: pointer"
+          ></i>
+        </div>
 
-          <div class="logo">
-            <a href="#"><img src="./assets/img/MS4L_logo.png" alt="" /></a>
-          </div>
-          <div class="toggle_icon">
-            <i
-              id="menu-toggle"
-              class="ri-grid-fill"
-              style="font-size: 24px; cursor: pointer"
-            ></i>
+        <ul id="menu" class="menu">
+          <li><a href="#arrival">New Arrival</a></li>
+          <li><a href="#leisure">Leisurewear</a></li>
+          <li><a href="#underwear">Underwear</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="home" id="home">
+        <div class="home_contain">
+          <div class="home_data">
+            <span class="home_new">New In</span>
+            <h1 class="home_title">DELUXE SET</h1>
+            <p class="home_desc">
+              Embrace the comfort of the Minimalist, yet, Luxury
+            </p>
+            <a href="store.html" class="button"
+              >Exlplore Now <i class="ri-arrow-right-line"></i
+            ></a>
           </div>
 
-            <ul id="menu" class="menu">
-              <!-- <li><a href="#">Home</a></li> -->
-              <li><a href="#arrival">New Arrival</a></li>
-              <li><a href="#leisure">Leisurewear</a></li>
-              <!-- <li><a href="#">Materials</a></li> -->
-              <li><a href="#">Underwear</a></li>
-              <li><a href="store.html">Store</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </nav>
-      </header>
-      <main class="main">
-        <section class="home" id="home">
-          <div class="home_contain">
-            <div class="home_data">
-              <span class="home_new">New In</span>
-              <h1 class="home_title">DELUXE SET</h1>
-              <p class="home_desc">
-                Embrace the comfort of the Minimalist, yet, Luxury
-              </p>
+          <div class="home_set">
+            <img src="./assets/img/home.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="new_arrival" id="arrival">
+        <h2>New Arrival</h2>
+        <div class="item_con">
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/arrival_1.png" alt="" />
+            <div class="button_s">
               <a href="store.html" class="button"
-                >Exlplore Now <i class="ri-arrow-right-line"></i
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
               ></a>
-            </div>
-
-            <div class="home_set">
-              <img src="./assets/img/home.png" alt="" />
             </div>
           </div>
-        </section>
-
-          <section class="new_arrival" id="arrival">
-            <h2>New Arrival</h2>
-            <div class="item_con">
-              <div class="item_box">
-                <div class="bgd"></div>
-                <img src="./assets/img/arrival_1.png" alt="">
-                <div class="button_s">
-                  <a href="store.html" class="button"
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/arrival_2.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
                 >shop now &nbsp;<i class="ri-arrow-right-line"></i
               ></a>
-                  </div>
-              </div>
-              <div class="item_box">
-                <div class="bgd"></div>
-                <img src="./assets/img/arrival_2.png" alt="">
-                <div class="button_s">
-                  <a href="store.html" class="button"
-                >shop now &nbsp;<i class="ri-arrow-right-line"></i
-              ></a>
-                  </div>
-              </div>
-
-            </div>
-          </section>
-
-          <section class="leisure" id="leisure">
-            <h2>Leisure Wear</h2>
-            <div class="item_con">
-              <div class="item_box">
-                <div class="bgd"></div>
-                <img src="./assets/img/gym_1.png" alt="">
-                <div class="button_s">
-                  <a href="store.html" class="button"
-                >shop now &nbsp;<i class="ri-arrow-right-line"></i
-              ></a>
-                  </div>
-              </div>
-
-              <div class="item_box">
-                <div class="bgd"></div>
-                <img src="./assets/img/pyjamas_1.png" alt="">
-                <div class="button_s">
-                  <a href="store.html" class="button"
-                >shop now &nbsp;<i class="ri-arrow-right-line"></i
-              ></a>
-                  </div>
-              </div>
-              
-            </div>
-          </section>
-      </main>
-
-      <footer>
-        <section id="contact">
-          <div class="footer_con">
-            <div class="footer_box">
-              <h3>MY <br> STORE <br> 4 <br> LIFE</h3>
-            </div>
-            <div class="footer_box">
-              <h3>CONTACT US</h3>
-              <p><a href="https://www.tiktok.com/my__storefl" target="_blank"><i class="ri-tiktok-fill"></i> Tiktok</a></p>
-              <p><a href="https://www.instagram.com/MY__STOREFL" target="_blank"><i class="ri-instagram-fill"></i> Instagram</a></p>
-              <p><a href="https://www.x.com/Leeshaofficial" target="_blank"><i class="ri-twitter-x-line"></i> X(Twitter)</a></p>
-              <p><a href="https://wa.me/+2349025049148" target="_blank"><i class="ri-whatsapp-fill"></i> Whatsapp</a></p>
-              <!-- <p><i class="ri-phone-fill"></i> : 09160596645 </p> -->
             </div>
           </div>
-        </section>
-      </footer>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/arrival_5.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/arrival_3.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/boobtapegrp.jpg" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <script src="./assets/js/main.js"></script>
-    </body>
-  </html>
+      <section class="leisure" id="leisure">
+        <h2>Leisure Wear</h2>
+        <div class="item_con">
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/leisure_2.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/gym_1.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/pyjamas_1.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/leisure_1.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="underwear" id="underwear">
+        <h2>Underwear</h2>
+        <div class="item_con">
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/no_1.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="item_box">
+            <div class="bgd"></div>
+            <img src="./assets/img/panties_4.png" alt="" />
+            <div class="button_s">
+              <a href="store.html" class="button"
+                >shop now &nbsp;<i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section id="contact">
+        <div class="footer_con">
+          <div class="footer_box">
+            <h3>
+              MY <br />
+              STORE <br />
+              4 <br />
+              LIFE
+            </h3>
+          </div>
+          <div class="footer_box">
+            <h3>CONTACT US</h3>
+            <p>
+              <a href="https://www.tiktok.com/my__storefl" target="_blank"
+                ><i class="ri-tiktok-fill"></i> Tiktok</a
+              >
+            </p>
+            <p>
+              <a href="https://www.instagram.com/MY__STOREFL" target="_blank"
+                ><i class="ri-instagram-fill"></i> Instagram</a
+              >
+            </p>
+            <p>
+              <a href="https://www.x.com/Leeshaofficial" target="_blank"
+                ><i class="ri-twitter-x-line"></i> X(Twitter)</a
+              >
+            </p>
+            <p>
+              <a href="https://wa.me/+2349025049148" target="_blank"
+                ><i class="ri-whatsapp-fill"></i> Whatsapp</a
+              >
+            </p>
+            <!-- <p><i class="ri-phone-fill"></i> : 09160596645 </p> -->
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
