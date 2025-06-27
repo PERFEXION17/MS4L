@@ -230,7 +230,7 @@ h2 {
 .footer_box a,
 p {
   color: var(--color_dark);
-  font-size: 1.75rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -244,6 +244,22 @@ p {
   width: 110px;
   height: auto;
   border-bottom: none;
+}
+
+.top{
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color_dark);
+  box-shadow: 1px 1px 5px 1px #1d1a1b;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -337,7 +353,7 @@ p {
 
   .footer_box h3 {
     border-bottom: 1px solid #1d1a1b;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
   }
