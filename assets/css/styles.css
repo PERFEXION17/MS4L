@@ -165,12 +165,20 @@ h2 {
 .item_con {
   position: relative;
   margin: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item_con_store{
+  position: relative;
+  margin: 2rem 1.5rem;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0.75rem;
 }
 
 .bgd {
@@ -189,6 +197,17 @@ h2 {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  border-radius: .5rem;
+}
+
+.item_box_store{
+  margin: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: .5rem;
 }
 
 .button_s {
