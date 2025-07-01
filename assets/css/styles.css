@@ -253,6 +253,11 @@ p {
   font-weight: 500;
 }
 
+.footer_box a:hover{
+  font-size: 1.2rem;
+  transition: .3s;
+}
+
 .footer_box h3 {
   border-bottom: 1px solid #1d1a1b;
   font-weight: 700;
