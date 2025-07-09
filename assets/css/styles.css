@@ -254,7 +254,7 @@ p {
 }
 
 .footer_box a:hover{
-  font-size: 1.2rem;
+  border-bottom: 1px solid #1d1a1b;
   transition: .3s;
 }
 
@@ -284,6 +284,13 @@ p {
   color: var(--color_dark);
   box-shadow: 1px 1px 5px 1px #1d1a1b;
   z-index: 2;
+}
+
+video{
+  height: 500px;
+  margin: 1rem;
+  border-radius: .5rem;
+  box-shadow: -1px 1px 5px #1d1a1b;
 }
 
 @media (min-width: 768px) {
