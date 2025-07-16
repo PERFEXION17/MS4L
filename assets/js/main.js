@@ -19,3 +19,17 @@ document.addEventListener("click", function (e) {
     toggleButton.classList.add("ri-grid-fill");
   }
 });
+
+  const btn = document.getElementById('scrollToTopBtn');
+
+  window.onscroll = () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  };
+
+  btn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
