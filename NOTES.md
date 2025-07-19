@@ -109,3 +109,12 @@ JavaScript
       });
 
       <i class="ri-grid-fill"></i>
+
+                  <span class="home_new">New In</span>
+            <h1 class="home_title">DELUXE SET</h1>
+            <p class="home_desc">
+              Embrace the comfort of the Minimalist, yet, Luxury
+            </p>
+            <a href="shop.html" class="button"
+              >Exlplore Now <i class="ri-arrow-right-line"></i
+            ></a>
