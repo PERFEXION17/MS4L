@@ -251,6 +251,21 @@ h2 {
   height: 100%;
 }
 
+.honour_con{
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: var(--font_2);
+  color: var(--color_dark);
+  background-color: var(--color_light);
+}
+
+.honour_box{
+  width: 33.33%;
+}
+
 .button {
   display: inline-block;
   background-color: var(--color_dark);
@@ -347,6 +362,7 @@ h2 {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  font-family: var(--font_2);
   background-color: var(--color_light);
 }
 
@@ -593,6 +609,15 @@ video {
 
   .seg_1 a{
     font-size: 1.5rem;
+  }
+
+  .honour_con, .honour_con p{
+    background-color: var(--color_dark);
+    color: var(--color_light);
+  }
+
+  .honour_con span{
+    font-size: 2rem;
   }
 
   .item_con {
