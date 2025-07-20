@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Sora:wght@100..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Outfit:wght@100..900&display=swap');
 
 :root {
   --font_1: "Cinzel", serif;
-  --font_2: "Sora", sans-serif;
+  --font_2: "Outfit", sans-serif;
   --color_dark: #1d1a1b;
   --color_light: #d3d3d3;
   --body: #fff;
@@ -112,6 +112,13 @@ h2 {
   text-align: center;
 }
 
+.hero_sec{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
 .slide_con {
   width: 100%;
   height: 60vh;
@@ -131,17 +138,6 @@ h2 {
   flex-shrink: 0;
 }
 
-/* .slide::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-} */
-
 .slide img {
   width: 100%;
   height: 100%;
@@ -149,36 +145,34 @@ h2 {
 }
 
 .cta_text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 2rem;
+  order: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  background-color: var(--color_dark);
 }
 
 .cta_text h2 {
   color: var(--color_light);
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   border: none;
-  text-shadow: 2px 2px 10px #1d1a1b;
 }
 
 .cta_text a {
-  padding: .75rem;
-  /* border-radius: .5rem; */
+  padding: .7rem;
   box-shadow: -1px 1px 5px 1px #1d1a1b;
   background-color: var(--color_light);
   color: var(--color_dark);
+  margin-top: -1rem;
   margin-bottom: 1rem;
   transition: .3s;
 }
 
 .cta_text a:hover {
-  transform: translateY(-0.25rem);
+  background-color: var(--color_dark);
+  color: var(--color_light);
 }
 
 @keyframes slide {
@@ -206,6 +200,55 @@ h2 {
   100% {
     transform: translateX(-80%);
   }
+}
+
+.seg_con{
+  position: relative;
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.seg_box{
+  width: 50%;
+  padding: 0 0 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color_light);
+}
+
+.seg_1{
+  width: 50%;
+}
+
+.seg_1 h4{
+  margin-bottom: .75rem;
+}
+
+.seg_1 a{
+  padding: .1rem .15rem;
+  font-size: .7rem;
+  color: var(--color_dark);
+  border: 1px solid #1d1a1b;
+  transition: .3s;
+}
+
+.seg_1 a:hover{
+  background-color: var(--color_dark);
+  color: var(--color_light);
+}
+
+.seg_2{
+  width: 50%;
+}
+
+.seg_2 img{
+  width: 100%;
+  height: 100%;
 }
 
 .button {
@@ -480,9 +523,29 @@ video {
     margin-top: 4rem;
   }
 
-  .slide_con {
+  .hero_sec{
+    height: max-content;
     width: 100%;
-    height: 90vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta_text{
+    order: 1;
+    width: 30%;
+    height: auto;
+    background-color: var(--body);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide_con {
+    order: 2;
+    width: 100%;
+    height: 80vh;
     position: relative;
     overflow: hidden;
   }
@@ -503,12 +566,32 @@ video {
   }
 
   .cta_text h2 {
-    font-size: 3.25rem;
+    font-size: 2.25rem;
     font-weight: 700;
+    color: var(--color_dark);
+    text-shadow: 1px 1px 3px var(--color_dark);
+    margin: 0;
+    padding: 1rem 2.5rem;
   }
 
   .cta_text a {
     padding: 1rem;
+    font-size: 1.2rem;
+    margin: 0;
+    background-color: var(--color_dark);
+    color: var(--color_light);
+  }
+
+  .cta_text a:hover{
+    background-color: var(--color_light);
+    color: var(--color_dark);
+  }
+
+  .seg_1 h4{
+    font-size: 2rem;
+  }
+
+  .seg_1 a{
     font-size: 1.5rem;
   }
 
