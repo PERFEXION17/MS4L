@@ -299,7 +299,7 @@ h2 {
 
 .promo_text a{
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1rem;
   padding: .5rem;
   font-size: .8rem;
   background-color: var(--color_light);
@@ -504,7 +504,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   overflow: hidden;
 }
 
