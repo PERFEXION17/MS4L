@@ -286,11 +286,12 @@ h2 {
 
 .promo_text p{
   color: var(--color_light);
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .promo_text span{
   font-weight: 600;
+  font-size: .9rem;
 }
 
 .strike{
