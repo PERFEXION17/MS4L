@@ -251,6 +251,82 @@ h2 {
   height: 100%;
 }
 
+.promo_con{
+  position: relative;
+  margin: auto;
+  width: 95%;
+  max-height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: 2px solid var(--color_light);
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  font-family: var(--font_2);
+  gap: 1rem;
+}
+
+.promo_text{
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.promo_text h4{
+  position: absolute;
+  top: 1rem;
+  padding: .4rem;
+  width: max-content;
+  font-size: 1.5rem;
+  border: 1px solid var(--color_light);
+}
+
+.promo_text p{
+  color: var(--color_light);
+  font-size: .9rem;
+}
+
+.promo_text span{
+  font-weight: 600;
+}
+
+.strike{
+  text-decoration: line-through;
+}
+
+.promo_text a{
+  position: absolute;
+  bottom: 1.5rem;
+  padding: .5rem;
+  background-color: var(--color_light);
+  color: var(--color_dark);
+  transition: .3s;
+}
+
+.promo_text a:hover{
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  outline: 1px solid var(--color_light);
+}
+
+.promo_img{
+  width: 50%;
+  padding: 1rem;
+  max-height: inherit;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.promo_img img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .honour_con{
   width: 100%;
   padding: 1rem;
@@ -609,6 +685,7 @@ video {
 
   .seg_1 a{
     font-size: 1.5rem;
+    padding: .5rem;
   }
 
   .honour_con, .honour_con p{
@@ -618,6 +695,18 @@ video {
 
   .honour_con span{
     font-size: 2rem;
+  }
+
+  .promo_text p{
+    font-size: 1.2rem;
+  }
+
+  .promo_text span{
+    font-size: 1.5rem;
+  }
+
+  .promo_text a, .promo_text h4{
+    font-size: 1.4rem;
   }
 
   .item_con {
