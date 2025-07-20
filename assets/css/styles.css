@@ -112,7 +112,7 @@ h2 {
   text-align: center;
 }
 
-.hero_sec{
+.hero_sec {
   display: flex;
   height: 100vh;
   width: 100%;
@@ -173,6 +173,7 @@ h2 {
 .cta_text a:hover {
   background-color: var(--color_dark);
   color: var(--color_light);
+  outline: 1px solid var(--color_light);
 }
 
 @keyframes slide {
@@ -202,7 +203,7 @@ h2 {
   }
 }
 
-.seg_con{
+.seg_con {
   position: relative;
   width: 90%;
   margin: 2rem auto;
@@ -210,10 +211,11 @@ h2 {
   align-items: center;
   justify-content: space-around;
   gap: 1rem;
+  flex-direction: column;
 }
 
-.seg_box{
-  width: 50%;
+.seg_box {
+  width: 100%;
   padding: 0 0 0 1rem;
   display: flex;
   align-items: center;
@@ -221,37 +223,39 @@ h2 {
   background-color: var(--color_light);
 }
 
-.seg_1{
+.seg_1 {
   width: 50%;
 }
 
-.seg_1 h4{
+.seg_1 h4 {
   margin-bottom: .75rem;
+  font-size: 1.5rem;
 }
 
-.seg_1 a{
-  padding: .1rem .15rem;
-  font-size: .7rem;
+.seg_1 a {
+  padding: .2rem;
+  font-size: 1rem;
   color: var(--color_dark);
   border: 1px solid #1d1a1b;
   transition: .3s;
 }
 
-.seg_1 a:hover{
+.seg_1 a:hover {
   background-color: var(--color_dark);
   color: var(--color_light);
 }
 
-.seg_2{
+.seg_2 {
   width: 50%;
+  display: flex;
 }
 
-.seg_2 img{
+.seg_2 img {
   width: 100%;
   height: 100%;
 }
 
-.promo_con{
+.promo_con {
   position: relative;
   margin: auto;
   width: 95%;
@@ -266,7 +270,7 @@ h2 {
   gap: 1rem;
 }
 
-.promo_text{
+.promo_text {
   width: 50%;
   padding: 1rem;
   display: flex;
@@ -275,32 +279,32 @@ h2 {
   justify-content: flex-start;
 }
 
-.promo_text h4{
-  position: absolute;
-  top: 1rem;
+.promo_text h4 {
+  margin-bottom: .5rem;
   padding: .4rem;
   width: max-content;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 1px solid var(--color_light);
 }
 
-.promo_text p{
+.promo_text p {
+  margin: 1rem 0;
   color: var(--color_light);
   font-size: .8rem;
 }
 
-.promo_text span{
+.promo_text span {
+  margin-bottom: .5rem;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
-.strike{
+.strike {
   text-decoration: line-through;
 }
 
-.promo_text a{
-  position: absolute;
-  bottom: 1rem;
+.promo_text a {
+  margin-top: .5rem;
   padding: .5rem;
   font-size: .8rem;
   background-color: var(--color_light);
@@ -308,28 +312,27 @@ h2 {
   transition: .3s;
 }
 
-.promo_text a:hover{
+.promo_text a:hover {
   background-color: var(--color_dark);
   color: var(--color_light);
   outline: 1px solid var(--color_light);
 }
 
-.promo_img{
+.promo_img {
   width: 50%;
-  padding: 1rem;
   max-height: inherit;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
 }
 
-.promo_img img{
+.promo_img img {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.honour_con{
+.honour_con {
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -340,22 +343,8 @@ h2 {
   background-color: var(--color_light);
 }
 
-.honour_box{
+.honour_box {
   width: 33.33%;
-}
-
-.button {
-  display: inline-block;
-  background-color: var(--color_dark);
-  color: #fff;
-  font-weight: 600;
-  padding: 1.125rem 1.5rem;
-  border-radius: 0.5rem;
-  transition: 0.3s;
-}
-
-.button:hover {
-  transform: translateY(-0.25rem);
 }
 
 .item_con {
@@ -385,8 +374,23 @@ h2 {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 0.5rem;
   transition: 0.5s;
+  background-color: var(--color_light);
+}
+
+.item_box a {
+  font-size: 1rem;
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  font-weight: 600;
+  padding: .7rem;
+  transition: 0.3s;
+}
+
+.item_box a:hover {
+  background-color: var(--color_light);
+  color: var(--color_dark);
+  outline: 1px solid var(--color_dark);
 }
 
 .item_box_store {
@@ -398,6 +402,17 @@ h2 {
   overflow: hidden;
   border-radius: 0.5rem;
   transition: 0.5s;
+}
+
+.item_text{
+  margin: .5rem;
+  padding: 1rem;
+  font-family: var(--font_2);
+}
+
+.item_text span{
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .item_frame {
@@ -425,10 +440,6 @@ h2 {
   font-weight: 600;
   border-radius: 0.5rem;
   transition: 0.3s;
-}
-
-.button_s:hover a {
-  transform: translateY(-0.25rem);
 }
 
 .footer_con {
@@ -482,7 +493,6 @@ p {
 video {
   height: 500px;
   margin: 1rem;
-  border-radius: 0.5rem;
   box-shadow: -1px 1px 5px #1d1a1b;
 }
 
@@ -617,7 +627,7 @@ video {
     margin-top: 4rem;
   }
 
-  .hero_sec{
+  .hero_sec {
     height: max-content;
     width: 100%;
     flex-direction: row;
@@ -625,7 +635,7 @@ video {
     justify-content: center;
   }
 
-  .cta_text{
+  .cta_text {
     order: 1;
     width: 30%;
     height: auto;
@@ -676,39 +686,53 @@ video {
     color: var(--color_light);
   }
 
-  .cta_text a:hover{
+  .cta_text a:hover {
     background-color: var(--color_light);
     color: var(--color_dark);
   }
 
-  .seg_1 h4{
+  .seg_con {
+    flex-direction: row;
+  }
+
+  .seg_1 h4 {
     font-size: 2rem;
   }
 
-  .seg_1 a{
+  .seg_1 a {
     font-size: 1.5rem;
     padding: .5rem;
   }
 
-  .honour_con, .honour_con p{
+  .honour_con,
+  .honour_con p {
     background-color: var(--color_dark);
     color: var(--color_light);
   }
 
-  .honour_con span{
+  .honour_con span {
     font-size: 2rem;
   }
 
-  .promo_text p{
+  .promo_text {
+    padding: 2rem;
+  }
+
+  .promo_text p {
     font-size: 1.2rem;
   }
 
-  .promo_text span{
+  .promo_text span {
     font-size: 1.5rem;
   }
 
-  .promo_text a, .promo_text h4{
-    font-size: 1.4rem;
+  .promo_text h4 {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  .promo_text a {
+    font-size: 1.5rem;
   }
 
   .item_con {
