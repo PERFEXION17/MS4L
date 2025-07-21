@@ -655,6 +655,10 @@ video {
     justify-content: center;
   }
 
+  .cta_text span{
+    margin-bottom: 1rem;
+  }
+
   .slide_con {
     order: 2;
     width: 100%;
