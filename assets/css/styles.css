@@ -163,7 +163,7 @@ h2 {
   border: none;
 }
 
-.cta_text span{
+.cta_text span {
   padding: 0 2rem;
   text-align: center;
   color: var(--color_light);
@@ -210,6 +210,11 @@ h2 {
   100% {
     transform: translateX(-80%);
   }
+}
+
+.new_arrival{
+  position: relative;
+  top: 4rem;
 }
 
 .seg_con {
@@ -378,9 +383,11 @@ h2 {
 .item_box {
   margin: 2rem 0 0 0;
   padding: 1rem;
+  max-width: 22rem;
+  height: 49rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
   transition: 0.5s;
@@ -406,29 +413,36 @@ h2 {
   margin: 2rem 0 0 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 0.5rem;
   transition: 0.5s;
+  background-color: var(--color_light);
+  outline: 2px solid var(--color_dark);
 }
 
-.item_text{
-  margin: .5rem;
+.item_text {
   padding: 1rem;
   font-family: var(--font_2);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.item_text span{
+.price{
+  font-weight: 700;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-family: var(--font_2);
 }
 
 .item_frame {
   width: 90%;
   margin: 0.5rem;
-  border-radius: 0.5rem;
+  display: flex;
   overflow: hidden;
+  background-color: var(--body);
+  outline: 2px solid var(--color_dark);
 }
 
 .item_frame img {
@@ -524,7 +538,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: 0.5rem; */
+  outline: 2px solid var(--color_dark);
   overflow: hidden;
 }
 
@@ -554,6 +568,16 @@ video {
 
 .about_text span {
   font-size: 1.5rem;
+}
+
+.about_contact{
+  margin-top: 1rem;
+}
+
+.about_contact a{
+  font-size: 1.3rem;
+  color: var(--color_dark);
+  margin: 0 1rem;
 }
 
 #scrollToTopBtn {
@@ -655,8 +679,10 @@ video {
     justify-content: center;
   }
 
-  .cta_text span{
+  .cta_text span {
     margin-bottom: 1rem;
+    color: var(--color_dark);
+    font-weight: 600;
   }
 
   .slide_con {
@@ -765,6 +791,20 @@ video {
     grid-template-rows: auto;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .item_box {
+    height: 55rem;
+  }
+
+  .item_text p{
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: .5rem;
   }
 
   .footer_cont {

@@ -1,7 +1,7 @@
 NOTES FOR MS4L
 
-Click on image > Redirect to Whatsapp(DM) > Type out a default text.
-Each image has a unique text
+Click on link > Redirect to Whatsapp(DM) > Type out a default text.
+Each link has a unique text
 
 CATEGORIES
 Underwear:lingerie,bra,pants,shapers,boxers,singlets
@@ -109,12 +109,3 @@ JavaScript
       });
 
       <i class="ri-grid-fill"></i>
-
-                  <span class="home_new">New In</span>
-            <h1 class="home_title">DELUXE SET</h1>
-            <p class="home_desc">
-              Embrace the comfort of the Minimalist, yet, Luxury
-            </p>
-            <a href="shop.html" class="button"
-              >Exlplore Now <i class="ri-arrow-right-line"></i
-            ></a>
