@@ -378,6 +378,7 @@ h2 {
   grid-template-rows: auto;
   align-items: center;
   justify-content: space-around;
+  gap: 1rem;
 }
 
 .item_box {
@@ -392,6 +393,7 @@ h2 {
   overflow: hidden;
   transition: 0.5s;
   background-color: var(--color_light);
+  outline: 2px solid var(--color_dark);
 }
 
 .item_box a {
@@ -421,6 +423,22 @@ h2 {
   outline: 2px solid var(--color_dark);
 }
 
+.item_box_store a {
+  font-size: .8rem;
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  font-weight: 600;
+  padding: .7rem;
+  margin-bottom: .5rem;
+  transition: 0.3s;
+}
+
+.item_box_store a:hover {
+  background-color: var(--color_light);
+  color: var(--color_dark);
+  outline: 1px solid var(--color_dark);
+}
+
 .item_text {
   padding: 1rem;
   font-family: var(--font_2);
@@ -442,6 +460,7 @@ h2 {
   display: flex;
   overflow: hidden;
   background-color: var(--body);
+  /* box-shadow: -1px 1px 5px 1px var(--color_dark); */
   outline: 2px solid var(--color_dark);
 }
 
