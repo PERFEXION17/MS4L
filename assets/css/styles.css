@@ -440,7 +440,7 @@ h2 {
 }
 
 .item_text {
-  padding: 1rem;
+  padding: .5rem 1rem 1rem 1rem;
   font-family: var(--font_2);
   display: flex;
   align-items: flex-start;
