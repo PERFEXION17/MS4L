@@ -63,12 +63,11 @@ h2 {
   font-weight: 700;
   font-size: 1.1rem;
   font-family: var(--font_1);
+  transition: .3s;
 }
 
 .menu a:hover {
-  border-bottom: 1px solid;
-  border-color: var(--color_dark);
-  transition: 0.3s;
+  color: var(--color_light);
 }
 
 .menu.active {
@@ -212,7 +211,7 @@ h2 {
   }
 }
 
-.new_arrival{
+.new_arrival {
   position: relative;
   top: 4rem;
 }
@@ -448,7 +447,7 @@ h2 {
   gap: 1rem;
 }
 
-.price{
+.price {
   font-weight: 700;
   font-size: 1.3rem;
   font-family: var(--font_2);
@@ -505,7 +504,7 @@ h2 {
   padding-top: 1rem;
 }
 
-.footer_icons a{
+.footer_icons a {
   font-size: 1.1rem;
   color: var(--color_dark);
 }
@@ -518,15 +517,15 @@ h2 {
   gap: 1rem;
 }
 
-.footer_box a{
+.footer_box a {
   color: var(--color_dark);
 }
 
-.footer_box a:hover{
+.footer_box a:hover {
   border-bottom: 1px solid var(--color_dark);
 }
 
-.credit{
+.credit {
   padding: 1rem;
   font-size: .8rem;
   color: var(--color_dark);
@@ -589,11 +588,11 @@ video {
   font-size: 1.5rem;
 }
 
-.about_contact{
+.about_contact {
   margin-top: 1rem;
 }
 
-.about_contact a{
+.about_contact a {
   font-size: 1.3rem;
   color: var(--color_dark);
   margin: 0 1rem;
@@ -666,11 +665,7 @@ video {
     font-weight: 600;
     font-size: 1rem;
     font-family: var(--font_1);
-  }
-
-  .menu a:hover {
-    border-bottom: 1px solid #1d1a1b;
-    transition: 0.5s;
+    transition: .3s;
   }
 
   .main {
@@ -816,7 +811,7 @@ video {
     height: 55rem;
   }
 
-  .item_text p{
+  .item_text p {
     font-size: 1.3rem;
   }
 
