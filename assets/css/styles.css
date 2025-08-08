@@ -463,8 +463,8 @@ h2 {
 }
 
 .item_frame {
-  width: 175px;
-  height: 300px;
+  width: 10.9375rem;
+  height: 18.75rem;
   margin: 0.5rem;
   display: flex;
   overflow: hidden;
@@ -830,8 +830,8 @@ video {
   }
 
   .item_frame {
-    width: 150px;
-    height: 260px;
+    width: 9.375rem;
+    height: 16.25rem;
   }
 
   .item_text p {
