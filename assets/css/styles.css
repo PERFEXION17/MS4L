@@ -9,8 +9,8 @@
 }
 
 /* .darkmode {
-  --color_dark: #1d1a1b;
-  --color_light: #d3d3d3;
+  --color_light: #1d1a1b;
+  --color_dark: #d3d3d3;
   --body: #1d1a1b;
 } */
 
@@ -43,7 +43,7 @@ h2 {
   right: 0;
   height: 100%;
   width: 250px;
-  background-color: #fff;
+  background-color: var(--body);
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -85,8 +85,8 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2rem;
-  background-color: #fff;
-  box-shadow: 2px 2px 10px #1d1a1b;
+  background-color: var(--body);
+  box-shadow: 2px 2px 10px var(--color_dark);
   z-index: 999;
 }
 
@@ -109,6 +109,11 @@ h2 {
 
 .main h3 {
   text-align: center;
+}
+
+.arr_wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero_sec {
@@ -387,7 +392,7 @@ h2 {
   height: 49rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-direction: column;
   overflow: hidden;
   transition: 0.5s;
@@ -454,7 +459,8 @@ h2 {
 }
 
 .item_frame {
-  width: 90%;
+  width: 175px;
+  height: 300px;
   margin: 0.5rem;
   display: flex;
   overflow: hidden;
@@ -507,6 +513,7 @@ h2 {
 .footer_icons a {
   font-size: 1.1rem;
   color: var(--color_dark);
+  transition: .3s;
 }
 
 .footer_box {
@@ -519,10 +526,13 @@ h2 {
 
 .footer_box a {
   color: var(--color_dark);
+  transition: .5s;
 }
 
 .footer_box a:hover {
-  border-bottom: 1px solid var(--color_dark);
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color_dark);
+
 }
 
 .credit {
@@ -613,6 +623,8 @@ video {
   box-shadow: 1px 1px 5px 1px #1d1a1b;
   cursor: pointer;
   display: none;
+  height: 3rem;
+  width: 3rem;
   z-index: 1000;
 }
 
@@ -620,8 +632,14 @@ video {
   display: block;
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .item_con_store {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-@media (min-width: 768px) {
+
+@media (min-width : 900px) {
   .nav_container {
     display: flex;
     align-items: center;
@@ -801,22 +819,23 @@ video {
     position: relative;
     margin: 2rem 1.5rem;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
-  .item_box {
-    height: 55rem;
+  .item_frame {
+    width: 150px;
+    height: 260px;
   }
 
   .item_text p {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .price {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-top: .5rem;
   }
