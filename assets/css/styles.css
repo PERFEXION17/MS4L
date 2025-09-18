@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --font_1: "Cinzel", serif;
-  --font_2: "Outfit", sans-serif;
+  --font_2: "Lato", sans-serif;
+  --price: "Raleway", sans-serif;
   --color_dark: #1d1a1b;
   --color_light: #d3d3d3;
   --body: #fff;
@@ -354,6 +355,12 @@ h2 {
   object-fit: contain;
 }
 
+.ed_pick_p {
+  padding: 0 1rem 1rem 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
 .ed_pick_con {
   display: flex;
   align-items: center;
@@ -385,28 +392,140 @@ h2 {
   padding: 1rem 0;
 }
 
+.ed_pick_txt h4 {
+  font-size: 1.1rem;
+}
+
 .ed_pick_txt p {
   color: var(--color_dark);
 }
 
 .ed_pick_txt span {
-  font-weight: 500;
+  font-weight: 600;
   font-family: var(--font_1);
+  font-size: 1.09rem;
 }
 
 .honour_con {
   width: 100%;
-  padding: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color_dark);
+  border-top: 2px solid var(--color_light);
+  border-bottom: 2px solid var(--color_light);
   font-family: var(--font_2);
-  color: var(--color_dark);
-  background-color: var(--color_light);
+  padding: 2rem;
+  margin: 2rem 0;
+  gap: 2rem;
 }
 
 .honour_box {
-  width: 33.33%;
+  background-color: var(--color_light);
+  min-height: 7rem;
+  max-height: 8rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.honour_img {
+  width: 50%;
+}
+
+.honour_txt {
+  width: 50%;
+  margin: 0 .5rem;
+  font-weight: 600;
+  color: var(--color_dark);
+}
+
+.news_con {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3rem auto;
+  background: url(/assets/img/new_bgd.jfif);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid var(--color_dark);
+}
+
+.bgd {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.news_txt {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color_light);
+  text-shadow: 1px 1px 1px;
+  z-index: 1;
+}
+
+.news_input {
+  width: 100%;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+.news_input form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.news_input input {
+  font-family: var(--font_1);
+  height: 2.5rem;
+  width: 65%;
+  padding: 0 .5rem;
+  outline: none;
+  border-left: 1px solid var(--color_dark);
+  border-right: none;
+  border-top: 1px solid var(--color_dark);
+  border-bottom: 1px solid var(--color_dark);
+}
+
+.news_input input:focus{
+  border: 2px solid var(--color_dark);
+}
+
+.news_input button{
+  height: 2.5rem;
+  padding: 0 .7rem;
+  font-family: var(--font_1);
+  font-size: 1.05rem;
+  font-weight: 600;
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  outline: none;
+  border-top: 1px solid var(--color_dark);
+  border-right: 1px solid var(--color_dark);
+  border-left: none;
+  border-bottom: 1px solid var(--color_dark);
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.news_input button:hover{
+  background-color: var(--color_light);
+  color: var(--color_dark);
+  border: 2px solid var(--color_dark);
 }
 
 /* ----ABOUT ME----- */
@@ -510,6 +629,14 @@ h2 {
   .ed_pick_box {
     padding: 2rem;
     max-width: 50%;
+  }
+
+  .honour_con {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news_txt {
+    font-size: 1.4rem;
   }
 }
 
@@ -654,16 +781,6 @@ h2 {
     padding: .5rem;
   }
 
-  .honour_con,
-  .honour_con p {
-    background-color: var(--color_dark);
-    color: var(--color_light);
-  }
-
-  .honour_con span {
-    font-size: 2rem;
-  }
-
   .promo_text {
     padding: 2rem;
   }
@@ -692,6 +809,23 @@ h2 {
 
   .ed_pick_box {
     max-width: 40%;
+  }
+
+  .honour_con {
+    grid-template-columns: repeat(6, 1fr);
+    border: 2px solid var(--color_light);
+  }
+
+  .news_con {
+    flex-direction: row;
+  }
+
+  .bgd {
+    width: 100%
+  }
+
+  .news_txt {
+    font-size: 1.6rem;
   }
 
   /* ----ABOUT ME----- */
