@@ -15,7 +15,7 @@
   --body: #1d1a1b;
 } */
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -35,7 +35,7 @@ a {
   text-decoration: none;
 }
 
-img{
+img {
   width: 100%;
 }
 
@@ -242,6 +242,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color_light);
+  border: 2px solid var(--color_dark);
 }
 
 .seg_1 {
@@ -353,6 +354,46 @@ h2 {
   object-fit: contain;
 }
 
+.ed_pick_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ed_pick_box {
+  width: 90%;
+  padding: 1rem;
+}
+
+.ed_pick_img {
+  border: 2px solid var(--color_dark);
+  display: flex;
+  overflow: hidden;
+}
+
+.ed_pick_img img {
+  transition: .5s;
+}
+
+.ed_pick_img img:hover {
+  scale: 1.075;
+  cursor: pointer;
+}
+
+.ed_pick_txt {
+  padding: 1rem 0;
+}
+
+.ed_pick_txt p {
+  color: var(--color_dark);
+}
+
+.ed_pick_txt span {
+  font-weight: 500;
+  font-family: var(--font_1);
+}
+
 .honour_con {
   width: 100%;
   padding: 1rem;
@@ -460,12 +501,21 @@ h2 {
 /* ------MEDIA QUERIES------ */
 
 @media (min-width: 600px) and (max-width: 900px) {
+  .ed_pick_con {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 
+  .ed_pick_box {
+    padding: 2rem;
+    max-width: 50%;
+  }
 }
 
 
 @media (min-width : 900px) {
-/* -----NAVIGATION----- */
+  /* -----NAVIGATION----- */
 
   .nav_container {
     display: flex;
@@ -635,6 +685,15 @@ h2 {
     font-size: 1.5rem;
   }
 
+  .ed_pick_con {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .ed_pick_box {
+    max-width: 40%;
+  }
+
   /* ----ABOUT ME----- */
 
   .about_con {
@@ -645,7 +704,7 @@ h2 {
     height: 90vh;
   }
 
-  .about_img{
+  .about_img {
     height: 90vh;
   }
 
