@@ -20,16 +20,69 @@ document.addEventListener("click", function (e) {
   }
 });
 
-  const btn = document.getElementById('scrollToTopBtn');
+// -----ACCRORDION-----
 
-  window.onscroll = () => {
-    if (window.scrollY > 300) {
-      btn.classList.add('show');
-    } else {
-      btn.classList.remove('show');
-    }
-  };
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.querySelectorAll(".agenda-header").forEach((button) => {
+//     button.addEventListener("click", () => {
+//       const item = button.parentElement;
+//       const content = item.querySelector(".agenda-content");
+//       const symbol = item.querySelector(".symbol");
 
-  btn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+//       const isOpen = item.classList.contains("active");
+
+//       // Close all items
+//       document.querySelectorAll(".agenda-item").forEach((i) => {
+//         i.classList.remove("active");
+//         const inner = i.querySelector(".agenda-content");
+//         inner.style.maxHeight = null;
+//         i.querySelector(".symbol").textContent = "+";
+//       });
+
+//       if (!isOpen) {
+//         // Open this one
+//         item.classList.add("active");
+//         content.style.maxHeight = content.scrollHeight + "px";
+//         symbol.textContent = "–";
+//       }
+//     });
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".agenda-header").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement;
+      const content = item.querySelector(".agenda-content");
+      const symbol = item.querySelector(".symbol");
+
+      const isOpen = item.classList.contains("active");
+
+      // Close all items
+      document.querySelectorAll(".agenda-item").forEach((i) => {
+        i.classList.remove("active");
+        const inner = i.querySelector(".agenda-content");
+        inner.style.maxHeight = null;
+        i.querySelector(".symbol").textContent = "+";
+      });
+
+      if (!isOpen) {
+        // Open this one
+        item.classList.add("active");
+
+        // Force reflow so padding applies before measuring height
+        content.style.maxHeight = "none";
+        const fullHeight = content.scrollHeight;
+
+        // Reset to 0, then transition to full height
+        content.style.maxHeight = "0px";
+        setTimeout(() => {
+          content.style.maxHeight = fullHeight + "px";
+        }, 10);
+
+        symbol.textContent = "–";
+      }
+    });
+  });
+});
+
