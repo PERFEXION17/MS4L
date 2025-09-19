@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 * {
@@ -719,7 +720,7 @@ footer {
   font-size: 1.5rem;
 }
 
-.agenda_con{
+.agenda_con {
   width: 100%;
   margin: 2rem 0;
 }
@@ -763,13 +764,13 @@ footer {
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.agenda-content ul{
+.agenda-content ul {
   padding: 1rem;
 }
 
-/* .agenda_wrap{
+.agenda_wrap {
   padding-bottom: 4rem;
-} */
+}
 
 .agenda-item.active .agenda-content {
   padding: 1rem;
@@ -858,6 +859,10 @@ footer {
   .item4 {
     grid-column: 3;
     grid-row: 3;
+  }
+
+  .agenda_wrap {
+    padding-bottom: 0;
   }
 }
 
@@ -1114,17 +1119,21 @@ footer {
     font-size: 2.5rem;
   }
 
-  .agenda_con{
+  .agenda_con {
     width: 70%;
     margin: 0 0 2rem 2rem;
   }
 
-  .agenda-item{
+  .agenda-item {
     border-left: none;
     border-right: none;
   }
 
-  .agenda-content{
+  .agenda-content {
     background-color: var(--white);
+  }
+
+  .agenda_wrap{
+    padding-bottom: 0;
   }
 }
