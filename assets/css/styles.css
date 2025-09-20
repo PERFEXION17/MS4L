@@ -720,90 +720,62 @@ footer {
   font-size: 1.5rem;
 }
 
-.agenda_con {
+.toggle-section {
+  margin-bottom: 1.25rem;
   width: 100%;
-  margin: 2rem 0;
 }
 
-.agenda-item {
+.toggle-button {
   width: 100%;
-  border: 1px solid var(--color_dark);
-  margin: .5rem auto;
-  overflow: hidden;
+  display: inline-block;
+  padding: 1rem 1.25rem;
+  margin: auto;
+  background: var(--color_dark);
+  color: var(--color_light);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: var(--font_1);
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-button:hover {
+  background: var(--color_light);
   color: var(--color_dark);
 }
 
-.agenda-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  padding: 1rem;
-  font-family: var(--font_1);
-  font-weight: 600;
-  font-size: 1rem;
-  background-color: var(--color_dark);
-  color: var(--color_light);
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
+/* .toggle-button.active::after {
+  content: ' \25bc ';
+} */
 
-.symbol {
-  font-weight: bold;
-}
-
-.agenda-content {
+.toggle-content {
   max-height: 0;
   overflow: hidden;
   padding: 0;
+  background: var(--white);
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.toggle-content.active {
+  max-height: 60vh;
+  padding: 1rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+}
+
+.toggle-content p,
+.toggle-content ul,
+.toggle-content h4 {
   font-family: var(--font_2);
-  font-weight: 500;
-  background-color: var(--white);
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.agenda-content ul {
-  padding: 1rem;
-}
-
-.agenda-content p{
-  padding: 1rem 0;
-}
-
-.agenda_wrap {
-  padding-bottom: 4rem;
-}
-
-.agenda-item.active .agenda-content {
-  padding: 1rem;
-}
-
-/* ------SCROLL BUTTON----- */
-
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: .2rem;
-  font-size: 2rem;
-  font-weight: 700;
-  background: var(--body);
+  font-size: 1rem;
   color: var(--color_dark);
-  border: none;
-  outline: none;
-  border-radius: 100%;
-  box-shadow: 1px 1px 5px 1px #1d1a1b;
-  cursor: pointer;
-  display: none;
-  height: 3rem;
-  width: 3rem;
-  z-index: 1000;
+  margin-bottom: 1rem;
 }
 
-#scrollToTopBtn.show {
-  display: block;
+.toggle-content ul {
+  padding-left: 1.25rem;
 }
 
 /* ------MEDIA QUERIES------ */
@@ -865,9 +837,6 @@ footer {
     grid-row: 3;
   }
 
-  .agenda_wrap {
-    padding-bottom: 0;
-  }
 }
 
 
@@ -1123,21 +1092,18 @@ footer {
     font-size: 2.5rem;
   }
 
-  .agenda_con {
+  .toggle-section{
     width: 70%;
-    margin: 0 0 2rem 2rem;
+    margin: 1rem auto;
   }
 
-  .agenda-item {
-    border-left: none;
-    border-right: none;
-  }
+ .toggle-content {
+   font-size: 0.9rem;
+ }
 
-  .agenda-content {
-    background-color: var(--white);
-  }
+ .toggle-content.active {
+   max-height: 80vh;
+   padding: 0.625rem;
+ }
 
-  .agenda_wrap{
-    padding-bottom: 0;
-  }
 }

@@ -20,69 +20,24 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// -----ACCRORDION-----
+// -----COLLAPSIBLE SECTION-----
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.querySelectorAll(".agenda-header").forEach((button) => {
-//     button.addEventListener("click", () => {
-//       const item = button.parentElement;
-//       const content = item.querySelector(".agenda-content");
-//       const symbol = item.querySelector(".symbol");
+document.querySelectorAll(".toggle-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-target");
+    const content = document.getElementById(targetId);
+    const isActive = content.classList.contains("active");
 
-//       const isOpen = item.classList.contains("active");
-
-//       // Close all items
-//       document.querySelectorAll(".agenda-item").forEach((i) => {
-//         i.classList.remove("active");
-//         const inner = i.querySelector(".agenda-content");
-//         inner.style.maxHeight = null;
-//         i.querySelector(".symbol").textContent = "+";
-//       });
-
-//       if (!isOpen) {
-//         // Open this one
-//         item.classList.add("active");
-//         content.style.maxHeight = content.scrollHeight + "px";
-//         symbol.textContent = "–";
-//       }
-//     });
-//   });
-// });
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".agenda-header").forEach((button) => {
-    button.addEventListener("click", () => {
-      const item = button.parentElement;
-      const content = item.querySelector(".agenda-content");
-      const symbol = item.querySelector(".symbol");
-
-      const isOpen = item.classList.contains("active");
-
-      // Close all items
-      document.querySelectorAll(".agenda-item").forEach((i) => {
-        i.classList.remove("active");
-        const inner = i.querySelector(".agenda-content");
-        inner.style.maxHeight = null;
-        i.querySelector(".symbol").textContent = "+";
-      });
-
-      if (!isOpen) {
-        // Open this one
-        item.classList.add("active");
-
-        // Force reflow so padding applies before measuring height
-        content.style.maxHeight = "none";
-        const fullHeight = content.scrollHeight;
-
-        // Reset to 0, then transition to full height
-        content.style.maxHeight = "0px";
-        setTimeout(() => {
-          content.style.maxHeight = fullHeight + "px";
-        }, 10);
-
-        symbol.textContent = "–";
-      }
+    document.querySelectorAll(".toggle-content").forEach((otherContent) => {
+      otherContent.classList.remove("active");
     });
+    document.querySelectorAll(".toggle-button").forEach((otherButton) => {
+      otherButton.classList.remove("active");
+    });
+
+    if (!isActive) {
+      content.classList.add("active");
+      button.classList.add("active");
+    }
   });
 });
-
