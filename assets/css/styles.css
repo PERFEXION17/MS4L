@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Marcellus&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --font_1: "Cinzel", serif;
-  --price: "Lato", sans-serif;
   --font_2: "Raleway", sans-serif;
+  --tile: "Marcellus", serif;
   --color_dark: #1d1a1b;
   --color_light: #d3d3d3;
   --white: #fff;
@@ -667,6 +667,72 @@ footer {
   padding: .5rem;
 }
 
+/* -----SHOP----- */
+
+.shop_wrap{
+  margin-bottom: 1rem;
+}
+.shop_wrap h3{
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.tile_con{
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem auto;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: var(--white);
+  color: var(--color_dark);
+}
+
+.tile{
+  cursor: pointer;
+  transition: .5s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  transition: .5s ease;
+  z-index: 1;
+}
+
+.tile:hover{
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.tile_txt{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--tile);
+  font-weight: 590;
+  padding: .5rem 0;
+  background-color: var(--white);
+}
+
+.tile_npr .price{
+  padding: .5rem 0;
+}
+
+.tile_txt a{
+  font-size: 1.5rem;
+  padding: .5rem;
+  margin-right: .5rem;
+  background-color: var(--color_light);
+  color: var(--color_dark);
+  transition: .5s ease;
+}
+
+.tile_txt a:hover{
+  background-color: var(--color_dark);
+  color: var(--color_light);
+}
+
 /* ----ABOUT ME----- */
 
 .about_con {
@@ -837,11 +903,20 @@ footer {
     grid-row: 3;
   }
 
+  /* -----SHOP----- */
+
+  .tile_con{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 
 @media (min-width : 900px) {
   /* -----NAVIGATION----- */
+
+  h2{
+    padding-top: 1rem;
+  }
 
   .nav_container {
     display: flex;
@@ -1070,6 +1145,12 @@ footer {
   .copy {
     margin-top: 2rem;
   }
+
+  /* -----SHOP----- */
+  .tile_con{
+    grid-template-columns: repeat(5, 1fr);
+  }
+
 
   /* ----ABOUT ME----- */
 

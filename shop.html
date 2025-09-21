@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/img/MS4L_logo.png"
+      type="image/x-icon"
+    />
+    <title>My Store For Life</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_container">
+        <div class="logo">
+          <a href="#"><img src="./assets/img/MS4L_logo.png" alt="" /></a>
+        </div>
+        <div class="toggle_icon">
+          <i
+            id="menu-toggle"
+            class="ri-menu-5-fill"
+            style="font-size: 24px; cursor: pointer"
+          ></i>
+        </div>
+
+        <ul id="menu" class="menu">
+          <li><a href="new_arrival.html">New Arrivals</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="aboutme.html" target="_blank">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <h2>SHOP</h2>
+
+      <section id="lingerie">
+        <div class="shop_wrap">
+          <h3>LINGERIE</h3>
+          <div class="tile_con">
+            <div class="tile" onclick="goToProduct(1)">
+              <img src="assets/img/leggings_1.jpg" alt="Leggings_1" />
+              <div class="tile_txt">
+                <div class="tile_npr">
+                  <p>Casual Leggings</p>
+                  <p class="price">&#8358;7,000.00</p>
+                </div>
+                <a href="#"><i class="ri-shopping-bag-2-line"></i></a>
+              </div>
+            </div>
+
+            <div class="tile" onclick="goToProduct(2)">
+              <img src="assets/img/leggings_1.jpg" alt="Leggings_1" />
+              <div class="tile_txt">
+                <div class="tile_npr">
+                  <p>Casual Leggings</p>
+                  <p class="price">&#8358;7,000.00</p>
+                </div>
+                <a href="#"><i class="ri-shopping-bag-2-line"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot_con">
+        <div class="foot_logo item1">
+          <img src="assets/img/MS4L_logo.png" alt="" />
+        </div>
+
+        <div class="foot_box item2a">
+          <h3>Site Map</h3>
+          <a href="new_arrival.html">New Arrivals</a>
+          <a href="men.html">Men</a>
+          <a href="shop.html">Shop</a>
+          <a href="#blog">Blog</a>
+          <a href="aboutme.html" target="_blank">About Us</a>
+        </div>
+
+        <div class="foot_box item2b">
+          <h3>Customer Service</h3>
+          <a href="aboutme.html#policy" target="_blank"
+            >Privacy Policy <i class="ri-arrow-right-up-line"></i
+          ></a>
+          <a href="aboutme.html#policy" target="_blank"
+            >Returns & Refund Policy <i class="ri-arrow-right-up-line"></i
+          ></a>
+          <a href="aboutme.html#policy" target="_blank"
+            >Shipping and Delivery <i class="ri-arrow-right-up-line"></i
+          ></a>
+        </div>
+
+        <div class="foot_box item3a">
+          <h3>Contact Us</h3>
+          <p><i class="ri-mail-line"></i> : feliciaonaji0@gmail.com</p>
+          <p><i class="ri-phone-line"></i> : +2348108683361, +2349160596645</p>
+          <p><i class="ri-whatsapp-line"></i> : +2348108683361</p>
+        </div>
+
+        <div class="foot_soc item3b">
+          <h3>Follow Us</h3>
+          <div class=".foot_soc-icons">
+            <a href="https://www.x.com/Leeshaofficial"
+              ><i class="ri-twitter-x-line"></i
+            ></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-facebook-line"></i></a>
+            <a href="#"><i class="ri-tiktok-line"></i></a>
+          </div>
+        </div>
+
+        <div class="foot_box item4">
+          <img src="assets/img/paystack.png" alt="" />
+        </div>
+      </div>
+      <div class="copy">
+        <p>
+          &copy; 2025 My Store For Life | PERFEXION INC. All Rights Reserved
+        </p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script>
+      function goToProduct(id) {
+        window.location.href = `prod_details.html?id=${id}`;
+      }
+    </script>
+  </body>
+</html>
