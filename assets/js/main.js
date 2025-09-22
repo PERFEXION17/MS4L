@@ -8,7 +8,6 @@ toggleButton.addEventListener("click", function (e) {
   toggleButton.classList.toggle("ri-close-line");
 });
 
-// Close menu on outside click and reset icon
 document.addEventListener("click", function (e) {
   const isClickInsideMenu = menu.contains(e.target);
   const isClickOnToggle = toggleButton.contains(e.target);

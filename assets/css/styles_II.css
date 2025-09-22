@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Marcellus&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font_1: "Cinzel", serif;
+    --font_2: "Raleway", sans-serif;
+    --tile: "Marcellus", serif;
+    --color_dark: #1d1a1b;
+    --color_light: #d3d3d3;
+    --white: #fff;
+    --gold: #ffdf00;
+}
+
+/* .darkmode {
+  --color_light: #1d1a1b;
+  --color_dark: #d3d3d3;
+  --body: #1d1a1b;
+} */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: var(--font_1);
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.75rem;
+    text-align: center;
+    border-bottom: 1px solid #1d1a1b;
+    margin: 2rem 4rem;
+}
+
+/* ------PRODUCT DETAILS----- */
+
+.tags_con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    padding: 1rem;
+    font-family: var(--font_2);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.tags_con a{
+    padding: .25rem .5rem;
+    background-color: var(--color_dark);
+    color: var(--color_light);
+    border: 2px solid var(--color_dark);
+    transition: .3s ease;
+}
+
+.tags_con a:hover{
+    background-color: var(--color_light);
+    color: var(--color_dark);
+}
+
+.product-detail{
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.prod_name{
+    font-size: 5rem;
+    animation: loader 3s infinite ease;
+}
+
+@keyframes loader{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

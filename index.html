@@ -196,7 +196,7 @@
           chosen to bring you the perfect blend of elegance and everyday ease.
         </p>
         <div class="ed_pick_con">
-          <div class="ed_pick_box">
+          <div class="ed_pick_box" onclick="goToProduct(2)">
             <div class="ed_pick_img">
               <img
                 src="assets/img/sexy_lingerie_set_1.jpg"
@@ -232,7 +232,7 @@
             </div>
           </div>
 
-          <div class="ed_pick_box">
+          <div class="ed_pick_box" onclick="goToProduct(7)">
             <div class="ed_pick_img">
               <img
                 src="assets/img/2_pcs_backnet_nightie_2.jpg"
@@ -421,6 +421,8 @@
     </footer>
 
     <script src="./assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/nav.js"></script>
     <script>
       function goToProduct(id) {
         window.location.href = `prod_details.html?id=${id}`;
