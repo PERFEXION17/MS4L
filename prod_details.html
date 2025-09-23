@@ -81,38 +81,61 @@
       </div>
 
       <div class="product-detail">
-        <div class="gallery">
-          <img id="main-image" src="" alt="Main Product Image" />
-          <div class="mini-images"></div>
+        <div class="product_img">
+          <div class="gallery">
+            <img
+              id="main-image"
+              src=""
+              alt="Main Product Image"
+            />
+            <div class="mini-images">
+            </div>
+          </div>
         </div>
-        <h3 id="product-name" class="prod_name">
-          <i class="ri-loader-line"></i>
-        </h3>
-        <p class="price" id="product-price"></p>
-        <p id="product-description"></p>
-        <div class="color-selector">
-          <label>Color:</label>
-          <div id="colors"></div>
+        <div class="product-txt">
+          <h3 id="product-name" class="prod_name">
+            <!-- <i class="ri-loader-line"></i> -->
+            loading...
+          </h3>
+
+          <p id="product-description">
+          </p>
+
+          <p class="price" id="product-price"></p>
+
+          <div class="qty-selector">
+            <label>Qty</label>
+            <input
+              type="number"
+              id="qty-input"
+              min="1"
+              value="1"
+              oninput="updateTotal()"
+            />
+          </div>
+
+          <div class="color-selector">
+            <!-- <label>Color:</label> -->
+            <div id="colors">
+            </div>
+          </div>
+
+          <div class="size-selector">
+            <label
+              >Size ( <span id="size-min"></span> -
+              <span id="size-max"></span>)</label
+            >
+            <input type="number" id="size-input" min="" max="" value="1" />
+          </div>
+
+          <div class="t_price_con">
+            <p class="t_price">TOTAL</p>
+          <p id="total-price" class="price"></p></div>
+
+          <button id="add-to-cart">
+            Add to Cart <i class="ri-shopping-bag-2-line"></i>
+          </button>
         </div>
-        <div class="size-selector">
-          <label
-            >Size (between <span id="size-min"></span> and
-            <span id="size-max"></span>):</label
-          >
-          <input type="number" id="size-input" min="" max="" value="1" />
-        </div>
-        <div class="qty-selector">
-          <label>Quantity:</label>
-          <input
-            type="number"
-            id="qty-input"
-            min="1"
-            value="1"
-            oninput="updateTotal()"
-          />
-        </div>
-        <p id="total-price" class="price"></p>
-        <button id="add-to-cart">Add to Cart</button>
       </div>
     </main>
 
