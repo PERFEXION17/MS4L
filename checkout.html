@@ -15,13 +15,17 @@
       type="image/x-icon"
     />
 
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+
     <title>My Store For Life | Cart</title>
   </head>
   <body>
     <header>
       <nav class="nav_container">
         <div class="logo">
-          <a href="#"><img src="./assets/img/MS4L_logo.png" alt="" /></a>
+          <a href="index.html"
+            ><img src="./assets/img/MS4L_logo.png" alt=""
+          /></a>
         </div>
 
         <div class="cart">
@@ -53,7 +57,64 @@
     </header>
 
     <main class="main">
+      <div class="srch_wrap">
+        <div class="cart_2">
+          <a href="cart.html"
+            ><div class="cart_wrap">
+              <i class="ri-shopping-bag-2-line"></i
+              ><span class="cart_no">0</span>
+            </div></a
+          >
+        </div>
+
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search" />
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <!-- Categories added dynamically -->
+          </select>
+          <button id="clear-search"><i class="ri-close-line"></i></button>
+        </div>
+      </div>
+
       <h2>CHECKOUT</h2>
+      <div class="checkout-con">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <div id="checkout-items"></div>
+          <p class="checkout_total">
+            Total:&nbsp; <span id="checkout-total">₦0.00</span>
+          </p>
+        </div>
+        <div class="checkout-form">
+          <h3>Billing Details</h3>
+
+          <form id="checkout-form">
+            <p>
+              <input type="text" id="name" placeholder="Full Name" required />
+            </p>
+            <p>
+              <input type="email" id="email" placeholder="Email" required />
+            </p>
+            <p>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required
+              />
+            </p>
+            <p>
+              <textarea
+                id="address"
+                placeholder="Deliver Address"
+                required
+              ></textarea>
+            </p>
+            <button type="submit" id="paystack-btn">Pay</button>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -113,8 +174,8 @@
         </p>
       </div>
     </footer>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/products.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/nav.js"></script>
     <script>
       function goToProduct(id) {

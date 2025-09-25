@@ -80,61 +80,50 @@
         <a href="shop.html#gym_wear">Gym Wear</a>
       </div>
 
-      <div class="product-detail">
-        <div class="product_img">
+      <section id="product-details">
+        <div class="product-details-con">
           <div class="gallery">
-            <img
-              id="main-image"
-              src=""
-              alt="Main Product Image"
-            />
-            <div class="mini-images">
+            <div class="main_image">
+              <img id="main-image" src="" alt="Product Image" />
             </div>
+            <div class="thumbnail-images"></div>
+          </div>
+
+          <div class="product-info">
+            <h3 id="product-name" class="prod_name"></h3>
+            <p id="product-description"></p>
+            <p id="product-price"></p>
+            <div class="product-options">
+              <div class="qty-selector">
+                <label for="product-quantity">QTY</label>
+                <input type="number" id="product-quantity" min="1" value="1" />
+              </div>
+
+              <div class="color-options" id="product-color"></div>
+
+              <div class="size-selector">
+                <label for="product-size">Size</label>
+                <input
+                  type="number"
+                  id="product-size"
+                  min="6"
+                  max="16"
+                  value="6"
+                />
+              </div>
+
+            </div>
+            <button id="add-to-cart">Add to Bag</button>
           </div>
         </div>
-        <div class="product-txt">
-          <h3 id="product-name" class="prod_name">
-            <!-- <i class="ri-loader-line"></i> -->
-            loading...
-          </h3>
+      </section>
 
-          <p id="product-description">
-          </p>
-
-          <p class="price" id="product-price"></p>
-
-          <div class="qty-selector">
-            <label>Qty</label>
-            <input
-              type="number"
-              id="qty-input"
-              min="1"
-              value="1"
-              oninput="updateTotal()"
-            />
-          </div>
-
-          <div class="color-selector">
-            <!-- <label>Color:</label> -->
-            <div id="colors">
-            </div>
-          </div>
-
-          <div class="size-selector">
-            <label
-              >Size ( <span id="size-min"></span> -
-              <span id="size-max"></span>)</label
-            >
-            <input type="number" id="size-input" min="" max="" value="1" />
-          </div>
-
-          <div class="t_price_con">
-            <p class="t_price">TOTAL</p>
-          <p id="total-price" class="price"></p></div>
-
-          <button id="add-to-cart">
-            Add to Cart <i class="ri-shopping-bag-2-line"></i>
-          </button>
+      <div class="modal" id="cart-modal">
+        <div class="modal-content">
+          <h3>Item Added!</h3>
+          <p class="icon"><i class="ri-checkbox-circle-line"></i></p>
+          <p>Item has been successfully added to your bag.</p>
+          <button id="close-modal">Continue Shopping</button>
         </div>
       </div>
     </main>
@@ -197,8 +186,8 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/products.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/nav.js"></script>
     <script>
       function goToProduct(id) {

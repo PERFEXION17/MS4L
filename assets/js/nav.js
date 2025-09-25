@@ -1,11 +1,18 @@
 function updateCartCounter() {
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
   const totalItems = cart.reduce((sum, item) => sum + parseInt(item.qty), 0);
-  const cartLink = document.querySelector('nav a[href="cart.html"]');
-  if (cartLink) {
-    cartLink.textContent = `Cart (${totalItems})`;
+  const cartNoSpans = document.querySelectorAll(".cart_no");
+  if (cartNoSpans) {
+    cartNoSpans.forEach((span) => {
+      span.textContent = totalItems;
+    });
   }
 }
 
-// Run on page load
-document.addEventListener("DOMContentLoaded", updateCartCounter);
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    updateCartCounter();
+  } catch (e) {
+    console.error("Error updating cart counter:", e);
+  }
+});
