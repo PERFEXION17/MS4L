@@ -126,6 +126,7 @@ const productDescription = document.getElementById("product-description");
 const productColor = document.getElementById("product-color");
 const productSize = document.getElementById("product-size");
 const productQuantity = document.getElementById("product-quantity");
+const totalPrice = document.getElementById("total-price");
 const addToCartBtn = document.getElementById("add-to-cart");
 
 if (
@@ -164,9 +165,23 @@ if (
       )
       .join("");
 
+    const sizeRangeEl = document.getElementById("size-range");
+    if (sizeRangeEl) {
+      sizeRangeEl.textContent = `Sizes (min: ${product.sizeLimits.min}, max: ${product.sizeLimits.max})`;
+    }
+    productSize.min = product.sizeLimits.min;
+    productSize.max = product.sizeLimits.max;
+    productSize.step = 1;
     productSize.value = product.sizeLimits.min;
-    productSize.min = 6;
-    productSize.max = 16;
+
+    // Update size input listener with dynamic min/max
+    productSize.addEventListener("input", () => {
+      const size = parseInt(productSize.value);
+      if (size < product.sizeLimits.min || isNaN(size))
+        productSize.value = product.sizeLimits.min;
+      if (size > product.sizeLimits.max)
+        productSize.value = product.sizeLimits.max;
+    });
 
     document.querySelectorAll(".thumbnail").forEach((thumb) => {
       thumb.addEventListener("click", () => {
@@ -187,18 +202,26 @@ if (
       });
     });
 
-    productSize.addEventListener("input", () => {
-      const size = parseInt(productSize.value);
-      if (size < 6 || isNaN(size)) productSize.value = 6;
-      if (size > 16) productSize.value = 16;
-    });
+    const updateTotalPrice = () => {
+      const qty = parseInt(productQuantity.value) || 1;
+      if (qty < 1) {
+        productQuantity.value = 1; // Enforce minimum
+      }
+      const total = product.price * Math.max(1, qty);
+      totalPrice.textContent = `\u20a6${total.toFixed(2)}`;
+    };
+
+    productQuantity.addEventListener("input", updateTotalPrice);
+
+    updateTotalPrice();
 
     addToCartBtn.addEventListener("click", () => {
       const size = parseInt(productSize.value);
-      if (size < 6 || size > 16 || isNaN(size)) {
-        alert("Please select a size between 6 and 16.");
+      if (size < product.sizeLimits.min || size > product.sizeLimits.max || isNaN(size)) {
+        alert("Please select a size between ${product.sizeLimits.min} and ${product.sizeLimits.max}.");
         return;
       }
+
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       const existingItem = cart.find(
         (item) =>
@@ -252,6 +275,13 @@ if (cartItems && cartTotal && proceedToCheckout && emptyCart) {
       emptyCart.style.display = "none";
 
       cart.forEach((item, index) => {
+        if (!item.sku) {
+          item.sku = `PROD-${item.id.toString().padStart(3, "0")}-${item.name
+            .slice(0, 3)
+            .toUpperCase()}`;
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
         const itemDiv = document.createElement("div");
         itemDiv.className = "cart-item";
         itemDiv.innerHTML = `
@@ -276,7 +306,7 @@ if (cartItems && cartTotal && proceedToCheckout && emptyCart) {
                 <p><input type="number" class="item-qty" value="${
                   item.qty
                 }" min="1" data-index="${index}" /></p>
-                <p>&#8358;${item.price.toFixed(2)}</p>
+                <p>&#8358;${(item.price * item.qty).toFixed(2)}</p>
                 <button class="remove-item" data-index="${index}"><i class="ri-close-line"></i></button>
               </div>
             </div>
@@ -339,12 +369,12 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     checkoutItems.innerHTML = "";
     let total = 0;
-        if (cart.length === 0) {
-          console.warn("Cart is empty on checkout page");
-          checkoutItems.innerHTML =
-            "<p>Your cart is empty. Add items to proceed.</p>";
-          return;
-        }
+    if (cart.length === 0) {
+      console.warn("Cart is empty on checkout page");
+      checkoutItems.innerHTML =
+        "<p>Your cart is empty. Add items to proceed.</p>";
+      return;
+    }
 
     cart.forEach((item) => {
       const itemDiv = document.createElement("div");
@@ -356,7 +386,6 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
           <p> Color: ${item.color || "Not Specified"}</p> 
           <p>Size: ${item.size || "Not Specified"}</p> 
           <p>Qty: ${item.qty}</p>
-          <p>SKU: ${item.sku || "Not Available"}</p>
         </div>  
         <p class="checkout_price">₦${(item.price * item.qty).toFixed(2)}</p>
       </div>
@@ -381,10 +410,10 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
 
-        if (cart.length === 0) {
-          alert("Your cart is empty. Add items to proceed.");
-          return;
-        }
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add items to proceed.");
+      return;
+    }
 
     const handler = PaystackPop.setup({
       key: "pk_test_d20590ef86fe4669a36f97288826af15ca69c90b",
@@ -443,7 +472,6 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
         window.location.href = "thankyou.html";
       },
       onClose: function () {
-        // alert("Payment cancelled.");
         showModal();
       },
     });

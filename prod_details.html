@@ -63,14 +63,13 @@
           >
         </div>
 
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <input type="text" id="search-input" placeholder="Search" />
           <select id="category-filter">
             <option value="">All Categories</option>
-            <!-- Categories added dynamically -->
           </select>
           <button id="clear-search"><i class="ri-close-line"></i></button>
-        </div>
+        </div> -->
       </div>
 
       <div class="tags_con">
@@ -106,12 +105,17 @@
                 <input
                   type="number"
                   id="product-size"
+                  step="1"
                   min="6"
                   max="16"
                   value="6"
                 />
+                <p id="size-range">
+                  Sizes (min: 6, max: 16)
+                </p>
               </div>
 
+              <p class="t_price">Total <span id="total-price">₦0.00</span></p>
             </div>
             <button id="add-to-cart">Add to Bag</button>
           </div>

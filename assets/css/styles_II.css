@@ -195,8 +195,12 @@ h2 {
     border: 1px solid var(--color_dark);
 }
 
+#size-range{
+    padding: 1rem 0;
+}
+
 .t_price {
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 

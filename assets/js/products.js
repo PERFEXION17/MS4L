@@ -100,7 +100,7 @@ const products = [
   {
     id: 8,
     name: "Full Gym Wear II",
-    price: 10000.0,
+    price: 25000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/gym_wear.jpg",
@@ -108,7 +108,7 @@ const products = [
       "/assets/img/gym_wear_3.jpg",
       "/assets/img/gym_wear_4.jpg",
     ],
-    colors: ["black", "blue"],
+    colors: ["blue","black" ],
     sizeLimits: { min: 6, max: 18 },
     category: "gym_wear",
     sku: "prod-008-gym",
@@ -365,7 +365,7 @@ const products = [
       "/assets/img/lingerie_set_6_iv.webp",
     ],
     colors: ["black", "navy", "maroon"],
-    sizeLimits: { min: 10, max: 18 },
+    sizeLimits: { min: 8, max: 18 },
     category: "pant",
     sku: "prod-027-lin",
   },
