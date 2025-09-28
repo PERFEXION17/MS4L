@@ -57,7 +57,7 @@
     </header>
 
     <main class="main">
-      <div class="srch_wrap">
+      <!-- <div class="srch_wrap">
         <div class="cart_2">
           <a href="cart.html"
             ><div class="cart_wrap">
@@ -71,11 +71,10 @@
           <input type="text" id="search-input" placeholder="Search" />
           <select id="category-filter">
             <option value="">All Categories</option>
-            <!-- Categories added dynamically -->
           </select>
           <button id="clear-search"><i class="ri-close-line"></i></button>
         </div>
-      </div>
+      </div> -->
 
       <h2>CHECKOUT</h2>
       <div class="checkout-con">
@@ -113,6 +112,15 @@
             </p>
             <button type="submit" id="paystack-btn">Pay</button>
           </form>
+        </div>
+      </div>
+
+      <div class="modal" id="cart-modal">
+        <div class="modal-content">
+          <h3>Payment Failed!</h3>
+          <p class="icon"><i class="ri-emotion-sad-line"></i></p>
+          <p>Your Items Eagerly Await you, Try Again.</p>
+          <button id="close-modal">Continue Shopping</button>
         </div>
       </div>
     </main>

@@ -1,13 +1,14 @@
 const products = [
   {
     id: 1,
-    name: "silicon Bra",
+    name: "Silicon Bra",
     price: 6500.0,
     description: "Strapless bra for your comfort and confidence",
     images: ["/assets/img/silicon_bra.webp", "/assets/img/silicon_bra_2.jpg"],
     colors: ["black"],
     sizeLimits: { min: 6, max: 16 },
     category: "bra",
+    sku: "prod-001-bra",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const products = [
     colors: ["white", "black", "green", "brown"],
     sizeLimits: { min: 6, max: 12 },
     category: "legging",
+    sku: "prod-002-leg",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const products = [
     colors: ["red", "black", "white"],
     sizeLimits: { min: 6, max: 16 },
     category: "lingerie",
+    sku: "prod-003-lin",
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const products = [
     colors: ["red"],
     sizeLimits: { min: 6, max: 16 },
     category: "lingerie",
+    sku: "prod-004-lin",
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const products = [
     colors: ["black", "red", "pink"],
     sizeLimits: { min: 6, max: 16 },
     category: "lingerie",
+    sku: "prod-005-lin",
   },
   {
     id: 6,
@@ -74,6 +79,7 @@ const products = [
     colors: ["black", "pink", "green", "blue"],
     sizeLimits: { min: 6, max: 18 },
     category: "gym_wear",
+    sku: "prod-006-gym",
   },
   {
     id: 7,
@@ -89,6 +95,7 @@ const products = [
     colors: ["black", "grey"],
     sizeLimits: { min: 6, max: 18 },
     category: "gym_wear",
+    sku: "prod-007-gym",
   },
   {
     id: 8,
@@ -104,6 +111,7 @@ const products = [
     colors: ["black", "blue"],
     sizeLimits: { min: 6, max: 18 },
     category: "gym_wear",
+    sku: "prod-008-gym",
   },
   {
     id: 9,
@@ -114,6 +122,7 @@ const products = [
     colors: ["white"],
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
+    sku: "prod-009-night",
   },
   {
     id: 10,
@@ -129,6 +138,7 @@ const products = [
     colors: ["white"],
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
+    sku: "prod-010-night",
   },
   {
     id: 11,
@@ -144,6 +154,7 @@ const products = [
     colors: ["grey", "maroon", "pink", "red", "white"],
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
+    sku: "prod-011-night",
   },
   {
     id: 12,
@@ -158,6 +169,7 @@ const products = [
     colors: ["black"],
     sizeLimits: { min: 6, max: 12 },
     category: "body_shaper",
+    sku: "prod-012-shp",
   },
   {
     id: 13,
@@ -173,26 +185,29 @@ const products = [
     colors: ["purple", "skyblue", "blue", "grey"],
     sizeLimits: { min: 16, max: 38 },
     category: "pyjamas",
+    sku: "prod-013-pyj",
   },
   {
     id: 14,
     name: "Checked Pyjamas",
     price: 12000.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/pyjamas_2.png", "/assets/img/pyjamas_3"],
+    images: ["/assets/img/pyjamas_2.png", "/assets/img/pyjamas_1.png"],
     colors: ["beige"],
     sizeLimits: { min: 16, max: 38 },
     category: "pyjamas",
+    sku: "prod-014-pyj",
   },
   {
     id: 15,
     name: "Playboy Pyjamas",
     price: 12000.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/playboy_3.png", "/assets/img/playboy_3.png"],
+    images: ["/assets/img/playboy_3.png", "/assets/img/playboy_2.png"],
     colors: ["purple"],
     sizeLimits: { min: 16, max: 38 },
     category: "pyjamas",
+    sku: "prod-015-pyj",
   },
   {
     id: 16,
@@ -203,6 +218,7 @@ const products = [
     colors: ["black", "white", "yellow", "maroon", "blue", "grey", "lime"],
     sizeLimits: { min: 10, max: 16 },
     category: "bra_top",
+    sku: "prod-016-bra_top",
   },
   {
     id: 17,
@@ -213,6 +229,7 @@ const products = [
     colors: ["black", "white", "navy", "grey", "maroon"],
     sizeLimits: { min: 10, max: 16 },
     category: "bra_top",
+    sku: "prod-017-bra_top",
   },
   {
     id: 18,
@@ -228,6 +245,7 @@ const products = [
     colors: ["black"],
     sizeLimits: { min: 10, max: 16 },
     category: "girdle",
+    sku: "prod-018-bra_top",
   },
   {
     id: 19,
@@ -238,26 +256,34 @@ const products = [
     colors: ["black"],
     sizeLimits: { min: 10, max: 16 },
     category: "tights",
+    sku: "prod-019-bra_top",
   },
   {
     id: 20,
     name: "Tights with Pockets",
     price: 5000.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/skin_tight_side_pocket_1.jpg"],
+    images: ["/assets/img/skin_tight_side_pocket_1.jpg", "/assets/img/skin_tight_side_pocket_2.png", "/assets/img/skin_tight_side_pocket_3.png"],
     colors: ["blue", "black", "maroon", "grey", "green", "brown"],
     sizeLimits: { min: 10, max: 16 },
     category: "tights",
+    sku: "prod-020-tht",
   },
   {
     id: 21,
     name: "Camisole Vest",
     price: 4000.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/camisole_vest_1.png"],
+    images: [
+      "/assets/img/camisole_vest_1.png",
+      "/assets/img/camisole_vest_3.png",
+      "/assets/img/camisole_vest_2.png",
+      "/assets/img/camisole_vest_4.png",
+    ],
     colors: ["black", "white", "blue", "yellow"],
     sizeLimits: { min: 10, max: 16 },
     category: "camisole",
+    sku: "prod-0121-cam",
   },
   {
     id: 22,
@@ -271,7 +297,8 @@ const products = [
     ],
     colors: ["black", "red", "pink"],
     sizeLimits: { min: 0, max: 0 },
-    category: "tights",
+    category: "bdsm",
+    sku: "prod-022-bdsm",
   },
   {
     id: 23,
@@ -282,5 +309,6 @@ const products = [
     colors: ["black", "red", "pink"],
     sizeLimits: { min: 6, max: 14 },
     category: "bra",
+    sku: "prod-023-bra",
   },
 ];

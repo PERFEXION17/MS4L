@@ -760,6 +760,14 @@ footer {
 
 /* -----SHOP----- */
 
+.srch_wrap{
+  position: sticky;
+  top: 3.8rem;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 100;
+}
+
 .shop_wrap {
   margin-bottom: 1rem;
 }
@@ -1002,6 +1010,7 @@ footer {
   }
 
   /* -----SHOP----- */
+
 
   .tile_con {
     grid-template-columns: repeat(3, 1fr);
@@ -1270,6 +1279,7 @@ footer {
   }
 
   /* -----SHOP----- */
+
   .tile_con {
     grid-template-columns: repeat(5, 1fr);
   }

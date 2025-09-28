@@ -45,23 +45,50 @@ if (closeModalBtn) {
 
 // "ADD TO CART" FROM SHOP PAGE
 
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
-if (addToCartButtons) {
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent triggering goToProduct
-      const productId = parseInt(button.dataset.id);
-      const product = products.find((p) => p.id === productId);
-      if (product) {
+document.addEventListener("DOMContentLoaded", () => {
+  // Only run on shop.html
+  if (window.location.pathname.includes("shop.html")) {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    if (addToCartButtons.length === 0) {
+      console.warn(
+        "No add-to-cart buttons found on shop.html. Check button class or HTML structure."
+      );
+      return;
+    }
+
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const productId = parseInt(button.dataset.id);
+        if (isNaN(productId) || !button.dataset.id) {
+          console.error(
+            `Invalid or missing data-id on button. Found: data-id="${button.dataset.id}"`
+          );
+          return;
+        }
+
+        const product = products.find((p) => p.id === productId);
+        if (!product) {
+          console.error(
+            `Product with ID ${productId} not found in products.js.`
+          );
+          return;
+        }
+
         const cart = JSON.parse(localStorage.getItem("cart") || "[]");
         const defaultColor = product.colors[0];
         const defaultSize = product.sizeLimits.min;
+
         const existingItem = cart.find(
           (item) =>
             item.id === product.id &&
             item.color === defaultColor &&
             item.size === defaultSize
         );
+
         if (existingItem) {
           existingItem.qty += 1;
         } else {
@@ -73,15 +100,21 @@ if (addToCartButtons) {
             size: defaultSize,
             qty: 1,
             image: product.images[0],
+            sku:
+              product.sku ||
+              `PROD-${product.id.toString().padStart(3, "0")}-${product.category
+                .slice(0, 3)
+                .toUpperCase()}`, // Include SKU
           });
         }
+
         localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCounter();
-        showModal();
-      }
+        updateCartCounter(); // From nav.js
+        showModal(); // Your existing modal
+      });
     });
-  });
-}
+  }
+});
 
 // PRODUCT DETAILS
 
@@ -306,6 +339,13 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     checkoutItems.innerHTML = "";
     let total = 0;
+        if (cart.length === 0) {
+          console.warn("Cart is empty on checkout page");
+          checkoutItems.innerHTML =
+            "<p>Your cart is empty. Add items to proceed.</p>";
+          return;
+        }
+
     cart.forEach((item) => {
       const itemDiv = document.createElement("div");
       itemDiv.className = "checkout-item";
@@ -313,9 +353,10 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
       <div class="checkout_box">
         <h3>${item.name}</h3>
         <div class="checkout_box_details">
-          <p> Color: ${item.color}</p> 
-          <p>Size: ${item.size}</p> 
+          <p> Color: ${item.color || "Not Specified"}</p> 
+          <p>Size: ${item.size || "Not Specified"}</p> 
           <p>Qty: ${item.qty}</p>
+          <p>SKU: ${item.sku || "Not Available"}</p>
         </div>  
         <p class="checkout_price">₦${(item.price * item.qty).toFixed(2)}</p>
       </div>
@@ -326,18 +367,27 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
     checkoutTotal.textContent = `₦${total.toFixed(2)}`;
   }
 
+  displayCheckout();
+
+  //PAYSTACK CHECKOUT
+
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const total =
-      cart.reduce((sum, item) => sum + item.price * item.qty, 0) * 100; // Paystack uses kobo
+      cart.reduce((sum, item) => sum + item.price * item.qty, 0) * 100;
     const email = document.getElementById("email").value;
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
 
+        if (cart.length === 0) {
+          alert("Your cart is empty. Add items to proceed.");
+          return;
+        }
+
     const handler = PaystackPop.setup({
-      key: "pk_test_d20590ef86fe4669a36f97288826af15ca69c90b", // Replace with your Paystack public key
+      key: "pk_test_d20590ef86fe4669a36f97288826af15ca69c90b",
       email: email,
       amount: total,
       currency: "NGN",
@@ -363,6 +413,28 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
             variable_name: "delivery_address",
             value: address,
           },
+          ...cart.flatMap((item, index) => [
+            // Dynamically add per-item fields
+            {
+              display_name: `Item ${index + 1} SKU`,
+              variable_name: `item_${index + 1}_sku`,
+              value:
+                item.sku ||
+                `PROD-${item.id.toString().padStart(3, "0")}-${item.name
+                  .slice(0, 3)
+                  .toUpperCase()}`, // Fallback if no sku
+            },
+            {
+              display_name: `Item ${index + 1} Color`,
+              variable_name: `item_${index + 1}_color`,
+              value: item.color,
+            },
+            {
+              display_name: `Item ${index + 1} Size`,
+              variable_name: `item_${index + 1}_size`,
+              value: item.size,
+            },
+          ]),
         ],
       },
       callback: function (response) {
@@ -371,13 +443,12 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
         window.location.href = "thankyou.html";
       },
       onClose: function () {
-        alert("Payment cancelled.");
+        // alert("Payment cancelled.");
+        showModal();
       },
     });
     handler.openIframe();
   });
-
-  displayCheckout();
 }
 
 // THANK YOU PAGE
@@ -407,4 +478,60 @@ document.querySelectorAll(".toggle-button").forEach((button) => {
       button.classList.add("active");
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector(".search-bar input");
+  const categorySelect = document.querySelector(".search-bar select");
+  const searchButton = document.querySelector(".search-bar button");
+
+  // Only run on shop.html
+  if (
+    searchInput &&
+    categorySelect &&
+    searchButton &&
+    window.location.pathname.includes("shop.html")
+  ) {
+    searchButton.addEventListener("click", performSearch);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") performSearch();
+    });
+  }
+
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categorySelect.value.toLowerCase();
+
+    const productTiles = document.querySelectorAll(".tile");
+
+    if (productTiles.length === 0) {
+      console.warn(
+        'No product tiles found for search. Ensure tiles have class="tile" in shop.html.'
+      );
+      return;
+    }
+
+    productTiles.forEach((tile) => {
+      const productName =
+        tile.querySelector("h3")?.textContent.toLowerCase() || "";
+      const productCategory = tile.dataset.category?.toLowerCase() || "";
+
+      const matchesQuery = !query || productName.includes(query);
+      const matchesCategory =
+        selectedCategory === "all" || productCategory === selectedCategory;
+
+      tile.style.display = matchesQuery && matchesCategory ? "block" : "none";
+    });
+
+    const visibleTiles = document.querySelectorAll(
+      '.tile[style="display: block;"]'
+    );
+    if (visibleTiles.length === 0) {
+      alert(
+        "No products match your search. Try a different query or category!"
+      );
+    } else {
+      visibleTiles[0].scrollIntoView({ behavior: "smooth" });
+    }
+  }
 });
