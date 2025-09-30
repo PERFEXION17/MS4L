@@ -340,7 +340,7 @@ const products = [
   {
     id: 26,
     name: "V-Decorated Panties",
-    price: 6500.0,
+    price: 2500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/v_panties_1.webp",

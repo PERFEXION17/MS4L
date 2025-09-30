@@ -829,6 +829,7 @@ footer {
   color: var(--color_dark);
   transition: .5s ease;
   cursor: pointer;
+  z-index: 30;
 }
 
 .tile_txt button:hover {
