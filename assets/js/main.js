@@ -124,7 +124,10 @@ const productName = document.getElementById("product-name");
 const productPrice = document.getElementById("product-price");
 const productDescription = document.getElementById("product-description");
 const productColor = document.getElementById("product-color");
-const productSize = document.getElementById("product-size");
+const sizeSlider = document.getElementById("product-size");
+const selectedSize = document.getElementById("selected-size");
+const sizeRange = document.getElementById("size-range");
+const sizeChartLink = document.getElementById("size-chart-link");
 const productQuantity = document.getElementById("product-quantity");
 const totalPrice = document.getElementById("total-price");
 const addToCartBtn = document.getElementById("add-to-cart");
@@ -136,7 +139,12 @@ if (
   productPrice &&
   productDescription &&
   productColor &&
-  productSize &&
+  sizeSlider &&
+  selectedSize &&
+  sizeRange &&
+  sizeChartLink &&
+  productQuantity &&
+  totalPrice &&
   addToCartBtn
 ) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -165,23 +173,56 @@ if (
       )
       .join("");
 
-    const sizeRangeEl = document.getElementById("size-range");
-    if (sizeRangeEl) {
-      sizeRangeEl.textContent = `Sizes (min: ${product.sizeLimits.min}, max: ${product.sizeLimits.max})`;
+    let selectedSizeValue = null;
+    if (product.sizeType === "numerical") {
+      sizeSlider.setAttribute("min", product.sizeLimits.min);
+      sizeSlider.setAttribute("max", product.sizeLimits.max);
+      sizeSlider.setAttribute("value", product.sizeLimits.min);
+      sizeSlider.setAttribute("step", 1);
+      selectedSize.textContent = product.sizeLimits.min;
+      sizeRange.textContent = `Sizes: ${product.sizeLimits.min} to ${product.sizeLimits.max}`;
+      selectedSizeValue = parseInt(sizeSlider.value);
+    } else if (product.sizeType === "letter") {
+      sizeSlider.setAttribute("min", 0);
+      sizeSlider.setAttribute("max", product.sizeOptions.length - 1);
+      sizeSlider.setAttribute("value", 0);
+      sizeSlider.setAttribute("step", 1);
+      selectedSize.textContent = product.sizeOptions[0];
+      sizeRange.textContent = `Sizes: ${product.sizeOptions[0]} to ${
+        product.sizeOptions[product.sizeOptions.length - 1]
+      }`;
+      selectedSizeValue = product.sizeOptions[0];
     }
-    productSize.min = product.sizeLimits.min;
-    productSize.max = product.sizeLimits.max;
-    productSize.step = 1;
-    productSize.value = product.sizeLimits.min;
 
-    // Update size input listener with dynamic min/max
-    productSize.addEventListener("input", () => {
-      const size = parseInt(productSize.value);
-      if (size < product.sizeLimits.min || isNaN(size))
-        productSize.value = product.sizeLimits.min;
-      if (size > product.sizeLimits.max)
-        productSize.value = product.sizeLimits.max;
+    // Size chart link (placeholder; update with actual modal or page)
+    sizeChartLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert(
+        `Size chart for ${product.name}:\n${
+          product.sizeType === "letter" && product.letterToNumerical
+            ? Object.entries(product.letterToNumerical)
+                .map(([k, v]) => `${k}: ${v}`)
+                .join("\n")
+            : `Sizes ${product.sizeLimits?.min} to ${product.sizeLimits?.max}`
+        }`
+      );
     });
+
+        sizeSlider.addEventListener("input", () => {
+          if (!selectedSize) {
+            console.error("selectedSize element not found");
+            return;
+          }
+          if (product.sizeType === "numerical") {
+            selectedSizeValue = parseInt(sizeSlider.value);
+            selectedSize.textContent = selectedSizeValue;
+          } else if (product.sizeType === "letter") {
+            selectedSizeValue =
+              product.sizeOptions[parseInt(sizeSlider.value)] ||
+              product.sizeOptions[0];
+            selectedSize.textContent = selectedSizeValue;
+          }
+        });
 
     document.querySelectorAll(".thumbnail").forEach((thumb) => {
       thumb.addEventListener("click", () => {
@@ -217,8 +258,14 @@ if (
 
     addToCartBtn.addEventListener("click", () => {
       const size = parseInt(productSize.value);
-      if (size < product.sizeLimits.min || size > product.sizeLimits.max || isNaN(size)) {
-        alert("Please select a size between ${product.sizeLimits.min} and ${product.sizeLimits.max}.");
+      if (
+        size < product.sizeLimits.min ||
+        size > product.sizeLimits.max ||
+        isNaN(size)
+      ) {
+        alert(
+          "Please select a size between ${product.sizeLimits.min} and ${product.sizeLimits.max}."
+        );
         return;
       }
 
