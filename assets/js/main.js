@@ -1,3 +1,63 @@
+// SEARCH FEATURE
+
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const clearSearch = document.getElementById("clear-search");
+const tileCon = document.querySelector(".tile_con");
+
+if (searchInput && searchButton && clearSearch && tileCon) {
+  function filterTiles(query = "") {
+    const tiles = tileCon.querySelectorAll(".tile");
+    if (tiles.length === 0) {
+      console.warn(
+        "No tiles found for search. Check .tile_con .tile in shop.html"
+      );
+      return;
+    }
+
+    let visibleCount = 0;
+    tiles.forEach((tile) => {
+      const name = tile.querySelector("h3")?.textContent.toLowerCase() || ""; // Use h3 from your HTML
+      const description = tile.dataset.description?.toLowerCase() || ""; // Optional, add data-description to tiles if needed
+      const matches =
+        name.includes(query.toLowerCase()) ||
+        description.includes(query.toLowerCase());
+      tile.style.display = matches ? "block" : "none";
+      if (matches) visibleCount++;
+    });
+
+    if (visibleCount === 0) {
+      tileCon.innerHTML = "<p>No products found.</p>" + tileCon.innerHTML; // Prepend message
+    } else {
+      // Remove any "No products" message if present
+      if (
+        tileCon.firstChild.tagName === "P" &&
+        tileCon.firstChild.textContent === "No products found."
+      ) {
+        tileCon.removeChild(tileCon.firstChild);
+      }
+    }
+  }
+
+  // Live search on input
+  searchInput.addEventListener("input", () => {
+    filterTiles(searchInput.value.trim());
+  });
+
+  // Search button click
+  searchButton.addEventListener("click", () => {
+    filterTiles(searchInput.value.trim());
+  });
+
+  // Clear search
+  clearSearch.addEventListener("click", () => {
+    searchInput.value = "";
+    filterTiles(); // Reset to show all tiles
+  });
+
+  // Initial display (all tiles)
+  filterTiles();
+}
 //MENU TOGGLE
 
 const menu = document.getElementById("menu");
@@ -208,21 +268,21 @@ if (
       );
     });
 
-        sizeSlider.addEventListener("input", () => {
-          if (!selectedSize) {
-            console.error("selectedSize element not found");
-            return;
-          }
-          if (product.sizeType === "numerical") {
-            selectedSizeValue = parseInt(sizeSlider.value);
-            selectedSize.textContent = selectedSizeValue;
-          } else if (product.sizeType === "letter") {
-            selectedSizeValue =
-              product.sizeOptions[parseInt(sizeSlider.value)] ||
-              product.sizeOptions[0];
-            selectedSize.textContent = selectedSizeValue;
-          }
-        });
+    sizeSlider.addEventListener("input", () => {
+      if (!selectedSize) {
+        console.error("selectedSize element not found");
+        return;
+      }
+      if (product.sizeType === "numerical") {
+        selectedSizeValue = parseInt(sizeSlider.value);
+        selectedSize.textContent = selectedSizeValue;
+      } else if (product.sizeType === "letter") {
+        selectedSizeValue =
+          product.sizeOptions[parseInt(sizeSlider.value)] ||
+          product.sizeOptions[0];
+        selectedSize.textContent = selectedSizeValue;
+      }
+    });
 
     document.querySelectorAll(".thumbnail").forEach((thumb) => {
       thumb.addEventListener("click", () => {
@@ -257,7 +317,7 @@ if (
     updateTotalPrice();
 
     addToCartBtn.addEventListener("click", () => {
-      const size = parseInt(productSize.value);
+      const size = parseInt(sizeSlider.value);
       if (
         size < product.sizeLimits.min ||
         size > product.sizeLimits.max ||
@@ -553,60 +613,4 @@ document.querySelectorAll(".toggle-button").forEach((button) => {
       button.classList.add("active");
     }
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".search-bar input");
-  const categorySelect = document.querySelector(".search-bar select");
-  const searchButton = document.querySelector(".search-bar button");
-
-  // Only run on shop.html
-  if (
-    searchInput &&
-    categorySelect &&
-    searchButton &&
-    window.location.pathname.includes("shop.html")
-  ) {
-    searchButton.addEventListener("click", performSearch);
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") performSearch();
-    });
-  }
-
-  function performSearch() {
-    const query = searchInput.value.toLowerCase().trim();
-    const selectedCategory = categorySelect.value.toLowerCase();
-
-    const productTiles = document.querySelectorAll(".tile");
-
-    if (productTiles.length === 0) {
-      console.warn(
-        'No product tiles found for search. Ensure tiles have class="tile" in shop.html.'
-      );
-      return;
-    }
-
-    productTiles.forEach((tile) => {
-      const productName =
-        tile.querySelector("h3")?.textContent.toLowerCase() || "";
-      const productCategory = tile.dataset.category?.toLowerCase() || "";
-
-      const matchesQuery = !query || productName.includes(query);
-      const matchesCategory =
-        selectedCategory === "all" || productCategory === selectedCategory;
-
-      tile.style.display = matchesQuery && matchesCategory ? "block" : "none";
-    });
-
-    const visibleTiles = document.querySelectorAll(
-      '.tile[style="display: block;"]'
-    );
-    if (visibleTiles.length === 0) {
-      alert(
-        "No products match your search. Try a different query or category!"
-      );
-    } else {
-      visibleTiles[0].scrollIntoView({ behavior: "smooth" });
-    }
-  }
 });

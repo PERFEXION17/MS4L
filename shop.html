@@ -61,28 +61,14 @@
           >
         </div>
 
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <input type="search" id="search-input" placeholder="Search" />
-          <select id="category-filter">
-            <option value="all">All Categories</option>
-            <option value="bra">Bra</option>
-            <option value="pant">Panties</option>
-            <option value="legging">Leggings</option>
-            <option value="lingerie">Lingerie</option>
-            <option value="gym_wear">Gym Wear</option>
-            <option value="night_wear">Night Wear</option>
-            <option value="body_shaper">Body Shaper</option>
-            <option value="pyjamas">Pyjamas</option>
-            <option value="bra_top">Bra Top</option>
-            <option value="girdle">Girdle</option>
-            <option value="tights">Tights</option>
-            <option value="camisole">Camisole</option>
-            <!-- Add any others from products.js -->
-          </select>
-          <button><i class="ri-search-line"></i></button>
+          <button id="search-button"><i class="ri-search-line"></i></button>
           <button id="clear-search"><i class="ri-close-line"></i></button>
-        </div>
+        </div> -->
       </div>
+
+      <div id="search-results"></div>
 
       <h2>SHOP</h2>
 
@@ -388,6 +374,18 @@
                 <div class="tile_npr">
                   <p>Playboy Pyjamas</p>
                   <p class="price">&#8358;12,000.00</p>
+                </div>
+                <button class="add-to-cart" data-id="15">
+                  <i class="ri-shopping-bag-2-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="tile" onclick="goToProduct(28)" data-category="pyjamas">
+              <img src="assets/img/striped_pyj_model.jpg" alt="Striped Pyjamas" />
+              <div class="tile_txt">
+                <div class="tile_npr">
+                  <p>Striped Pyjamas</p>
+                  <p class="price">&#8358;15,000.00</p>
                 </div>
                 <button class="add-to-cart" data-id="15">
                   <i class="ri-shopping-bag-2-line"></i>

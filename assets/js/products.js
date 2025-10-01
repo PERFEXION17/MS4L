@@ -16,7 +16,7 @@ const products = [
     name: "Casual Leggings",
     price: 12000.0,
     description:
-      "Breathable leggings for your daily activities.Elegant and bold lingerie set for special occasions.",
+      "Breathable leggings for your daily activities.",
     images: [
       "/assets/img/leggings_1.jpg",
       "/assets/img/leggings_2.jpg",
@@ -393,7 +393,23 @@ const products = [
     colors: ["black", "navy", "maroon"],
     sizeType: "numerical",
     sizeLimits: { min: 8, max: 18 },
-    category: "pant",
+    category: "lingerie",
     sku: "prod-027-lin",
+  },
+  {
+    id: 28,
+    name: "Striped Pyjamas",
+    price: 15000.0,
+    description: "Lorem ipsum var deux vox machina.",
+    images: [
+      "/assets/img/striped_pyj_model.jpg",
+      "/assets/img/striped_pyj_1.png",
+      "/assets/img/striped_pyj_2.png"
+    ],
+    colors: ["pink",],
+    sizeType: "numerical",
+    sizeLimits: { min: 16, max: 38 },
+    category: "pyjamas",
+    sku: "prod-028-pyj",
   },
 ];
