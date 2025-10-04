@@ -659,7 +659,7 @@ h2 {
 }
 
 .news_input input {
-  font-family: var(--font_1);
+  font-family: var(--tile);
   height: 2.5rem;
   width: 65%;
   padding: 0 .5rem;
