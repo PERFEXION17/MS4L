@@ -856,6 +856,11 @@ footer {
   font-family: var(--font_2);
 }
 
+.slash{
+  margin-top: .5rem;
+  text-decoration: line-through;
+}
+
 /* ----ABOUT ME----- */
 
 .about_con {

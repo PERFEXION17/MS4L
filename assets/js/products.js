@@ -401,6 +401,7 @@ const products = [
     price: 15000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
+      "/assets/img/striped_pyj_3.webp",
       "/assets/img/striped_pyj_model.jpg",
       "/assets/img/striped_pyj_1.png",
       "/assets/img/striped_pyj_2.png",
@@ -417,7 +418,7 @@ const products = [
   {
     id: 29,
     name: "Aurora (Fancy Stripes)",
-    price: 9500.0,
+    price: 8550.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/aurora_kaft_1.webp",
@@ -434,7 +435,7 @@ const products = [
   {
     id: 30,
     name: "Marvelous",
-    price: 7000.0,
+    price: 6300.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/marv_kaft_1.webp",
