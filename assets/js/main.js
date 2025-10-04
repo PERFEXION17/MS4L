@@ -1,3 +1,47 @@
+// PROMO COUNTDOWN TIMER
+
+const promoTimer = document.getElementById("promo-timer");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+if (promoTimer && daysEl && hoursEl && minutesEl && secondsEl) {
+  // Set promo end date (adjust to your desired date/time)
+  const promoEndDate = new Date("2025-10-19T23:59:59Z"); // UTC for Oct 10, 2025, 23:59:59
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeLeft = promoEndDate - now; // Difference in milliseconds
+
+    if (timeLeft <= 0) {
+      promoTimer.innerHTML = "<h3>Promo Ended</h3>";
+      return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    daysEl.textContent = days;
+    hoursEl.textContent = hours;
+    minutesEl.textContent = minutes;
+    secondsEl.textContent = seconds;
+  }
+
+  // Update every second
+  updateCountdown();
+  const countdownInterval = setInterval(() => {
+    updateCountdown();
+    if (promoEndDate <= new Date()) {
+      clearInterval(countdownInterval);
+    }
+  }, 1000);
+}
+
 // SEARCH FEATURE
 
 const searchInput = document.getElementById("search-input");

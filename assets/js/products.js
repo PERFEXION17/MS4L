@@ -15,8 +15,7 @@ const products = [
     id: 2,
     name: "Casual Leggings",
     price: 12000.0,
-    description:
-      "Breathable leggings for your daily activities.",
+    description: "Breathable leggings for your daily activities.",
     images: [
       "/assets/img/leggings_1.jpg",
       "/assets/img/leggings_2.jpg",
@@ -404,12 +403,49 @@ const products = [
     images: [
       "/assets/img/striped_pyj_model.jpg",
       "/assets/img/striped_pyj_1.png",
-      "/assets/img/striped_pyj_2.png"
+      "/assets/img/striped_pyj_2.png",
     ],
-    colors: ["pink",],
+    colors: ["pink"],
     sizeType: "numerical",
     sizeLimits: { min: 16, max: 38 },
     category: "pyjamas",
     sku: "prod-028-pyj",
+  },
+
+  // -----MEN-----
+
+  {
+    id: 29,
+    name: "Aurora (Fancy Stripes)",
+    price: 9500.0,
+    description: "Lorem ipsum var deux vox machina.",
+    images: [
+      "/assets/img/aurora_kaft_1.webp",
+      "/assets/img/aurora_kaft_2.webp",
+      "/assets/img/aurora_kaft_3.webp",
+      "/assets/img/aurora_kaft_4.webp",
+    ],
+    colors: ["black", "white", "grey", "brown", "navy", "skyblue"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "kaftan",
+    sku: "prod-029-kaf",
+  },
+  {
+    id: 30,
+    name: "Marvelous",
+    price: 7000.0,
+    description: "Lorem ipsum var deux vox machina.",
+    images: [
+      "/assets/img/marv_kaft_1.webp",
+      "/assets/img/marv_kaft_2.webp",
+      "/assets/img/marv_kaft_3.webp",
+      "/assets/img/marv_kaft_4.webp",
+    ],
+    colors: ["navy", "brown", "beige", "maroon",],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "kaftan",
+    sku: "prod-029-kaf",
   },
 ];
