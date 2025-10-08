@@ -189,9 +189,9 @@ const products = [
   },
   {
     id: 13,
-    name: "Silk Pyjamas",
+    name: "Satin Pyjamas",
     price: 13600.0,
-    description: "2-Piece pure silk pyjamas",
+    description: "2-Piece pure satin pyjamas",
     images: [
       "/assets/img/silk_pyjamas_1.png",
       "/assets/img/silk_pyjamas_2.png",
@@ -219,8 +219,9 @@ const products = [
   {
     id: 15,
     name: "Playboy Pyjamas",
-    price: 12000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    price: 16700.0,
+    description:
+      "Cotton 2 piece playboy designed night wear. (Design of choice is to be communicated during delivery processing).",
     images: ["/assets/img/playboy_3.png", "/assets/img/playboy_2.png"],
     colors: ["purple"],
     sizeType: "numerical",
@@ -231,7 +232,7 @@ const products = [
   {
     id: 16,
     name: "Cotton Bra-Top",
-    price: 4500.0,
+    price: 3800.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/s_bra_4.png"],
     colors: ["black", "white", "yellow", "maroon", "blue", "grey", "lime"],
@@ -243,7 +244,7 @@ const products = [
   {
     id: 17,
     name: "Lace Bra-Top",
-    price: 4500.0,
+    price: 3800.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/lace_bra_top_1.png"],
     colors: ["black", "white", "navy", "grey", "maroon"],
@@ -255,7 +256,7 @@ const products = [
   {
     id: 18,
     name: "High Waist Girdle",
-    price: 12000.0,
+    price: 11700.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/high_waist_girdle_4.webp",
@@ -402,9 +403,9 @@ const products = [
   },
   {
     id: 28,
-    name: "Striped Pyjamas",
-    price: 15000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    name: "Silk Striped Pyjamas",
+    price: 14500.0,
+    description: "100% Silk pyjamas",
     images: [
       "/assets/img/striped_pyj_3.webp",
       "/assets/img/striped_pyj_model.jpg",
@@ -413,7 +414,7 @@ const products = [
     ],
     colors: ["pink"],
     sizeType: "numerical",
-    sizeLimits: { min: 16, max: 38 },
+    sizeLimits: { min: 6, max: 88 },
     category: "pyjamas",
     sku: "prod-028-pyj",
   },
