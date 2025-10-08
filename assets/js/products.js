@@ -496,7 +496,7 @@ const products = [
       "/assets/img/boobtape_1.webp",
       "/assets/img/boobtape_2.webp",
     ],
-    colors: ["brown"],
+    colors: ["black","brown"],
     sizeType: "numerical",
     sizeLimits: { min: 0, max: 0 },
     category: "boob_tape",
