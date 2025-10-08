@@ -485,16 +485,4 @@ const products = [
     category: "boxers",
     sku: "prod-033-box",
   },
-  {
-    id: 34,
-    name: "Held (Fine Suiting)",
-    price: 5300.0,
-    description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/heldsui_kaft_1.webp", "/assets/img/heldsui_kaft_2.webp", "/assets/img/heldsui_kaft_3.webp", "/assets/img/heldsui_kaft_4.webp"],
-    colors: ["black", "brown", "navy", "beige"],
-    sizeType: "numerical",
-    sizeLimits: { min: 0, max: 0 },
-    category: "boxers",
-    sku: "prod-033-box",
-  },
 ];
