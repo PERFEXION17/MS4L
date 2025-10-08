@@ -342,7 +342,7 @@ const products = [
     name: "Plunge Bra",
     price: 11200.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/plungebra.png", "/assets/img/plungebra_2.jpg"],
+    images: ["/assets/img/plungebra.png", "/assets/img/plungebra_3.webp", "/assets/img/plungebra_2.jpg"],
     colors: ["black"],
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 14 },

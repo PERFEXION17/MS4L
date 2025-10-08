@@ -216,6 +216,7 @@ h2 {
   max-width: 1200px;
   min-width: 200px;
   margin-top: 4.5rem;
+  position: relative;
 }
 
 .main h3 {
@@ -860,6 +861,41 @@ footer {
 .slash{
   margin-top: .5rem;
   text-decoration: line-through;
+}
+
+.up{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.7rem;
+  background-color: var(--color_dark);
+  border: 2px solid var(--color_dark);
+  transition: .3s ease;
+  z-index: 5;
+  /* visibility: hidden; */
+}
+
+/* .up.show{
+  visibility: visible;
+  opacity: 1;
+} */
+
+.up:hover{
+  background-color: var(--color_light);
+}
+
+.up a{
+  color: var(--color_light);
+}
+
+.up a:hover{
+  color: var(--color_dark);
 }
 
 /* ----ABOUT ME----- */

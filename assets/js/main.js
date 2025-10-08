@@ -42,66 +42,8 @@ if (promoTimer && daysEl && hoursEl && minutesEl && secondsEl) {
   }, 1000);
 }
 
-// SEARCH FEATURE
+//BACK TO TOP
 
-const searchInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
-const clearSearch = document.getElementById("clear-search");
-const tileCon = document.querySelector(".tile_con");
-
-if (searchInput && searchButton && clearSearch && tileCon) {
-  function filterTiles(query = "") {
-    const tiles = tileCon.querySelectorAll(".tile");
-    if (tiles.length === 0) {
-      console.warn(
-        "No tiles found for search. Check .tile_con .tile in shop.html"
-      );
-      return;
-    }
-
-    let visibleCount = 0;
-    tiles.forEach((tile) => {
-      const name = tile.querySelector("h3")?.textContent.toLowerCase() || ""; // Use h3 from your HTML
-      const description = tile.dataset.description?.toLowerCase() || ""; // Optional, add data-description to tiles if needed
-      const matches =
-        name.includes(query.toLowerCase()) ||
-        description.includes(query.toLowerCase());
-      tile.style.display = matches ? "block" : "none";
-      if (matches) visibleCount++;
-    });
-
-    if (visibleCount === 0) {
-      tileCon.innerHTML = "<p>No products found.</p>" + tileCon.innerHTML; // Prepend message
-    } else {
-      // Remove any "No products" message if present
-      if (
-        tileCon.firstChild.tagName === "P" &&
-        tileCon.firstChild.textContent === "No products found."
-      ) {
-        tileCon.removeChild(tileCon.firstChild);
-      }
-    }
-  }
-
-  // Live search on input
-  searchInput.addEventListener("input", () => {
-    filterTiles(searchInput.value.trim());
-  });
-
-  // Search button click
-  searchButton.addEventListener("click", () => {
-    filterTiles(searchInput.value.trim());
-  });
-
-  // Clear search
-  clearSearch.addEventListener("click", () => {
-    searchInput.value = "";
-    filterTiles(); // Reset to show all tiles
-  });
-
-  // Initial display (all tiles)
-  filterTiles();
-}
 //MENU TOGGLE
 
 const menu = document.getElementById("menu");
