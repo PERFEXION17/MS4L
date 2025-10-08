@@ -285,7 +285,7 @@ const products = [
   {
     id: 20,
     name: "Tights with Pockets",
-    price: 5000.0,
+    price: 4800.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/skin_tight_side_pocket_1.jpg",
@@ -301,7 +301,7 @@ const products = [
   {
     id: 21,
     name: "Camisole Vest",
-    price: 4000.0,
+    price: 3200.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/camisole_vest_1.png",
@@ -309,7 +309,7 @@ const products = [
       "/assets/img/camisole_vest_2.png",
       "/assets/img/camisole_vest_4.png",
     ],
-    colors: ["black", "white", "blue", "yellow"],
+    colors: ["black", "white", "blue", "yellow", "red", "green",],
     sizeType: "numerical",
     sizeLimits: { min: 10, max: 16 },
     category: "camisole",
@@ -318,7 +318,7 @@ const products = [
   {
     id: 22,
     name: "BDSM Kit",
-    price: 30000.0,
+    price: 28000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/bdsmkit_3.jpg",
