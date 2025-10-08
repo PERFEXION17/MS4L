@@ -272,10 +272,10 @@ const products = [
   },
   {
     id: 19,
-    name: "Thigh Tights",
-    price: 5000.0,
+    name: "Shaper Tights",
+    price: 9900.0,
     description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/tights_1.jpg"],
+    images: ["/assets/img/shaper_tights_1.jpg", "/assets/img/shaper_tights_2.webp", "/assets/img/shaper_tights_3.webp"],
     colors: ["black"],
     sizeType: "numerical",
     sizeLimits: { min: 10, max: 16 },
