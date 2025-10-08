@@ -485,4 +485,21 @@ const products = [
     category: "boxers",
     sku: "prod-033-box",
   },
+  {
+    id: 34,
+    name: "Boob Tape",
+    price: 2500.0,
+    description: "Lorem ipsum var deux vox machina.",
+    images: [
+      "/assets/img/boobtapeboob.webp",
+      "/assets/img/boobtapeboob_2.webp",
+      "/assets/img/boobtape_1.webp",
+      "/assets/img/boobtape_2.webp",
+    ],
+    colors: ["brown"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "boob_tape",
+    sku: "prod-034-tape",
+  },
 ];
