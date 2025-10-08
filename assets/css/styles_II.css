@@ -316,6 +316,7 @@ video{
     align-items: center;
     justify-content: center;
     position: absolute;
+    padding: 1rem;
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--color_light);
     font-size: 2rem;
