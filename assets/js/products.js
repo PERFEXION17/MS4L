@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     name: "Silicon Bra",
-    price: 6500.0,
+    price: 5900.0,
     description: "Strapless bra for your comfort and confidence",
     images: ["/assets/img/silicon_bra.webp", "/assets/img/silicon_bra_2.jpg"],
     colors: ["black"],
@@ -14,7 +14,7 @@ const products = [
   {
     id: 2,
     name: "Casual Leggings",
-    price: 12000.0,
+    price: 11800.0,
     description: "Breathable leggings for your daily activities.",
     images: [
       "/assets/img/leggings_1.jpg",
@@ -22,7 +22,7 @@ const products = [
       "/assets/img/leggings_3.jpg",
       "/assets/img/leggings_4.jpg",
     ],
-    colors: ["white", "black", "green", "brown"],
+    colors: ["white", "black", "green", "brown", "pink", "blue"],
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 12 },
     category: "legging",
@@ -31,7 +31,7 @@ const products = [
   {
     id: 3,
     name: "Lingerie Set I",
-    price: 25000.0,
+    price: 23000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/sexy_lingerie_set_1.jpg",
@@ -48,7 +48,7 @@ const products = [
   {
     id: 4,
     name: "Lingerie Set II",
-    price: 22000.0,
+    price: 20500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/lingerie_set_x.jpg"],
     colors: ["red"],
@@ -60,7 +60,7 @@ const products = [
   {
     id: 5,
     name: "Lingerie Set III",
-    price: 22000.0,
+    price: 20500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/sexy_lingerie-set_5.webp"],
     colors: ["black", "red", "pink"],
@@ -72,7 +72,7 @@ const products = [
   {
     id: 6,
     name: "Full Gym Wear I",
-    price: 25000.0,
+    price: 23000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/full_gym_wear_1.webp",
@@ -89,7 +89,7 @@ const products = [
   {
     id: 7,
     name: "Short Gym Wear",
-    price: 13500.0,
+    price: 12300.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/short_gym_wear_1.jpg",
@@ -106,7 +106,7 @@ const products = [
   {
     id: 8,
     name: "Full Gym Wear II",
-    price: 25000.0,
+    price: 23000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/gym_wear.jpg",
@@ -123,10 +123,14 @@ const products = [
   {
     id: 9,
     name: "2-Piece Night Wear",
-    price: 8500.0,
-    description: "Lorem ipsum var deux vox machina.",
-    images: ["/assets/img/2_pcs_night_wear_4.jpg"],
-    colors: ["white"],
+    price: 7800.0,
+    description:
+      "Cotton 2 piece night wear crafted and designed for your comfort and luxury. (Design of choice is to be communicated during delivery processing).",
+    images: [
+      "/assets/img/2_pcs_night_wear_4.jpg",
+      "/assets/img/2_pcs_night_wear_5.webp",
+    ],
+    colors: ["white", "pink"],
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
@@ -135,8 +139,9 @@ const products = [
   {
     id: 10,
     name: "2-Piece Backnet Nightie",
-    price: 13000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    price: 12300.0,
+    description:
+      "Cotton 2 piece night wear crafted and designed for your comfort and luxury. Backnet for breatheability and the best of sleep. (Design of choice is to be communicated during delivery processing).",
     images: [
       "/assets/img/2_pcs_backnet_nightie_2.jpg",
       "/assets/img/2_pcs_backnet_nightie.jpg",
@@ -151,8 +156,8 @@ const products = [
   },
   {
     id: 11,
-    name: "3in1 Mesh Night Gown",
-    price: 15000.0,
+    name: "3in1 Mesh Lingerie",
+    price: 13800.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/3_pcs_mesh_nightgown_3.jpg",
@@ -164,12 +169,12 @@ const products = [
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
-    sku: "prod-011-night",
+    sku: "prod-011-lin",
   },
   {
     id: 12,
     name: "Thong Shaper",
-    price: 11000.0,
+    price: 9900.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/thong_shaper_1.jpg",
@@ -185,8 +190,8 @@ const products = [
   {
     id: 13,
     name: "Silk Pyjamas",
-    price: 15000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    price: 13600.0,
+    description: "2 Piece Pure Silk Pyjamas",
     images: [
       "/assets/img/silk_pyjamas_1.png",
       "/assets/img/silk_pyjamas_2.png",
@@ -195,7 +200,7 @@ const products = [
     ],
     colors: ["purple", "skyblue", "blue", "grey"],
     sizeType: "numerical",
-    sizeLimits: { min: 16, max: 38 },
+    sizeLimits: { min: 16, max: 24 },
     category: "pyjamas",
     sku: "prod-013-pyj",
   },
@@ -328,7 +333,7 @@ const products = [
   {
     id: 23,
     name: "Plunge Bra",
-    price: 12000.0,
+    price: 11200.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/plungebra.png", "/assets/img/plungebra_2.jpg"],
     colors: ["black"],
@@ -340,7 +345,7 @@ const products = [
   {
     id: 24,
     name: "Lingerie Set IV",
-    price: 22000.0,
+    price: 20500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/lingerie_set_2.jpg"],
     colors: ["red"],
@@ -352,7 +357,7 @@ const products = [
   {
     id: 25,
     name: "Lingerie Set V",
-    price: 22000.0,
+    price: 20500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/lingerie_set_3.webp"],
     colors: ["white"],
@@ -364,7 +369,7 @@ const products = [
   {
     id: 26,
     name: "V-Decorated Panties",
-    price: 2500.0,
+    price: 2200.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/v_panties_1.webp",
@@ -381,7 +386,7 @@ const products = [
   {
     id: 27,
     name: "3-Piece Lingerie Set I",
-    price: 20000.0,
+    price: 18000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/lingerie_set_6_i.webp",
@@ -487,8 +492,8 @@ const products = [
   },
   {
     id: 34,
-    name: "Boob Tape",
-    price: 2500.0,
+    name: "Boob Tape [L]",
+    price: 5900.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/boobtapeboob.webp",
@@ -496,7 +501,24 @@ const products = [
       "/assets/img/boobtape_1.webp",
       "/assets/img/boobtape_2.webp",
     ],
-    colors: ["black","brown"],
+    colors: ["black", "brown"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "boob_tape",
+    sku: "prod-034-tape",
+  },
+  {
+    id: 35,
+    name: "Boob Tape [XL]",
+    price: 6900.0,
+    description: "Lorem ipsum var deux vox machina.",
+    images: [
+      "/assets/img/boobtapeboob.webp",
+      "/assets/img/boobtapeboob_2.webp",
+      "/assets/img/boobtape_1.webp",
+      "/assets/img/boobtape_2.webp",
+    ],
+    colors: ["black", "brown"],
     sizeType: "numerical",
     sizeLimits: { min: 0, max: 0 },
     category: "boob_tape",
