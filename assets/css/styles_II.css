@@ -8,6 +8,8 @@
     --color_light: #d3d3d3;
     --white: #fff;
     --color_accent: #818181;
+    --green: #3BA55C;
+    --red: #C24040;
 }
 
 /* .darkmode {
@@ -594,8 +596,8 @@ video{
     font-family: var(--font_1);
     font-size: 1rem;
     font-weight: 600;
-    background-color: var(--color_dark);
-    color: var(--color_light);
+    background-color: var(--green);
+    color: var(--white);
     outline: none;
     border: 2px solid var(--color_dark);
     cursor: pointer;
