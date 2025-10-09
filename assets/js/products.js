@@ -169,7 +169,7 @@ const products = [
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 16 },
     category: "night_wear",
-    sku: "prod-011-lin",
+    sku: "prod-011-night",
   },
   {
     id: 12,

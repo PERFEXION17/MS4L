@@ -951,6 +951,13 @@ footer {
   font-size: 1.5rem;
 }
 
+.about_text ul{
+  font-weight: 600;
+  text-align: left;
+  padding: 0 2rem;
+  list-style: disc;
+}
+
 .toggle-section {
   margin-bottom: 1.25rem;
   width: 100%;
@@ -1502,9 +1509,9 @@ footer {
     top: 0;
   }
 
-  .about_img {
-    height: 90vh;
-  }
+  /* .about_img {
+    /* height: 90vh; */
+  } */
 
   .about_text {
     width: 100%;
