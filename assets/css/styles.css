@@ -119,7 +119,7 @@ h2 {
 }
 
 .cart a {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--color_dark);
   transition: .3s ease;
@@ -913,7 +913,7 @@ footer {
 }
 
 .about_img {
-  width: 80%;
+  width: 70%;
   margin: auto;
   height: auto;
   display: flex;
@@ -1508,10 +1508,6 @@ footer {
     padding: 0 5rem 5rem 0;
     top: 0;
   }
-
-  /* .about_img {
-    /* height: 90vh; */
-  } */
 
   .about_text {
     width: 100%;

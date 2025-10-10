@@ -92,8 +92,8 @@ if (closeModalBtn) {
 // "ADD TO CART" FROM SHOP PAGE
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Only run on shop.html
-  if (window.location.pathname.includes("shop.html")) {
+  // Only run on shop.html and men.html
+  if (window.location.pathname.includes("shop.html" && "men.html")) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
     if (addToCartButtons.length === 0) {
