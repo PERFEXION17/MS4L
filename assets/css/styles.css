@@ -88,6 +88,25 @@ h2 {
   opacity: 1;
 }
 
+.mark{
+  position: relative;
+}
+
+.mark::after{
+  content: '';
+  position: absolute;
+  bottom: -.25rem;
+  left: 0;
+  height: .125rem;
+  width: 20%;
+  background-color: var(--color_dark);
+  transition: .3s ease;
+}
+
+.mark:hover::after{
+  background-color: var(--color_light);
+}
+
 .nav_container {
   position: fixed;
   top: 0;
@@ -909,7 +928,6 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  top: 2rem;
 }
 
 .about_img {

@@ -1172,7 +1172,7 @@ const products = [
   },
   {
     id: 84,
-    name: "Sizeless Cotton Gown III",
+    name: "Sizeless Cotton Gown IV",
     price: 15000.0,
     description:
       "Enjoy the freedom the sizeless gown gives.",
@@ -1182,6 +1182,19 @@ const products = [
     sizeLimits: { min: 0, max: 0 },
     category: "misc",
     sku: "MCS-SZS-4",
+  },
+  {
+    id: 85,
+    name: "Sizeless Cotton Gown V",
+    price: 15000.0,
+    description:
+      "Enjoy the freedom the sizeless gown gives.",
+    images: ["/assets/img/szl_v_1.png"],
+    colors: ["white"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "misc",
+    sku: "MCS-SZS-5",
   },
 
   // -----MEN-----
