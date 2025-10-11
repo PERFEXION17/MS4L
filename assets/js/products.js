@@ -649,7 +649,7 @@ const products = [
   },
   {
     id: 49,
-    name: "Sizeless Cotton Gown",
+    name: "Sizeless Cotton Gown I",
     price: 15000.0,
     description:
       "'No Pants is the Best Pants.' Enjoy the freedom the sizeless gown gives.",
@@ -658,7 +658,7 @@ const products = [
     sizeType: "numerical",
     sizeLimits: { min: 0, max: 0 },
     category: "misc",
-    sku: "MCS-SZS-COT-GWN",
+    sku: "MCS-SZS-1",
   },
   {
     id: 50,
@@ -1143,6 +1143,45 @@ const products = [
     sizeLimits: { min: 0, max: 0 },
     category: "night",
     sku: "NHT-2PC-CHR",
+  },
+  {
+    id: 82,
+    name: "Sizeless Cotton Gown II",
+    price: 15000.0,
+    description:
+      "Enjoy the freedom the sizeless gown gives.",
+    images: ["/assets/img/szl_ii_1.webp", "/assets/img/szl_ii_2.webp", "/assets/img/szl_ii_3.webp"],
+    colors: ["purple", "pink", "blue"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "misc",
+    sku: "MCS-SZS-2",
+  },
+  {
+    id: 83,
+    name: "Sizeless Cotton Gown III",
+    price: 15000.0,
+    description:
+      "Enjoy the freedom the sizeless gown gives.",
+    images: ["/assets/img/szl_iii_1.png"],
+    colors: ["white"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "misc",
+    sku: "MCS-SZS-3",
+  },
+  {
+    id: 84,
+    name: "Sizeless Cotton Gown III",
+    price: 15000.0,
+    description:
+      "Enjoy the freedom the sizeless gown gives.",
+    images: ["/assets/img/szl_iv_1.png"],
+    colors: ["white"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    category: "misc",
+    sku: "MCS-SZS-4",
   },
 
   // -----MEN-----
