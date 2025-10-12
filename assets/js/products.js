@@ -32,7 +32,7 @@ const products = [
     id: 3,
     name: "Lingerie Set I",
     price: 23000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    description: "Sexy Lingerie set. Comes with Pop-Hose Socks.",
     images: [
       "/assets/img/sexy_lingerie_set_1.jpg",
       "/assets/img/sexy_lingerie_set_2.jpg",
@@ -49,7 +49,7 @@ const products = [
     id: 4,
     name: "Lingerie Set II",
     price: 20500.0,
-    description: "Lorem ipsum var deux vox machina.",
+    description: "Sexy Lingerie Made of Straps for Extra Allure.",
     images: [
       "/assets/img/lingerie_set_ii_1.jpg",
       "/assets/img/lingerie_set_ii_2.webp",
@@ -64,8 +64,8 @@ const products = [
   {
     id: 5,
     name: "Lingerie Set III",
-    price: 20500.0,
-    description: "Lorem ipsum var deux vox machina.",
+    price: 19800.0,
+    description: "Sexy Lingerie Set.",
     images: ["/assets/img/sexy_lingerie-set_5.webp"],
     colors: ["black", "red", "pink"],
     sizeType: "numerical",
@@ -84,9 +84,9 @@ const products = [
       "/assets/img/full_gym_wear_3.jpg",
       "/assets/img/full_gym_wear_4.webp",
     ],
-    colors: ["black", "pink", "green", "blue"],
+    colors: ["pink",],
     sizeType: "numerical",
-    sizeLimits: { min: 6, max: 18 },
+    sizeLimits: { min: 6, max: 8 },
     category: "gym_wear",
     sku: "GYM-F-GYM-W-1",
   },
@@ -360,8 +360,8 @@ const products = [
   {
     id: 24,
     name: "Lingerie Set IV",
-    price: 20500.0,
-    description: "Lorem ipsum var deux vox machina.",
+    price: 19800.0,
+    description: "Sexy Lingerie Set with Gold Straps.",
     images: [
       "/assets/img/lingerie_set_iv_1.webp",
       "/assets/img/lingerie_set_iv_5.jpg",
@@ -378,7 +378,7 @@ const products = [
     id: 25,
     name: "Lingerie Set V",
     price: 20500.0,
-    description: "Lorem ipsum var deux vox machina.",
+    description: "Sexy Lingerie Set with Handgloves and Pop-Hose Socks. ",
     images: [
       "/assets/img/lin_set_v_1.webp",
       "/assets/img/lin_set_v_4.webp",
@@ -635,7 +635,7 @@ const products = [
   {
     id: 48,
     name: "Lingerie Gown Set I",
-    price: 15000.0,
+    price: 9500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s1_2.webp",
@@ -663,7 +663,7 @@ const products = [
   {
     id: 50,
     name: "Lingerie Gown Set II",
-    price: 15000.0,
+    price: 9500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s2_1.webp",
@@ -679,7 +679,7 @@ const products = [
   {
     id: 51,
     name: "Lingerie Gown Set III",
-    price: 15000.0,
+    price: 9500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s3_1.jpeg",
@@ -922,7 +922,7 @@ const products = [
       "/assets/img/fishnet_gown_2.webp",
       "/assets/img/fishnet_gown_3.webp",
     ],
-    colors: ["black", "white"],
+    colors: ["black", "white", "blue", "green"],
     sizeType: "numerical",
     sizeLimits: { min: 0, max: 0 },
     category: "fishnet",
@@ -946,15 +946,15 @@ const products = [
   {
     id: 67,
     name: "Lingerie Set VI",
-    price: 2200.0,
-    description: "Lorem ipsum",
+    price: 23000.0,
+    description: "Sexy Lingerie Set with Pop-Hose Socks.",
     images: [
       "/assets/img/lin_set_vi_1.webp",
       "/assets/img/lin_set_vi_2.webp",
       "/assets/img/lin_set_vi_4.webp",
       "/assets/img/lin_set_vi_3.webp",
     ],
-    colors: ["black", "pink", "red"],
+    colors: ["black", "white", "red",],
     sizeType: "numerical",
     sizeLimits: { min: 6, max: 20 },
     category: "lingerie",
@@ -963,8 +963,8 @@ const products = [
   {
     id: 68,
     name: "Lingerie Set VII",
-    price: 2200.0,
-    description: "Comes Only in the Pattern Above",
+    price: 20500.0,
+    description: "Sexy Lingerie Set. (Comes Only in the Pattern Above)",
     images: [
       "/assets/img/lin_set_vii_1.webp",
       "/assets/img/lin_set_vii_2.webp",
@@ -979,7 +979,7 @@ const products = [
   {
     id: 69,
     name: "Lingerie Set VIII",
-    price: 2200.0,
+    price: 23000.0,
     description: "Lorem ipsum",
     images: ["/assets/img/lin_set_viii_1.webp"],
     colors: ["black"],
@@ -991,7 +991,7 @@ const products = [
   {
     id: 70,
     name: "Lingerie Set IX",
-    price: 2200.0,
+    price: 23000.0,
     description: "Comes Only in the Pattern Above",
     images: ["/assets/img/lin_set_ix_1.webp"],
     colors: ["black"],
@@ -1003,7 +1003,7 @@ const products = [
   {
     id: 71,
     name: "Lingerie Set X",
-    price: 2200.0,
+    price: 23000.0,
     description: "Lorem Ipsum",
     images: ["/assets/img/lin_set_x_1.webp"],
     colors: ["black"],
@@ -1015,7 +1015,7 @@ const products = [
   {
     id: 72,
     name: "Lingerie Set XI",
-    price: 2200.0,
+    price: 20500.0,
     description: "Lorem Ipsum",
     images: ["/assets/img/lin_set_xi_1.webp"],
     colors: ["pink"],
@@ -1027,7 +1027,7 @@ const products = [
   {
     id: 73,
     name: "Lingerie Set XII",
-    price: 2200.0,
+    price: 23000.0,
     description: "Lorem Ipsum",
     images: [
       "/assets/img/lin_set_xii_1.webp",
@@ -1042,7 +1042,7 @@ const products = [
   {
     id: 74,
     name: "Lingerie Set XIII",
-    price: 2200.0,
+    price: 23000.0,
     description: "Lorem Ipsum",
     images: ["/assets/img/lin_set_xiii_1.webp"],
     colors: ["black"],
@@ -1054,7 +1054,7 @@ const products = [
   {
     id: 75,
     name: "Lingerie Set XIV",
-    price: 2200.0,
+    price: 23000.0,
     description: "Lace Colours can be Customised During Order Processing.",
     images: [
       "/assets/img/lin_set_xiv_1.webp",
@@ -1199,7 +1199,7 @@ const products = [
   {
     id: 88,
     name: "Lingerie-BeachWear",
-    price: 15000.0,
+    price: 14200.0,
     description: "Lorem Ipsum",
     images: [
       "/assets/img/lin_bch_1.webp",
@@ -1360,7 +1360,7 @@ const products = [
   {
     id: 102,
     name: "Nipple Cover",
-    price: 15000.0,
+    price: 4000.0,
     description: "Lorem Ipsum",
     images: ["/assets/img/nipple_cover.webp"],
     colors: ["grey"],
@@ -1401,7 +1401,7 @@ const products = [
     images: ["/assets/img/polo_box.webp"],
     colors: ["grey", "black", "pink", "skyblue"],
     sizeType: "numerical",
-    sizeLimits: { min: 0, max: 0 },
+    sizeLimits: { min: 10, max: 14 },
     category: "boxers",
     sku: "BOX-POL-BOX",
   },
@@ -1413,7 +1413,7 @@ const products = [
     images: ["/assets/img/3in1_ck.webp"],
     colors: ["red"],
     sizeType: "numerical",
-    sizeLimits: { min: 0, max: 0 },
+    sizeLimits: { min: 10, max: 14 },
     category: "pant",
     sku: "PNT-3N1-CKL",
   },
