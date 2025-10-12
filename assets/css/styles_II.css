@@ -138,6 +138,7 @@ h2 {
 #product-description {
     font-family: var(--font_2);
     font-size: .95rem;
+    text-transform: capitalize;
     padding: 1rem 0;
 }
 
