@@ -1203,10 +1203,6 @@ footer {
   .tile_con {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .tile_txt button {
-    display: block;
-  }
 }
 
 
