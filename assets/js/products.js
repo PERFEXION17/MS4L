@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     name: "Silicon Bra",
-    price: 5900.0,
+    price: 6500.0,
     description: "Strapless bra for your comfort and confidence",
     images: ["/assets/img/silicon_bra.webp", "/assets/img/silicon_bra_2.jpg"],
     colors: ["black"],
@@ -14,7 +14,7 @@ const products = [
   {
     id: 2,
     name: "Casual Leggings",
-    price: 11800.0,
+    price: 13000.0,
     description: "Breathable leggings for your daily activities.",
     images: [
       "/assets/img/leggings_1.jpg",
@@ -31,7 +31,7 @@ const products = [
   {
     id: 3,
     name: "Lingerie Set I",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lingerie set. Comes with Pop-Hose Socks.",
     images: [
       "/assets/img/sexy_lingerie_set_1.jpg",
@@ -48,7 +48,7 @@ const products = [
   {
     id: 4,
     name: "Lingerie Set II",
-    price: 20500.0,
+    price: 22000.0,
     description: "Sexy Lingerie Made of Straps for Extra Allure.",
     images: [
       "/assets/img/lingerie_set_ii_1.jpg",
@@ -64,7 +64,7 @@ const products = [
   {
     id: 5,
     name: "Lingerie Set III",
-    price: 19800.0,
+    price: 22000.0,
     description: "Sexy Lingerie Set.",
     images: ["/assets/img/sexy_lingerie-set_5.webp"],
     colors: ["black", "red", "pink"],
@@ -76,7 +76,7 @@ const products = [
   {
     id: 6,
     name: "Full Gym Wear I",
-    price: 23000.0,
+    price: 25000.0,
     description:
       "Hit the gym with swag and confidence and crush your fitness goals.",
     images: [
@@ -94,7 +94,7 @@ const products = [
   {
     id: 7,
     name: "Short Gym Wear",
-    price: 12300.0,
+    price: 13500.0,
     description:
       "Hit the gym with swag and confidence and crush your fitness goals. Long pants uncomfortable? Opt for shorts.",
     images: [
@@ -112,7 +112,7 @@ const products = [
   {
     id: 8,
     name: "Full Gym Wear II",
-    price: 23000.0,
+    price: 25000.0,
     description:
       "Hit the gym with swag and confidence and crush your fitness goals.",
     images: [
@@ -130,7 +130,7 @@ const products = [
   {
     id: 9,
     name: "2-Piece Night Wear",
-    price: 7800.0,
+    price: 9000.0,
     description:
       "Cotton 2 piece night wear crafted and designed for your comfort and luxury. (Design of choice is to be communicated during delivery processing).",
     images: [
@@ -146,7 +146,7 @@ const products = [
   {
     id: 10,
     name: "2-Piece Backnet Nightie",
-    price: 12300.0,
+    price: 13500.0,
     description:
       "Cotton 2 piece night wear crafted and designed for your comfort and luxury. Backnet for breatheability and the best of sleep. (Design of choice is to be communicated during delivery processing).",
     images: [
@@ -164,7 +164,7 @@ const products = [
   {
     id: 11,
     name: "3in1 Mesh Lingerie",
-    price: 13800.0,
+    price: 15000.0,
     description: "Sexy Lngerie Set",
     images: [
       "/assets/img/3_pcs_mesh_nightgown_3.jpg",
@@ -181,7 +181,7 @@ const products = [
   {
     id: 12,
     name: "Thong Shaper",
-    price: 9900.0,
+    price: 11000.0,
     description: "Thong shaped body shaper, giving you a dual purpose shaper.",
     images: [
       "/assets/img/thong_shaper_4.webp",
@@ -198,7 +198,7 @@ const products = [
   {
     id: 13,
     name: "Satin Pyjamas",
-    price: 13500.0,
+    price: 15000.0,
     description: "2-Piece pure satin pyjamas",
     images: [
       "/assets/img/silk_pyjamas_1.png",
@@ -215,7 +215,7 @@ const products = [
   {
     id: 14,
     name: "Checked Pyjamas",
-    price: 16700.0,
+    price: 18000.0,
     description: "2-Piece pure cotton pyjamas",
     images: ["/assets/img/pyjamas_2.png", "/assets/img/pyjamas_1.png"],
     colors: ["beige"],
@@ -227,7 +227,7 @@ const products = [
   {
     id: 15,
     name: "Playboy Pyjamas",
-    price: 16700.0,
+    price: 18000.0,
     description:
       "Cotton 2 piece playboy designed night wear. (Design of choice is to be communicated during delivery processing).",
     images: ["/assets/img/playboy_3.png", "/assets/img/playboy_2.png"],
@@ -240,7 +240,7 @@ const products = [
   {
     id: 16,
     name: "Cotton Bra-Top",
-    price: 3800.0,
+    price: 4500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/s_bra_4.png"],
     colors: ["black", "white", "yellow", "maroon", "blue", "grey", "lime"],
@@ -252,7 +252,7 @@ const products = [
   {
     id: 17,
     name: "Lace Bra-Top",
-    price: 3800.0,
+    price: 4500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: ["/assets/img/lace_bra_top_1.png"],
     colors: ["black", "white", "navy", "grey", "maroon"],
@@ -264,7 +264,7 @@ const products = [
   {
     id: 18,
     name: "High Waist Girdle",
-    price: 10800.0,
+    price: 12000.0,
     description: "High waisted shaper.",
     images: [
       "/assets/img/high_waist_girdle_4.webp",
@@ -281,7 +281,7 @@ const products = [
   {
     id: 19,
     name: "Shaper Tights",
-    price: 9500.0,
+    price: 11000.0,
     description: "Body shaper with tights for extra utility.",
     images: [
       "/assets/img/shaper_tights_1.jpg",
@@ -297,7 +297,7 @@ const products = [
   {
     id: 20,
     name: "Tights with Pockets",
-    price: 4500.0,
+    price: 5500.0,
     description: "Tights with pockets to hold your desired item.",
     images: [
       "/assets/img/skin_tight_side_pocket_1.jpg",
@@ -313,7 +313,7 @@ const products = [
   {
     id: 21,
     name: "Camisole Vest",
-    price: 3000.0,
+    price: 3800.0,
     description: "Camisole vest for your daily activities.",
     images: [
       "/assets/img/camisole_vest_1.png",
@@ -330,7 +330,7 @@ const products = [
   {
     id: 22,
     name: "BDSM Kit",
-    price: 28000.0,
+    price: 30000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/bdsmkit_4.webp",
@@ -347,7 +347,7 @@ const products = [
   {
     id: 23,
     name: "Plunge Bra",
-    price: 11200.0,
+    price: 12500.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/plungebra.png",
@@ -363,7 +363,7 @@ const products = [
   {
     id: 24,
     name: "Lingerie Set IV",
-    price: 19800.0,
+    price: 22000.0,
     description: "Sexy Lingerie Set with Gold Straps.",
     images: [
       "/assets/img/lingerie_set_iv_1.webp",
@@ -380,7 +380,7 @@ const products = [
   {
     id: 25,
     name: "Lingerie Set V",
-    price: 20500.0,
+    price: 22000.0,
     description: "Sexy Lingerie Set with Handgloves and Pop-Hose Socks. ",
     images: [
       "/assets/img/lin_set_v_1.webp",
@@ -397,7 +397,7 @@ const products = [
   {
     id: 26,
     name: "V-Decorated Panties",
-    price: 2200.0,
+    price: 2500.0,
     description: "Sexy Panties with V-shaped Ornaments ",
     images: [
       "/assets/img/v_panties_1.webp",
@@ -414,7 +414,7 @@ const products = [
   {
     id: 27,
     name: "3-Piece Lingerie Set I",
-    price: 18000.0,
+    price: 20000.0,
     description: "Lorem ipsum var deux vox machina.",
     images: [
       "/assets/img/lingerie_set_6_i.webp",
@@ -431,7 +431,7 @@ const products = [
   {
     id: 28,
     name: "Silk Striped Pyjamas",
-    price: 14500.0,
+    price: 16000.0,
     description: "100% Silk pyjamas",
     images: [
       "/assets/img/striped_pyj_3.webp",
@@ -448,7 +448,7 @@ const products = [
   {
     id: 34,
     name: "Boob Tape [L]",
-    price: 5900.0,
+    price: 6800.0,
     description: "Tapes that lifts your boobs and confidence.",
     images: [
       "/assets/img/boobtapeboob.webp",
@@ -465,7 +465,7 @@ const products = [
   {
     id: 35,
     name: "Boob Tape [XL]",
-    price: 6900.0,
+    price: 7800.0,
     description: "Tapes that lifts your boobs and confidence.",
     images: [
       "/assets/img/boobtapeboob.webp",
@@ -482,7 +482,7 @@ const products = [
   {
     id: 36,
     name: "2-Piece (Sleep) Night Wear",
-    price: 7800.0,
+    price: 9000.0,
     description:
       "Cotton 2 piece 'Sleep' printed night wear. (Design of choice is to be communicated during delivery processing).",
     images: [
@@ -499,7 +499,7 @@ const products = [
   {
     id: 37,
     name: "Full Cup Bra I",
-    price: 7800.0,
+    price: 9000.0,
     description:
       "Full cup bra with Leopard spot pattern. Sizes are in the 'C' category",
     images: ["/assets/img/bra_s3_1.webp", "/assets/img/bra_s3_2.webp"],
@@ -512,7 +512,7 @@ const products = [
   {
     id: 38,
     name: "Half Cup Bra ",
-    price: 7800.0,
+    price: 9000.0,
     description:
       "Half cup bra with over-boob strap. Sizes are in the 'B' category",
     images: ["/assets/img/bra_s2_1.webp"],
@@ -525,7 +525,7 @@ const products = [
   {
     id: 39,
     name: "2-Piece Full Pyjamas Set I",
-    price: 20300.0,
+    price: 22000.0,
     description:
       "City girl indoor and outdoor pyjamas. Perfect for girl's night, PJ parties and more.",
     images: [
@@ -542,7 +542,7 @@ const products = [
   {
     id: 40,
     name: "Binny's Bra I",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'C' category.",
     images: ["/assets/img/bra_s1_1.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -554,7 +554,7 @@ const products = [
   {
     id: 41,
     name: "Binny's Bra II",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'D' category.",
     images: ["/assets/img/bra_s1_2.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -566,7 +566,7 @@ const products = [
   {
     id: 42,
     name: "Binny's Bra III",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'C' category.",
     images: ["/assets/img/bra_s1_3.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -578,7 +578,7 @@ const products = [
   {
     id: 43,
     name: "Binny's Bra IV",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'C' category.",
     images: ["/assets/img/bra_s1_4.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -590,7 +590,7 @@ const products = [
   {
     id: 44,
     name: "Binny's Bra V",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'B' category.",
     images: ["/assets/img/bra_s1_5.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -602,7 +602,7 @@ const products = [
   {
     id: 45,
     name: "Binny's Bra VI",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'C' category.",
     images: ["/assets/img/bra_s1_6.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -614,7 +614,7 @@ const products = [
   {
     id: 46,
     name: "Binny's Bra VII",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'D' category.",
     images: ["/assets/img/bra_s1_7.jpeg"],
     colors: ["black", "pink", "blue", "black", "brown"],
@@ -626,7 +626,7 @@ const products = [
   {
     id: 47,
     name: "Binny's Bra VIII",
-    price: 8800.0,
+    price: 10000.0,
     description: "Sizes are in the 'E' category.",
     images: ["/assets/img/bra_s1_8.jpeg"],
     colors: ["black", "pink", "grey", "blue", "maroon", "brown"],
@@ -638,7 +638,7 @@ const products = [
   {
     id: 48,
     name: "Lingerie Gown Set I",
-    price: 9500.0,
+    price: 10500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s1_2.webp",
@@ -653,7 +653,7 @@ const products = [
   {
     id: 49,
     name: "Sizeless Cotton Gown I",
-    price: 9800.0,
+    price: 11000.0,
     description:
       "'No Pants is the Best Pants.' Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szless_gown_1.webp"],
@@ -666,7 +666,7 @@ const products = [
   {
     id: 50,
     name: "Lingerie Gown Set II",
-    price: 9500.0,
+    price: 10500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s2_1.webp",
@@ -682,7 +682,7 @@ const products = [
   {
     id: 51,
     name: "Lingerie Gown Set III",
-    price: 9500.0,
+    price: 10500.0,
     description: "Comes with a G-string.",
     images: [
       "/assets/img/lin_gown_s3_1.jpeg",
@@ -699,7 +699,7 @@ const products = [
   {
     id: 52,
     name: "2-Piece Full Pyjamas Set II",
-    price: 16800.0,
+    price: 18500.0,
     description: "Comfy pyjamas for a good night's rest.",
     images: [
       "/assets/img/f_pyj_l_slv_1.jpeg",
@@ -715,7 +715,7 @@ const products = [
   {
     id: 54,
     name: "High Waist Panties",
-    price: 2500.0,
+    price: 3000.0,
     description: "High waist panties for that extra tummy tuck.",
     images: ["/assets/img/panties_1.png"],
     colors: ["beige", "black", "grey", "red"],
@@ -727,7 +727,7 @@ const products = [
   {
     id: 55,
     name: "Panties Set I",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cndom/Lace Panties.",
     images: ["/assets/img/panties_2.png"],
     colors: [
@@ -748,7 +748,7 @@ const products = [
   {
     id: 56,
     name: "Panties Set II",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cndom/Lace Panties.",
     images: ["/assets/img/panties_3.png"],
     colors: ["black", "grey", "red", "pink", "skyblue"],
@@ -760,7 +760,7 @@ const products = [
   {
     id: 57,
     name: "Panties Set III",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cndom/Lace Panties.",
     images: ["/assets/img/panties_4.png"],
     colors: ["beige", "grey", "pink", "skyblue"],
@@ -772,7 +772,7 @@ const products = [
   {
     id: 58,
     name: "Panties Set IV",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/panties_5.png"],
     colors: [
@@ -793,7 +793,7 @@ const products = [
   {
     id: 59,
     name: "Panties Set V",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/panties_6.png"],
     colors: ["white", "red", "pink", "skyblue"],
@@ -805,7 +805,7 @@ const products = [
   {
     id: 60,
     name: "Panties Set VI",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/panties_7.png"],
     colors: [
@@ -826,7 +826,7 @@ const products = [
   {
     id: 61,
     name: "Panties Set VII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/panties_8.png"],
     colors: [
@@ -848,7 +848,7 @@ const products = [
   {
     id: 62,
     name: "Panties Set VIII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton Panties.",
     images: ["/assets/img/panties_9.png"],
     colors: [
@@ -870,7 +870,7 @@ const products = [
   {
     id: 63,
     name: "High Waist Panties (Lace)",
-    price: 1900.0,
+    price: 2500.0,
     description:
       "High waist panties for that extra tummy tuck, this time, in lace.",
     images: ["/assets/img/highpant_1.png"],
@@ -883,7 +883,7 @@ const products = [
   {
     id: 64,
     name: "Fishnet Pantyhose",
-    price: 4300.0,
+    price: 5000.0,
     description:
       "(Design of choice is to be communicated during delivery processing).",
     images: [
@@ -901,7 +901,7 @@ const products = [
   {
     id: 65,
     name: "Fishnet Gown",
-    price: 11800.0,
+    price: 13000.0,
     description:
       "(Design of choice is to be communicated during delivery processing).",
     images: [
@@ -918,7 +918,7 @@ const products = [
   {
     id: 66,
     name: "Biker Shorts I",
-    price: 5900.0,
+    price: 6500.0,
     description: "Multipurpose tight shorts.",
     images: [
       "/assets/img/biker_shorts_1.webp",
@@ -933,7 +933,7 @@ const products = [
   {
     id: 67,
     name: "Lingerie Set VI",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lingerie Set with Pop-Hose Socks.",
     images: [
       "/assets/img/lin_set_vi_1.webp",
@@ -950,7 +950,7 @@ const products = [
   {
     id: 68,
     name: "Lingerie Set VII",
-    price: 20500.0,
+    price: 22000.0,
     description: "Sexy Lingerie Set. (Comes Only in the Pattern Above)",
     images: [
       "/assets/img/lin_set_vii_1.webp",
@@ -966,7 +966,7 @@ const products = [
   {
     id: 69,
     name: "Lingerie Set VIII",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lingerie Set",
     images: ["/assets/img/lin_set_viii_1.webp"],
     colors: ["black"],
@@ -978,7 +978,7 @@ const products = [
   {
     id: 70,
     name: "Lingerie Set IX",
-    price: 23000.0,
+    price: 25000.0,
     description: "Comes Only in the Pattern Above",
     images: ["/assets/img/lin_set_ix_1.webp"],
     colors: ["black"],
@@ -990,7 +990,7 @@ const products = [
   {
     id: 71,
     name: "Lingerie Set X",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lngerie Set",
     images: ["/assets/img/lin_set_x_1.webp"],
     colors: ["black"],
@@ -1002,7 +1002,7 @@ const products = [
   {
     id: 72,
     name: "Lingerie Set XI",
-    price: 20500.0,
+    price: 22000.0,
     description: "Sexy Lngerie Set",
     images: ["/assets/img/lin_set_xi_1.webp"],
     colors: ["pink"],
@@ -1014,7 +1014,7 @@ const products = [
   {
     id: 73,
     name: "Lingerie Set XII",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lngerie Set",
     images: [
       "/assets/img/lin_set_xii_1.webp",
@@ -1029,7 +1029,7 @@ const products = [
   {
     id: 74,
     name: "Lingerie Set XIII",
-    price: 23000.0,
+    price: 25000.0,
     description: "Sexy Lngerie Set",
     images: ["/assets/img/lin_set_xiii_1.webp"],
     colors: ["black"],
@@ -1041,7 +1041,7 @@ const products = [
   {
     id: 75,
     name: "Lingerie Set XIV",
-    price: 23000.0,
+    price: 25000.0,
     description: "Lace Colours can be Customised During Order Processing.",
     images: [
       "/assets/img/lin_set_xiv_1.webp",
@@ -1056,7 +1056,7 @@ const products = [
   {
     id: 76,
     name: "Panties Set IX",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties",
     images: ["/assets/img/pant_1.webp"],
     colors: ["white", "pink", "red", "grey", "blue", "gold"],
@@ -1068,7 +1068,7 @@ const products = [
   {
     id: 77,
     name: "Panties Set X",
-    price: 1900.0,
+    price: 2200.0,
     description: "Lace panties.",
     images: ["/assets/img/pant_2.webp"],
     colors: ["white", "pink", "beige", "red"],
@@ -1080,7 +1080,7 @@ const products = [
   {
     id: 78,
     name: "3in1 Classic Beach Wear",
-    price: 20500.0,
+    price: 22000.0,
     description:
       "(Desired Design is to be Communcated During Order Processing).",
     images: [
@@ -1098,7 +1098,7 @@ const products = [
   {
     id: 79,
     name: "Biker Tights II",
-    price: 2300.0,
+    price: 3000.0,
     description: "Multipurpose tight shorts.",
     images: ["/assets/img/tights_biker_1.webp"],
     colors: ["brown", "beige", "blue", "black", "grey"],
@@ -1110,7 +1110,7 @@ const products = [
   {
     id: 80,
     name: "Short Gym Wear (Vest)",
-    price: 13800.0,
+    price: 15000.0,
     description:
       "Hit the gym with swag and confidence and crush your fitness goals. Opt for the vest if you want to show of those sleek arms.",
     images: ["/assets/img/s_gymwear_1.webp", "/assets/img/s_gymwear_2.webp"],
@@ -1123,7 +1123,7 @@ const products = [
   {
     id: 81,
     name: "2-Piece (Cheer) Night Wear",
-    price: 9300.0,
+    price: 10500.0,
     description: "Night wear for a beautiful night's sleep.",
     images: ["/assets/img/cheer_1.webp"],
     colors: ["maroon", "navy", "skyblue", "pink"],
@@ -1135,7 +1135,7 @@ const products = [
   {
     id: 82,
     name: "Sizeless Cotton Gown II",
-    price: 9800.0,
+    price: 11000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: [
       "/assets/img/szl_ii_1.webp",
@@ -1151,7 +1151,7 @@ const products = [
   {
     id: 83,
     name: "Sizeless Cotton Gown III",
-    price: 5200.0,
+    price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_iii_1.png"],
     colors: ["white"],
@@ -1163,7 +1163,7 @@ const products = [
   {
     id: 84,
     name: "Sizeless Cotton Gown IV",
-    price: 5200.0,
+    price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_iv_1.png"],
     colors: ["white"],
@@ -1175,7 +1175,7 @@ const products = [
   {
     id: 85,
     name: "Sizeless Cotton Gown V",
-    price: 5200.0,
+    price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_v_1.png"],
     colors: ["white"],
@@ -1187,7 +1187,7 @@ const products = [
   {
     id: 88,
     name: "Lingerie-BeachWear",
-    price: 14200.0,
+    price: 15500.0,
     description: "Sexy lingerie and beach hybrid wear. Show off your style. ",
     images: [
       "/assets/img/lin_bch_1.webp",
@@ -1204,7 +1204,7 @@ const products = [
   {
     id: 89,
     name: "Panties Set XI",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/pant_3.webp"],
     colors: ["pink", "red", "white", "maroon", "blue", "yellow"],
@@ -1216,7 +1216,7 @@ const products = [
   {
     id: 90,
     name: "Panties Set XII",
-    price: 19000.0,
+    price: 2200.0,
     description: "Cotton/Lace panties.",
     images: ["/assets/img/pant_4.webp"],
     colors: ["pink", "red", "brown", "purple", "blue", "black"],
@@ -1228,7 +1228,7 @@ const products = [
   {
     id: 91,
     name: "Panties Set XIII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton/Lace panties.",
     images: ["/assets/img/pant_5.webp"],
     colors: ["pink", "brown", "beige", "black"],
@@ -1240,7 +1240,7 @@ const products = [
   {
     id: 92,
     name: "Panties Set XIV",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton Panties.",
     images: ["/assets/img/pant_6.webp"],
     colors: ["red", "skyblue", "red", "blue", "yellow"],
@@ -1252,7 +1252,7 @@ const products = [
   {
     id: 93,
     name: "Panties Set XV",
-    price: 1850.0,
+    price: 2000.0,
     description: "Cotton panties.",
     images: ["/assets/img/pant_7.webp"],
     colors: ["white", "skyblue", "red", "blue", "yellow", "pink", "green"],
@@ -1264,7 +1264,7 @@ const products = [
   {
     id: 94,
     name: "Panties Set XVI",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/pant_8.webp"],
     colors: ["skyblue", "red", "yellow", "pink"],
@@ -1276,7 +1276,7 @@ const products = [
   {
     id: 95,
     name: "Panties Set XVII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Lorem Ipsum",
     images: ["/assets/img/pant_9.webp"],
     colors: ["grey", "red", "white"],
@@ -1288,7 +1288,7 @@ const products = [
   {
     id: 96,
     name: "Panties Set XVIII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/pant_10.webp"],
     colors: ["grey", "brown"],
@@ -1300,7 +1300,7 @@ const products = [
   {
     id: 97,
     name: "Panties Set XIX",
-    price: 1700.0,
+    price: 2000.0,
     description: "(Desired Print may be Requested during Order Processing)",
     images: ["/assets/img/pant_11.webp"],
     colors: ["red", "white", "pink", "black", "grey", "skyblue"],
@@ -1312,7 +1312,7 @@ const products = [
   {
     id: 98,
     name: "Panties Set XX",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton/Lace panties (Brief).",
     images: ["/assets/img/pant_12.webp"],
     colors: ["grey", "beige", "pink"],
@@ -1324,7 +1324,7 @@ const products = [
   {
     id: 99,
     name: "Panties Set XXI",
-    price: 1900.0,
+    price: 2200.0,
     description: "Lace panties.",
     images: ["/assets/img/pant_13.webp"],
     colors: ["red", "green", "pink", "purple"],
@@ -1336,7 +1336,7 @@ const products = [
   {
     id: 100,
     name: "Panties Set XXII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Lace panties",
     images: ["/assets/img/pant_14.webp"],
     colors: ["blue", "beige", "pink", "skyblue"],
@@ -1348,7 +1348,7 @@ const products = [
   {
     id: 101,
     name: "Panties Set XXIII",
-    price: 1900.0,
+    price: 2200.0,
     description: "Cotton panties.",
     images: ["/assets/img/pant_15.webp"],
     colors: ["blue", "beige", "yellow", "purple"],
@@ -1360,7 +1360,7 @@ const products = [
   {
     id: 102,
     name: "Nipple Cover",
-    price: 4000.0,
+    price: 5000.0,
     description: "Cover your nipples with this delicate covering.",
     images: ["/assets/img/nipple_cover.webp"],
     colors: ["grey"],
@@ -1372,7 +1372,7 @@ const products = [
   {
     id: 106,
     name: "3in1 Calvin Klein",
-    price: 11700.0,
+    price: 13000.0,
     description: "Pure cotton, high quality.",
     images: ["/assets/img/3in1_ck.webp"],
     colors: ["red"],
@@ -1384,7 +1384,7 @@ const products = [
   {
     id: 107,
     name: "3in1 Versace",
-    price: 11700.0,
+    price: 13000.0,
     description: "Pure cotton, high quality.",
     images: ["/assets/img/3in1_vers.webp"],
     colors: ["red"],
@@ -1395,8 +1395,8 @@ const products = [
   },
   {
     id: 108,
-    name: "Bker Shorts III",
-    price: 5900.0,
+    name: "Biker Shorts III",
+    price: 6500.0,
     description: "Multipurpose tight shorts.",
     images: ["/assets/img/tights_biker_ii.webp"],
     colors: ["maroon", "green", "blue", "black", "grey"],
@@ -1408,7 +1408,7 @@ const products = [
   {
     id: 109,
     name: "Bker Shorts IV",
-    price: 3200.0,
+    price: 4000.0,
     description: "Multipurpose tight shorts.",
     images: ["/assets/img/tights_biker_iii.webp"],
     colors: ["purple", "green", "blue", "black", "grey"],
@@ -1420,7 +1420,7 @@ const products = [
   {
     id: 110,
     name: "Bker Shorts V",
-    price: 5900.0,
+    price: 6500.0,
     description: "Multipurpose tight shorts.",
     images: ["/assets/img/tights_biker_iv.webp"],
     colors: ["black", "grey"],
@@ -1435,7 +1435,7 @@ const products = [
   {
     id: 29,
     name: "Aurora (Fancy Stripes)",
-    price: 12300.0,
+    price: 14000.0,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/aurora_kaft_1.webp",
@@ -1452,7 +1452,7 @@ const products = [
   {
     id: 30,
     name: "Marvelous",
-    price: 8500.0,
+    price: 10000.0,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/marv_kaft_1.webp",
@@ -1469,7 +1469,7 @@ const products = [
   {
     id: 53,
     name: "Admiral",
-    price: 9500.0,
+    price: 11000.0,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/admiral_1.jpeg",
@@ -1486,7 +1486,7 @@ const products = [
   {
     id: 31,
     name: "Condom Boxers",
-    price: 7800.0,
+    price: 9000.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/condom_boxers.webp"],
@@ -1499,7 +1499,7 @@ const products = [
   {
     id: 32,
     name: "Beach Boxers",
-    price: 8300.0,
+    price: 9500.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/3in1_boxers_3.webp"],
@@ -1512,7 +1512,7 @@ const products = [
   {
     id: 33,
     name: "MelloW Boxers",
-    price: 9500.0,
+    price: 11000.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/elastic-boxers.webp"],
@@ -1525,7 +1525,7 @@ const products = [
   {
     id: 86,
     name: "Jack Carter",
-    price: 8500.0,
+    price: 10000.0,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/jack_cart_1.webp",
@@ -1552,7 +1552,7 @@ const products = [
   {
     id: 87,
     name: "Jimmy Carter (Finest Luxury Wool)",
-    price: 23000.0,
+    price: 25000.0,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/jim_cart_1.webp",
@@ -1569,7 +1569,7 @@ const products = [
   {
     id: 103,
     name: "Hermes Boxers (4in1)",
-    price: 8800.0,
+    price: 10000.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/hermes_box.webp"],
@@ -1582,7 +1582,7 @@ const products = [
   {
     id: 104,
     name: "Lacoste Boxers (4in1)",
-    price: 8800.0,
+    price: 10000.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/lacoste_box.webp"],
@@ -1595,7 +1595,7 @@ const products = [
   {
     id: 105,
     name: "Polo Boxers (4in1)",
-    price: 8800.0,
+    price: 10000.0,
     description:
       "Boxers that is a Confidence booster. (only size 3XL available)",
     images: ["/assets/img/polo_box.webp"],
