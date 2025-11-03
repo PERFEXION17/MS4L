@@ -1419,7 +1419,7 @@ const products = [
   },
   {
     id: 110,
-    name: "Bker Shorts V",
+    name: "Biker Shorts V",
     price: 6500.0,
     description: "Multipurpose tight shorts.",
     images: ["/assets/img/tights_biker_iv.webp"],
@@ -1428,6 +1428,54 @@ const products = [
     sizeLimits: { min: 6, max: 20 },
     category: "tights",
     sku: "THT-BKR-SHT-5",
+  },
+  {
+    id: 111,
+    name: "2-Piece Silk and Lace Night Wear",
+    price: 6500.0,
+    description: "Lace top and silk shorts.",
+    images: [
+      "/assets/img/silk_lace_2pc_1.webp",
+      "/assets/img/silk_lace_2pc_2.webp",
+      "/assets/img/silk_lace_2pc_5.webp",
+      "/assets/img/silk_lace_2pc_4.webp",
+    ],
+    colors: ["maroon", "yellow", "blue", "purple"],
+    sizeType: "numerical",
+    sizeLimits: { min: 10, max: 20 },
+    category: "night",
+    sku: "NHT-2PC-S&L",
+  },
+  {
+    id: 112,
+    name: "Full Cup Bra II",
+    price: 9500.0,
+    description: "Full cup bra. Sizes are in the 'C' category",
+    images: [
+      "/assets/img/bra_f_cup_ii.webp",
+      "/assets/img/bra_f_cup_ii_2.webp",
+    ],
+    colors: ["blue", "maroon", "navy", "pink", "black"],
+    sizeType: "numerical",
+    sizeLimits: { min: 36, max: 42 },
+    category: "bra",
+    sku: "BRA-F-CUP-2",
+  },
+  {
+    id: 113,
+    name: "Full Gym Wear I (Vest)",
+    price: 25000.0,
+    description:
+      "Hit the gym with swag and confidence and crush your fitness goals. Vest for extra swagger. Comes with removable breast pad.",
+    images: [
+      "/assets/img/full_gym_wear_vest_1.webp",
+      "/assets/img/full_gym_wear_vest_2.webp",
+    ],
+    colors: ["blue", "red", "grey", "brown", "black"],
+    sizeType: "numerical",
+    sizeLimits: { min: 10, max: 20 },
+    category: "gym_wear",
+    sku: "GYM-F-GYM-W-1",
   },
 
   // -----MEN-----
