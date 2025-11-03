@@ -1,0 +1,12 @@
+# robots.txt for https://ms4l.com.ng
+
+User-agent: *
+Allow: /
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /wp-admin/
+Disallow: /search/
+
+# Sitemap location
+Sitemap: https://ms4l.com.ng/sitemap.xml
