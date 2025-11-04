@@ -10,11 +10,11 @@
   --gold: #ffdf00;
 }
 
-/* .darkmode {
+.darkmode {
   --color_light: #1d1a1b;
   --color_dark: #d3d3d3;
   --body: #1d1a1b;
-} */
+}
 
 html {
   scroll-behavior: smooth;

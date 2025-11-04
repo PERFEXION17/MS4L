@@ -1,5 +1,9 @@
 //BACK TO TOP
 
+import { products } from "./products.js";
+import {updateCartCounter} from "./nav.js";
+
+
 //MENU TOGGLE
 
 const menu = document.getElementById("menu");
@@ -49,7 +53,7 @@ if (closeModalBtn) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Only run on shop.html and men.html
-  if (window.location.pathname.includes("shop.html" && "men.html")) {
+  if (window.location.pathname.includes("women.html" && "men.html")) {
     const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
     if (addToCartButtons.length === 0) {

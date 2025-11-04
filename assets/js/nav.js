@@ -16,3 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Error updating cart counter:", e);
   }
 });
+
+export {updateCartCounter}
