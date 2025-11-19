@@ -1656,7 +1656,7 @@ main {
 /* ----ABOUT ME----- */
 
 .about_con {
-  margin: 0 auto 3rem auto;
+  margin: auto;
   width: 100%;
   padding: 0 0 3rem 0;
   position: relative;
@@ -1692,7 +1692,7 @@ main {
 
 .about_text {
   margin: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .about_text h2 {
@@ -1711,7 +1711,7 @@ main {
 .about_list{
   margin-bottom: 1rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -1728,50 +1728,75 @@ main {
   line-height: 2;
 }
 
-.about_text ul {
-  font-weight: 600;
-  text-align: left;
-  padding: 0 2rem;
-  list-style: disc;
+.motto{
+  font-family: var(--ff-heading);
 }
 
 .toggle-section {
-  margin-bottom: 1.25rem;
   width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .toggle-button {
-  width: 100%;
-  display: inline-block;
-  padding: 1rem 1.25rem;
+  width: 95%;
   margin: auto;
-  background: var(--color_dark);
-  color: var(--color_light);
+  padding: 1rem 1.25rem;
+  display: inline-block;
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  color: var(--text);
   font-size: 1.2rem;
+  font-family: var(--ff-heading);
   font-weight: 700;
-  font-family: var(--font_1);
-  text-align: left;
-  border: none;
+  outline: none;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .toggle-button:hover {
-  background: var(--color_light);
-  color: var(--color_dark);
+  box-shadow: var(--shadow);
+}
+
+.toggle-button:active{
+  scale: .95;
+  box-shadow: var(--shadow-act);
 }
 
 .toggle-content {
   max-height: 0;
-  overflow: hidden;
   padding: 0;
-  background: var(--white);
-  transition: max-height 0.5s ease, padding 0.5s ease;
+  background-color: var(--white);
+  color: var(--text);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.toggle-content::-webkit-scrollbar{
+  width: .5rem;
+  background-color: var(--primary-color);
+}
+
+.toggle-content::-webkit-scrollbar-thumb{
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+.toggle-content h3{
+  margin-bottom: 1rem;
+  font-family: var(--ff-heading);
+  text-align: center;
 }
 
 .toggle-content.active {
   max-height: 60vh;
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin-top: 1rem;
   overflow-y: auto;
 }
@@ -1779,9 +1804,7 @@ main {
 .toggle-content p,
 .toggle-content ul,
 .toggle-content h4 {
-  font-family: var(--font_2);
   font-size: 1rem;
-  color: var(--color_dark);
   margin-bottom: 1rem;
 }
 
