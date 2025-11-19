@@ -94,6 +94,16 @@ body {
   transition: var(--transition);
 }
 
+body::-webkit-scrollbar{
+  width: .5rem;
+  background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
 a {
   text-decoration: none;
 }
