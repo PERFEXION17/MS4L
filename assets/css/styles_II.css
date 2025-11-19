@@ -1142,7 +1142,7 @@ img {
     color: var(--color_dark);
 }
 
-/* -----NEW ARRIVALS----- */
+/* ===== GALLERY ===== */
 
 video {
     width: 100%;
@@ -1257,7 +1257,7 @@ video {
         width: 20%;
     }
 
-    /* -----CHECKOUT----- */
+    /* ===== CHECKOUT ===== */
 
     .checkout-con {
         justify-content: flex-start;
@@ -1281,7 +1281,7 @@ video {
         background-color: var(--color_light);
     }
 
-    /* -----NEW ARRIVALS----- */
+    /* ===== GALLERY ===== */
     .vid_con {
         grid-template-columns: repeat(3, 1fr);
     }

@@ -70,9 +70,9 @@ function renderProducts(list) {
       `;
 
       // On-click: go to product page
-      item.addEventListener("click", () => {
-        window.location.href = `/prod_details.html?id=${p.id}`;
-      });
+      // item.addEventListener("click", () => {
+      //   window.location.href = `/prod_details.html?id=${p.id}`;
+      // });
 
       // Add JSON-LD structured data
       const ld = {

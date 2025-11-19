@@ -3,83 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="5oxUgUYbjZH17wDAA1bpLm0WNghszbmSe6B5LlFhq5k"
+    />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/styles_II.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
       rel="shortcut icon"
-      href="assets/img/MS4L_logo.png"
+      href="assets/img/MS4L_logo.webp"
       type="image/x-icon"
     />
-    <title>MS4L | NEW ARRIVALS</title>
+    <title>My Store For Life</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "LocalBusiness"],
+        "name": "My Store For Life",
+        "alternateName": "MS4L",
+        "url": "https://ms4l.com.ng",
+        "logo": "https://ms4l.com.ng/assets/img/MS4L_logo.png",
+        "image": "https://ms4l.com.ng/assets/img/MS4L_logo.png",
+        "description": "My Store For Life offers comfortable and affordable undergarments for men and women — including bras, lingerie, boxers, tights, singlets, and nightwear.",
+        "slogan": "Comfort and Elegance in Every Layer",
+        "email": "feliciaonaji0@gmail.com",
+        "telephone": "+234-902-504-9148",
+        "priceRange": "₦₦",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "45 Rwang Pam Street, Jos",
+          "addressLocality": "Plateau",
+          "addressCountry": "NG"
+        },
+        "sameAs": [
+          "https://www.instagram.com/ms4l.ng",
+          "https://www.facebook.com/ms4l.ng",
+          "https://twitter.com/ms4l_ng"
+        ],
+        "brand": {
+          "@type": "Brand",
+          "name": "My Store For Life",
+          "logo": "https://ms4l.com.ng/assets/img/MS4L_logo.png"
+        },
+        "foundingDate": "2023",
+        "founder": {
+          "@type": "Person",
+          "name": "Onaji Onyemowo Felicia"
+        }
+      }
+    </script>
   </head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ3C15Q6P9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-CZ3C15Q6P9"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-CZ3C15Q6P9');
-</script>
+    gtag("config", "G-CZ3C15Q6P9");
+  </script>
+
   <body>
+    <div id="preloader" class="preloader">
+      <div class="loader-content">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
     <header>
-      <nav class="nav_container">
+      <nav class="navbar">
         <div class="logo">
-          <a href="index.html"><img src="./assets/img/MS4L_logo.png" alt="" /></a>
+          <a href="index.html"
+            ><img src="./assets/img/MS4L_logo.png" alt=""
+          /></a>
         </div>
 
-        <div class="cart">
-          <a href="cart.html"
-            ><div class="cart_wrap">
-              <i class="ri-shopping-bag-2-line"></i
-              ><span class="cart_no">0</span>
-            </div></a
-          >
-        </div>
-
-        <div class="toggle_icon">
-          <i
-            id="menu-toggle"
-            class="ri-menu-5-fill"
-            style="font-size: 24px; cursor: pointer"
-          ></i>
-        </div>
-
-        <ul id="menu" class="menu">
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a class="mark" href="new_arrival.html">New Arrivals</a></li>
           <li><a href="men.html">Men</a></li>
           <li><a href="women.html">Women</a></li>
+          <li><a class="mark" href="gallery.html">Gallery</a></li>
           <li><a href="aboutme.html" target="_blank">About Us</a></li>
         </ul>
+
+        <div class="utilities">
+          <div class="cart-icon-wrapper">
+            <button id="mini-cart-toggle" aria-label="Open cart">
+              <i class="ph ph-handbag"></i>
+              <span class="cart-counter" id="mini-cart-counter">0</span>
+            </button>
+
+            <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+              <div class="mini-cart-header">
+                <h4>Your Bag</h4>
+                <button id="close-mini-cart" aria-label="Close">
+                  <i class="ph ph-x"></i>
+                </button>
+              </div>
+              <div class="mini-cart-items" id="mini-cart-items"></div>
+              <div
+                class="mini-cart-footer"
+                id="mini-cart-footer"
+                style="display: none"
+              >
+                <div class="mini-cart-subtotal">
+                  <span>Subtotal:</span>
+                  <strong
+                    id="mini-cart-subtotal"
+                    class="mini-cart-subtotal-price"
+                    >₦0</strong
+                  >
+                </div>
+                <div class="mini-cart-actions">
+                  <a href="bag.html" class="btn-secondary">View Bag</a>
+                  <a href="checkout.html" class="btn-primary">Checkout</a>
+                </div>
+              </div>
+              <div class="mini-cart-empty" id="mini-cart-empty">
+                <p>Your bag is empty</p>
+                <a href="women.html" class="btn-link"
+                  >Explore Our Collection!</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <button id="btn">
+            <i class="ri-moon-line"></i><i class="ri-sun-line"></i>
+          </button>
+
+          <button id="menu-btn" class="menu-btn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
     </header>
 
+    <div id="menulist" class="menu-overlay">
+      <ul class="menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a class="mark" href="gallery.html">Gallery</a></li>
+        <li><a href="aboutme.html" target="_blank">About Us</a></li>
+      </ul>
+    </div>
+
     <main class="main">
-      <div class="srch_wrap">
-        <div class="cart_2">
-          <a href="cart.html"
-            ><div class="cart_wrap">
-              <i class="ri-shopping-bag-2-line"></i
-              ><span class="cart_no">0</span>
-            </div></a
-          >
-        </div>
 
-        <!-- <div class="search-bar">
-          <input type="text" id="search-input" placeholder="Search" />
-          <select id="category-filter">
-            <option value="">All Categories</option>
-          </select>
-          <button id="clear-search"><i class="ri-close-line"></i></button>
-        </div> -->
-      </div>
-
-      <h2>NEW ARRIVALS</h2>
+      <h2>GALLERY</h2>
 
       <div class="vid_con">
         <div class="vid_tile" onclick="goToProduct(15)">
@@ -170,7 +260,12 @@
         </div> -->
 
         <div class="vid_tile" onclick="goToProduct(52)">
-          <video src="/assets/vids/full_pyj_II_1.mp4" autoplay muted loop></video>
+          <video
+            src="/assets/vids/full_pyj_II_1.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
           <div class="vid_txt">
             <h4>2-Piece Full Pyjamas Set II</h4>
             <p class="price">&#8358;18,500</p>
@@ -235,7 +330,12 @@
         </div> -->
 
         <div class="vid_tile" onclick="goToProduct(19)">
-          <video src="/assets/vids/shaper_tights_vid.mp4" autoplay muted loop></video>
+          <video
+            src="/assets/vids/shaper_tights_vid.mp4"
+            autoplay
+            muted
+            loop
+          ></video>
           <div class="vid_txt">
             <h4>Shaper Tights</h4>
             <p class="price">&#8358;11,000</p>
@@ -279,11 +379,14 @@
         <div class="foot_box item2b">
           <h3>Customer Service</h3>
           <a href="aboutme.html#policy" target="_blank"
-            >Privacy Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Privacy Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i></a>
+            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i
+          ></a>
         </div>
 
         <div class="foot_box item3a">
@@ -318,7 +421,6 @@
         </p>
       </div>
     </footer>
-
 
     <script type="module" src="assets/js/products.js"></script>
     <script type="module" src="assets/js/nav.js"></script>
