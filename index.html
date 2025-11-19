@@ -13,6 +13,16 @@
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
       rel="shortcut icon"
       href="assets/img/MS4L_logo.webp"
       type="image/x-icon"
@@ -70,263 +80,397 @@
 
     gtag("config", "G-CZ3C15Q6P9");
   </script>
+
   <body>
-    <header>
-      <nav class="nav_container">
-        <div class="logo">
-          <a href="index.html"
-            ><img src="./assets/img/MS4L_logo.png" alt=""
-          /></a>
-        </div>
+    <div id="preloader" class="preloader">
+      <div class="loader-content">
+        <div class="spinner"></div>
+      </div>
+    </div>
 
-        <div class="cart">
-          <a href="cart.html"
-            ><div class="cart_wrap">
-              <i class="ri-shopping-bag-2-line"></i
-              ><span class="cart_no">0</span>
-            </div></a
-          >
-        </div>
+    <section class="hero">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="./assets/img/MS4L_logo.png" alt=""
+            /></a>
+          </div>
 
-        <div class="toggle_icon">
-          <i
-            id="menu-toggle"
-            class="ri-menu-5-fill"
-            style="font-size: 24px; cursor: pointer"
-          ></i>
-        </div>
+          <ul class="nav-links">
+            <li><a class="mark" href="index.html">Home</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="aboutme.html" target="_blank">About Us</a></li>
+          </ul>
 
-        <ul id="menu" class="menu">
+          <div class="utilities">
+            <div class="cart-icon-wrapper">
+              <button id="mini-cart-toggle" aria-label="Open cart">
+                <i class="ph ph-handbag"></i>
+                <span class="cart-counter" id="mini-cart-counter">0</span>
+              </button>
+
+                <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+                  <div class="mini-cart-header">
+                    <h4>Your Bag</h4>
+                    <button id="close-mini-cart" aria-label="Close">
+                      <i class="ph ph-x"></i>
+                    </button>
+                  </div>
+                  <div class="mini-cart-items" id="mini-cart-items"></div>
+                  <div
+                    class="mini-cart-footer"
+                    id="mini-cart-footer"
+                    style="display: none"
+                  >
+                    <div class="mini-cart-subtotal">
+                      <span>Subtotal:</span>
+                      <strong
+                        id="mini-cart-subtotal"
+                        class="mini-cart-subtotal-price"
+                        >₦0</strong
+                      >
+                    </div>
+                    <div class="mini-cart-actions">
+                      <a href="bag.html" class="btn-secondary">View Bag</a>
+                      <a href="checkout.html" class="btn-primary">Checkout</a>
+                    </div>
+                  </div>
+                  <div class="mini-cart-empty" id="mini-cart-empty">
+                    <p>Your bag is empty</p>
+                    <a href="women.html" class="btn-link">Explore Our Collection!</a>
+                  </div>
+                </div>
+            </div>
+
+            <button id="btn">
+              <i class="ri-moon-line"></i><i class="ri-sun-line"></i>
+            </button>
+
+            <button id="menu-btn" class="menu-btn">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <div id="menulist" class="menu-overlay">
+        <ul class="menu-links">
           <li><a class="mark" href="index.html">Home</a></li>
-          <li><a href="new_arrival.html">New Arrivals</a></li>
           <li><a href="men.html">Men</a></li>
           <li><a href="women.html">Women</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="aboutme.html" target="_blank">About Us</a></li>
         </ul>
-      </nav>
-    </header>
-
-    <main class="main">
-      <div class="srch_wrap">
-        <div class="cart_2">
-          <a href="cart.html"
-            ><div class="cart_wrap">
-              <i class="ri-shopping-bag-2-line"></i
-              ><span class="cart_no">0</span>
-            </div></a
-          >
-        </div>
       </div>
 
-      <section class="home" id="home">
-        <div class="hero_sec">
-          <div class="cta_text">
-            <h2>LUXURY THAT FEELS LIKE HOME</h2>
-            <span
-              >My Store For Life is where self-love meets style. Our pieces are
-              more than clothing, they are soft declarations of confidence,
-              beauty, and presence.</span
-            >
-            <a href="shop.html">EXPLORE</a>
+      <div class="hero-con">
+        <div class="hero-txt">
+          <div class="hero-txt_bg">
+            <h1 class="hero_h1"><span>LUXURY</span> THAT FEELS LIKE HOME</h1>
+            <p class="hero_p">
+              My Store For Life is where self-love meets style. Our pieces are
+              more than clothing. They are soft declarations of confidence,
+              beauty, and presence.
+            </p>
+
+            <a href="women.html">Explore</a>
           </div>
-          <div class="slide_con">
-            <div class="slider">
-              <div class="slide">
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    srcset="assets/img/v_panties_1.webp"
-                  />
-                  <img src="assets/img/v_panties_1.webp" alt="Hero image 1" />
-                </picture>
+        </div>
+
+        <div class="des_con">
+          <div class="des_box">
+            <div class="des_box1" onclick="goToProduct(26)">
+              <div class="in">
+                <img src="assets/img/v_panties_1.webp" alt="" />
               </div>
-              <div class="slide">
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    srcset="assets/img/pyjamas_2.png"
-                  />
-                  <img src="assets/img/pyjamas_2.png" alt="Hero image 2" />
-                </picture>
+              <div class="text">
+                <p class="name">V-Decorated Panties</p>
+                <span><i class="ph-fill ph-star"></i>4.8</span>
+                <p class="price">&#8358;2,500</p>
               </div>
-              <div class="slide">
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    srcset="assets/img/2_pcs_backnet_nightie_3.jpg"
-                  />
-                  <img
-                    src="assets/img/2_pcs_backnet_nightie_3.jpg"
-                    alt="Hero image 3"
-                  />
-                </picture>
+            </div>
+            <div class="des_box2" onclick="goToProduct(75)">
+              <div class="in">
+                <img src="assets/img/lin_set_xiv_1.webp" alt="" />
               </div>
-              <div class="slide">
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    srcset="assets/img/aurora_kaft_4.webp"
-                  />
-                  <img src="assets/img/aurora_kaft_4.webp" alt="Hero image 4" />
-                </picture>
+              <div class="text">
+                <p class="name">Lingerie Set XIV</p>
+                <span><i class="ph-fill ph-star"></i>4.5</span>
+                <p class="price">&#8358;25,000</p>
               </div>
-              <div class="slide">
-                <picture>
-                  <source
-                    media="(max-width: 768px)"
-                    srcset="assets/img/2_pcs_night_wear_4.jpg"
-                  />
-                  <img
-                    src="assets/img/2_pcs_night_wear_4.jpg"
-                    alt="Hero image 5"
-                  />
-                </picture>
+            </div>
+            <div class="des_box3" onclick="goToProduct(2)">
+              <div class="in">
+                <img src="assets/img/leggings_1.jpg" alt="" />
+              </div>
+              <div class="text">
+                <p class="name">Casual Leggings</p>
+                <span><i class="ph-fill ph-star"></i>4.7</span>
+                <p class="price">&#8358;13,000</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="seg">
-        <div class="seg_con">
-          <div class="seg_box">
-            <div class="seg_1">
-              <h4>FOR HER</h4>
-              <a href="shop.html">shop now</a>
-            </div>
-            <div class="seg_2">
-              <img
-                src="assets/img/hero_2in1.png"
-                alt="2 in 1 nightgown model"
-              />
-            </div>
-          </div>
-          <div class="seg_box">
-            <div class="seg_1">
-              <h4>FOR HIM</h4>
-              <a href="men.html">shop now</a>
-            </div>
-            <div class="seg_2">
-              <img
-                src="assets/img/hero_boxers.png"
-                alt="A black Man in white boxers"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <main class="main">
       <section id="ed_pick">
-        <h2>Editor's Pick</h2>
-        <p class="ed_pick_p">
-          A handpicked selection of our most stylish and comfortable pieces,
-          chosen to bring you the perfect blend of elegance and everyday ease.
-        </p>
-        <div class="ed_pick_con">
-          <div class="ed_pick_box" onclick="goToProduct(26)">
-            <div class="ed_pick_img">
-              <img src="assets/img/v_panties_1.webp" alt="Sexy Red Lingerie" />
+        <h2>EDITORS' PICK</h2>
+
+        <div class="slider-container-wrapper">
+          <!-- New wrapper for centering -->
+          <div class="slider-container spilled-slider">
+            <!-- Added 'spilled-slider' class -->
+            <div class="slider-wrapper">
+              <!-- Slides will be here, JS will clone for infinite effect -->
+
+              <div class="slide" onclick="goToProduct(88)">
+                <img src="assets/img/lin_bch_1.webp" alt="Image 1" />
+                <div class="slide-content">
+                  <h3>Lingerie-Beach Wear</h3>
+                  <span><i class="ph-fill ph-star"></i>4.7</span>
+                  <p>&#8358;15,500</p>
+                </div>
+              </div>
+
+              <div class="slide" onclick="goToProduct(70)">
+                <img src="assets/img/lin_set_ix_1.webp" alt="Image 2" />
+                <div class="slide-content">
+                  <h3>Lingerie Set IX</h3>
+                  <span><i class="ph-fill ph-star"></i>4.5</span>
+                  <p>&#8358;25,000</p>
+                </div>
+              </div>
+
+              <div class="slide" onclick="goToProduct(27)">
+                <img src="assets/img/lingerie_set_6_i.webp" alt="Image 3" />
+                <div class="slide-content">
+                  <h3>3-Piece Lingerie Set I</h3>
+                  <span><i class="ph-fill ph-star"></i>4.9</span>
+                  <p>&#8358;20,000</p>
+                </div>
+              </div>
+
+              <div class="slide" onclick="goToProduct(4)">
+                <img src="assets/img/lingerie_set_ii_1.jpg" alt="Image 4" />
+                <div class="slide-content">
+                  <h3>Lingerie Set II</h3>
+                  <span><i class="ph-fill ph-star"></i>4.6</span>
+                  <p>&#8358;22,000</p>
+                </div>
+              </div>
+              <!-- Cloned slides will be inserted here by JS -->
             </div>
-            <div class="ed_pick_txt">
-              <h4>V-Decorated Panties</h4>
+
+            <button class="nav-button prev-button">&#10094;</button>
+            <button class="nav-button next-button">&#10095;</button>
+          </div>
+        </div>
+
+        <a class="cta" href="women.html">EXPLORE THE COLLECTION</a>
+      </section>
+
+      <section id="logos">
+        <div class="car_con">
+          <div class="car_item item1">
+            <img src="assets/img/light.png" alt="partner-logo" />
+          </div>
+          <div class="car_item item2">
+            <img src="assets/img/light (1).png" alt="partner-logo" />
+          </div>
+          <div class="car_item item3">
+            <img src="assets/img/light (2).png" alt="partner-logo" />
+          </div>
+          <div class="car_item item4">
+            <img src="assets/img/light (3).png" alt="partner-logo" />
+          </div>
+
+          <div class="car_item item5">
+            <img src="assets/img/light.png" alt="partner-logo" />
+          </div>
+          <div class="car_item item6">
+            <img src="assets/img/light (1).png" alt="partner-logo" />
+          </div>
+          <div class="car_item item7">
+            <img src="assets/img/light (2).png" alt="partner-logo" />
+          </div>
+          <div class="car_item item8">
+            <img src="assets/img/light (3).png" alt="partner-logo" />
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h2>TESTIMONIALS</h2>
+
+        <div class="test_con">
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
               <p>
-                <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot.
               </p>
-              <span class="">&#8358;2,500</span> <br />
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ph-fill ph-star"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
             </div>
           </div>
 
-          <div class="ed_pick_box" onclick="goToProduct(29)">
-            <div class="ed_pick_img">
-              <img src="assets/img/aurora_kaft_1.webp" alt="Aurora Kaftan" />
-            </div>
-            <div class="ed_pick_txt">
-              <h4>Aurora (Fancy Stripes)</h4>
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
               <p>
-                <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot. The fox
+                leaped over the big brown bear with the honey pot.
               </p>
-              <span class="">&#8358;14,000 / Yard</span> <br />
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
             </div>
           </div>
 
-          <div class="ed_pick_box" onclick="goToProduct(10)">
-            <div class="ed_pick_img">
-              <img
-                src="assets/img/2_pcs_backnet_nightie_2.jpg"
-                alt="Back Net Night Wear"
-              />
-            </div>
-            <div class="ed_pick_txt">
-              <h4>2-Piece Back Net Night Wear</h4>
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
               <p>
-                <i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i><i class="ri-star-s-fill"></i
-                ><i class="ri-star-s-fill"></i>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot. The fox
+                leaped over the big brown bear with the honey pot.
               </p>
-              <span class="">&#8358;13,500</span> <br />
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <p>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot. The fox
+                leaped over the big brown bear with the honey pot.
+              </p>
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <p>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot. The fox
+                leaped over the big brown bear with the honey pot.
+              </p>
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test_box">
+            <div class="test_txt">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <p>
+                The fox leaped over the big brown bear with the honey pot. The
+                fox leaped over the big brown bear with the honey pot. The fox
+                leaped over the big brown bear with the honey pot.
+              </p>
+            </div>
+            <div class="test_id">
+              <div class="test_img">
+                <img src="assets/img/port_img_2.jpg" alt="Customer Image" />
+              </div>
+              <div class="test_name">
+                <p class="name">Achusim Chibuike</p>
+                <p>Frontend Developer</p>
+                <span
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+                  ><i class="ri-star-fill"></i
+                ></span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="honour">
-        <div class="honour_con">
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/fast_shipping_vector.png" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>Fast Shipping</p>
-            </div>
-          </div>
+      <div class="line"></div>
 
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/cheap_prices.png" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>Best Prices</p>
-            </div>
+      <section id="select">
+        <div class="sel_con">
+          <div class="sel_box box_1">
+            <a class="sel_link" href="women.html">HER</a>
           </div>
-
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/customer_service_vector.jpg" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>24/7 Customer Service</p>
-            </div>
+          <div class="sel_box box_2">
+            <a href="gallery.html" class="sel_link">GALLERY</a>
           </div>
-
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/return_vector.png" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>Returns & Refunds</p>
-            </div>
-          </div>
-
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/satisfied_customer_vector.png" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>Customer Delight</p>
-            </div>
-          </div>
-
-          <div class="honour_box">
-            <div class="honour_img">
-              <img src="assets/img/world_vector.png" alt="" />
-            </div>
-            <div class="honour_txt">
-              <p>Worldwide Delivery</p>
-            </div>
+          <div class="sel_box box_3">
+            <a class="sel_link" href="men.html">HIM</a>
           </div>
         </div>
       </section>
@@ -381,34 +525,31 @@
         <div class="foot_box item2b">
           <h3>Customer Service</h3>
           <a href="aboutme.html#policy" target="_blank"
-            >Privacy Policy <i class="ri-arrow-right-up-line"></i
-          ></a>
+            >Privacy Policy <i class="ph ph-arrow-up-right"></i></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Returns & Refund Policy <i class="ri-arrow-right-up-line"></i
-          ></a>
+            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Shipping and Delivery <i class="ri-arrow-right-up-line"></i
-          ></a>
+            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
         <div class="foot_box item3a">
           <h3>Contact Us</h3>
-          <p><i class="ri-mail-line"></i> : support@ms4l.com.ng</p>
-          <p><i class="ri-phone-line"></i> : +2349160596645</p>
-          <p><i class="ri-whatsapp-line"></i> : +2349025049148</p>
+          <p><i class="ph ph-envelope-simple"></i> : support@ms4l.com.ng</p>
+          <p><i class="ph ph-phone"></i> : +2349160596645</p>
+          <p><i class="ph ph-whatsapp-logo"></i> : +2349025049148</p>
         </div>
 
         <div class="foot_soc item3b">
           <h3>Follow Us</h3>
           <div class=".foot_soc-icons">
             <a href="https://www.x.com/Leeshaofficial" target="_blank"
-              ><i class="ri-twitter-x-line"></i
+              ><i class="ph ph-x-logo"></i
             ></a>
             <a href="https://www.instagram.com/My__storefl" target="_blank"
-              ><i class="ri-instagram-line"></i
+              ><i class="ph ph-instagram-logo"></i
             ></a>
             <a href="https://www.tiktok.com/@my__storefl" target="_blank"
-              ><i class="ri-tiktok-line"></i
+              ><i class="ph ph-tiktok-logo"></i
             ></a>
           </div>
         </div>
@@ -424,13 +565,18 @@
       </div>
     </footer>
 
-    <script type="module" src="assets/js/products.js"></script>
-    <script type="module" src="assets/js/nav.js"></script>
-    <script type="module" src="./assets/js/main.js"></script>
     <script>
       function goToProduct(id) {
         window.location.href = `prod_details.html?id=${id}`;
       }
     </script>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations_scroll.js"></script>
+
+    <script type="module" src="assets/js/products.js"></script>
+    <script type="module" src="assets/js/nav.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>

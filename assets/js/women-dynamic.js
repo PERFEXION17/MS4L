@@ -43,28 +43,38 @@ function renderProducts(list) {
   categories.forEach((category) => {
     const section = document.createElement("section");
     section.className = "category-section";
-    section.innerHTML = `<h2 class="category-title">${category.toUpperCase()}</h2>`;
+    section.innerHTML = `<h3>${category.toUpperCase()}</h3>`;
 
     const grid = document.createElement("div");
-    grid.className = "tile_con category-grid";
+    grid.className = "tile_con";
 
     grouped[category].forEach((p) => {
       const item = document.createElement("div");
       item.className = "tile";
       item.innerHTML = `
+      <div  class="tile_img">
         <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
-        <div class="tile_text">
-          <h3>${p.name}</h3>
-          <p>₦${p.price.toLocaleString()}</p>
+      </div>
+        <div class="tile_txt">
+          <p class="tile_name">${p.name}</p>
+          <div class="price_con">
+            <p class="price">₦${p.price.toLocaleString()}</p>
+            <button class="buy_now" onclick="goToProduct(${
+              p.id
+            })">Buy Now</button>
+          </div>
+          <button class="add_bag add-to-bag" data-id="${p.id}">
+            <i class="ph ph-handbag regular"></i>
+          </button>
         </div>
       `;
 
       // On-click: go to product page
       item.addEventListener("click", () => {
-        window.location.href = `/product.html?id=\${p.id}`;
+        window.location.href = `/prod_details.html?id=${p.id}`;
       });
 
-      // ✅ Add JSON-LD structured data
+      // Add JSON-LD structured data
       const ld = {
         "@context": "https://schema.org/",
         "@type": "Product",
@@ -98,7 +108,7 @@ function renderProducts(list) {
   });
 }
 
-// 🔍 Apply filters and search
+// Apply filters and search
 function applyFilters() {
   const searchTerm = searchInput.value.toLowerCase();
   const colorValue = colorFilter.value;

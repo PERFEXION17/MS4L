@@ -3,6 +3,8 @@ const products = [
     id: 1,
     name: "Silicon Bra",
     price: 6500.0,
+    rating: 4.3,
+    reviewCount: 120,
     description: "Strapless bra for your comfort and confidence",
     images: ["/assets/img/silicon_bra.webp", "/assets/img/silicon_bra_2.jpg"],
     colors: ["black"],
@@ -695,7 +697,7 @@ const products = [
   },
   {
     id: 49,
-    name: "Sizeless Cotton Gown I",
+    name: "Loose Fit Cotton Gown I",
     price: 11000.0,
     description:
       "'No Pants is the Best Pants.' Enjoy the freedom the sizeless gown gives.",
@@ -1209,7 +1211,7 @@ const products = [
   },
   {
     id: 82,
-    name: "Sizeless Cotton Gown II",
+    name: "Loose Fit Cotton Gown II",
     price: 11000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: [
@@ -1226,7 +1228,7 @@ const products = [
   },
   {
     id: 83,
-    name: "Sizeless Cotton Gown III",
+    name: "Loose Fit Cotton Gown III",
     price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_iii_1.png"],
@@ -1239,7 +1241,7 @@ const products = [
   },
   {
     id: 84,
-    name: "Sizeless Cotton Gown IV",
+    name: "Loose Fit Cotton Gown IV",
     price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_iv_1.png"],
@@ -1252,7 +1254,7 @@ const products = [
   },
   {
     id: 85,
-    name: "Sizeless Cotton Gown V",
+    name: "Loose Fit Cotton Gown V",
     price: 6000.0,
     description: "Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szl_v_1.png"],
@@ -1586,6 +1588,8 @@ const products = [
     id: 29,
     name: "Aurora (Fancy Stripes)",
     price: 14000.0,
+    rating: 4.5,
+    reviewCount: 128,
     description: "Luxury Material for your kaftan.",
     images: [
       "/assets/img/aurora_kaft_1.webp",

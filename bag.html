@@ -28,8 +28,7 @@
       href="assets/img/MS4L_logo.webp"
       type="image/x-icon"
     />
-    <title>MS4L | THANK YOU</title>
-    <script src="https://js.paystack.co/v2/inline.js"></script>
+    <title>MS4L | BAG</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -83,11 +82,11 @@
     gtag("config", "G-CZ3C15Q6P9");
   </script>
   <body>
-    <!-- <div id="preloader" class="preloader">
+    <div id="preloader" class="preloader">
       <div class="loader-content">
         <div class="spinner"></div>
       </div>
-    </div> -->
+    </div>
 
     <header>
       <nav class="navbar">
@@ -169,16 +168,38 @@
     </div>
 
     <main class="main">
-      <div class="thankyou_con">
-        <h3>THANK YOU FOR YOUR ORDER!</h3>
-        <div class="thankyou_box">
-          <h4>Your order has been successfully placed.</h4>
-          <p class="icon"><i class="ph ph-package"></i></p>
-          <p>You'll receive a confirmation email soon.</p>
-          <p>Order Reference: <span id="order-ref"></span></p>
-          <button onclick="window.location.href = `index.html`">Continue Shopping</button>
+      <button id="previous-btn" class="prev_btn">
+        <i class="ph ph-caret-left"></i>
+      </button>
+
+      <section id="bag">
+        <h3>Your Bag</h3>
+        <div class="empty-cart" id="empty-cart">
+          <h4 class="bag_header">Your Bag Is Empty!</h4>
+          <p class="icon"><i class="ph ph-handbag"></i></p>
+          <p>Explore our collection and find something you love!</p>
+          <button id="start-shopping">Start Shopping</button>
         </div>
-      </div>
+
+        <div class="bag_wrap">
+          <div id="bag-items"></div>
+        </div>
+
+        <div class="bag_btns">
+          <div class="bag-total">
+            <p><span id="bag-total">₦0.00</span></p>
+          </div>
+
+          <button id="proceed-to-checkout" class="bag_checkout_btn">
+            Proceed to Checkout
+          </button>
+        </div>
+
+        <div class="bag-actions">
+          <button id="back-btn" class="btn-secondary">Back</button>
+          <button id="clear-bag-btn" class="btn-danger">Clear Bag</button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -238,13 +259,14 @@
       </div>
     </footer>
 
-    <script type="module" src="assets/js/products.js"></script>
-    <script type="module" src="assets/js/nav.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
     <script>
       function goToProduct(id) {
         window.location.href = `prod_details.html?id=${id}`;
       }
     </script>
+
+    <script type="module" src="assets/js/products.js"></script>
+    <script type="module" src="assets/js/nav.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
