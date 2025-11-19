@@ -286,35 +286,35 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
   }
 
-  // --- Content Animation for Current Slide ---
-  function animateSlideContent(currentOriginalSlideElement) {
-    // Only reset content for the *previous* active slide, not all.
-    // This is more efficient. We need to store the previously active content.
-    // For simplicity for now, we'll reset all, but for larger sliders this could be refined.
-    originalSlides.forEach((oslide) => {
-      const h2 = oslide.querySelector("h2");
-      const p = oslide.querySelector("p");
-      if (h2) gsap.set(h2, { y: 20, autoAlpha: 0 });
-      if (p) gsap.set(p, { y: 20, autoAlpha: 0 });
-    });
+  // // --- Content Animation for Current Slide ---
+  // function animateSlideContent(currentOriginalSlideElement) {
+  //   // Only reset content for the *previous* active slide, not all.
+  //   // This is more efficient. We need to store the previously active content.
+  //   // For simplicity for now, we'll reset all, but for larger sliders this could be refined.
+  //   originalSlides.forEach((oslide) => {
+  //     const h2 = oslide.querySelector("h2");
+  //     const p = oslide.querySelector("p");
+  //     if (h2) gsap.set(h2, { y: 20, autoAlpha: 0 });
+  //     if (p) gsap.set(p, { y: 20, autoAlpha: 0 });
+  //   });
 
-    const content = currentOriginalSlideElement.querySelector(".slide-content");
-    if (content) {
-      gsap
-        .timeline()
-        .fromTo(
-          content.querySelector("h2"),
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.6, ease: "power2.out" }
-        )
-        .fromTo(
-          content.querySelector("p"),
-          { y: 20, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.6, ease: "power2.out" },
-          "-=0.4"
-        );
-    }
-  }
+  //   const content = currentOriginalSlideElement.querySelector(".slide-content");
+  //   if (content) {
+  //     gsap
+  //       .timeline()
+  //       .fromTo(
+  //         content.querySelector("h2"),
+  //         { y: 20, autoAlpha: 0 },
+  //         { y: 0, autoAlpha: 1, duration: 0.6, ease: "power2.out" }
+  //       )
+  //       .fromTo(
+  //         content.querySelector("p"),
+  //         { y: 20, autoAlpha: 0 },
+  //         { y: 0, autoAlpha: 1, duration: 0.6, ease: "power2.out" },
+  //         "-=0.4"
+  //       );
+  //   }
+  // }
 
   // --- Event Listeners ---
   prevButton.addEventListener("click", () => {
