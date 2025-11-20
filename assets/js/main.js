@@ -884,7 +884,7 @@ if (checkoutItems && checkoutTotal && checkoutForm && paystackBtn) {
     }
 
     const handler = PaystackPop.setup({
-      key: "pk_test_5c93d4d4bfbcc9da9a3e3ffb72edf309cae4381d",
+      key: "pk_live_988acbd343f21914562810ef81e1bb35db912df7",
       email: email,
       amount: total,
       currency: "NGN",
