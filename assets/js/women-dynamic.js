@@ -7,7 +7,7 @@ const colorFilter = document.getElementById("color-filter");
 // Filter only male products
 let menProducts = products.filter((p) => p.gender === "women");
 
-// 🧩 Group by category
+// Group by category
 function groupByCategory(list) {
   return list.reduce((groups, product) => {
     const category = product.category || "Other";
@@ -17,7 +17,7 @@ function groupByCategory(list) {
   }, {});
 }
 
-// 🧱 Render grouped products
+// Render grouped products
 function renderProducts(list) {
   container.innerHTML = "";
 
@@ -66,13 +66,10 @@ function renderProducts(list) {
           <button class="add_bag add-to-bag" data-id="${p.id}">
             <i class="ph ph-handbag regular"></i>
           </button>
+          <button class="wishlist-btn" data-id="${p.id}">
+          </button>
         </div>
       `;
-
-      // On-click: go to product page
-      // item.addEventListener("click", () => {
-      //   window.location.href = `/prod_details.html?id=${p.id}`;
-      // });
 
       // Add JSON-LD structured data
       const ld = {
@@ -131,5 +128,5 @@ function applyFilters() {
 searchInput.addEventListener("input", applyFilters);
 colorFilter.addEventListener("change", applyFilters);
 
-// 🏁 Initial render
+// Initial render
 renderProducts(menProducts);

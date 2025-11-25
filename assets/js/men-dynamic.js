@@ -7,7 +7,7 @@ const colorFilter = document.getElementById('color-filter');
 // Filter only male products
 let menProducts = products.filter(p => p.gender === 'men');
 
-// 🧩 Group by category
+// Group by category
 function groupByCategory(list) {
   return list.reduce((groups, product) => {
     const category = product.category || 'Other';
@@ -17,7 +17,7 @@ function groupByCategory(list) {
   }, {});
 }
 
-// 🧱 Render grouped products
+// Render grouped products
 function renderProducts(list) {
   container.innerHTML = '';
 
@@ -64,6 +64,8 @@ function renderProducts(list) {
           <button class="add_bag add-to-bag" data-id="${p.id}">
             <i class="ph ph-handbag regular"></i>
           </button>
+          <button class="wishlist-btn" data-id="${p.id}">
+          </button>
         </div>
       `;
 
@@ -72,7 +74,7 @@ function renderProducts(list) {
       //   window.location.href = `/prod_details.html?id=${p.id}`;
       // });
 
-      // ✅ Add JSON-LD structured data
+      // Add JSON-LD structured data
       const ld = {
         "@context": "https://schema.org/",
         "@type": "Product",
@@ -106,7 +108,7 @@ function renderProducts(list) {
   });
 }
 
-// 🔍 Apply filters and search
+// Apply filters and search
 function applyFilters() {
   const searchTerm = searchInput.value.toLowerCase();
   const colorValue = colorFilter.value;

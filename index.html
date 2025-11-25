@@ -106,43 +106,54 @@
           </ul>
 
           <div class="utilities">
+            <button
+              type="button"
+              class="nav-icon wishlist-btn-header"
+              aria-label="Wishlist"
+            >
+              <i class="ph ph-heart"></i>
+              <span class="wishlist-counter" aria-hidden="true">0</span>
+            </button>
+
             <div class="cart-icon-wrapper">
               <button id="mini-cart-toggle" aria-label="Open cart">
                 <i class="ph ph-handbag"></i>
                 <span class="cart-counter" id="mini-cart-counter">0</span>
               </button>
 
-                <div class="mini-cart-dropdown" id="mini-cart-dropdown">
-                  <div class="mini-cart-header">
-                    <h4>Your Bag</h4>
-                    <button id="close-mini-cart" aria-label="Close">
-                      <i class="ph ph-x"></i>
-                    </button>
+              <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+                <div class="mini-cart-header">
+                  <h4>Your Bag</h4>
+                  <button id="close-mini-cart" aria-label="Close">
+                    <i class="ph ph-x"></i>
+                  </button>
+                </div>
+                <div class="mini-cart-items" id="mini-cart-items"></div>
+                <div
+                  class="mini-cart-footer"
+                  id="mini-cart-footer"
+                  style="display: none"
+                >
+                  <div class="mini-cart-subtotal">
+                    <span>Subtotal:</span>
+                    <strong
+                      id="mini-cart-subtotal"
+                      class="mini-cart-subtotal-price"
+                      >₦0</strong
+                    >
                   </div>
-                  <div class="mini-cart-items" id="mini-cart-items"></div>
-                  <div
-                    class="mini-cart-footer"
-                    id="mini-cart-footer"
-                    style="display: none"
-                  >
-                    <div class="mini-cart-subtotal">
-                      <span>Subtotal:</span>
-                      <strong
-                        id="mini-cart-subtotal"
-                        class="mini-cart-subtotal-price"
-                        >₦0</strong
-                      >
-                    </div>
-                    <div class="mini-cart-actions">
-                      <a href="bag.html" class="btn-secondary">View Bag</a>
-                      <a href="checkout.html" class="btn-primary">Checkout</a>
-                    </div>
-                  </div>
-                  <div class="mini-cart-empty" id="mini-cart-empty">
-                    <p>Your bag is empty</p>
-                    <a href="women.html" class="btn-link">Explore Our Collection!</a>
+                  <div class="mini-cart-actions">
+                    <a href="bag.html" class="btn-secondary">View Bag</a>
+                    <a href="checkout.html" class="btn-primary">Checkout</a>
                   </div>
                 </div>
+                <div class="mini-cart-empty" id="mini-cart-empty">
+                  <p>Your bag is empty</p>
+                  <a href="women.html" class="btn-link"
+                    >Explore Our Collection!</a
+                  >
+                </div>
+              </div>
             </div>
 
             <button id="btn">
@@ -312,7 +323,8 @@
             <div class="test_txt">
               <span><i class="ri-double-quotes-l"></i></span>
               <p>
-                Got exactly what was advertised. Delivery was prompt as well. A truly awesome feeling and experience.
+                Got exactly what was advertised. Delivery was prompt as well. A
+                truly awesome feeling and experience.
               </p>
             </div>
             <div class="test_id">
@@ -524,11 +536,14 @@
         <div class="foot_box item2b">
           <h3>Customer Service</h3>
           <a href="aboutme.html#policy" target="_blank"
-            >Privacy Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Privacy Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i></a>
+            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i
+          ></a>
         </div>
 
         <div class="foot_box item3a">

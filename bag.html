@@ -81,6 +81,7 @@
 
     gtag("config", "G-CZ3C15Q6P9");
   </script>
+
   <body>
     <div id="preloader" class="preloader">
       <div class="loader-content">
@@ -105,6 +106,15 @@
         </ul>
 
         <div class="utilities">
+          <button
+            type="button"
+            class="nav-icon wishlist-btn-header"
+            aria-label="Wishlist"
+          >
+            <i class="ph ph-heart"></i>
+            <span class="wishlist-counter" aria-hidden="true">0</span>
+          </button>
+
           <div class="cart-icon-wrapper">
             <button id="mini-cart-toggle" aria-label="Open cart">
               <i class="ph ph-handbag"></i>
@@ -173,12 +183,14 @@
       </button>
 
       <section id="bag">
-        <h3>Your Bag</h3>
+        <h2>Your Bag</h2>
         <div class="empty-cart" id="empty-cart">
           <h4 class="bag_header">Your Bag Is Empty!</h4>
           <p class="icon"><i class="ph ph-handbag"></i></p>
           <p>Explore our collection and find something you love!</p>
-          <button id="start-shopping">Start Shopping</button>
+          <button id="start-shopping" class="empty-button">
+            Explore Our Collection!
+          </button>
         </div>
 
         <div class="bag_wrap">
@@ -194,12 +206,23 @@
             Proceed to Checkout
           </button>
         </div>
-
-        <div class="bag-actions">
+        <div class="bag-actions" id="bag-actions">
           <button id="back-btn" class="btn-secondary">Back</button>
           <button id="clear-bag-btn" class="btn-danger">Clear Bag</button>
         </div>
       </section>
+
+      <div class="modal" id="clear-modal">
+        <div class="modal-content">
+          <h3>Clear Bag?</h3>
+          <p class="icon-clear"><i class="ph ph-warning"></i></p>
+          <p>Are you sure you want to clear your bag?</p>
+          <div class="clear-btns">
+            <button id="close-clear-modal" class="clear-no">No</button>
+            <button id="clear-bag-modal" class="clear-yes">Yes</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -219,11 +242,14 @@
         <div class="foot_box item2b">
           <h3>Customer Service</h3>
           <a href="aboutme.html#policy" target="_blank"
-            >Privacy Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Privacy Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i></a>
+            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
           <a href="aboutme.html#policy" target="_blank"
-            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i></a>
+            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i
+          ></a>
         </div>
 
         <div class="foot_box item3a">

@@ -354,7 +354,9 @@ const products = [
     id: 22,
     name: "BDSM Kit",
     price: 30000.0,
-    description: "Lorem ipsum var deux vox machina.",
+    rating: 4.7,
+    reviewCount: 75,
+    description: "Spice up your Sex with these luxury BDSM Kits.",
     images: [
       "/assets/img/bdsmkit_4.webp",
       "/assets/img/bdsmkit_3.jpg",
@@ -1769,6 +1771,26 @@ const products = [
     gender: "men",
     category: "boxers",
     sku: "BOX-POL-BOX",
+  },
+  {
+    id: 114,
+    name: "BDSM Kit",
+    price: 30000.0,
+    rating: 4.7,
+    reviewCount: 75,
+    description: "Spice up your Sex with these luxury BDSM Kits.",
+    images: [
+      "/assets/img/bdsmkit_4.webp",
+      "/assets/img/bdsmkit_3.jpg",
+      "/assets/img/bdsmkit_2.jpg",
+      "/assets/img/bdsmkit_1.jpg",
+    ],
+    colors: ["black", "red", "pink"],
+    sizeType: "numerical",
+    sizeLimits: { min: 0, max: 0 },
+    gender: "men",
+    category: "bdsm",
+    sku: "BDSM-BDSM-KIT",
   },
 ];
 
