@@ -516,7 +516,7 @@ img {
 }
 
 .size-chip.selected {
-    background: var(--secondary-color);
+    background: var(--accent);
     color: var(--text);
     border-color: var(--accent);
 }
