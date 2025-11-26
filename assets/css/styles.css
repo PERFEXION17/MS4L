@@ -1657,14 +1657,15 @@ main {
 .price {
   font-family: var(--ff-numeric);
   font-weight: var(--ff-light);
+  color: var(--price-color);
 }
 
 .buy_now {
   width: 100%;
   padding: .5rem 1rem;
-  background-color: var(--text);
-  color: var(--primary-color);
-  font-family: var(--ff-body);
+  background-color: var(--secondary-color);
+  color: var(--text);
+  font-family: var(--ff-heading);
   font-weight: var(--ff-regular);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -2173,7 +2174,7 @@ main {
     padding: 0.5rem;
   }
 
-  /* -----HERO SECTION----- */
+  /* ===== HERO SECTION ===== */
 
   .hero-con {
     height: 90vh;

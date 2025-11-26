@@ -21,32 +21,38 @@ window.onload = hidePreloader;
 
 const formatPrice = (amount) => `₦${Number(amount).toLocaleString()}`;
 
-// GLOBAL CART COUNTER + MINI-CART LIVE UPDATE (NO REFRESH)
-
+// =====================================================
+// CART: LIVE COUNTER + MINI-CART SYNC
+// =====================================================
 window.updateCartCounter = () => {
-  const counters = document.querySelectorAll(".cart-counter");
   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  counters.forEach((c) => (c.textContent = cart.length));
+  const itemCount = cart.length;
 
-  // === LIVE MINI-CART RE-RENDER (EVEN IF CLOSED) ===
+  // Update ALL cart counters instantly (header, mobile, etc.)
+  document.querySelectorAll(".cart-counter").forEach(counter => {
+    counter.textContent = itemCount;
+    counter.style.display = itemCount > 0 ? "flex" : "none";
+  });
+
+  // MINI-CART LIVE UPDATE (even if closed)
 
   const miniCartItems = document.getElementById("mini-cart-items");
+  const miniCartSubtotal = document.getElementById("mini-cart-subtotal");
   const miniCartFooter = document.getElementById("mini-cart-footer");
   const miniCartEmpty = document.getElementById("mini-cart-empty");
-  const miniCartSubtotal = document.getElementById("mini-cart-subtotal");
 
   if (miniCartItems) {
     miniCartItems.innerHTML = "";
     let total = 0;
 
-    if (cart.length === 0) {
+    if (itemCount === 0) {
       if (miniCartFooter) miniCartFooter.style.display = "none";
       if (miniCartEmpty) miniCartEmpty.style.display = "block";
     } else {
       if (miniCartFooter) miniCartFooter.style.display = "block";
       if (miniCartEmpty) miniCartEmpty.style.display = "none";
 
-      cart.forEach((item) => {
+      cart.forEach(item => {
         total += item.price * item.qty;
         const div = document.createElement("div");
         div.className = "mini-cart-item";
@@ -60,6 +66,7 @@ window.updateCartCounter = () => {
         `;
         miniCartItems.appendChild(div);
       });
+
       if (miniCartSubtotal) miniCartSubtotal.textContent = formatPrice(total);
     }
   }
@@ -134,6 +141,128 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// ===== WISHLIST RENDER =====
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("wishlist-items");
+  const empty = document.getElementById("empty-wishlist");
+  const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+  if (wishlist.length === 0) {
+    empty.style.display = "block";
+    return;
+  }
+
+  wishlist.forEach((id) => {
+    const p = products.find((x) => x.id === id);
+    if (!p) return;
+
+    const div = document.createElement("div");
+    div.className = "tile";
+    div.innerHTML = `
+          <div class="tile_img">
+            <img src="${p.images[0]}" alt="${p.name}" />
+          </div>
+          <div class="tile_txt">
+            <p class="tile_name">${p.name}</p>
+            <p class="price">${formatPrice(p.price)}</p>
+            <div class="wishlist-buttons">
+              <button onclick="addToCartFromWishlist(${p.id})" class="wishlist-bag">
+              Move to Bag
+              </button>
+              <button class="wishlist-remove" data-id="${
+                p.id
+              }">
+                <i class="ph ph-trash-simple"></i>
+              </button>
+            </div>
+          </div>
+        `;
+    container.appendChild(div);
+  });
+
+  renderWishlistHearts();
+});
+
+function addToCartFromWishlist(id) {
+  const product = products.find((p) => p.id === id);
+  if (!product) {
+    alert("Oops! This product is no longer available.");
+    return;
+  }
+
+  // === REUSE YOUR EXACT ADD-TO-CART LOGIC (same as shop/product page) ===
+  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+  // Use the same defaults as your shop pages
+  const defaultColor = product.colors[0];
+  const defaultSize = product.sizeLimits.min || 0; // even sizes already handled
+
+  // Check if same product + color + size already exists
+  const existingItem = cart.find(
+    (item) =>
+      item.id === product.id &&
+      item.color === defaultColor &&
+      item.size === defaultSize
+  );
+
+  if (existingItem) {
+    // Just increase quantity
+    existingItem.qty += 1;
+  } else {
+    // Add new item
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      color: defaultColor,
+      size: defaultSize,
+      qty: 1,
+      image: product.images[0],
+      sku:
+        product.sku ||
+        `PROD-${String(product.id).padStart(3, "0")}-${product.name
+          .slice(0, 3)
+          .toUpperCase()}`,
+    });
+  }
+
+  // Save cart
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // === UPDATE UI INSTANTLY ===
+  updateCartCounter(); // Live cart counter + mini-cart
+  window.triggerCartModal?.(); // Optional: show success modal
+
+  // === REMOVE FROM WISHLIST ===
+  toggleWishlist(id); // Removes heart + updates counter
+
+  // === SUCCESS FEEDBACK ===
+  // Optional: Create a floating toast (add to your CSS if you want this)
+  function showToast(message) {
+    const toast = document.createElement("div");
+    toast.textContent = message;
+    toast.style.cssText = `
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    z-index: 10000;
+    animation: toastUp 0.6s ease;
+  `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // Then in the function:
+  showToast(`${product.name} moved to bag!`);
+}
 
 // === GLOBAL MODAL SYSTEM ===
 
@@ -282,55 +411,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("wishlist-items");
-  const empty = document.getElementById("empty-wishlist");
-  const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-
-  if (wishlist.length === 0) {
-    empty.style.display = "block";
-    return;
-  }
-
-  wishlist.forEach((id) => {
-    const p = products.find((x) => x.id === id);
-    if (!p) return;
-
-    const div = document.createElement("div");
-    div.className = "product-card";
-    div.innerHTML = `
-          <div class="product-image">
-            <img src="${p.images[0]}" alt="${p.name}" />
-          </div>
-          <div class="product-info">
-            <h3>${p.name}</h3>
-            <p class="price">${formatPrice(p.price)}</p>
-            <button onclick="addToCartFromWishlist(${
-              p.id
-            })" class="btn-primary" style="width:100%; margin-top:1rem;">
-              Move to Bag
-            </button>
-            <button class="wishlist-btn" data-id="${
-              p.id
-            }" style="margin-top:0.5rem; background:none; border:none;">
-              <i class="ph ph-trash" style="font-size:1.5rem;"></i> Remove
-            </button>
-          </div>
-        `;
-    container.appendChild(div);
-  });
-
-  renderWishlistHearts();
-});
-
-function addToCartFromWishlist(id) {
-  const product = products.find((p) => p.id === id);
-  // Your existing add-to-cart logic here (reuse from shop)
-  // Then remove from wishlist
-  toggleWishlist(id);
-  alert(`${product.name} moved to bag!`);
-}
 
 // =====================================================
 // 4. PRODUCT DETAILS PAGE
@@ -772,7 +852,7 @@ if (
 }
 
 // =====================================================
-// 5. BAG PAGE + FIXED QUANTITY PICKER + FALLBACK women.html
+// 5. BAG PAGE
 // =====================================================
 
 const cartItems = document.getElementById("bag-items");
@@ -906,7 +986,7 @@ if (cartItems && cartTotal && proceedToCheckout && emptyCart) {
 
   function bindQuantityPickers() {
     document.querySelectorAll(".qty-btn").forEach((btn) => {
-      btn.replaceWith(btn.cloneNode(true)); // Remove old listeners
+      btn.replaceWith(btn.cloneNode(true));
     });
 
     document.querySelectorAll(".qty-btn").forEach((btn) => {
@@ -936,6 +1016,7 @@ if (cartItems && cartTotal && proceedToCheckout && emptyCart) {
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCounter();
         displayCart(); // ← FULL REFRESH + RE-BIND
       });
     });
@@ -950,6 +1031,7 @@ if (cartItems && cartTotal && proceedToCheckout && emptyCart) {
       const cart = JSON.parse(localStorage.getItem("cart") || "[]");
       cart.splice(index, 1);
       localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCounter();
       displayCart();
     }
   });
