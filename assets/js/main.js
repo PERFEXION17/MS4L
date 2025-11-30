@@ -1,5 +1,4 @@
 import { products } from "./products.js";
-import { updateCartCounter } from "./nav.js";
 
 // ===== HIDE PRELOADER =====
 

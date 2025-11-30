@@ -264,89 +264,8 @@
       }
     </script>
 
-    <!-- <script>
-      function addToCartFromWishlist(id) {
-        const product = products.find((p) => p.id === id);
-        if (!product) {
-          alert("Oops! This product is no longer available.");
-          return;
-        }
-
-        // === REUSE YOUR EXACT ADD-TO-CART LOGIC (same as shop/product page) ===
-        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-
-        // Use the same defaults as your shop pages
-        const defaultColor = product.colors[0];
-        const defaultSize = product.sizeLimits.min || 0; // even sizes already handled
-
-        // Check if same product + color + size already exists
-        const existingItem = cart.find(
-          (item) =>
-            item.id === product.id &&
-            item.color === defaultColor &&
-            item.size === defaultSize
-        );
-
-        if (existingItem) {
-          // Just increase quantity
-          existingItem.qty += 1;
-        } else {
-          // Add new item
-          cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            color: defaultColor,
-            size: defaultSize,
-            qty: 1,
-            image: product.images[0],
-            sku:
-              product.sku ||
-              `PROD-${String(product.id).padStart(3, "0")}-${product.name
-                .slice(0, 3)
-                .toUpperCase()}`,
-          });
-        }
-
-        // Save cart
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        // === UPDATE UI INSTANTLY ===
-        updateCartCounter(); // Live cart counter + mini-cart
-        window.triggerCartModal?.(); // Optional: show success modal
-
-        // === REMOVE FROM WISHLIST ===
-        toggleWishlist(id); // Removes heart + updates counter
-
-        // === SUCCESS FEEDBACK ===
-        // Optional: Create a floating toast (add to your CSS if you want this)
-        function showToast(message) {
-          const toast = document.createElement("div");
-          toast.textContent = message;
-          toast.style.cssText = `
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #000;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    z-index: 10000;
-    animation: toastUp 0.6s ease;
-  `;
-          document.body.appendChild(toast);
-          setTimeout(() => toast.remove(), 3000);
-        }
-
-        // Then in the function:
-        showToast(`${product.name} moved to bag!`);
-      }
-    </script> -->
 
     <script type="module" src="assets/js/products.js"></script>
-    <script type="module" src="assets/js/nav.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
