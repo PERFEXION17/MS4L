@@ -1647,7 +1647,7 @@ const products = [
     name: "Condom Boxers",
     price: 9000.0,
     description:
-      "Boxers that is a Confidence booster. (only size 3XL available)",
+      "Boxers that is a Confidence booster.",
     images: ["/assets/img/condom_boxers.webp"],
     colors: ["black"],
     sizeType: "numerical",
