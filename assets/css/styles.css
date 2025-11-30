@@ -1058,6 +1058,11 @@ header {
   display: block;
   object-fit: cover;
   border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.slide img:hover{
+  scale: 1.05;
 }
 
 .slide-content {
