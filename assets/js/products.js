@@ -702,7 +702,7 @@ const products = [
     name: "Loose Fit Cotton Gown I",
     price: 11000.0,
     description:
-      "'No Pants is the Best Pants.' Enjoy the freedom the sizeless gown gives.",
+      "'No Pants are the Best Pants.' Enjoy the freedom the sizeless gown gives.",
     images: ["/assets/img/szless_gown_1.webp"],
     colors: ["black"],
     sizeType: "numerical",

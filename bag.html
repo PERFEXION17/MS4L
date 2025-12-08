@@ -207,7 +207,6 @@
           </button>
         </div>
         <div class="bag-actions" id="bag-actions">
-          <button id="back-btn" class="btn-secondary">Back</button>
           <button id="clear-bag-btn" class="btn-danger">Clear Bag</button>
         </div>
       </section>
@@ -217,6 +216,18 @@
           <h3>Clear Bag?</h3>
           <p class="icon-clear"><i class="ph ph-warning"></i></p>
           <p>Are you sure you want to clear your bag?</p>
+          <div class="clear-btns">
+            <button id="close-clear-modal" class="clear-no">No</button>
+            <button id="clear-bag-modal" class="clear-yes">Yes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="remove-modal">
+        <div class="modal-content">
+          <h3>Remove Item?</h3>
+          <p class="icon-clear"><i class="ph ph-warning"></i></p>
+          <p>Are you sure you want to remove this item?</p>
           <div class="clear-btns">
             <button id="close-clear-modal" class="clear-no">No</button>
             <button id="clear-bag-modal" class="clear-yes">Yes</button>
@@ -291,7 +302,6 @@
       }
     </script>
 
-    <script type="module" src="assets/js/products.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>
