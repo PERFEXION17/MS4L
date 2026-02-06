@@ -197,13 +197,33 @@ img {
 /* ===== NAVIGATION ===== */
 
 header {
-  position: relative;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.announcement_bar {
+  padding: 8px 5%;
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  text-align: center;
+  font-family: var(--ff-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.announcement_bar p {
+  margin: 0;
+  color: var(--text);
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -213,7 +233,6 @@ header {
   backdrop-filter: var(--glass);
   -webkit-backdrop-filter: var(--glass);
   transition: var(--transition);
-  z-index: 999;
 }
 
 .logo img {
@@ -297,7 +316,7 @@ header {
 .menu-links a {
   position: relative;
   display: inline-block;
-  color: var(--secondary-color);
+  color: var(--accent);
   font-family: var(--ff-heading);
   font-size: var(--ff-title-2);
   font-weight: var(--ff-regular);
@@ -744,7 +763,7 @@ header {
 /* ===== HERO SECTION ===== */
 
 .hero-con {
-  margin: 5.5rem 1rem;
+  margin: 9.5rem 1rem;
   background: var(--gradient);
   display: flex;
   align-items: center;
@@ -993,7 +1012,7 @@ header {
 }
 
 .main {
-  margin: 5rem auto;
+  margin: 9rem auto;
   position: relative;
 }
 
@@ -2346,7 +2365,7 @@ main {
   }
 
   .main {
-    margin: 5rem auto;
+    margin: 7.5rem auto;
   }
 
   /* ===== IMAGE SLIDER ===== */
