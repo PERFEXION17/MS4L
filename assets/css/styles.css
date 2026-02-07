@@ -3,7 +3,7 @@
 :root {
   --primary-color: #eddede;
   --secondary-color: #eececf;
-  --price-color: #BD2929;
+  --price-color: #bd2929;
   --text: #231f20;
   --text-2: hsl(25, 20%, 15%);
   --accent: #e01f06;
@@ -60,7 +60,7 @@
 .darkmode {
   --primary-color: #1a1414;
   --secondary-color: #2d1f20;
-  --price-color: #F65656;
+  --price-color: #f65656;
   --text: #fdf1e8;
   --text-2: hsl(25, 20%, 15%);
   --accent: #ff3d24;
@@ -197,7 +197,7 @@ img {
 /* ===== NAVIGATION ===== */
 
 header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -762,8 +762,81 @@ header {
 
 /* ===== HERO SECTION ===== */
 
+.banner_con {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  margin-top: 9.5rem;
+  background: url(/assets/img/val-ann-model.webp);
+  background-size: cover;
+  background-position: right 20% center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.banner_txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_txt span {
+  margin-bottom: -0.5rem;
+  color: var(--white_txt);
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 5px 20px #000;
+}
+
+.banner_txt p {
+  color: var(--white_txt);
+  font-family: var(--ff-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 5px 20px #000;
+}
+
+.banner_txt .sub_txt {
+  margin-bottom: 2rem;
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.banner_txt button {
+  padding: var(--padding) 1.5rem;
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  color: var(--white_txt);
+  font-family: var(--ff-heading);
+  font-size: var(--ff-text);
+  font-weight: var(--ff-regular);
+  outline: none;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.banner_txt button:hover {
+  box-shadow: var(--shadow-hov);
+  transform: var(--hover);
+}
+
+.banner_txt button:active {
+  box-shadow: var(--shadow-act);
+  scale: 0.95;
+}
+
 .hero-con {
-  margin: 9.5rem 1rem;
+  margin: 3rem 1rem;
   background: var(--gradient);
   display: flex;
   align-items: center;
@@ -1389,6 +1462,7 @@ header {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: grayscale(50%);
   border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1396,7 +1470,7 @@ header {
 }
 
 .sel_box:hover {
-  filter: grayscale(50%);
+  filter: none;
   box-shadow: var(--shadow-hov);
 }
 
@@ -1406,15 +1480,15 @@ header {
 }
 
 .box_1 {
-  background-image: url(/assets/img/women_select.jpg);
+  background-image: url(/assets/img/women_select.webp);
 }
 
 .box_2 {
-  background-image: url(/assets/img/gallery_select.jpg);
+  background-image: url(/assets/img/gallery_select.webp);
 }
 
 .box_3 {
-  background-image: url(/assets/img/men_select.jpg);
+  background-image: url(/assets/img/men_select.webp);
 }
 
 .sel_link {
@@ -2350,6 +2424,27 @@ main {
     border-top-right-radius: 0;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 0;
+  }
+
+  .banner_con {
+    background-position: top;
+  }
+
+  .banner_txt span {
+    font-size: 3rem;
+  }
+
+  .banner_txt p {
+    font-size: 5rem;
+  }
+
+  .banner_txt .sub_txt {
+    font-size: 1.5rem;
+  }
+
+  .banner_txt button {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
   }
 
   .des_con {
