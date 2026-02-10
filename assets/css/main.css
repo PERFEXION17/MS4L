@@ -1,0 +1,17 @@
+/* 1. Base Setup */
+@import 'base/reset.css';
+
+/* 2. Global Components */
+@import 'components/navbar.css';
+@import 'components/footer.css';
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/modals.css';
+
+/* 3. Features */
+@import 'components/video-gallery.css';
+
+/* 4. Page Specifics */
+@import 'pages/pdp.css';
+@import 'pages/cart.css';
+@import 'pages/wishlist.css';

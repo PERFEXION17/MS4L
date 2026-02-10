@@ -1,6 +1,6 @@
 import { hidePreloader } from "./preloader.js";
 import {
-  updateCartCounter,
+  // updateCartCounter, // Commented out to avoid conflict
   displayCart,
   displayCheckout,
   setupThankYouPage,
@@ -29,13 +29,14 @@ import { setupMiniCart } from "./minicart.js";
 import { initProductDetailPage } from "./pdp.js";
 import { initShopAddToCart } from "./shopCart.js";
 import "./video-gallery.js";
+
 // Preloader
 window.onload = hidePreloader;
 
 // Global App Init
 document.addEventListener("DOMContentLoaded", () => {
   // Core systems
-  updateCartCounter();
+  // updateCartCounter(); // Disabled
   updateWishlistCounter();
   renderWishlistHearts();
   setupModalClosers();
@@ -43,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupDarkMode();
   setupMenuToggle();
   setupSearchToggle();
-  setupMiniCart(updateCartCounter);
+
+  // FIX: Call without arguments
+  setupMiniCart();
 
   // Page-specific inits
   initShopAddToCart();
@@ -78,16 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartFromWishlist(id);
   });
 
-  // Close Gestue in Gallery
+  // Close Gesture in Gallery
   const instructModal = document.getElementById("instruct-modal");
-  
-  setTimeout(() => instructModal.remove(), 3500);
-
+  if (instructModal) {
+    setTimeout(() => instructModal.remove(), 3500);
+  }
 });
 
-// Global exports for inline onclicks (if any)
+// Global exports for inline onclicks
 window.toggleWishlist = toggleWishlist;
-window.updateCartCounter = updateCartCounter;
+// window.updateCartCounter = updateCartCounter;
 window.triggerCartModal = triggerCartModal;
 window.triggerClearModal = triggerClearModal;
 window.triggerLinkModal = triggerLinkModal;

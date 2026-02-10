@@ -29,45 +29,28 @@ export function setupCollapsibleSections() {
 // =====================================================
 
 export function setupDarkMode() {
-  const toggleBtn = document.getElementById("btn");
-  let darkMode = localStorage.getItem("darkmode");
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+  const icon = themeToggle ? themeToggle.querySelector("i") : null;
 
-  function enableDarkMode() {
-    document.body.classList.add("darkmode");
-    localStorage.setItem("darkmode", "active");
+  // Check saved preference
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("darkmode");
+    if (icon) icon.classList.replace("ph-moon", "ph-sun");
   }
 
-  function disableDarkMode() {
-    document.body.classList.remove("darkmode");
-    localStorage.setItem("darkmode", "null");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("darkmode");
+      const isDark = body.classList.contains("darkmode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+
+      if (icon) {
+        if (isDark) icon.classList.replace("ph-moon", "ph-sun");
+        else icon.classList.replace("ph-sun", "ph-moon");
+      }
+    });
   }
-
-  if (darkMode === "active") {
-    enableDarkMode();
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkmode");
-    if (darkMode !== "active") {
-      enableDarkMode();
-    } else {
-      disableDarkMode();
-    }
-  });
-}
-
-// =====================================================
-// MENU TOGGLE
-// =====================================================
-
-export function setupMenuToggle() {
-  const menuToggle = document.getElementById("menu-btn");
-  const menuList = document.getElementById("menulist");
-
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    menuList.classList.toggle("active");
-  });
 }
 
 // =====================================================
@@ -78,7 +61,7 @@ export function setupSearchToggle() {
   const searchToggle = document.getElementById("srch");
   const filters = document.getElementById("filters");
 
-  if(!searchToggle){
+  if (!searchToggle) {
     return;
   }
 
@@ -102,5 +85,92 @@ if (prevBtn) {
     } else {
       window.location.href = "women.html";
     }
+  });
+}
+
+// ==========
+// HYBRID MENU
+// ==========
+
+export function setupMenuToggle() {
+  const header = document.querySelector("header");
+  const menuBtn = document.getElementById("menu-btn");
+  const closeBtn = document.getElementById("close-menu-btn");
+  const menuList = document.getElementById("menulist");
+  const body = document.body;
+  let lastScrollTop = 0;
+  let scrollTimeout;
+
+  // 1. Hybrid Scroll Logic
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop < 50) {
+        header.classList.remove("nav-hidden");
+        lastScrollTop = scrollTop;
+        return;
+      }
+
+      if (scrollTop > lastScrollTop) {
+        header.classList.add("nav-hidden");
+        clearTimeout(scrollTimeout);
+      } else {
+        header.classList.remove("nav-hidden");
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          if (window.pageYOffset > 50) {
+            header.classList.add("nav-hidden");
+          }
+        }, 3000);
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    },
+    { passive: true },
+  );
+
+  // 2. Menu Open/Close Logic
+  const openMenu = () => {
+    if (menuList) {
+      menuList.classList.add("active");
+      body.style.overflow = "hidden";
+    }
+  };
+
+  const closeMenu = () => {
+    if (menuList) {
+      menuList.classList.remove("active");
+      body.style.overflow = "";
+    }
+  };
+
+  if (menuBtn) menuBtn.addEventListener("click", openMenu);
+  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+
+  // 3. Accordion Logic (Mobile Dropdowns)
+  const dropdownHeaders = document.querySelectorAll(".dropdown-header");
+  dropdownHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const parent = header.parentElement;
+      const icon = header.querySelector("i");
+
+      // Close others
+      document.querySelectorAll(".mobile-dropdown.active").forEach((item) => {
+        if (item !== parent) {
+          item.classList.remove("active");
+          const otherIcon = item.querySelector(".dropdown-header i");
+          if (otherIcon) otherIcon.classList.replace("ph-minus", "ph-plus");
+        }
+      });
+
+      parent.classList.toggle("active");
+      if (parent.classList.contains("active")) {
+        icon.classList.replace("ph-plus", "ph-minus");
+      } else {
+        icon.classList.replace("ph-minus", "ph-plus");
+      }
+    });
   });
 }

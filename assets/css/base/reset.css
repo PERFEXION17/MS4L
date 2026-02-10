@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* --primary-color: hsl(210, 5%, 95%); */
+  --primary-color: #eddede;
+  /* --secondary-color: hsl(210, 50%, 80%); */
+  --secondary-color: #eececf;
+  /* --price-color: hsl(210, 50%, 40%); */
+  --price-color: hsl(0, 64%, 45%);
+  /* --text: hsl(25, 20%, 15%); */
+  --text: #231f20;
+  /* --accent: hsl(40, 60%, 55%); */
+  --accent: #e01f06;
+  --input-color: hsl(0, 0%, 90%);
+  --empty-state: hsl(0, 0%, 85%);
+  /* --glass-bg: hsla(0, 0%, 100%, 0.15); */
+  --glass-bg: hsla(0, 45%, 50%, 0.15);
+  --green: hsl(145, 35%, 55%);
+  --green-2: hsl(145, 35%, 45%);
+  --red: hsl(0, 65%, 60%);
+  --red-2: hsl(0, 65%, 50%);
+  --overlay: hsla(210, 25%, 25%, 0.55);
+  --link: hsl(40, 95%, 75%);
+  /* --rating: hsl(40, 60%, 45%); */
+  --rating: hsl(0, 60%, 45%);
+  --white_txt: hsl(0, 0%, 100%);
+  --gradient: linear-gradient(
+    to bottom,
+    hsla(210, 5%, 85%, 0.5) 0%,
+    hsla(210, 5%, 95%, 1) 100%
+  );
+  /* --shadow: 0 0 12px hsla(210, 45%, 50%, 0.5); */
+  --shadow: 0 0 12px hsla(0, 45%, 50%, 0.5);
+  /* --shadow-hov: 0 0 16px hsla(210, 45%, 50%, 0.7); */
+  --shadow-hov: 0 0 16px hsla(0, 45%, 50%, 0.7);
+  /* --shadow-act: 0 0 8px hsla(210, 45%, 50%, 0.5); */
+  --shadow-act: 0 0 8px hsla(0, 45%, 50%, 0.5);
+  /* --border: 1px solid hsla(40, 60%, 55%, 0.4); */
+  --border: 1px solid hsla(0, 60%, 55%, 0.4);
+  /* --border-radius: 2rem; */
+  --transition: all 0.3s ease-in-out;
+  --glass: blur(5px);
+  --hover: translateY(-2px);
+  --padding: 1rem;
+  --l-padding: 2rem;
+  --s-margin: 0.5rem;
+  --margin: 1rem;
+  --l-margin: 2rem;
+  --ff-heading: Cinzel, serif;
+  --ff-body: Montserrat, sans-serif;
+  --ff-numeric: Poppins, sans-serif;
+  --ff-xtitle: 2.5rem;
+  --ff-title: 2rem;
+  --ff-title-2: 1.5rem;
+  --ff-text: 1.125rem;
+  --ff-small: 0.875rem;
+  --ff-xbold: 800;
+  --ff-bold: 700;
+  --ff-regular: 500;
+  --ff-light: 400;
+  --hero: url(/assets/img/hero.jpg);
+  --slides-per-view: 1;
+  --slide-gap: 20px;
+}
+
+.darkmode {
+  /* --primary-color: hsl(206, 14%, 10%); */
+  --primary-color: #1a1414;
+  /* --secondary-color: hsl(210, 25%, 18%); */
+  --secondary-color: #2d1f20;
+  /* --price-color: hsl(210, 50%, 50%); */
+  --price-color: #f65656;
+  /* --text: hsl(30, 25%, 92%); */
+  --text: #fdf1e8;
+  /* --accent: hsl(40, 65%, 60%); */
+  --accent: #ff3d24;
+  --input-color: hsl(0, 0%, 80%);
+  --empty-state: hsl(0, 0%, 20%);
+  /* --glass-bg: hsla(210, 25%, 25%, 0.35); */
+  --glass-bg: hsla(0, 25%, 25%, 0.35);
+  --green: hsl(145, 45%, 55%);
+  --green-2: hsl(145, 45%, 45%);
+  --red: hsl(0, 70%, 60%);
+  --overlay: hsla(210, 30%, 10%, 0.65);
+  --link: hsl(40, 85%, 75%);
+  --rating: #f25c5c;
+  --white_txt: hsl(0, 0%, 100%);
+  --gradient: linear-gradient(
+    to bottom,
+    hsla(206, 14%, 10%, 1) 0%,
+    hsla(206, 14%, 20%, 0.3) 100%
+  );
+  /* --shadow: 0 0 18px hsla(210, 60%, 25%, 0.6); */
+  --shadow: 0 0 18px hsla(0, 60%, 25%, 0.6);
+  /* --shadow-hov: 0 0 22px hsla(210, 60%, 30%, 0.8); */
+  --shadow-hov: 0 0 22px hsla(0, 60%, 30%, 0.8);
+  /* --shadow-act: 0 0 14px hsla(210, 60%, 25%, 0.5); */
+  --shadow-act: 0 0 14px hsla(0, 60%, 25%, 0.5);
+  /* --border: 1px solid hsla(40, 60%, 60%, 0.35); */
+  --border: 1px solid hsla(0, 60%, 60%, 0.35);
+  --border-radius: 2rem;
+  --hero: url(/assets/img/hero_2.jpg);
+  --slide-gap: 20px;
+}
+
+/* ==========
+RESETS
+========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--ff-body);
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a {
+  color: inherit;
+}
+
+h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--ff-title);
+  font-weight: var(--ff-bold);
+  color: var(--text);
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}

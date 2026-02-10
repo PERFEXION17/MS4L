@@ -1,95 +1,83 @@
 import { formatPrice } from "./utils.js";
 
-export function setupMiniCart(updateCartCounter) {
-  // Pass in updateCartCounter for override
-  const miniCartToggle = document.getElementById("mini-cart-toggle");
-  const miniCartDropdown = document.getElementById("mini-cart-dropdown");
-  const miniCartItems = document.getElementById("mini-cart-items");
-  const miniCartFooter = document.getElementById("mini-cart-footer");
-  const miniCartEmpty = document.getElementById("mini-cart-empty");
-  const miniCartSubtotal = document.getElementById("mini-cart-subtotal");
-  const closeMiniCart = document.getElementById("close-mini-cart");
+export function setupMiniCart() {
+  const wrapper = document.querySelector(".mini-cart-wrapper");
+  const dropdown = document.getElementById("mini-cart-dropdown");
+  const itemsContainer = document.getElementById("mini-cart-items");
+  const footer = document.getElementById("mini-cart-footer");
+  const emptyMsg = document.getElementById("mini-cart-empty");
+  const subtotalEl = document.getElementById("mini-cart-subtotal");
+  const cartCountBadge = document.getElementById("cart-count");
 
-  if (!miniCartToggle || !miniCartDropdown) return;
+  // Safety check: if wrapper or dropdown don't exist, stop.
+  if (!wrapper || !dropdown) return;
 
-  let isOpen = false;
+  let closeTimeout;
 
-  const openMiniCart = () => {
-    miniCartDropdown.classList.add("open");
-    isOpen = true;
-    renderMiniCart();
-  };
-
-  const closeMiniCartFn = () => {
-    miniCartDropdown.classList.remove("open");
-    isOpen = false;
-  };
-
-  miniCartToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    isOpen ? closeMiniCartFn() : openMiniCart();
-  });
-
-  if (closeMiniCart) {
-    closeMiniCart.addEventListener("click", closeMiniCartFn);
-  }
-
-  document.addEventListener("click", (e) => {
-    if (
-      isOpen &&
-      !miniCartDropdown.contains(e.target) &&
-      e.target !== miniCartToggle
-    ) {
-      closeMiniCartFn();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && isOpen) closeMiniCartFn();
-  });
-
+  // --- RENDER FUNCTION ---
   const renderMiniCart = () => {
+    // 1. Get Cart from Storage
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    miniCartItems.innerHTML = "";
+
+    // 2. Clear current list
+    if (itemsContainer) itemsContainer.innerHTML = "";
+
     let total = 0;
 
-    if (cart.length === 0) {
-      miniCartFooter.style.display = "none";
-      miniCartEmpty.style.display = "block";
-    } else {
-      miniCartFooter.style.display = "block";
-      miniCartEmpty.style.display = "none";
+    // 3. Update Badge
+    if (cartCountBadge) cartCountBadge.textContent = cart.length;
 
+    // 4. Handle Empty vs Full State
+    if (cart.length === 0) {
+      if (footer) footer.style.display = "none";
+      if (emptyMsg) emptyMsg.style.display = "block";
+    } else {
+      if (footer) footer.style.display = "block";
+      if (emptyMsg) emptyMsg.style.display = "none";
+
+      // 5. Render Items
       cart.forEach((item) => {
         total += item.price * item.qty;
+
         const div = document.createElement("div");
         div.className = "mini-cart-item";
         div.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" />
+          <img src="${item.image}" alt="${item.name}" loading="lazy" />
           <div class="mini-cart-item-info">
             <h5>${item.name}</h5>
-            <p>Color: ${item.color} | Size: ${item.size} | Qty: ${item.qty}</p>
-            <p class="cart_price"><strong>${formatPrice(
-              item.price * item.qty
-            )}</strong></p>
+            <p>Size: ${item.size} | Qty: ${item.qty}</p>
+            <p class="cart_price"><strong>${formatPrice(item.price * item.qty)}</strong></p>
           </div>
         `;
-        miniCartItems.appendChild(div);
+        if (itemsContainer) itemsContainer.appendChild(div);
       });
 
-      miniCartSubtotal.textContent = formatPrice(total);
+      // 6. Update Subtotal
+      if (subtotalEl) subtotalEl.textContent = formatPrice(total);
     }
   };
 
-  // Override updateCartCounter to refresh mini-cart if open
-  const originalUpdate = updateCartCounter;
-  window.updateCartCounter = () => {
-    originalUpdate();
-    const counter = document.getElementById("mini-cart-counter");
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    if (counter) counter.textContent = cart.length;
-    if (isOpen) renderMiniCart();
+  // --- HOVER EVENTS ---
+  wrapper.addEventListener("mouseenter", () => {
+    clearTimeout(closeTimeout);
+    renderMiniCart(); // Fetch fresh data on hover
+    dropdown.classList.add("active");
+  });
+
+  wrapper.addEventListener("mouseleave", () => {
+    closeTimeout = setTimeout(() => {
+      dropdown.classList.remove("active");
+    }, 300);
+  });
+
+  // --- GLOBAL UPDATE HOOK ---
+  window.updateMiniCart = () => {
+    renderMiniCart();
+    // Optional: Auto-open briefly
+    dropdown.classList.add("active");
+    setTimeout(() => dropdown.classList.remove("active"), 2500);
   };
 
-  window.updateCartCounter(); // Initial call
+  // --- INITIAL RENDER ---
+  renderMiniCart();
 }
