@@ -14,4 +14,5 @@
 /* 4. Page Specifics */
 @import 'pages/pdp.css';
 @import 'pages/cart.css';
+@import 'pages/shop.css';
 @import 'pages/wishlist.css';

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="assets/img/MS4L_logo.webp"
+      type="image/x-icon"
+    />
+
+    <title>MS4L | Collection</title>
+  </head>
+  <body>
+    <div id="preloader" class="preloader"><div class="spinner"></div></div>
+
+    <header>
+      <div class="announcement_bar">
+        <p>
+          LOVE YOURSELF FIRST 🌹 Enjoy ₦500 OFF storewide. Because you deserve
+          the best.
+        </p>
+      </div>
+
+      <nav class="navbar">
+        <div class="nav-top">
+          <div class="logo">
+            <a href="index.html">
+              <img src="./assets/img/MS4L_logo.png" alt="MS4L Logo" />
+            </a>
+          </div>
+
+          <div class="utilities">
+            <button id="search-btn">
+              <i class="ph ph-magnifying-glass"></i>
+            </button>
+            <button id="theme-toggle"><i class="ph ph-moon"></i></button>
+
+            <a href="wishlist.html" class="icon-link">
+              <i class="ph ph-heart"></i>
+              <span id="wishlist-count" class="badge">0</span>
+            </a>
+
+            <div class="mini-cart-wrapper">
+              <a href="bag.html" class="icon-link" id="mini-cart-toggle">
+                <i class="ph ph-handbag"></i>
+                <span id="cart-count" class="badge">0</span>
+              </a>
+
+              <div id="mini-cart-dropdown" class="mini-cart-dropdown">
+                <div class="mini-cart-header">
+                  <h4>Your Bag</h4>
+                </div>
+
+                <div id="mini-cart-items" class="mini-cart-items"></div>
+
+                <div id="mini-cart-footer" class="mini-cart-footer">
+                  <div class="mini-cart-subtotal">
+                    <span>Subtotal:</span>
+                    <strong id="mini-cart-subtotal">₦0</strong>
+                  </div>
+                  <div class="mini-cart-actions">
+                    <a href="bag.html" class="btn-secondary">View Bag</a>
+                    <a href="checkout.html" class="btn-primary">Checkout</a>
+                  </div>
+                </div>
+
+                <div
+                  id="mini-cart-empty"
+                  class="mini-cart-empty"
+                  style="display: none"
+                >
+                  <p>Your bag is empty</p>
+                  <a href="shop.html?category=new-arrivals">Start Shopping</a>
+                </div>
+              </div>
+            </div>
+
+            <button id="menu-btn" class="menu-btn">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="nav-bottom">
+          <ul class="nav-links">
+            <li>
+              <a href="shop.html?category=new-arrivals">New Arrivals</a>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="shop.html?category=lingerie">Lingerie</a>
+              <div class="mega-menu">
+                <div class="mega-content">
+                  <div class="mega-column">
+                    <h3>Collections</h3>
+                    <ul>
+                      <li>
+                        <a href="shop.html?category=lingerie-sets"
+                          >Bra & Panty Sets</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop.html?category=teddies"
+                          >Bodysuits & Teddies</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop.html?category=babydolls"
+                          >Babydolls & Chemises</a
+                        >
+                      </li>
+                      <li>
+                        <a href="shop.html?category=corsets"
+                          >Corsets & Bustiers</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-column">
+                    <h3>Styles</h3>
+                    <ul>
+                      <li>
+                        <a href="shop.html?category=lace">Lace Collection</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=fishnet">Fishnet & Mesh</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=bridal">Bridal Lingerie</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=plus-size">Plus Size</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-column">
+                    <div
+                      class="mega-image"
+                      onclick="
+                        window.location.href =
+                          'shop.html?category=lingerie-sets'
+                      "
+                    >
+                      <img
+                        src="./assets/img/lin_set_xiv_1.webp"
+                        alt="Lingerie Sets"
+                      />
+                      <div class="mega-image-overlay">
+                        <span>Best Sellers</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mega-column">
+                    <div
+                      class="mega-image"
+                      onclick="
+                        window.location.href = 'shop.html?category=new-arrivals'
+                      "
+                    >
+                      <img
+                        src="./assets/img/lin_gown_s1_1.webp"
+                        alt="New Arrivals"
+                      />
+                      <div class="mega-image-overlay">
+                        <span>New Arrivals</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="shop.html?category=sleep-lounge">Sleep & Lounge</a>
+              <div class="mega-menu">
+                <div
+                  class="mega-content"
+                  style="grid-template-columns: 1fr 1fr 2fr"
+                >
+                  <div class="mega-column">
+                    <h3>Sleepwear</h3>
+                    <ul>
+                      <li>
+                        <a href="shop.html?category=pyjamas">Pyjama Sets</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=nightgowns">Nightgowns</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=robes">Robes & Kimonos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-column">
+                    <h3>Fabrics</h3>
+                    <ul>
+                      <li>
+                        <a href="shop.html?category=satin">Satin & Silk</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=cotton">Cotton Comfort</a>
+                      </li>
+                      <li>
+                        <a href="shop.html?category=luxury"
+                          >Luxury Collection</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mega-column">
+                    <div
+                      class="mega-image"
+                      onclick="
+                        window.location.href = 'shop.html?category=pyjamas'
+                      "
+                    >
+                      <img
+                        src="./assets/img/silk_pyjamas_1.png"
+                        alt="Silk Pyjamas"
+                      />
+                      <div class="mega-image-overlay">
+                        <span>The Silk Collection</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="shop.html?category=underwear">Underwear</a></li>
+            <li><a href="shop.html?category=activewear">Activewear</a></li>
+            <li><a href="shop.html?category=clothing">Clothing</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div id="menulist" class="menu-overlay">
+      <button id="close-menu-btn" class="close-btn">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <ul class="menu-links">
+        <li><a href="shop.html?category=new-arrivals">New Arrivals</a></li>
+
+        <li class="mobile-dropdown">
+          <div class="dropdown-header">Lingerie <i class="ph ph-plus"></i></div>
+          <ul class="submenu">
+            <li>
+              <a href="shop.html?category=lingerie-sets">Bra & Panty Sets</a>
+            </li>
+            <li>
+              <a href="shop.html?category=teddies">Bodysuits & Teddies</a>
+            </li>
+            <li>
+              <a href="shop.html?category=babydolls">Babydolls & Chemises</a>
+            </li>
+            <li>
+              <a href="shop.html?category=fishnet">Fishnet & Hosiery</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="mobile-dropdown">
+          <div class="dropdown-header">
+            Sleep & Lounge <i class="ph ph-plus"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="shop.html?category=pyjamas">Pyjama Sets</a></li>
+            <li><a href="shop.html?category=nightgowns">Nightgowns</a></li>
+            <li><a href="shop.html?category=lounge-sets">Lounge Sets</a></li>
+          </ul>
+        </li>
+
+        <li class="mobile-dropdown">
+          <div class="dropdown-header">
+            Underwear <i class="ph ph-plus"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="shop.html?category=panties">Panties</a></li>
+            <li><a href="shop.html?category=bra">Bras</a></li>
+            <li><a href="shop.html?category=boxers">Boxers</a></li>
+            <li><a href="shop.html?category=body-shaper">Shapewear</a></li>
+          </ul>
+        </li>
+
+        <li><a href="shop.html?category=activewear">Activewear</a></li>
+        <li><a href="shop.html?category=clothing">Clothing</a></li>
+        <li><a href="aboutme.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <main class="main section-p1 shop-main">
+      <div class="shop_header">
+        <h2 id="category-title" class="shop_title">COLLECTION</h2>
+        <p id="category-desc" class="shop_desc">Explore our latest styles</p>
+      </div>
+
+      <section id="product-grid" class="product-grid"></section>
+
+      <div class="modal" id="cart-modal">
+        <div class="modal-content">
+          <h3>Item Added!</h3>
+          <p class="icon"><i class="ph ph-check-circle"></i></p>
+          <button id="close-modal">Continue Shopping</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="foot_con">
+        <div class="foot_logo item1">
+          <img src="assets/img/MS4L_logo.png" alt="" />
+        </div>
+
+        <div class="foot_box item2a">
+          <h3>Site Map</h3>
+          <a href="new_arrival.html">New Arrivals</a>
+          <a href="men.html">Men</a>
+          <a href="women.html">Women</a>
+          <a href="aboutme.html" target="_blank">About Us</a>
+        </div>
+
+        <div class="foot_box item2b">
+          <h3>Customer Service</h3>
+          <a href="aboutme.html#policy" target="_blank"
+            >Privacy Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
+          <a href="aboutme.html#policy" target="_blank"
+            >Returns & Refund Policy <i class="ph ph-arrow-up-right"></i
+          ></a>
+          <a href="aboutme.html#policy" target="_blank"
+            >Shipping and Delivery <i class="ph ph-arrow-up-right"></i
+          ></a>
+        </div>
+
+        <div class="foot_box item3a">
+          <h3>Contact Us</h3>
+          <p><i class="ph ph-envelope-simple"></i> : support@ms4l.com.ng</p>
+          <p><i class="ph ph-phone"></i> : +2349160596645</p>
+          <p><i class="ph ph-whatsapp-logo"></i> : +2349025049148</p>
+        </div>
+
+        <div class="foot_soc item3b">
+          <h3>Follow Us</h3>
+          <div class=".foot_soc-icons">
+            <a href="https://www.x.com/Leeshaofficial" target="_blank"
+              ><i class="ph ph-x-logo"></i
+            ></a>
+            <a href="https://www.instagram.com/My__storefl" target="_blank"
+              ><i class="ph ph-instagram-logo"></i
+            ></a>
+            <a href="https://www.tiktok.com/@my__storefl" target="_blank"
+              ><i class="ph ph-tiktok-logo"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="foot_box item4">
+          <img src="assets/img/paystack.png" alt="" />
+        </div>
+      </div>
+      <div class="copy">
+        <p>
+          &copy; 2025 My Store For Life | PERFEXION INC. All Rights Reserved
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/js/shop-dynamic.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
