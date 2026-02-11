@@ -5,37 +5,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const productGrid = document.getElementById("product-grid");
   const categoryTitle = document.getElementById("category-title");
 
-  // 1. Get URL Params
+  // 1. Get URL parameters
   const urlParams = new URLSearchParams(window.location.search);
-  const targetCategory = urlParams.get("category");
+  const targetCategory = urlParams.get("category");       // e.g. ?category=lingerie
+  const targetSubCategory = urlParams.get("subCategory"); // e.g. ?subCategory=teddies
+
+  let filteredProducts = [];
+  
+  // Helper to format title (e.g., "gym-wear" -> "GYM WEAR")
+  const formatTitle = (str) => str ? str.replace(/-/g, " ").toUpperCase() : "";
 
   // 2. Filter Logic
-  let filteredProducts = [];
-
-  if (!targetCategory || targetCategory === "all") {
-    // Show everything if no category specified
-    filteredProducts = products;
-    categoryTitle.textContent = "All Products";
-  } else if (targetCategory === "new-arrivals") {
-    // Logic for New Arrivals (e.g., last 10 items or specific IDs)
+  
+  // SCENARIO A: Explicit Sub-Category (The new, correct way)
+  if (targetSubCategory) {
     filteredProducts = products.filter(
-      (p) => p.category === "new-arrivals" || p.id <= 8,
+      (p) => p.subCategory && p.subCategory.toLowerCase() === targetSubCategory.toLowerCase()
     );
-    categoryTitle.textContent = "New Arrivals";
-  } else {
-    // Standard Category Filter
-    // This checks if the product's category OR sub-category includes the URL param
-    // ensuring ?category=babydolls finds items labeled as "Babydoll"
+    categoryTitle.textContent = formatTitle(targetSubCategory);
+  } 
+  
+  // SCENARIO B: New Arrivals (Using the boolean flag in your new data)
+  else if (targetCategory === "new-arrivals") {
+    filteredProducts = products.filter((p) => p.newArrival === true);
+    categoryTitle.textContent = "NEW ARRIVALS";
+  } 
+  
+  // SCENARIO C: Main Category (or "Catch-All" for old links)
+  else if (targetCategory && targetCategory !== "all") {
+    const slug = targetCategory.toLowerCase();
+    
     filteredProducts = products.filter((p) => {
-      const cat = p.category ? p.category.toLowerCase() : "";
-      const type = p.type ? p.type.toLowerCase() : ""; // Assuming you have a 'type' field
-      const slug = targetCategory.toLowerCase();
-
-      return cat.includes(slug) || type.includes(slug);
+      // 1. Check Main Category
+      const catMatch = p.category && p.category.toLowerCase() === slug;
+      // 2. Check Sub Category (Backup for old links)
+      const subCatMatch = p.subCategory && p.subCategory.toLowerCase() === slug;
+      
+      return catMatch || subCatMatch;
     });
-
-    // Format Title (remove hyphens)
-    categoryTitle.textContent = targetCategory.replace(/-/g, " ").toUpperCase();
+    
+    categoryTitle.textContent = formatTitle(targetCategory);
+  } 
+  
+  // SCENARIO D: Default (Show All)
+  else {
+    filteredProducts = products;
+    categoryTitle.textContent = "ALL PRODUCTS";
   }
 
   // 3. Render
@@ -43,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     productGrid.innerHTML = `
         <div class="no-products-msg">
             <h3>No products found in this collection.</h3>
-            <a href="shop.html?category=new-arrivals" class="no-products-link">View New Arrivals</a>
+            <a href="shop.html?category=new-arrivals" class="no-products-link">View New Arrivals <i class="ph ph-arrow-up-right"></i
+          ></a>
         </div>`;
   } else {
     renderGrid(filteredProducts);
@@ -51,13 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- RENDER FUNCTION (9:16 CARDS) ---
+
 function renderGrid(items) {
   const productGrid = document.getElementById("product-grid");
 
   productGrid.innerHTML = items
     .map(
       (product) => `
-    <div class="tile" onclick="window.location.href='prod_details.html?id=${product.id}'">
+    <div class="tile" onclick="window.location.href='pdp.html?id=${product.id}'">
       
       <div class="tile_img">
         <img src="${product.images[0]}" alt="${product.name}" loading="lazy">

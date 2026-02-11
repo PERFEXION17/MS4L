@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   /* --primary-color: hsl(210, 5%, 95%); */
@@ -8,13 +8,15 @@
   /* --price-color: hsl(210, 50%, 40%); */
   --price-color: hsl(0, 64%, 45%);
   /* --text: hsl(25, 20%, 15%); */
-  --text: #231f20;
+  --text: hsl(345, 6%, 3%);
   /* --accent: hsl(40, 60%, 55%); */
   --accent: #e01f06;
   --input-color: hsl(0, 0%, 90%);
   --empty-state: hsl(0, 0%, 85%);
   /* --glass-bg: hsla(0, 0%, 100%, 0.15); */
   --glass-bg: hsla(0, 45%, 50%, 0.15);
+  --glass-bg-menu: hsla(0, 25%, 70%, 0.8);
+  --glass: blur(5px);
   --green: hsl(145, 35%, 55%);
   --green-2: hsl(145, 35%, 45%);
   --red: hsl(0, 65%, 60%);
@@ -39,7 +41,6 @@
   --border: 1px solid hsla(0, 60%, 55%, 0.4);
   /* --border-radius: 2rem; */
   --transition: all 0.3s ease-in-out;
-  --glass: blur(5px);
   --hover: translateY(-2px);
   --padding: 1rem;
   --l-padding: 2rem;
@@ -78,6 +79,8 @@
   --empty-state: hsl(0, 0%, 20%);
   /* --glass-bg: hsla(210, 25%, 25%, 0.35); */
   --glass-bg: hsla(0, 25%, 25%, 0.35);
+  --glass-bg-menu: hsla(0, 25%, 25%, 0.90);
+  --glass: blur(5px);
   --green: hsl(145, 45%, 55%);
   --green-2: hsl(145, 45%, 45%);
   --red: hsl(0, 70%, 60%);

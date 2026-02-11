@@ -1,76 +1,75 @@
 /* ==================== SHOP PAGE LAYOUT ==================== */
 
-/* 1. Main Container Spacing */
-/* Pushes content down so it isn't hidden behind the fixed Glass Navbar */
 .shop-main {
     margin-top: 180px; 
     min-height: 80vh; /* Ensures footer stays at bottom on empty pages */
 }
 
-/* Mobile Adjustment for Header Height */
 @media (max-width: 900px) {
     .shop-main {
         margin-top: 140px; 
     }
 }
 
-/* 2. Page Header (Title & Desc) */
 .shop_header {
     margin-bottom: 40px;
-    text-align: center;
     padding: 0 20px;
+    text-align: center;
 }
 
 .shop_title {
-    font-family: var(--ff-heading);
-    font-size: 2.5rem;
-    text-transform: uppercase;
+    /* margin-bottom: 10px; */
     color: var(--text);
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    font-family: var(--ff-heading);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .shop_desc {
-    color: var(--text);
-    opacity: 0.7;
-    font-family: var(--ff-body);
-    font-size: 1rem;
     max-width: 600px;
     margin: 0 auto;
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    opacity: 0.7;
 }
 
-/* 3. The Product Grid */
 .product-grid {
+    padding: 0 32px;
     display: grid;
-    /* responsive columns: at least 280px wide, filling available space */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-    gap: 30px 20px; /* Row Gap 30px, Column Gap 20px */
+    /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px 20px;
     width: 100%;
 }
 
-/* Mobile Grid Adjustment: Ensure 2 columns on larger phones if desired, 
-   or keep 1 column for large 9:16 images. 
-   Currently set to 1 column on very small screens, 2 on larger phones. */
+@media (min-width: 600px) and (max-width: 900px) {
+    .product-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns on mobile */
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px 10px;
     }
     
     .shop_title {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 }
 
 /* 4. Empty State (No Products Found) */
 .no-products-msg {
-    grid-column: 1 / -1; /* Spans all columns */
-    text-align: center;
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    grid-column: 1 / -1;
+    text-align: center;
 }
 
 .no-products-msg h3 {
@@ -80,11 +79,11 @@
 }
 
 .no-products-link {
+    color: var(--accent);
     font-family: var(--ff-body);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 4px;
-    color: var(--accent);
     transition: var(--transition);
 }
 
