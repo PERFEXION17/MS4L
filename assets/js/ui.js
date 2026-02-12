@@ -25,35 +25,6 @@ export function setupCollapsibleSections() {
 }
 
 // =====================================================
-// DARKMODE
-// =====================================================
-
-export function setupDarkMode() {
-  const themeToggle = document.getElementById("theme-toggle");
-  const body = document.body;
-  const icon = themeToggle ? themeToggle.querySelector("i") : null;
-
-  // Check saved preference
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("darkmode");
-    if (icon) icon.classList.replace("ph-moon", "ph-sun");
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      body.classList.toggle("darkmode");
-      const isDark = body.classList.contains("darkmode");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-
-      if (icon) {
-        if (isDark) icon.classList.replace("ph-moon", "ph-sun");
-        else icon.classList.replace("ph-sun", "ph-moon");
-      }
-    });
-  }
-}
-
-// =====================================================
 // SEARCH TOGGLE
 // =====================================================
 

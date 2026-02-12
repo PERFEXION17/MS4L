@@ -1,11 +1,24 @@
+// assets/js/main.js
+
+// --- 1. CORE IMPORTS ---
 import { hidePreloader } from "./preloader.js";
+import { updateCartUI } from "./cart.js"; 
+import { initPDP } from "./pdp.js";
+
+// --- 2. UI & SYSTEMS IMPORTS ---
 import {
-  // updateCartCounter, // Commented out to avoid conflict
-  displayCart,
-  displayCheckout,
-  setupThankYouPage,
-  initPaystackCheckout,
-} from "./cart.js";
+  setupCollapsibleSections,
+  setupMenuToggle,
+  setupSearchToggle,
+} from "./ui.js";
+
+import {
+  triggerCartModal,
+  triggerClearModal,
+  triggerLinkModal,
+  setupModalClosers,
+} from "./modals.js";
+
 import {
   toggleWishlist,
   updateWishlistCounter,
@@ -13,84 +26,71 @@ import {
   renderWishlistPage,
   addToCartFromWishlist,
 } from "./wishlist.js";
-import {
-  triggerCartModal,
-  triggerClearModal,
-  triggerLinkModal,
-  setupModalClosers,
-} from "./modals.js";
-import {
-  setupCollapsibleSections,
-  setupDarkMode,
-  setupMenuToggle,
-  setupSearchToggle,
-} from "./ui.js";
-import { setupMiniCart } from "./minicart.js";
-import { initProductDetailPage } from "./pdp.js";
-import { initShopAddToCart } from "./shopCart.js";
+
 import "./video-gallery.js";
 
-// Preloader
-window.onload = hidePreloader;
+// --- 3. PRELOADER ---
+window.addEventListener("load", hidePreloader);
 
-// Global App Init
+// --- 4. GLOBAL APP INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
-  // Core systems
-  // updateCartCounter(); // Disabled
-  updateWishlistCounter();
-  renderWishlistHearts();
-  setupModalClosers();
-  setupCollapsibleSections();
-  setupDarkMode();
+  console.log("🚀 Main Engine Starting...");
+
+  // A. Initialize UI Components
   setupMenuToggle();
   setupSearchToggle();
+  setupCollapsibleSections();
+  setupModalClosers();
 
-  // FIX: Call without arguments
-  setupMiniCart();
+  // B. Initialize Cart System (Badge + Mini Cart + Cart Page)
+  updateCartUI();
 
-  // Page-specific inits
-  initShopAddToCart();
-  initProductDetailPage();
-  initPaystackCheckout();
+  // C. Initialize Page-Specific Logic
+  initPDP();
   renderWishlistPage();
-  displayCart();
-  displayCheckout();
-  setupThankYouPage();
 
-  // Global wishlist header button
-  const headerWishlistBtn = document.querySelector(".wishlist-btn-header");
-  if (headerWishlistBtn) {
-    headerWishlistBtn.addEventListener("click", () => {
-      window.location.href = "wishlist.html";
-    });
+  // D. Initialize Wishlist System
+  updateWishlistCounter();
+  renderWishlistHearts();
+  setupGlobalWishlistEvents();
+
+  // E. One-off Helpers
+  handleIntroModal();
+});
+
+// --- 5. HELPER FUNCTIONS ---
+
+function setupGlobalWishlistEvents() {
+  const headerBtn = document.querySelector(".wishlist-btn-header");
+  if (headerBtn) {
+    headerBtn.onclick = () => (window.location.href = "wishlist.html");
   }
 
-  // Global wishlist buttons on cards
   document.querySelectorAll(".wishlist-btn[data-id]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       toggleWishlist(parseInt(btn.dataset.id));
     });
   });
 
-  // Move to Bag buttons (wishlist page)
-  document.addEventListener("click", (e) => {
-    const moveBtn = e.target.closest(".wishlist-bag");
-    if (!moveBtn) return;
-
-    const id = parseInt(moveBtn.dataset.id);
-    addToCartFromWishlist(id);
+  document.body.addEventListener("click", (e) => {
+    if (e.target.closest(".wishlist-bag")) {
+      const btn = e.target.closest(".wishlist-bag");
+      addToCartFromWishlist(parseInt(btn.dataset.id));
+    }
   });
+}
 
-  // Close Gesture in Gallery
+function handleIntroModal() {
   const instructModal = document.getElementById("instruct-modal");
   if (instructModal) {
     setTimeout(() => instructModal.remove(), 3500);
   }
-});
+}
 
-// Global exports for inline onclicks
+// --- 6. WINDOW EXPORTS ---
 window.toggleWishlist = toggleWishlist;
-// window.updateCartCounter = updateCartCounter;
 window.triggerCartModal = triggerCartModal;
 window.triggerClearModal = triggerClearModal;
 window.triggerLinkModal = triggerLinkModal;
