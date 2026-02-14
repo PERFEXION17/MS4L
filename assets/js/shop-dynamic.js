@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productGrid.innerHTML = `
         <div class="no-products-msg">
             <h3>No products found in this collection.</h3>
-            <a href="shop.html?category=new-arrivals" class="no-products-link">View New Arrivals <i class="ph ph-arrow-up-right"></i
+            <a href="shop.html?category=new-arrivals" class="no-products-link">View New Arrivals <i class="ph-light ph-arrow-up-right"></i
           ></a>
         </div>`;
   } else {
@@ -80,7 +80,7 @@ function renderGrid(items) {
         <img src="${product.images[0]}" alt="${product.name}" loading="lazy">
         
         <button class="wishlist-btn" data-id="${product.id}" onclick="event.stopPropagation(); toggleWishlist(${product.id})">
-          <i class="ph ph-heart"></i>
+          <i class="ph-light ph-heart"></i>
         </button>
       </div>
 

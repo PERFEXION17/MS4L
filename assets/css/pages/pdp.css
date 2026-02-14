@@ -1,0 +1,397 @@
+@import "/assets/css/base/reset.css";
+
+/* =========================================
+   PDP LAYOUT (Updated: Left-Aligned Grid Gallery)
+   ========================================= */
+
+#prodetails {
+  display: flex;
+  margin-top: 180px;
+  gap: 40px;
+  position: relative;
+  padding: 0 32px;
+  align-items: flex-start; /* Crucial for sticky behavior */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- 1. GALLERY CONTAINER (Left Side) --- */
+.single-pro-image {
+  width: 60%;
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  z-index: 10;
+}
+
+/* --- 2. THUMBNAILS (The Left Stack) --- */
+.small-img-group {
+  flex: 1;
+  order: -1;
+  max-height: 120vh;
+  width: 120px;
+  padding: 0 5px;
+  flex-shrink: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) transparent;
+}
+
+.small-img-col {
+  width: 100%;
+  flex: unset;
+  aspect-ratio: 9 / 16;
+  border: 1px solid transparent;
+  opacity: 0.6;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.small-img-col.active,
+.small-img-col:hover {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- 3. MAIN IMAGE (The Right Stack) --- */
+.img-zoom-container {
+  flex: 2;
+  width: 60%;
+  margin-bottom: 0;
+  height: auto;
+  display: flex;
+  cursor: pointer;
+}
+
+/* --- 4. PRODUCT DETAILS (Right Side of Page) --- */
+.single-pro-details {
+  width: 35%;
+  padding-top: 0;
+}
+
+/* --- MOBILE RESPONSIVENESS (Reset to Stacked) --- */
+@media (max-width: 900px) {
+  #prodetails {
+    flex-direction: column;
+  }
+
+  .single-pro-image {
+    width: 100%;
+    position: static;
+    flex-direction: column;
+  }
+
+  .small-img-group {
+    order: 1;
+    width: 100%;
+    max-height: none;
+    padding-top: 10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .small-img-col {
+    flex: 0 0 20%;
+    aspect-ratio: auto;
+  }
+
+  .single-pro-details {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   RIGHT COLUMN: PRODUCT DETAILS
+   ========================================= */
+.single-pro-details {
+  width: 50%;
+  padding-top: 10px;
+}
+
+/* Breadcrumbs & Categories */
+.single-pro-details h6 {
+  font-family: var(--ff-body);
+  font-size: var(--ff-small);
+  color: var(--text);
+  opacity: 0.7;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Product Name */
+.single-pro-details h4 {
+  font-family: var(--ff-heading); /* Cinzel */
+  font-size: var(--ff-title);
+  color: var(--text);
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Product Price */
+.single-pro-details h2 {
+  margin-bottom: 25px;
+  font-family: var(--ff-heading);
+  font-size: var(--ff-title);
+  font-weight: var(--ff-bold);
+  color: var(--text);
+}
+
+/* --- FORM ELEMENTS --- */
+.selector-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.single-pro-details select,
+.single-pro-details input {
+  font-family: var(--ff-body);
+  display: block;
+  padding: 12px 15px;
+  border: 1px solid #ccc; /* Fallback */
+  border: var(--border);
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--primary-color);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.single-pro-details select:focus,
+.single-pro-details input:focus {
+  border-color: var(--accent);
+}
+
+.single-pro-details select {
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.single-pro-details input {
+  width: 80px;
+  padding-left: 15px;
+}
+
+/* Add to Cart Button */
+.single-pro-details button.normal {
+  font-family: var(--ff-body);
+  background-color: var(--accent); /* Brand Red */
+  color: var(--white_txt);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px; /* Pill shape */
+  cursor: pointer;
+  font-weight: var(--ff-bold);
+  font-size: 15px;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow);
+}
+
+.single-pro-details button.normal:hover {
+  background-color: var(--red-2); /* Darker Red on hover */
+  transform: var(--hover);
+  box-shadow: var(--shadow-hov);
+}
+
+/* =========================================
+   RICH METADATA (Editorial Style)
+   ========================================= */
+
+.product-meta {
+  margin-top: 40px;
+}
+
+/* "Product Details" Heading */
+.product-meta h4 {
+  border-bottom: none;
+  font-size: var(--ff-title-2);
+  margin-bottom: 10px;
+}
+
+/* Marketing Hook */
+.marketing-text {
+  font-family: "Cinzel", serif; /* Use heading font for classy feel */
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Tech Specs List */
+.tech-specs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.tech-specs li {
+  font-family: var(--ff-body);
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.tech-specs li::before {
+  content: "✦"; /* Classy Bullet */
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 1rem;
+}
+
+/* Meta Footer (Material/Tags) */
+.meta-footer {
+  border-top: 1px dashed var(--secondary-color);
+  padding-top: 20px;
+}
+
+.meta-footer p {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: var(--ff-light);
+}
+
+.meta-footer strong {
+  font-weight: var(--ff-bold);
+  color: var(--accent);
+}
+
+/* =========================================
+   NEW LIGHTBOX OVERLAY (Fullscreen Zoom)
+   ========================================= */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: zoom-in;
+}
+
+.lightbox-img.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  font-family: var(--ff-heading);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.section-p1 {
+  margin: 80px 0;
+}
+
+.similar-con-h2{
+  color: var(--text);
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+}
+
+.similar-con-p {
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.pro-container {
+  width: 100%;
+  margin: 80px 0;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px 20px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 799px) {
+  #prodetails {
+    padding: 0 var(--padding);
+    margin-top: 140px;
+    flex-direction: column;
+  }
+
+  .single-pro-image {
+    width: 100%;
+    position: static; /* No sticky on mobile */
+  }
+
+  .single-pro-details {
+    width: 100%;
+  }
+
+  .img-zoom-container {
+    width: 100%;
+  }
+
+  /* Adjust Lightbox for Mobile */
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+  }
+
+  .lightbox-img.zoomed {
+    transform: scale(2.5); /* Allow deeper zoom */
+  }
+}

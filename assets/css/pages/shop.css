@@ -1,7 +1,7 @@
 /* ==================== SHOP PAGE LAYOUT ==================== */
 
 .shop-main {
-    margin-top: 180px; 
+    margin-top: 180px;
     min-height: 80vh; /* Ensures footer stays at bottom on empty pages */
 }
 
@@ -12,50 +12,50 @@
 }
 
 .shop_header {
-    margin-bottom: 40px;
-    padding: 0 20px;
-    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
 }
 
 .shop_title {
-    /* margin-bottom: 10px; */
-    color: var(--text);
+    color: var(--text-primary);
     font-family: var(--ff-heading);
-    font-size: 1.7rem;
+    font-size: var(--font-size-h3);
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: var(--spacing-header);
 }
 
 .shop_desc {
-    max-width: 600px;
-    margin: 0 auto;
-    color: var(--text);
+    color: var(--text-body);
     font-family: var(--ff-body);
-    font-size: 1rem;
-    opacity: 0.7;
+    font-size: var(--font-size-xs);
 }
 
 .product-grid {
-    padding: 0 32px;
-    display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));  */
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 30px 20px;
     width: 100%;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: var(--spacing-xl) var(--spacing-md);
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
+    .shop-main{
+        margin-top: 100px;
+    }
     .product-grid{
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 600px) {
+    .shop-main{
+        margin-top: 100px;
+    }
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 10px;
+        gap: var(--spacing-md) var(--spacing-xs);
     }
-    
+
     .shop_title {
         font-size: 1.3rem;
     }
@@ -63,7 +63,7 @@
 
 /* 4. Empty State (No Products Found) */
 .no-products-msg {
-    padding: 80px 20px;
+    padding: var(--spacing-xl) var(--spacing-md);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,20 +73,22 @@
 }
 
 .no-products-msg h3 {
+    color: var(--text-primary);
     font-family: var(--ff-heading);
-    font-size: 1.5rem;
-    color: var(--text);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-light);
 }
 
 .no-products-link {
-    color: var(--accent);
+    color: var(--text-muted);
     font-family: var(--ff-body);
-    font-weight: 600;
+    font-size: var(--font-size-ui);
+    font-weight: var(--font-weight-light);
     text-decoration: underline;
     text-underline-offset: 4px;
     transition: var(--transition);
 }
 
 .no-products-link:hover {
-    color: var(--text);
+    color: var(--text-body);
 }

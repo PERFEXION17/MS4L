@@ -1,399 +1,363 @@
-import { formatPrice } from "./utils.js";
-import { triggerClearModal } from "./modals.js";
+// assets/js/cart.js
 
-let cartItemsContainer = null;
+// --- IMPORTS ---
+import { formatPrice } from "./utils.js"; // Ensure this exists or replace with helper below
 
-// ONE-TIME EVENT DELEGATION — attached once, never duplicated
-document.addEventListener("DOMContentLoaded", () => {
-  cartItemsContainer = document.getElementById("bag-items");
-  if (!cartItemsContainer) return;
+// --- STATE MANAGEMENT ---
+export let cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 
-  // + / − QUANTITY BUTTONS
-  cartItemsContainer.addEventListener("click", (e) => {
-    const btn = e.target.closest(".qty-btn");
-    if (!btn) return;
+// --- CORE FUNCTIONS ---
 
-    const picker = btn.closest(".qty-picker");
-    if (!picker?.dataset.index) return;
+/**
+ * Adds a product to the cart.
+ * Handles logic for existing items (same ID + size + color) vs new items.
+ */
+export function addToCart(product, quantity = 1, size = null, color = null) {
+  if (!product) return;
 
-    const index = parseInt(picker.dataset.index);
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  // 1. Generate Unique ID for Variant (e.g. "105-L-Red")
+  const cartItemId = generateCartItemId(product.id, size, color);
 
-    if (btn.classList.contains("increase") || btn.classList.contains("plus")) {
-      cart[index].qty += 1;
-    } else if (
-      btn.classList.contains("decrease") ||
-      btn.classList.contains("minus")
-    ) {
-      if (cart[index].qty > 1) {
-        cart[index].qty -= 1;
-      } else {
-        if (!confirm("Remove this item from bag?")) return;
-        cart.splice(index, 1);
-      }
-    }
+  // 2. Check if this specific variant is already in cart
+  const existingItem = cart.find((item) => item.cartItemId === cartItemId);
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCounter();
-    displayCart();
-  });
-
-  // REMOVE ITEM BUTTON
-  cartItemsContainer.addEventListener("click", (e) => {
-    const btn = e.target.closest(".remove-item");
-    if (!btn?.dataset.index) return;
-
-    const index = parseInt(btn.dataset.index);
-    if (!confirm("Remove this item?")) return;
-
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCounter();
-    displayCart();
-  });
-});
-
-// UPDATE COUNTER + MINI-CART
-export function updateCartCounter() {
-  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  const count = cart.length;
-
-  document.querySelectorAll(".cart-counter").forEach((el) => {
-    el.textContent = count;
-    el.style.display = count > 0 ? "flex" : "none";
-  });
-
-  const miniItems = document.getElementById("mini-cart-items");
-  const miniSubtotal = document.getElementById("mini-cart-subtotal");
-  const miniFooter = document.getElementById("mini-cart-footer");
-  const miniEmpty = document.getElementById("mini-cart-empty");
-
-  if (!miniItems) return;
-
-  miniItems.innerHTML = "";
-  let total = 0;
-
-  if (count === 0) {
-    miniFooter && (miniFooter.style.display = "none");
-    miniEmpty && (miniEmpty.style.display = "block");
+  if (existingItem) {
+    existingItem.quantity += quantity;
   } else {
-    miniFooter && (miniFooter.style.display = "");
-    miniEmpty && (miniEmpty.style.display = "none");
-
-    cart.forEach((item) => {
-      total += item.price * item.qty;
-      const div = document.createElement("div");
-      div.className = "mini-cart-item";
-      div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" />
-        <div class="mini-cart-item-info">
-          <h5>${item.name}</h5>
-          <p>Color: ${item.color} | Size: ${item.size} | Qty: ${item.qty}</p>
-          <p><strong>${formatPrice(item.price * item.qty)}</strong></p>
-        </div>
-      `;
-      miniItems.appendChild(div);
+    cart.push({
+      cartItemId: cartItemId,
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.images[0],
+      size: size || "Univ",
+      color: color || "Default",
+      quantity: quantity,
     });
-
-    miniSubtotal && (miniSubtotal.textContent = formatPrice(total));
   }
+
+  saveCart();
+  updateCartUI();
+  showToast(`${quantity} x ${product.name} added to bag!`);
 }
 
-// MAIN BAG PAGE RENDER + ALL BUTTONS FIXED
-export function displayCart() {
-  const cartItems = document.getElementById("bag-items");
-  const cartTotal = document.getElementById("bag-total");
-  const emptyCart = document.getElementById("empty-cart");
-  const bagActions = document.getElementById("bag-actions");
-  const backBtn =
-    document.getElementById("previous-btn") ||
-    document.getElementById("back-btn");
-  const clearBagBtn = document.getElementById("clear-bag-btn");
-  const proceedBtn = document.getElementById("proceed-to-checkout");
-  const startShopping = document.getElementById("start-shopping");
+/**
+ * Removes an item or decreases quantity.
+ */
+export function updateCartItemQuantity(cartItemId, change) {
+  const itemIndex = cart.findIndex((item) => item.cartItemId === cartItemId);
+  if (itemIndex === -1) return;
 
-  if (!cartItems || !cartTotal || !emptyCart) return;
+  const item = cart[itemIndex];
+  const newQty = item.quantity + change;
 
-  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  cartItems.innerHTML = "";
-  let subtotal = 0;
+  if (newQty > 0) {
+    item.quantity = newQty;
+  } else {
+    // Remove if quantity becomes 0
+    if (confirm("Remove this item from bag?")) {
+      cart.splice(itemIndex, 1);
+    }
+  }
 
-  // EMPTY STATE
+  saveCart();
+  updateCartUI();
+}
+
+/**
+ * Completely removes an item row.
+ */
+export function removeFromCart(cartItemId) {
+  if (!confirm("Remove this item?")) return;
+  cart = cart.filter((item) => item.cartItemId !== cartItemId);
+  saveCart();
+  updateCartUI();
+}
+
+/**
+ * Clears the entire cart.
+ */
+export function clearCart() {
+  if (!confirm("Are you sure you want to clear your bag?")) return;
+  cart = [];
+  saveCart();
+  updateCartUI();
+}
+
+// --- HELPER FUNCTIONS ---
+
+function saveCart() {
+  localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+
+function generateCartItemId(productId, size, color) {
+  // Creates a unique string like "12-L-Red" or "12-null-null"
+  return `${productId}-${size || "null"}-${color || "null"}`;
+}
+
+export function showToast(message) {
+  // Remove existing toast to prevent stacking
+  const existing = document.querySelector(".toast-notification");
+  if (existing) existing.remove();
+
+  const toast = document.createElement("div");
+  toast.className = "toast-notification";
+  toast.textContent = message;
+
+  // Basic Toast Styles (Add to your CSS for better control)
+  toast.style.cssText = `
+    position: fixed; bottom: 20px; right: 20px;
+    background: #088178; color: #fff; padding: 12px 24px;
+    border-radius: 4px; z-index: 10000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: slideIn 0.3s ease-out;
+  `;
+
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+// --- UI UPDATERS ---
+
+/**
+ * Master function to update all Cart UIs (Badge, Mini-Cart, Cart Page)
+ */
+export function updateCartUI() {
+  updateCartCount();
+  renderMiniCart();
+  renderCartPage(); // Only runs if on cart page
+  renderCheckoutPage(); // Only runs if on checkout page
+}
+
+function updateCartCount() {
+  const countElements = document.querySelectorAll(".cart-count, .cart-counter");
+  const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  countElements.forEach((el) => {
+    el.textContent = totalQty;
+    el.style.display = totalQty > 0 ? "flex" : "none";
+  });
+}
+
+// Internal helper function for cart.js
+function renderMiniCart() {
+  const container = document.getElementById("mini-cart-items");
+  const subtotalEl = document.getElementById("mini-cart-subtotal");
+  const footer = document.getElementById("mini-cart-footer");
+  const emptyMsg = document.getElementById("mini-cart-empty");
+  const cartCount = document.getElementById("cart-count");
+
+  // Safety check: exit if elements don't exist (e.g. on a page without nav)
+  if (!container) return;
+
+  // 1. Update Badge
+  const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+  if (cartCount) {
+    cartCount.textContent = totalQty;
+    // Optional: Hide badge if 0
+    cartCount.style.display = totalQty > 0 ? "flex" : "none";
+  }
+
+  // 2. Handle Empty State
   if (cart.length === 0) {
-    emptyCart.style.display = "block";
-    bagActions && (bagActions.style.display = "none");
-    proceedBtn && (proceedBtn.style.display = "none");
-    document.querySelector(".bag-total").style.display = "none";
-    cartTotal.textContent = formatPrice(0);
-    removeSummary();
-    updateCartCounter();
+    container.innerHTML = "";
+    if (footer) footer.style.display = "none";
+    if (emptyMsg) emptyMsg.style.display = "block";
+    if (subtotalEl) subtotalEl.textContent = "₦0";
     return;
   }
 
-  // HAS ITEMS
-  emptyCart.style.display = "none";
-  bagActions && (bagActions.style.display = "flex");
-  proceedBtn && (proceedBtn.style.display = "block");
+  // 3. Handle Full State
+  if (footer) footer.style.display = "block";
+  if (emptyMsg) emptyMsg.style.display = "none";
+  container.innerHTML = "";
 
-  cart.forEach((item, index) => {
-    subtotal += item.price * item.qty;
+  let total = 0;
+
+  cart.forEach((item) => {
+    total += item.price * item.quantity;
+
+    const div = document.createElement("div");
+    div.className = "mini-cart-item";
+    div.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="mini-cart-item-info">
+        <h5>${item.name}</h5>
+        <p>Qty: ${item.quantity} ${item.size !== "Univ" ? `| Size: ${item.size}` : ""}</p>
+        <p style="font-weight:600; margin-top:2px; color: var(--price-color); font-size: 14px;">₦${(item.price * item.quantity).toLocaleString()}</p>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+
+  // 4. Update Subtotal
+  if (subtotalEl) subtotalEl.textContent = `₦${total.toLocaleString()}`;
+}
+
+function renderCartPage() {
+  const container = document.getElementById("bag-items");
+  const totalEl = document.getElementById("bag-total");
+  const emptyEl = document.getElementById("empty-cart");
+  const actionsEl = document.getElementById("bag-actions");
+
+  if (!container) return; // Not on cart page
+
+  if (cart.length === 0) {
+    container.innerHTML = "";
+    if (emptyEl) emptyEl.style.display = "block";
+    if (actionsEl) actionsEl.style.display = "none";
+    if (totalEl) totalEl.textContent = "₦0";
+    return;
+  }
+
+  if (emptyEl) emptyEl.style.display = "none";
+  if (actionsEl) actionsEl.style.display = "flex";
+
+  let subtotal = 0;
+  container.innerHTML = "";
+
+  cart.forEach((item) => {
+    subtotal += item.price * item.quantity;
 
     const div = document.createElement("div");
     div.className = "bag_con";
     div.innerHTML = `
       <div class="bag_box">
-        <div class="bag-img"><img src="${item.image}" alt="${
-      item.name
-    }" /></div>
+        <div class="bag-img">
+          <img src="${item.image}" alt="${item.name}" />
+        </div>
         <div class="bag-details">
           <div class="bag_name_bin">
             <h4>${item.name}</h4>
-            <button class="remove-item" data-index="${index}">
-              <i class="ph ph-trash-simple"></i>
+            <button class="remove-item-btn" data-id="${item.cartItemId}">
+              <i class="far fa-trash-alt"></i>
             </button>
           </div>
-          <div class="color-box" style="background-color: ${item.color}"></div>
+          <div class="bag_meta">
+            ${item.color !== "Default" ? `<span class="meta-tag">Color: ${item.color}</span>` : ""}
+            ${item.size !== "Univ" ? `<span class="meta-tag">Size: ${item.size}</span>` : ""}
+          </div>
           <div class="bag_mini_box">
-            <p>Size: ${item.size}</p>
-            <div class="qty-picker" data-index="${index}">
-              <button class="qty-btn decrease" type="button">−</button>
-              <span class="qty-value">${item.qty}</span>
-              <button class="qty-btn increase" type="button">+</button>
+            <div class="qty-picker">
+              <button class="qty-btn" onclick="window.updateQty('${item.cartItemId}', -1)">−</button>
+              <span class="qty-value">${item.quantity}</span>
+              <button class="qty-btn" onclick="window.updateQty('${item.cartItemId}', 1)">+</button>
             </div>
-            <p class="bag_subtotal">${formatPrice(item.price * item.qty)}</p>
+            <p class="bag_subtotal">₦${(item.price * item.quantity).toLocaleString()}</p>
           </div>
         </div>
       </div>
     `;
-    cartItems.appendChild(div);
+    container.appendChild(div);
   });
 
-  cartTotal.textContent = formatPrice(subtotal);
+  if (totalEl) totalEl.textContent = `₦${subtotal.toLocaleString()}`;
 
-  // ORDER SUMMARY (DESKTOP) — NOW WORKS
-  renderOrderSummary(subtotal);
-
-  // BACK BUTTON
-  if (backBtn) {
-    backBtn.onclick = () => window.history.back();
-  }
-
-  // CLEAR BAG BUTTON
-  if (clearBagBtn) {
-    clearBagBtn.onclick = () => {
-      triggerClearModal();
-    };
-    const clearBagYes = document.getElementById("clear-bag-modal");
-    const clearBagNo = document.getElementById("close-clear-modal");
-    const clearModal = document.getElementById("clear-modal");
-
-    clearBagYes.onclick = () => {
-      localStorage.removeItem("cart");
-      updateCartCounter();
-      displayCart();
-      clearModal.remove();
-    };
-
-    clearBagNo.onclick = () => {
-      clearModal.style.display = "none";
-    };
-  }
-
-  // PROCEED TO CHECKOUT (MAIN BUTTON)
-  if (proceedBtn) {
-    proceedBtn.onclick = () => (window.location.href = "checkout.html");
-  }
-
-  // START SHOPPING (EMPTY STATE)
-  if (startShopping) {
-    startShopping.onclick = () => (window.location.href = "women.html");
-  }
-
-  updateCartCounter();
+  // Attach Event Listeners for Remove Buttons
+  document.querySelectorAll(".remove-item-btn").forEach((btn) => {
+    btn.onclick = () => removeFromCart(btn.dataset.id);
+  });
 }
 
-// CHECKOUT PAGE
-export function displayCheckout() {
-  const items = document.getElementById("checkout-items");
+function renderCheckoutPage() {
+  const container = document.getElementById("checkout-items");
   const totalEl = document.getElementById("checkout-total");
-  if (!items || !totalEl) return;
 
-  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-  items.innerHTML = "";
-  let total = 0;
+  if (!container) return;
 
   if (cart.length === 0) {
-    items.innerHTML = "<p>Your cart is empty.</p>";
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    if (totalEl) totalEl.textContent = "₦0";
     return;
   }
 
+  let total = 0;
+  container.innerHTML = "";
+
   cart.forEach((item) => {
-    total += item.price * item.qty;
+    total += item.price * item.quantity;
     const div = document.createElement("div");
     div.className = "checkout-item";
     div.innerHTML = `
       <div class="checkout_box">
-        <div class="checkout-img">
-        <img src="${item.image}" alt="${item.name}" />
-        </div>
+        <img src="${item.image}" class="checkout-img" alt="${item.name}">
         <div class="checkout_box_details">
-          <div>
-            <h4>${item.name}</h4>
-            <p> Color: ${item.color || "Not Specified"}</p> 
-            <p>Size: ${item.size || "Not Specified"}</p> 
-            <p>Qty: ${item.qty}</p>
-          </div>
-          <p class="checkout_price">₦${(
-            item.price * item.qty
-          ).toLocaleString()}</p>
-        </div>  
+          <h4>${item.name}</h4>
+          <p class="sm-text">Qty: ${item.quantity} ${item.size !== "Univ" ? `| Size: ${item.size}` : ""}</p>
+          <p class="checkout_price">₦${(item.price * item.quantity).toLocaleString()}</p>
+        </div>
       </div>
     `;
-    items.appendChild(div);
+    container.appendChild(div);
   });
 
-  totalEl.textContent = `₦${total.toLocaleString()}`;
+  if (totalEl) totalEl.textContent = `₦${total.toLocaleString()}`;
 }
 
-// THANK YOU PAGE
-export function setupThankYouPage() {
-  const ref = document.getElementById("order-ref");
-  if (ref) ref.textContent = localStorage.getItem("orderRef") || "N/A";
-}
+// --- GLOBAL EXPORTS FOR HTML ONCLICK ---
+// (Required because modules isolate scope, but HTML onclick needs global scope)
+window.updateQty = (id, change) => updateCartItemQuantity(id, change);
 
-// HELPER: ORDER SUMMARY (DESKTOP)
-function renderOrderSummary(subtotal) {
-  const cartItems = document.getElementById("bag-items");
-  let wrapper = document.querySelector(".bag-summary-wrapper");
-  if (!wrapper) {
-    wrapper = document.createElement("div");
-    wrapper.className = "bag-summary-wrapper";
-    document.querySelector(".bag-items-wrapper")?.appendChild(wrapper) ||
-      // document.body.appendChild(wrapper);
-      cartItems.parentElement.appendChild(wrapper);
-  }
+// --- INITIALIZATION ---
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartUI();
 
-  wrapper.innerHTML = `
-    <div class="bag-summary">
-      <h4>Order Summary</h4>
-      <div class="summary-line"><span>Subtotal</span><span>${formatPrice(
-        subtotal
-      )}</span></div>
-      <div class="summary-line"><span>Tax (0%)</span><span>${formatPrice(
-        0
-      )}</span></div>
-      <div class="summary-line total"><strong>Total</strong><strong>${formatPrice(
-        subtotal
-      )}</strong></div>
-      <button id="proceed-to-checkout-summary" class="btn-primary">Proceed to Checkout</button>
-    </div>
-  `;
+  // Clear Cart Button Logic
+  const clearBtn = document.getElementById("clear-bag-btn");
+  if (clearBtn) clearBtn.onclick = clearCart;
 
-  // This is the key fix
-  wrapper
-    .querySelector("#proceed-to-checkout-summary")
-    ?.addEventListener("click", () => {
-      window.location.href = "checkout.html";
-    });
-}
+  // Paystack Initialization
+  const payForm = document.getElementById("checkout-form");
+  if (payForm) initPaystackCheckout(payForm);
+});
 
-function removeSummary() {
-  document.querySelector(".bag-summary-wrapper")?.remove();
-}
-
-// PAYSTACK INTEGRATION — ADD THIS TO THE END OF cart.js
-
-export function initPaystackCheckout() {
-  const form = document.getElementById("checkout-form");
-  const payBtn = document.getElementById("paystack-btn");
-  const firstName = document.getElementById("firstname");
-  const lastName = document.getElementById("lastname");
-  const phone = document.getElementById("phone");
-  const address = document.getElementById("address");
-
-  if (!form || !payBtn) return;
-
+// --- PAYSTACK LOGIC ---
+function initPaystackCheckout(form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     if (cart.length === 0) {
       alert("Your bag is empty!");
       return;
     }
 
     const totalAmount =
-      cart.reduce((sum, item) => sum + item.price * item.qty, 0) * 100; // in kobo
-    const email = document.getElementById("email").value.trim();
+      cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100; // Kobo
+    const email = document.getElementById("email").value;
+    const firstName = document.getElementById("firstname").value;
 
     const handler = PaystackPop.setup({
-      key: "pk_live_988acbd343f21914562810ef81e1bb35db912df7", // ← your live key
+      key: "pk_live_988acbd343f21914562810ef81e1bb35db912df7",
       email: email,
       amount: totalAmount,
       currency: "NGN",
       metadata: {
         custom_fields: [
           {
-            display_name: "First Name",
-            variable_name: "first_name",
+            display_name: "Customer",
+            variable_name: "customer_name",
             value: firstName,
           },
-          {
-            display_name: "Last Name",
-            variable_name: "last_name",
-            value: lastName,
-          },
-          {
-            display_name: "Phone Number",
-            variable_name: "phone_number",
-            value: phone,
-          },
-          {
-            display_name: "Email Address",
-            variable_name: "email_address",
-            value: email,
-          },
-          {
-            display_name: "Delivery Address",
-            variable_name: "delivery_address",
-            value: address,
-          },
-          ...cart.flatMap((item, index) => [
-            // Dynamically add per-item fields
-            {
-              display_name: `Item ${index + 1} SKU`,
-              variable_name: `item_${index + 1}_sku`,
-              value:
-                item.sku ||
-                `PROD-${item.id.toString().padStart(3, "0")}-${item.name
-                  .slice(0, 3)
-                  .toUpperCase()}`, // Fallback if no sku
-            },
-            {
-              display_name: `Item ${index + 1} Color`,
-              variable_name: `item_${index + 1}_color`,
-              value: item.color,
-            },
-            {
-              display_name: `Item ${index + 1} Size`,
-              variable_name: `item_${index + 1}_size`,
-              value: item.size,
-            },
-          ]),
+          ...cart.map((item, i) => ({
+            display_name: `Item ${i + 1}`,
+            variable_name: `item_${i + 1}`,
+            value: `${item.name} (${item.quantity}x) - ${item.size}`,
+          })),
         ],
       },
       callback: function (response) {
         localStorage.setItem("orderRef", response.reference);
-        localStorage.removeItem("cart");
+        cart = []; // Clear internal variable
+        saveCart(); // Clear local storage
         window.location.href = "thankyou.html";
       },
       onClose: function () {
-        // optional: show modal again
-        const modal = document.getElementById("cart-modal");
-        if (modal) modal.style.display = "flex";
+        alert("Transaction cancelled.");
       },
     });
+
     handler.openIframe();
   });
 }
