@@ -74,6 +74,15 @@ body {
   transition: var(--transition);
 }
 
+body::-webkit-scrollbar{
+  width: 5px;
+  background: var(--bg-canvas);
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--brand-main);
+}
+
 a {
   color: inherit;
 }

@@ -445,8 +445,6 @@ header.nav-hidden {
   border: var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   z-index: 9999;
-
-  /* Animation State: Hidden */
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
@@ -477,6 +475,15 @@ header.nav-hidden {
   margin-bottom: var(--spacing-neu);
   max-height: 300px;
   overflow-y: auto;
+}
+
+.mini-cart-items::-webkit-scrollbar{
+  width: 3px;
+  background: var(--bg-canvas);
+}
+
+.mini-cart-items::-webkit-scrollbar-thumb{
+  background: var(--brand-main);
 }
 
 .mini-cart-item {
