@@ -14,7 +14,7 @@ export const CATEGORY_IDS = {
 
 // 2. Collection Tags (For Homepage Sections)
 export const COLLECTIONS = {
-  NEW_ARRIVALS: "new-arrivals",
+  NEW_ARRIVALS: "new-in",
   BEST_SELLERS: "best-sellers",
   EDITOR_PICK: "editor-pick",
   SALE: "sale",
