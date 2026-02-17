@@ -8,9 +8,6 @@
 @import 'components/cards.css';
 @import 'components/modals.css';
 
-/* 3. Features */
-@import 'components/video-gallery.css';
-
 /* 4. Page Specifics */
 @import 'pages/pdp.css';
 @import 'pages/cart.css';
