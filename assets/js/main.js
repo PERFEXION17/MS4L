@@ -4,6 +4,7 @@
 import { hidePreloader } from "./preloader.js";
 import { updateCartUI } from "./cart.js"; 
 import { initPDP } from "./pdp.js";
+import { initShopPage } from "./shop.js";
 
 // --- 2. UI & SYSTEMS IMPORTS ---
 import {
@@ -27,8 +28,6 @@ import {
   addToCartFromWishlist,
 } from "./wishlist.js";
 
-import "./video-gallery.js";
-
 // --- 3. PRELOADER ---
 window.addEventListener("load", hidePreloader);
 
@@ -48,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // C. Initialize Page-Specific Logic
   initPDP();
   renderWishlistPage();
+  initShopPage();
 
   // D. Initialize Wishlist System
   updateWishlistCounter();

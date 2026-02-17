@@ -1,51 +1,74 @@
 // assets/js/cart.js
 
-// --- IMPORTS ---
-import { formatPrice } from "./utils.js"; // Ensure this exists or replace with helper below
-
 // --- STATE MANAGEMENT ---
-export let cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+// We initialize the cart from Local Storage or start empty
+export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // --- CORE FUNCTIONS ---
 
 /**
  * Adds a product to the cart.
- * Handles logic for existing items (same ID + size + color) vs new items.
+ * Handles logic for new Sapphire Schema (media objects) vs Old Data.
  */
 export function addToCart(product, quantity = 1, size = null, color = null) {
   if (!product) return;
 
-  // 1. Generate Unique ID for Variant (e.g. "105-L-Red")
-  const cartItemId = generateCartItemId(product.id, size, color);
+  // 1. Generate Unique ID for Variant (e.g. "prod_001-L-noir")
+  const variantId = generateVariantId(product.id, size, color);
 
-  // 2. Check if this specific variant is already in cart
-  const existingItem = cart.find((item) => item.cartItemId === cartItemId);
+  // 2. RESOLVE IMAGE (The Fix)
+  // We try to find the image for the specific color. Fallback to the first available media.
+  let imageToSave = "assets/img/components/MS4L-logo.webp";
+
+  if (product.media) {
+    if (color && product.media[color]) {
+      imageToSave = product.media[color][0]; // Correct: Get first image of selected color
+    } else {
+      // Fallback: Get the first key in the media object (e.g. "noir")
+      const firstKey = Object.keys(product.media)[0];
+      imageToSave = product.media[firstKey][0];
+    }
+  } else if (product.images) {
+    // Legacy support for old products
+    imageToSave = product.images[0];
+  }
+
+  // 3. Check if this specific variant is already in cart
+  const existingItem = cart.find((item) => item.variantId === variantId);
 
   if (existingItem) {
     existingItem.quantity += quantity;
+    showToast(`Updated quantity for ${product.name}`);
   } else {
     cart.push({
-      cartItemId: cartItemId,
+      variantId: variantId,
       productId: product.id,
       name: product.name,
       price: product.price,
-      image: product.images[0],
+      image: imageToSave, // Saved the resolved image
       size: size || "Univ",
       color: color || "Default",
       quantity: quantity,
     });
+    showToast(`${product.name} added to bag!`);
   }
 
   saveCart();
   updateCartUI();
-  showToast(`${quantity} x ${product.name} added to bag!`);
+
+  // Open the mini-cart automatically for feedback
+  const miniCart = document.getElementById("mini-cart-dropdown");
+  if (miniCart) {
+    miniCart.classList.add("active");
+    setTimeout(() => miniCart.classList.remove("active"), 3000);
+  }
 }
 
 /**
- * Removes an item or decreases quantity.
+ * Update Quantity (Increase/Decrease)
  */
-export function updateCartItemQuantity(cartItemId, change) {
-  const itemIndex = cart.findIndex((item) => item.cartItemId === cartItemId);
+export function updateCartItemQuantity(variantId, change) {
+  const itemIndex = cart.findIndex((item) => item.variantId === variantId);
   if (itemIndex === -1) return;
 
   const item = cart[itemIndex];
@@ -54,7 +77,7 @@ export function updateCartItemQuantity(cartItemId, change) {
   if (newQty > 0) {
     item.quantity = newQty;
   } else {
-    // Remove if quantity becomes 0
+    // If quantity becomes 0, remove it
     if (confirm("Remove this item from bag?")) {
       cart.splice(itemIndex, 1);
     }
@@ -65,17 +88,17 @@ export function updateCartItemQuantity(cartItemId, change) {
 }
 
 /**
- * Completely removes an item row.
+ * Remove Item Completely
  */
-export function removeFromCart(cartItemId) {
+export function removeFromCart(variantId) {
   if (!confirm("Remove this item?")) return;
-  cart = cart.filter((item) => item.cartItemId !== cartItemId);
+  cart = cart.filter((item) => item.variantId !== variantId);
   saveCart();
   updateCartUI();
 }
 
 /**
- * Clears the entire cart.
+ * Clear Entire Cart
  */
 export function clearCart() {
   if (!confirm("Are you sure you want to clear your bag?")) return;
@@ -87,16 +110,15 @@ export function clearCart() {
 // --- HELPER FUNCTIONS ---
 
 function saveCart() {
-  localStorage.setItem("shoppingCart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function generateCartItemId(productId, size, color) {
-  // Creates a unique string like "12-L-Red" or "12-null-null"
+function generateVariantId(productId, size, color) {
+  // Creates a unique string like "prod_001-L-noir"
   return `${productId}-${size || "null"}-${color || "null"}`;
 }
 
 export function showToast(message) {
-  // Remove existing toast to prevent stacking
   const existing = document.querySelector(".toast-notification");
   if (existing) existing.remove();
 
@@ -104,17 +126,10 @@ export function showToast(message) {
   toast.className = "toast-notification";
   toast.textContent = message;
 
-  // Basic Toast Styles (Add to your CSS for better control)
-  toast.style.cssText = `
-    position: fixed; bottom: 20px; right: 20px;
-    background: #088178; color: #fff; padding: 12px 24px;
-    border-radius: 4px; z-index: 10000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    animation: slideIn 0.3s ease-out;
-  `;
-
   document.body.appendChild(toast);
   setTimeout(() => {
     toast.style.opacity = "0";
+    
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
@@ -127,12 +142,14 @@ export function showToast(message) {
 export function updateCartUI() {
   updateCartCount();
   renderMiniCart();
-  renderCartPage(); // Only runs if on cart page
-  renderCheckoutPage(); // Only runs if on checkout page
+
+  // Only render these if the elements exist on the current page
+  if (document.getElementById("bag-items")) renderCartPage();
+  if (document.getElementById("checkout-items")) renderCheckoutPage();
 }
 
 function updateCartCount() {
-  const countElements = document.querySelectorAll(".cart-count, .cart-counter");
+  const countElements = document.querySelectorAll("#cart-count");
   const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   countElements.forEach((el) => {
@@ -141,30 +158,26 @@ function updateCartCount() {
   });
 }
 
-// Internal helper function for cart.js
 function renderMiniCart() {
   const container = document.getElementById("mini-cart-items");
   const subtotalEl = document.getElementById("mini-cart-subtotal");
   const footer = document.getElementById("mini-cart-footer");
   const emptyMsg = document.getElementById("mini-cart-empty");
-  const cartCount = document.getElementById("cart-count");
 
-  // Safety check: exit if elements don't exist (e.g. on a page without nav)
   if (!container) return;
 
-  // 1. Update Badge
+  // 1. Calculate Totals
   const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-  if (cartCount) {
-    cartCount.textContent = totalQty;
-    // Optional: Hide badge if 0
-    cartCount.style.display = totalQty > 0 ? "flex" : "none";
-  }
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   // 2. Handle Empty State
   if (cart.length === 0) {
     container.innerHTML = "";
     if (footer) footer.style.display = "none";
-    if (emptyMsg) emptyMsg.style.display = "block";
+    if (emptyMsg) emptyMsg.style.display = "flex";
     if (subtotalEl) subtotalEl.textContent = "₦0";
     return;
   }
@@ -174,26 +187,28 @@ function renderMiniCart() {
   if (emptyMsg) emptyMsg.style.display = "none";
   container.innerHTML = "";
 
-  let total = 0;
-
   cart.forEach((item) => {
-    total += item.price * item.quantity;
-
     const div = document.createElement("div");
     div.className = "mini-cart-item";
     div.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
       <div class="mini-cart-item-info">
         <h5>${item.name}</h5>
-        <p>Qty: ${item.quantity} ${item.size !== "Univ" ? `| Size: ${item.size}` : ""}</p>
-        <p style="font-weight:600; margin-top:2px; color: var(--price-color); font-size: 14px;">₦${(item.price * item.quantity).toLocaleString()}</p>
+        <p class='mini-cart-item-data'>
+          Qty: ${item.quantity} ${item.size !== "Univ" ? `| Size: ${item.size}` : ""}
+          <button onclick="window.removeItem('${item.variantId}')">
+          <i class="ph-thin ph-trash-simple""></i></button>
+        </p>
+        <p>
+            ₦${(item.price * item.quantity).toLocaleString()}
+        </p>
       </div>
     `;
     container.appendChild(div);
   });
 
   // 4. Update Subtotal
-  if (subtotalEl) subtotalEl.textContent = `₦${total.toLocaleString()}`;
+  if (subtotalEl) subtotalEl.textContent = `₦${totalPrice.toLocaleString()}`;
 }
 
 function renderCartPage() {
@@ -202,7 +217,7 @@ function renderCartPage() {
   const emptyEl = document.getElementById("empty-cart");
   const actionsEl = document.getElementById("bag-actions");
 
-  if (!container) return; // Not on cart page
+  if (!container) return;
 
   if (cart.length === 0) {
     container.innerHTML = "";
@@ -231,19 +246,19 @@ function renderCartPage() {
         <div class="bag-details">
           <div class="bag_name_bin">
             <h4>${item.name}</h4>
-            <button class="remove-item-btn" data-id="${item.cartItemId}">
-              <i class="far fa-trash-alt"></i>
+            <button class="remove-item-btn" onclick="window.removeItem('${item.variantId}')">
+              <i class="ph-light ph-trash"></i>
             </button>
           </div>
           <div class="bag_meta">
-            ${item.color !== "Default" ? `<span class="meta-tag">Color: ${item.color}</span>` : ""}
-            ${item.size !== "Univ" ? `<span class="meta-tag">Size: ${item.size}</span>` : ""}
+            ${item.color !== "Default" && item.color !== "null" ? `<span class="meta-tag">Color: <span style="display:inline-block; width:10px; height:10px; background:${item.color}; border-radius:50%; margin-left:5px;"></span></span>` : ""}
+            ${item.size !== "Univ" && item.size !== "null" ? `<span class="meta-tag">Size: ${item.size}</span>` : ""}
           </div>
           <div class="bag_mini_box">
             <div class="qty-picker">
-              <button class="qty-btn" onclick="window.updateQty('${item.cartItemId}', -1)">−</button>
+              <button class="qty-btn" onclick="window.updateQty('${item.variantId}', -1)">−</button>
               <span class="qty-value">${item.quantity}</span>
-              <button class="qty-btn" onclick="window.updateQty('${item.cartItemId}', 1)">+</button>
+              <button class="qty-btn" onclick="window.updateQty('${item.variantId}', 1)">+</button>
             </div>
             <p class="bag_subtotal">₦${(item.price * item.quantity).toLocaleString()}</p>
           </div>
@@ -254,16 +269,18 @@ function renderCartPage() {
   });
 
   if (totalEl) totalEl.textContent = `₦${subtotal.toLocaleString()}`;
-
-  // Attach Event Listeners for Remove Buttons
-  document.querySelectorAll(".remove-item-btn").forEach((btn) => {
-    btn.onclick = () => removeFromCart(btn.dataset.id);
-  });
 }
 
 function renderCheckoutPage() {
   const container = document.getElementById("checkout-items");
   const totalEl = document.getElementById("checkout-total");
+  const payForm = document.getElementById("checkout-form");
+
+  // Initialize Paystack listener once if on checkout page
+  if (payForm && !payForm.dataset.init) {
+    initPaystackCheckout(payForm);
+    payForm.dataset.init = "true";
+  }
 
   if (!container) return;
 
@@ -296,23 +313,6 @@ function renderCheckoutPage() {
   if (totalEl) totalEl.textContent = `₦${total.toLocaleString()}`;
 }
 
-// --- GLOBAL EXPORTS FOR HTML ONCLICK ---
-// (Required because modules isolate scope, but HTML onclick needs global scope)
-window.updateQty = (id, change) => updateCartItemQuantity(id, change);
-
-// --- INITIALIZATION ---
-document.addEventListener("DOMContentLoaded", () => {
-  updateCartUI();
-
-  // Clear Cart Button Logic
-  const clearBtn = document.getElementById("clear-bag-btn");
-  if (clearBtn) clearBtn.onclick = clearCart;
-
-  // Paystack Initialization
-  const payForm = document.getElementById("checkout-form");
-  if (payForm) initPaystackCheckout(payForm);
-});
-
 // --- PAYSTACK LOGIC ---
 function initPaystackCheckout(form) {
   form.addEventListener("submit", (e) => {
@@ -327,8 +327,10 @@ function initPaystackCheckout(form) {
       cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100; // Kobo
     const email = document.getElementById("email").value;
     const firstName = document.getElementById("firstname").value;
+    const phone = document.getElementById("phone").value;
 
     const handler = PaystackPop.setup({
+      // Your Public Key
       key: "pk_live_988acbd343f21914562810ef81e1bb35db912df7",
       email: email,
       amount: totalAmount,
@@ -340,10 +342,11 @@ function initPaystackCheckout(form) {
             variable_name: "customer_name",
             value: firstName,
           },
+          { display_name: "Phone", variable_name: "phone", value: phone },
           ...cart.map((item, i) => ({
             display_name: `Item ${i + 1}`,
             variable_name: `item_${i + 1}`,
-            value: `${item.name} (${item.quantity}x) - ${item.size}`,
+            value: `${item.name} (${item.quantity}x) - ${item.size} / ${item.color}`,
           })),
         ],
       },
@@ -361,3 +364,19 @@ function initPaystackCheckout(form) {
     handler.openIframe();
   });
 }
+
+// --- GLOBAL EXPORTS FOR HTML ONCLICK ATTRIBUTES ---
+// Necessary because <button onclick="..."> cannot see inside modules
+window.updateQty = (id, change) => updateCartItemQuantity(id, change);
+window.removeItem = (id) => removeFromCart(id);
+window.clearCart = clearCart;
+window.addToCart = addToCart;
+
+// --- INITIALIZATION ---
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartUI();
+
+  // Clear Cart Button Logic (if exists on page)
+  const clearBtn = document.getElementById("clear-bag-btn");
+  if (clearBtn) clearBtn.onclick = clearCart;
+});

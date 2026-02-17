@@ -1,0 +1,24 @@
+.toast-notification {
+  position: fixed;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--brand-main);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  animation: slideIn .6s ease-out;
+  z-index: 10000;
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateX(100vw);
+        transition: translate 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }to{
+        transform: translateX(0);   
+    }
+}

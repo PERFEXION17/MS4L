@@ -1,82 +1,115 @@
 import { products } from "./products.js";
-import { addToCart, updateCartUI } from "./cart.js"; // <--- FIXED IMPORTS
+import { addToCart } from "./cart.js";
 
-// --- STATE MANAGEMENT ---
-
+// --- 1. TOGGLE WISHLIST (The Engine) ---
 export function toggleWishlist(productId) {
-  let wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-  const index = wishlist.indexOf(productId);
+  const id = String(productId);
 
-  if (index === -1) {
-    wishlist.push(productId);
-    showHeartAnimation(); // Optional visual feedback
+  // 1. GET & SANITIZE
+  let rawList = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  let wishlist = rawList.filter((item) => item && item.id);
+
+  // 2. CHECK INDEX
+  const existingIndex = wishlist.findIndex((item) => String(item.id) === id);
+
+  if (existingIndex > -1) {
+    // REMOVE
+    wishlist.splice(existingIndex, 1);
+    console.log(`Removed ${id} from wishlist`);
   } else {
-    wishlist.splice(index, 1);
+    // ADD
+    const product = products.find((p) => String(p.id) === id);
+
+    if (product) {
+      // Safe Image Resolver
+      let mainImg = "assets/img/no-image.jpg";
+
+      if (
+        product.options &&
+        product.options.colors &&
+        product.options.colors.length > 0
+      ) {
+        const defaultColorId = product.options.colors[0].id;
+        if (product.media && product.media[defaultColorId]) {
+          mainImg = product.media[defaultColorId][0];
+        }
+      } else if (product.images && product.images.length > 0) {
+        mainImg = product.images[0];
+      }
+
+      wishlist.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: mainImg,
+        stock: product.inStock,
+        slug: product.slug || "",
+      });
+      // Animation removed as requested
+    }
   }
 
+  // 3. SAVE
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  // 4. UPDATE UI
   updateWishlistCounter();
   renderWishlistHearts();
+  window.dispatchEvent(new Event("wishlistUpdated"));
 }
 
+// --- 2. UPDATE NOTIFICATION DOT ---
 export function updateWishlistCounter() {
   const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-  const count = wishlist.length;
+  const hasItems = wishlist.length > 0;
 
-  document.querySelectorAll(".wishlist-counter").forEach((el) => {
-    el.textContent = count;
-    // Optional: Hide badge if 0
-    // el.style.display = count > 0 ? "flex" : "none";
-  });
+  const dot = document.getElementById("wishlist-count");
+  if (dot) {
+    // Simply toggle visibility. No numbers.
+    dot.style.display = hasItems ? "block" : "none";
+  }
 }
 
+// --- 3. RENDER HEARTS (On Product Cards) ---
 export function renderWishlistHearts() {
-  const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  const wishlistIds = getWishlistIds();
 
   document.querySelectorAll(".wishlist-btn").forEach((btn) => {
-    const id = parseInt(btn.dataset.id);
-    if (wishlist.includes(id)) {
+    const id = btn.dataset.id;
+    const icon = btn.querySelector("i");
+
+    if (wishlistIds.includes(id)) {
+      // ACTIVE: Solid Heart
       btn.classList.add("active");
-      // Use FontAwesome classes consistent with your setup
-      btn.innerHTML = '<i class="fas fa-heart"></i>';
+      if (icon) {
+        icon.classList.remove("ph-thin");
+        icon.classList.add("ph-fill");
+      } else {
+        btn.innerHTML = '<i class="ph-fill ph-heart"></i>';
+      }
     } else {
+      // INACTIVE: Thin Heart
       btn.classList.remove("active");
-      btn.innerHTML = '<i class="far fa-heart"></i>';
+      if (icon) {
+        icon.classList.remove("ph-fill");
+        icon.classList.add("ph-thin");
+      } else {
+        btn.innerHTML = '<i class="ph-thin ph-heart"></i>';
+      }
     }
   });
 }
 
-// --- VISUALS ---
-
-export function showHeartAnimation(x, y) {
-  // If coordinates aren't passed (e.g. from a non-pointer event), default to center
-  const top = y || window.innerHeight / 2;
-  const left = x || window.innerWidth / 2;
-
-  const heart = document.createElement("div");
-  heart.className = "heart-float";
-  heart.innerHTML = "<i class='fas fa-heart'></i>";
-  heart.style.position = "fixed";
-  heart.style.left = left + "px";
-  heart.style.top = top + "px";
-  heart.style.color = "#ff0000";
-  heart.style.zIndex = "10000";
-  heart.style.pointerEvents = "none";
-  heart.style.animation = "floatUp 1s ease-out forwards";
-
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 1200);
-}
-
-// --- WISHLIST PAGE RENDERER ---
-
+// --- 4. RENDER WISHLIST PAGE (Branded) ---
 export function renderWishlistPage() {
   const container = document.getElementById("wishlist-items");
   const empty = document.getElementById("empty-wishlist");
 
-  if (!container) return; // Not on wishlist page
+  if (!container) return;
 
-  const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  const rawList = JSON.parse(localStorage.getItem("wishlist") || "[]");
+  const wishlist = rawList.filter((item) => item && item.id);
+
   container.innerHTML = "";
 
   if (wishlist.length === 0) {
@@ -86,26 +119,29 @@ export function renderWishlistPage() {
 
   if (empty) empty.style.display = "none";
 
-  wishlist.forEach((id) => {
-    const p = products.find((x) => x.id === id);
-    if (!p) return;
-
-    // Create Tile
+  wishlist.forEach((item) => {
     const div = document.createElement("div");
-    div.className = "wishlist-card"; // Suggest renaming class for clarity
+    div.className = "wishlist-card";
+
     div.innerHTML = `
-      <div class="tile_img">
-        <img src="${p.images[0]}" alt="${p.name}" onclick="window.location.href='pdp.html?id=${p.id}'" />
+      <div class="tile_img" onclick="window.location.href='pdp.html?id=${item.id}'" style="cursor: pointer;">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" />
       </div>
       <div class="tile_txt">
-        <p class="tile_name">${p.name}</p>
-        <p class="price">₦${p.price.toLocaleString()}</p>
-        <div class="wishlist-buttons">
-          <button class="wishlist-bag-btn" data-id="${p.id}">
+        <h5 style="font-family: var(--ff-heading); font-size: 1rem; margin-bottom: 5px;">${item.name}</h5>
+        
+        <h4 style="font-family: var(--ff-numeric); color: var(--text-muted); font-size: 0.95rem;">
+            ₦${item.price.toLocaleString()}
+        </h4>
+
+        <div class="wishlist-buttons" style="margin-top: 15px; display: flex; gap: 10px;">
+          <button class="wishlist-bag-btn" data-id="${item.id}" 
+                  style="flex: 1; padding: 10px; background: var(--brand-main); color: #fff; border: none; font-family: var(--ff-body); text-transform: uppercase; font-size: 0.8rem; cursor: pointer;">
             Move to Bag
           </button>
-          <button class="wishlist-remove-btn" data-id="${p.id}">
-            <i class="far fa-trash-alt"></i>
+          <button class="wishlist-remove-btn" data-id="${item.id}"
+                  style="width: 40px; background: transparent; border: 1px solid var(--border-light); color: var(--status-error); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            <i class="ph-thin ph-trash" style="font-size: 1.2rem;"></i>
           </button>
         </div>
       </div>
@@ -115,41 +151,58 @@ export function renderWishlistPage() {
 
   // Attach Events
   document.querySelectorAll(".wishlist-bag-btn").forEach((btn) => {
-    btn.onclick = () => addToCartFromWishlist(parseInt(btn.dataset.id));
+    btn.onclick = () => addToCartFromWishlist(btn.dataset.id);
   });
 
   document.querySelectorAll(".wishlist-remove-btn").forEach((btn) => {
     btn.onclick = () => {
-      toggleWishlist(parseInt(btn.dataset.id));
-      renderWishlistPage(); // Re-render immediately
+      toggleWishlist(btn.dataset.id);
+      renderWishlistPage();
     };
   });
 }
 
-// --- MOVE TO BAG LOGIC ---
-
+// --- 5. MOVE TO BAG ---
 export function addToCartFromWishlist(id) {
-  const product = products.find((p) => p.id === id);
+  const product = products.find((p) => String(p.id) === String(id));
+
   if (!product) {
-    alert("Product no longer available.");
+    alert("Product details not found.");
     return;
   }
 
-  // 1. Determine Defaults
-  let defaultSize = "Univ";
-  if (product.sizes && product.sizes.length > 0) defaultSize = product.sizes[0];
-  else if (product.sizeLimits) defaultSize = product.sizeLimits.min;
+  const defaultSize =
+    product.availableSizes && product.availableSizes[0]
+      ? product.availableSizes[0]
+      : product.sizes
+        ? product.sizes[0]
+        : "Univ";
 
-  const defaultColor = product.colors ? product.colors[0] : "Default";
+  const defaultColor =
+    product.options && product.options.colors && product.options.colors[0]
+      ? product.options.colors[0].id
+      : "Default";
 
-  // 2. Call the Engine's Add Function
   addToCart(product, 1, defaultSize, defaultColor);
-
-  // 3. Remove from Wishlist
   toggleWishlist(id);
 
-  // 4. Update UI (Already handled by addToCart, but if on wishlist page, re-render list)
   if (document.getElementById("wishlist-items")) {
     renderWishlistPage();
+  }
+}
+
+// --- 6. HELPER ---
+export function getWishlistIds() {
+  const raw = localStorage.getItem("wishlist");
+  if (!raw) return [];
+
+  try {
+    const list = JSON.parse(raw);
+    return list
+      .filter((item) => item && item.id)
+      .map((item) => String(item.id));
+  } catch (err) {
+    localStorage.removeItem("wishlist");
+    return [];
   }
 }
