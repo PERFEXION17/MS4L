@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --bg-canvas: #fcfcfc;
@@ -10,7 +10,7 @@
   --text-muted: #666666; /* Price labels, subtext */
   --text-inverse: #fcfcfc; /* Text on dark backgrounds */
 
-  --brand-main: #1a2b42; /* Primary Buttons */
+  --brand-main: #050505; /* Primary Buttons */
   --brand-soft: #ebddd6; /* Accents / Hover fills */
 
   --border-light: #e5e5e5; /* Subtle dividers */
@@ -29,7 +29,6 @@
   /* --- TYPOGRAPHY SCALE (Desktop) --- */
   --ff-heading: Cinzel, serif;
   --ff-body: Montserrat, sans-serif;
-  --ff-numeric: Poppins, sans-serif;
 
   --font-size-display: 5rem; /* 80px - Hero Banners */
   --font-size-h1: 3.5rem; /* 56px - Page Titles */
