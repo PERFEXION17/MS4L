@@ -70,11 +70,12 @@ body {
   height: 100%;
   font-family: var(--ff-body);
   background-color: var(--bg-canvas);
+  color: var(--text-body);
   transition: var(--transition);
 }
 
 body::-webkit-scrollbar{
-  width: 5px;
+  width: var(--spacing-xs);
   background: var(--bg-canvas);
 }
 
