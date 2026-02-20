@@ -8,6 +8,7 @@
       content="5oxUgUYbjZH17wDAA1bpLm0WNghszbmSe6B5LlFhq5k"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/components/filters.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -26,8 +27,6 @@
     <title id="doc-title">MS4L | COLLECTION</title>
   </head>
   <body>
-    <!-- <div id="preloader" class="preloader"><div class="spinner"></div></div> -->
-
     <header>
       <!-- <div class="announcement_bar">
           <p>
@@ -65,7 +64,7 @@
 
               <div id="mini-cart-dropdown" class="mini-cart-dropdown">
                 <div class="mini-cart-header">
-                  <h4>Your Bag</h4>
+                  <h4>My Bag</h4>
                 </div>
 
                 <div id="mini-cart-items" class="mini-cart-items"></div>
@@ -87,7 +86,7 @@
                   style="display: none"
                 >
                   <p>Your bag is empty</p>
-                  <a href="shop.html?category=new-arrivals">Start Shopping</a>
+                  <a href="shop.html?collections=new-arrivals">Start Shopping</a>
                 </div>
               </div>
             </div>
@@ -101,7 +100,7 @@
         <div class="nav-bottom">
           <ul class="nav-links">
             <li>
-              <a href="shop.html?collection=new-arrivals">New In</a>
+              <a href="shop.html?collection=new-in">New In</a>
             </li>
 
             <li class="has-dropdown">
@@ -110,7 +109,7 @@
                 <div class="mega-content">
                   <div class="mega-links-container">
                     <div class="mega-column">
-                      <h3>Collections</h3>
+                      <h3>Styles</h3>
                       <ul>
                         <li>
                           <a href="shop.html?subCategory=lingerie-sets"
@@ -119,7 +118,7 @@
                         </li>
                         <li>
                           <a href="shop.html?subCategory=teddies"
-                            >Bodysuits & Teddies</a
+                            >Teddies</a
                           >
                         </li>
                         <li>
@@ -127,14 +126,15 @@
                             >Babydolls</a
                           >
                         </li>
-                        <li>
-                          <a href="shop.html?subCategory=corsets"
-                            >Corsets & Bustiers</a
-                          >
-                        </li>
+                        <li><a href="shop.html?subCategory=bodysuits">Bodysuits</a></li>
                         <li>
                           <a href="shop.html?subCategory=hosiery"
                             >Fishnets & Hosiery</a
+                          >
+                        </li>
+                        <li>
+                          <a href="shop.html?subCategory=gowns"
+                            >Gowns</a
                           >
                         </li>
                         <li>
@@ -146,15 +146,15 @@
                       </ul>
                     </div>
                     <div class="mega-column">
-                      <h3>Styles</h3>
+                      <h3>Trends</h3>
                       <ul>
                         <li>
-                          <a href="shop.html?subCategory=lace"
+                          <a href="shop.html?silhoutte=lace"
                             >Lace Collection</a
                           >
                         </li>
                         <li>
-                          <a href="shop.html?subCategory=fishnet"
+                          <a href="shop.html?silhoutte=fishnet"
                             >Fishnet & Mesh</a
                           >
                         </li>
@@ -221,32 +221,35 @@
             <li class="has-dropdown">
               <a href="shop.html?category=sleep-wears">Sleep & Lounge</a>
               <div class="mega-menu">
-                <div
-                  class="mega-content"
-                  style="grid-template-columns: 1fr 1fr 2fr"
-                >
-                  <div class="mega-column">
-                    <h3>Sleepwear</h3>
-                    <ul>
-                      <li>
-                        <a href="shop.html?subCategory=pyjamas">Pyjama Sets</a>
-                      </li>
-                      <li>
-                        <a href="shop.html?subCategory=nightgowns"
-                          >Nightgowns</a
-                        >
-                      </li>
-                      <li>
-                        <a href="shop.html?subCategory=lounge">Lounge Wears</a>
-                      </li>
-                      <li>
-                        <a class="shop-all" href="shop.html?category=sleep-wears">Shop All</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="mega-column">
-                    <h3>Fabrics</h3>
-                    <ul>
+                <div class="mega-content">
+                  <div class="mega-links-container">
+                    <div class="mega-column">
+                      <h3>Sleepwear</h3>
+                      <ul>
+                        <li>
+                          <a href="shop.html?subCategory=pyjamas"
+                            >Pyjamas sets</a
+                          >
+                        </li>
+                        <li>
+                          <a href="shop.html?subCategory=nightgowns"
+                            >Nightgowns</a
+                          >
+                        </li>
+                        <li>
+                          <a href="shop.html?subCategory=lounge"
+                            >Lounge Wears</a
+                          >
+                        </li>
+                        <li><a href="shop.html?subCategory=bodysuits">Bodysuits</a></li>
+                        <li>
+                          <a class="shop-all" href="shop.html?category=sleep-wears">Shop All</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-column">
+                      <h3>Fabrics</h3>
+                      <ul>
                       <li>
                         <a href="shop.html?subCategory=satin/silk"
                           >Satin & Silk</a
@@ -262,10 +265,11 @@
                           >Shop All</a
                         >
                       </li>
-                      
                     </ul>
+                    </div>
                   </div>
-                  <div class="mega-column">
+                  <div class="mega-images-container">
+                    <div class="mega-column">
                     <div
                       class="mega-image"
                       onclick="
@@ -281,6 +285,7 @@
                         <span>The Silk Collection</span>
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -415,19 +420,25 @@
                 <div class="mega-content">
                   <div class="mega-links-container">
                     <div class="mega-column">
-                      <h3>Collections</h3>
+                      <h3>Styles</h3>
                       <ul>
                         <li>
                           <a href="shop.html?subCategory=leggings">Leggings</a>
                         </li>
                         <li>
-                          <a href="shop.html?subCategory=gymsets">Jumpsuits</a>
+                          <a href="shop.html?subCategory=jumpsuits">Jumpsuits</a>
+                        </li>
+                        <li>
+                          <a href="shop.html?subCategory=tops">Tops</a>
                         </li>
                         <li>
                           <a href="shop.html?subCategory=shorts">Shorts</a>
                         </li>
                         <li>
-                          <a href="shop.html?subCategory=gymsets">Full Sets</a>
+                          <a href="shop.html?subCategory=gym-sets">Full Sets</a>
+                        </li>
+                        <li>
+                          <a class="shop-all href="shop.html?category=activewear">Shop All</a>
                         </li>
                       </ul>
                     </div>
@@ -482,6 +493,26 @@
                         <li>
                           <a href="shop.html?subCategory=vests">Vests</a>
                         </li>
+                        <li>
+                          <a class="shop-all" href="shop.html?category=men">Shop All</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-column">
+                      <h3>Textiles</h3>
+                      <ul>
+                        <li>
+                          <a href="shop.html?silhoutte=cotton">Cotton</a>
+                        </li>
+                        <li>
+                          <a href="shop.html?silhoutte=wool">Wool</a>
+                        </li>
+                        <li>
+                          <a href="shop.html?silhoutte=silk">Silk</a>
+                        </li>
+                        <li>
+                          <a class="shop-all" href="shop.html?subCategory=textiles">Shop All</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -509,7 +540,7 @@
                       "
                     >
                       <img
-                        src="./assets/img/leggings_1.jpg"
+                        src="./assets/img/jack_cart_1.webp"
                         alt="Kaftan Materials"
                       />
                       <div class="mega-image-overlay">
@@ -675,12 +706,21 @@
     </div>
 
     <main class="main section-p1 shop-main">
-      <div class="shop_header">
-        <h2 id="page-title" class="shop_title">Collection</h2>
-        <p id="page-desc" class="shop_desc">Explore our latest styles</p>
+      <div class="shop-controls">
+        <div class="shop-header-text">
+          <h2 id="page-title" class="shop_title">Collection</h2>
+          <p id="page-desc" class="shop_desc text"></p>
+        </div>
+
+        <button id="filter-trigger-btn" class="filter-trigger-btn">
+          <i class="ph-thin ph-faders"></i> Filter & Sort
+        </button>
+        <p id="page-count" class="shop_desc">---</p>
       </div>
 
-      <section id="shop-products-container" class="product-grid"></section>
+      <div class="shop-container">
+        <section id="shop-products-container" class="product-grid"></section>
+      </div>
     </main>
 
     <footer>

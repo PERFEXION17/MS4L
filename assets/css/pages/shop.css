@@ -11,8 +11,8 @@
   }
 }
 
-.shop_header {
-  margin-bottom: var(--spacing-xl);
+.shop-header-text {
+  margin-bottom: var(--spacing-md);
   padding: 0 var(--spacing-md);
 }
 
@@ -25,9 +25,14 @@
 }
 
 .shop_desc {
+  margin: var(--spacing-xs) var(--spacing-md) var(--spacing-xl);
   color: var(--text-body);
   font-family: var(--ff-body);
   font-size: var(--font-size-xs);
+}
+
+.shop_desc.text{
+  margin: 0;
 }
 
 .product-grid {
@@ -105,22 +110,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: var(--spacing-md);
   grid-column: 1 / -1;
   text-align: center;
 }
 
 .no-products-msg h3 {
-  color: var(--text-primary);
-  font-family: var(--ff-heading);
-  font-size: var(--font-size-h3);
+  color: var(--text-body);
+  font-size: var(--font-size-ui);
   font-weight: var(--font-weight-light);
-  letter-spacing: var(--spacing-header);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
 }
 
 .no-products-msg p {
   color: var(--text-muted);
   font-size: var(--font-size-ui);
+}
+
+.no-products-msg button{
+  padding: var(--spacing-md);
+  background: var(--brand-main);
+  color: var(--text-inverse);
+  font-size: var(--font-size-ui);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  border: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.no-products-msg button:hover{
+  background: var(--brand-soft);
+  color: var(--text-primary);
 }
 
 .no-products-link {
@@ -274,6 +297,11 @@
   background: none;
   border: none;
   cursor: pointer;
+  transition: var(--transition);
+}
+
+.qa-close:hover{
+  background: var(--brand-soft);
 }
 
 .qa-body {
