@@ -202,7 +202,7 @@ export const products = [
     id: "prod_0004",
     slug: "classic-cobalt-boxers",
     name: "Classic Cobalt Pinstripe Boxers",
-    category: CATEGORY_IDS.INTIMATES, // Adjusted to match new schema logic
+    category: 'men', 
     subCategory: "boxers",
     silhouette: SILHOUETTES.BOXER,
     tags: [SEARCH_TAGS.COTTON, "breathable", "classic-fit", "pinstripe"],
