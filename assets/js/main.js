@@ -3,7 +3,7 @@
 // --- 1. CORE IMPORTS ---
 import { hidePreloader } from "./preloader.js";
 import { updateCartUI } from "./cart.js"; 
-import { initPDP } from "./pdp.js";
+import { initPDPPage } from "./pdp.js";
 import { initShopPage } from "./shop.js";
 
 // --- 2. UI & SYSTEMS IMPORTS ---
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartUI();
 
   // C. Initialize Page-Specific Logic
-  initPDP();
+  initPDPPage();
   renderWishlistPage();
   initShopPage();
 
