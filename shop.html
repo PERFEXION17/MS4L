@@ -71,42 +71,14 @@
               <span id="wishlist-count" class="badge">0</span>
             </a>
 
-            <div class="mini-cart-wrapper">
-              <a href="bag.html" class="icon-link" id="mini-cart-toggle">
-                <i class="ph-thin ph-handbag"></i>
-                <span id="cart-count" class="badge">0</span>
-              </a>
-
-              <div id="mini-cart-dropdown" class="mini-cart-dropdown">
-                <div class="mini-cart-header">
-                  <h4>My Bag</h4>
-                </div>
-
-                <div id="mini-cart-items" class="mini-cart-items"></div>
-
-                <div id="mini-cart-footer" class="mini-cart-footer">
-                  <div class="mini-cart-subtotal">
-                    <span>Subtotal:</span>
-                    <strong id="mini-cart-subtotal">₦0</strong>
-                  </div>
-                  <div class="mini-cart-actions">
-                    <a href="bag.html" class="btn-secondary">View Bag</a>
-                    <a href="checkout.html" class="btn-primary">Checkout</a>
-                  </div>
-                </div>
-
-                <div
-                  id="mini-cart-empty"
-                  class="mini-cart-empty"
-                  style="display: none"
-                >
-                  <p>Your bag is empty</p>
-                  <a href="shop.html?collections=new-arrivals"
-                    >Start Shopping</a
-                  >
-                </div>
-              </div>
-            </div>
+            <button
+              class="icon-link"
+              id="cart-drawer-toggle"
+              aria-label="Open Bag"
+            >
+              <i class="ph-thin ph-handbag"></i>
+              <span id="cart-count" class="badge">0</span>
+            </button>
 
             <button id="menu-btn" class="menu-btn">
               <i class="ph-thin ph-list"></i>
@@ -827,6 +799,34 @@
         </p>
       </div>
     </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3>Your Bag (<span id="cart-drawer-count">0</span>)</h3>
+        <button id="cart-drawer-close" aria-label="Close Bag">
+          <i class="ph-thin ph-x"></i>
+        </button>
+      </div>
+
+      <div class="cart-drawer-body" id="cart-drawer-body"></div>
+
+      <div class="cart-drawer-footer" id="cart-drawer-footer">
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <span id="cart-drawer-subtotal" class="cart-subtotal-price">₦0</span>
+        </div>
+        <p class="cart-shipping-note">
+          Shipping & taxes calculated at checkout.
+        </p>
+        <button
+          class="btn-checkout-drawer"
+          onclick="window.location.href = 'checkout.html'"
+        >
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
 
     <script type="module" src="./assets/js/shop.js"></script>
     <script type="module" src="./assets/js/main.js"></script>
