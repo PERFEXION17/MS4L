@@ -296,9 +296,17 @@ header.nav-hidden {
 
 /* ==================== MOBILE & iPAD (< 901px) ==================== */
 @media (max-width: 900px) {
-  .logo {
-    padding-left: 0;
-    padding-right: 20%;
+  .nav-top{
+    position: relative;
+  }
+  .utilities{
+    gap: var(--spacing-xs);
+  }
+
+  .logo{
+    position: absolute;
+    left: clamp(50px, 20%, 100px);
+    padding: 0;
   }
 
   .logo img {
