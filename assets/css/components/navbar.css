@@ -260,7 +260,8 @@ header.nav-hidden {
 
   .mega-image {
     position: relative;
-    max-height: 360px;
+    /* max-height: 360px; */
+    aspect-ratio: 2/3;
     width: 100%;
     overflow: hidden;
     cursor: pointer;
