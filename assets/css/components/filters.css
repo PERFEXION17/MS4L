@@ -77,10 +77,11 @@
 .filter-header h3 {
   margin: 0;
   color: var(--text-primary);
-  font-family: var(--ff-heading);
+  /* font-family: var(--ff-heading); */
   font-size: var(--font-size-h3);
-  font-weight: var(--font-weigt-light);
-  letter-spacing: var(--spacing-header);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--spacing-wide);
+  text-transform: uppercase;
 }
 
 .filter-close-btn {

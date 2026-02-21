@@ -149,10 +149,10 @@ header.nav-hidden {
     position: relative;
     padding: var(--spacing-neu) 0;
     color: var(--text-primary);
-    font-family: var(--ff-heading);
-    font-size: var(--font-size-ui);
+    /* font-family: var(--ff-heading); */
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    letter-spacing: var(--spacing-header);
+    letter-spacing: var(--spacing-wide);
     text-transform: uppercase;
   }
 
@@ -234,11 +234,11 @@ header.nav-hidden {
     padding-bottom: var(--spacing-xs);
     display: inline-block;
     color: var(--text-primary);
-    font-family: var(--ff-heading);
-    font-size: var(--font-size-ui);
+    /* font-family: var(--ff-heading); */
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-light);
     text-transform: uppercase;
-    letter-spacing: var(--spacing-header);
+    letter-spacing: var(--spacing-wide);
     border-bottom: var(--border);
   }
 
@@ -260,7 +260,6 @@ header.nav-hidden {
 
   .mega-image {
     position: relative;
-    /* max-height: 360px; */
     aspect-ratio: 2/3;
     width: 100%;
     overflow: hidden;
@@ -484,10 +483,11 @@ header.nav-hidden {
   margin-bottom: var(--spacing-neu);
   padding-bottom: var(--spacing-xs);
   color: var(--text-primary);
-  font-family: var(--ff-heading);
+  /* font-family: var(--ff-heading); */
   font-size: var(--font-size-ui);
   font-weight: var(--font-weight-bold);
-  letter-spacing: var(--spacing-header);
+  letter-spacing: var(--spacing-wide);
+  text-transform: uppercase;
   border-bottom: var(--border);
 }
 
