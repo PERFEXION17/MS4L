@@ -16,7 +16,7 @@
 
 /* --- LEFT: EDITORIAL GALLERY (70%) --- */
 .pdp-gallery {
-  width: 100%; 
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xs);
@@ -277,7 +277,7 @@
 }
 
 /* Engagement Sections */
-.section-p1 h2 {
+.pdp-section-bottom.section-p1 h2 {
   margin: var(--spacing-xl) var(--spacing-md) var(--spacing-md)
     var(--spacing-md);
   color: var(--text-primary);
