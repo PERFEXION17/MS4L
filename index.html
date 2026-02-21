@@ -11,7 +11,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/thin/style.css"
     />
     <link
       rel="shortcut icon"
@@ -102,40 +102,10 @@
               <span id="wishlist-count" class="badge">0</span>
             </a>
 
-            <div class="mini-cart-wrapper">
-              <a href="bag.html" class="icon-link" id="mini-cart-toggle">
-                <i class="ph-thin ph-handbag"></i>
-                <span id="cart-count" class="badge">0</span>
-              </a>
-
-              <div id="mini-cart-dropdown" class="mini-cart-dropdown">
-                <div class="mini-cart-header">
-                  <h4>My Bag</h4>
-                </div>
-
-                <div id="mini-cart-items" class="mini-cart-items"></div>
-
-                <div id="mini-cart-footer" class="mini-cart-footer">
-                  <div class="mini-cart-subtotal">
-                    <span>Subtotal:</span>
-                    <strong id="mini-cart-subtotal">₦0</strong>
-                  </div>
-                  <div class="mini-cart-actions">
-                    <a href="bag.html" class="btn-secondary">View Bag</a>
-                    <a href="checkout.html" class="btn-primary">Checkout</a>
-                  </div>
-                </div>
-
-                <div
-                  id="mini-cart-empty"
-                  class="mini-cart-empty"
-                  style="display: none"
-                >
-                  <p>Your bag is empty</p>
-                  <a href="shop.html?collections=new-arrivals">Start Shopping</a>
-                </div>
-              </div>
-            </div>
+           <button class="icon-link" id="cart-drawer-toggle" aria-label="Open Bag">
+              <i class="ph-thin ph-handbag"></i>
+              <span id="cart-count" class="badge">0</span>
+            </button>
 
             <button id="menu-btn" class="menu-btn">
               <i class="ph-thin ph-list"></i>
