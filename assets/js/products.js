@@ -1453,4 +1453,471 @@ export const products = [
     rating: 4.8,
     reviewCount: 12,
   },
+  {
+    id: "prod_0025",
+    slug: "sculpt-seamless-high-waist-thong",
+    name: "Sculpt Seamless High-Waist Thong",
+    category: "intimates",
+    subCategory: "shaper-wear",
+    silhouette: "shaping-thong",
+    tags: [
+      SEARCH_TAGS.SEAMLESS, 
+      SEARCH_TAGS.HIGH_WAIST, 
+      "compression", 
+      "tummy-control", 
+      "invisible-finish"
+    ],
+    collections: [COLLECTIONS.BEST_SELLERS, COLLECTIONS.NEW_ARRIVALS],
+
+    price: 11000,
+    priceUSD: 8.50,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0021", "prod_0010"],
+
+    sizeType: SIZE_TYPES.LETTER, 
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      S: 'UK 8 (Waist 25-26")',
+      M: 'UK 10-12 (Waist 27-29")',
+      L: 'UK 14 (Waist 30-32")',
+      XL: 'UK 16 (Waist 33-35")',
+      "2XL": 'UK 18 (Waist 36-38")'
+    },
+
+    composition: "78% Nylon, 22% Spandex",
+    gsm: 280,
+    careInstructions: "Hand wash cold only. Lay flat to dry to maintain elasticity.",
+
+    options: {
+      sizes: ["S", "M", "L", "XL", "2XL"],
+      colors: [
+        { id: "onyx-black", label: "Onyx Black", hex: "#000000" },
+      ],
+    },
+
+    media: {
+      "onyx-black": [
+        "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-1.webp",
+        "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-2.webp",
+        "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-3.webp"
+      ],
+    },
+
+    description: "Engineered for ultimate control without the bulk. This seamless high-waist thong provides 360-degree midsection compression while remaining completely invisible under your most form-fitting Sapphire Signature dresses.",
+    details: [
+      "Ultra-high waistband with anti-slip silicone lining",
+      "Reinforced front panel for targeted tummy smoothing",
+      "Thong back design to eliminate visible panty lines (VPL)",
+      "Breathable, sweat-wicking foundation fabric"
+    ],
+
+    releaseDate: "2026-03-08",
+    rating: 4.9,
+    reviewCount: 112,
+  },
+  {
+    id: "prod_0026",
+    slug: "sculpt-seamless-mid-thigh-short",
+    name: "Sculpt Seamless Mid-Thigh Short",
+    category: "intimates",
+    subCategory: "shaper-wear",
+    silhouette: "shaping-short",
+    tags: [
+      SEARCH_TAGS.SEAMLESS, 
+      SEARCH_TAGS.HIGH_WAIST, 
+      "compression", 
+      "anti-chafing", 
+      "thigh-sculpting"
+    ],
+    collections: [COLLECTIONS.BEST_SELLERS],
+    price: 11000,
+    priceUSD: 8.50,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0025", "prod_0001"],
+    sizeType: SIZE_TYPES.LETTER, 
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      S: 'UK 8 (Waist 25-26")',
+      M: 'UK 10-12 (Waist 27-29")',
+      L: 'UK 14 (Waist 30-32")',
+      XL: 'UK 16 (Waist 33-35")',
+      "2XL": 'UK 18 (Waist 36-38")'
+    },
+    composition: "75% Nylon, 25% Spandex",
+    gsm: 300,
+    careInstructions: "Hand wash cold. Avoid fabric softeners to preserve compression power.",
+    options: {
+      sizes: ["S", "M", "L", "XL", "2XL"],
+      colors: [
+        { id: "onyx-black", label: "Onyx Black", hex: "#000000" },
+      ],
+    },
+    media: {
+      "onyx-black": [
+        "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-1.webp",
+        "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-2.webp",
+        "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-3.webp"
+      ],
+    },
+    description: "The ultimate foundation for a flawless silhouette. These mid-thigh shorts provide intense core compression and targeted thigh sculpting, finished with sheer mesh panels for breathability and a smooth transition under clothing.",
+    details: [
+      "Extended high-waist coverage for total midsection control",
+      "Sheer mesh thigh panels for targeted ventilation",
+      "Laser-cut edges for a zero-line finish",
+      "Double-layered abdominal panel for maximum smoothing"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.8,
+    reviewCount: 89,
+  },
+  {
+    id: "prod_0027",
+    slug: "azure-lace-sculpt-brief",
+    name: "Azure Lace Sculpt High-Waist Brief",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "briefs",
+    tags: [
+      SEARCH_TAGS.LACE, 
+      SEARCH_TAGS.HIGH_WAIST, 
+      "tummy-control", 
+      "floral-lace", 
+      "light-compression"
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 2200,
+    priceUSD: 2.00,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0025", "prod_0026"],
+    sizeType: SIZE_TYPES.LETTER, 
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8 (Waist 25-26")',
+      M: 'UK 10-12 (Waist 27-29")',
+      L: 'UK 14 (Waist 30-32")',
+      XL: 'UK 16 (Waist 33-35")'
+    },
+    composition: "82% Polyamide, 18% Elastane",
+    gsm: 240,
+    careInstructions: "Hand wash cold. Use a lingerie bag if machine washing on delicate cycle.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "azure-blue", label: "Azure Blue", hex: "#87CEEB" },
+      ],
+    },
+    media: {
+      "azure-blue": [
+        "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-1.webp",
+        "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-2.webp",
+      "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-3.webp"
+      ],
+    },
+    description: "A beautiful fusion of elegance and functionality. This high-waist shaping brief features a smooth azure blue front panel for gentle tummy control, accented by delicate floral lace side panels for a feminine touch that doesn't sacrifice support.",
+    details: [
+      "Targeted light-to-medium compression for abdominal smoothing",
+      "Sheer floral lace side panels for breathability and style",
+      "Soft elasticated waistband designed to sit flat against the skin",
+      "Full back coverage with a flattering high-cut leg"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.7,
+    reviewCount: 45,
+  },
+  {
+    id: "prod_0028",
+    slug: "ribbed-cotton-modal-heart-brief",
+    name: "Essential Ribbed Cotton-Modal Brief",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "brief",
+    tags: [
+      SEARCH_TAGS.HIGH_WAIST,
+      "ribbed-texture",
+      "gold-hardware",
+      "daily-luxury",
+      "breathable"
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
+    price: 2200,
+    priceUSD: 2.00,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: true,
+    crossSell: ["prod_0027", "prod_0025"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 6-8 (Hips 34-36")',
+      M: 'UK 10 (Hips 37-38")',
+      L: 'UK 12-14 (Hips 39-41")',
+      XL: 'UK 16 (Hips 42-44")'
+    },
+    composition: "47% Cotton, 47% Modal, 6% Spandex",
+    gsm: 180,
+    careInstructions: "Machine wash warm in a mesh bag. Tumble dry low.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "soft-sand", label: "Soft Sand", hex: "#D9C5B2" },
+      ],
+    },
+    media: {
+      "soft-sand": [
+        "./assets/img/underwears/panties/panties-2-sand-ribbed-cotton-modal-brief-1.webp",
+        "./assets/img/underwears/panties/panties-2-sand-ribbed-cotton-modal-brief-2.webp"
+      ],
+    },
+    description: "The ultimate everyday foundation. Crafted from a premium cotton-modal blend with a soft ribbed texture, this brief features a delicate lace-trim waistband and a signature gold heart charm for a touch of Sapphire elegance.",
+    details: [
+      "Ultra-soft breathable ribbed fabric for all-day wear",
+      "Intricate geometric lace waistband detail",
+      "Signature 14K gold-plated heart charm at center front",
+      "Full back coverage with a mid-to-high rise fit"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.9,
+    reviewCount: 156,
+  },
+  {
+    id: "prod_0029",
+    slug: "linear-accent-high-waist-panty",
+    name: "Linear Accent High-Waist Panty",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "brief",
+    tags: [
+      SEARCH_TAGS.HIGH_WAIST, 
+      SEARCH_TAGS.SEAMLESS,
+      "sport-luxe", 
+      "breathable-mesh",
+      "daily-comfort"
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 2200,
+    priceUSD: 2.00,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0028", "prod_0001"],
+    sizeType: SIZE_TYPES.LETTER, 
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8 (Hips 34-36")',
+      M: 'UK 10-12 (Hips 37-39")',
+      L: 'UK 14 (Hips 40-42")',
+      XL: 'UK 16 (Hips 43-45")'
+    },
+    composition: "90% Nylon, 10% Spandex",
+    gsm: 160,
+    careInstructions: "Machine wash cold. Tumble dry low. Do not iron.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "cream-slate", label: "Cream & Slate", hex: "#F5F5DC" }
+      ],
+    },
+    media: {
+      "cream-slate": [
+        "./assets/img/underwears/panties/panties-3-cream-linear-accent-high-waist-panty-1.webp",
+        "./assets/img/underwears/panties/panties-3-cream-linear-accent-high-waist-panty-2.webp"
+      ]
+    },
+    description: "Modern athletic aesthetics meet everyday comfort. This high-waist panty features contrast linear detailing and a micro-ribbed texture, offering a secure fit with a breathable, lightweight finish perfect for active days.",
+    details: [
+      "Contrast slate-grey linear detailing for a sporty silhouette",
+      "Soft, high-rise waistband for a flattering, stay-put fit",
+      "Moisture-wicking micro-mesh fabric panels",
+      "Seamless edges for a smooth look under leggings or jeans"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.7,
+    reviewCount: 12,
+  },
+  {
+    id: "prod_0030",
+    slug: "signature-ribbed-v-hardware-thong",
+    name: "Signature Ribbed V-Hardware Thong",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "thong",
+    tags: [
+      SEARCH_TAGS.RIB_KNIT,
+      "gold-hardware",
+      "v-hardware",
+      "minimalist-luxury",
+      "low-rise"
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 2500,
+    priceUSD: 2.00,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0028", "prod_0029"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 6-8 (Hips 34-36")',
+      M: 'UK 10 (Hips 37-38")',
+      L: 'UK 12-14 (Hips 39-41")',
+      XL: 'UK 16 (Hips 42-44")'
+    },
+    composition: "92% Nylon, 8% Spandex",
+    gsm: 170,
+    careInstructions: "Hand wash recommended to preserve hardware finish. If machine washing, use a delicate bag.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "arctic-white", label: "Arctic White", hex: "#FFFFFF" },
+      ],
+    },
+    media: {
+      "arctic-white": [
+        "./assets/img/underwears/panties/panties-4-white-ribbed-v-hardware-thong-1.webp",
+        "./assets/img/underwears/panties/panties-4-white-ribbed-v-hardware-thong-2.webp"
+      ],
+    },
+    description: "Elevate your essentials with the Signature V-Hardware Thong. Featuring a clean ribbed texture and polished rose-gold 'V' hardware at the hips, this piece combines a sporty aesthetic with high-fashion detail.",
+    details: [
+      "Premium micro-ribbed stretch fabric for a contoured fit",
+      "Bespoke rose-gold plated 'V' hardware accents at the hips",
+      "Seamless thong back for an invisible finish under clothing",
+      "Lined cotton gusset for superior all-day comfort"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.8,
+    reviewCount: 21,
+  },
+  {
+    id: "prod_0031",
+    slug: "crimson-ribbed-hardware-thong",
+    name: "Crimson Ribbed Gold-Link Thong",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "thong",
+    tags: [
+      SEARCH_TAGS.RIB_KNIT,
+      "gold-hardware",
+      "bold-color",
+      "minimalist",
+      "low-rise"
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
+    price: 2200,
+    priceUSD: 2.00,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0030", "prod_0001"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 6-8 (Hips 34-36")',
+      M: 'UK 10 (Hips 37-38")',
+      L: 'UK 12-14 (Hips 39-41")',
+      XL: 'UK 16 (Hips 42-44")'
+    },
+    composition: "90% Nylon, 10% Spandex",
+    gsm: 175,
+    careInstructions: "Hand wash cold to maintain the brilliance of the crimson dye and gold hardware.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "crimson-red", label: "Crimson Red", hex: "#BC0000" }
+      ],
+    },
+    media: {
+      "crimson-red": [
+        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-1.webp",
+        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-2.webp",
+        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-3.webp",
+        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-4.webp"
+      ]
+    },
+    description: "Make a vibrant statement with our Crimson Ribbed Thong. Designed with a flattering high-cut leg and accented by subtle circular gold-link hardware at the hips, this piece brings an opulent edge to your daily intimates.",
+    details: [
+      "Vibrant crimson rib-knit stretch fabric",
+      "Delicate gold-link hardware connectors at the hip",
+      "Ultra-slim waistband for a modern, minimalist fit",
+      "Cotton-lined gusset for breathable, all-day comfort"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.9,
+    reviewCount: 14,
+  },
+  {
+    id: "prod_0032",
+    slug: "seamless-contour-essentials-bra",
+    name: "Seamless Contour Essentials Bra",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "bras",
+    silhouette: "push-up",
+    tags: [
+      SEARCH_TAGS.SEAMLESS,
+      "t-shirt-bra",
+      "daily-comfort",
+      "moulded-cups",
+      "wire-free"
+    ],
+    collections: [COLLECTIONS.BEST_SELLERS],
+    price: 10000,
+    priceUSD: 7.50,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0031", "prod_0028"],
+    sizeType: SIZE_TYPES.BRA,
+    availableSizes: ["32B", "34B", "34C", "36C", "38D"],
+    sizeChart: {
+      "32B": "Underbust 27-28 in",
+      "34B": "Underbust 29-30 in",
+      "34C": "Underbust 29-30 in",
+      "36C": "Underbust 31-32 in",
+      "38D": "Underbust 33-34 in"
+    },
+    composition: "85% Polyamide, 15% Elastane",
+    gsm: 210,
+    careInstructions: "Hand wash only. Do not wring or twist. Dry flat to maintain cup shape.",
+    options: {
+      sizes: ["32B", "34B", "34C", "36C", "38D"],
+      colors: [
+        { id: "magenta-berry", label: "Magenta Berry", hex: "#A4345D" }
+      ],
+    },
+    media: {
+      "magenta-berry": [
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-1.webp",
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-2.webp",
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-3.webp",
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-4.webp",
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-5.webp"
+      ]
+    },
+    description: "The ultimate invisible layer. Our Seamless Contour Bra features ultra-smooth, moulded cups and a wire-free design that provides natural lift and support without any visible lines, finished in a rich magenta berry hue.",
+    details: [
+      "Smooth, seamless finish for zero visibility under clothing",
+      "Breathable, lightweight foam contour cups",
+      "Adjustable straps and hook-and-eye back closure",
+      "Wide comfort wings for smooth back and side support"
+    ],
+    releaseDate: "2026-03-08",
+    rating: 4.9,
+    reviewCount: 64,
+  }
 ];
