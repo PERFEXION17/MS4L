@@ -234,7 +234,6 @@ header.nav-hidden {
     padding-bottom: var(--spacing-xs);
     display: inline-block;
     color: var(--text-primary);
-    /* font-family: var(--ff-heading); */
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-light);
     text-transform: uppercase;
@@ -403,31 +402,39 @@ header.nav-hidden {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: var(--ff-heading);
     font-size: var(--font-size-h3);
-    letter-spacing: var(--spacing-header);
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-wide);
     color: var(--text-primary);
     cursor: pointer;
   }
 
-  .submenu {
-    /* display: none; */
-    padding-left: var(--spacing-neu);
-    height: 0;
-    background: var(--bg-canvas);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition);
-    z-index: 0;
-  }
+.submenu {
+  height: 0;
+  padding-left: var(--spacing-neu);
+  background: var(--bg-canvas);
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.92) translateY(-0.4rem);
+  transform-origin: top;
+  transition: 
+    height    0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   0.65s ease-out,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: height, opacity, transform;
+}
+
+.mobile-dropdown.active .submenu {
+  height: auto;
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+}
 
   .submenu h3 {
     margin-top: var(--spacing-md);
     padding-bottom: var(--spacing-xs);
     display: inline-block;
     color: var(--text-primary);
-    font-family: var(--ff-heading);
     font-size: var(--font-size-ui);
     font-weight: var(--font-weight-light);
     text-transform: uppercase;
@@ -435,13 +442,6 @@ header.nav-hidden {
     border-bottom: var(--border);
   }
 
-  .mobile-dropdown.active .submenu {
-    /* display: block; */
-    height: max-content;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
   .submenu li {
     margin: var(--spacing-neu) 0;
     border: none;
@@ -451,5 +451,8 @@ header.nav-hidden {
     font-size: var(--font-size-ui);
     color: var(--text-muted);
   }
-}
 
+  .shop-all {
+    text-decoration: underline;
+  }
+}
