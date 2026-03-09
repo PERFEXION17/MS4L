@@ -278,7 +278,9 @@ function renderCompleteTheLook() {
       div.onclick = () => (window.location.href = `pdp.html?id=${item.id}`);
 
       div.innerHTML = `
+              <div class="comp-the-look-img">
                 <img src="${img}">
+              </div>
                 <div style="flex:1;">
                     <h5>${item.name}</h5>
                     <span>₦${item.price.toLocaleString()}</span>
