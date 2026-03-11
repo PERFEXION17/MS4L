@@ -1,0 +1,109 @@
+/* =========================================
+   PRODUCT CARD HOVER
+   ========================================= */
+
+.pro-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pro-img-box .main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.pro-img-box .hover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.pro:hover .hover-img {
+  opacity: 1;
+}
+
+/* =========================================
+   PRODUCT CARD ACTIONS
+   ========================================= */
+
+/* Ensure the card confines the overlay */
+.pro {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.pro .pro-actions {
+  position: absolute;
+  top: var(--spacing-xs);
+  right: var(--spacing-xs);
+  left: var(--spacing-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.action-btn {
+  width: var(--spacing-md);
+  height: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: var(--font-size-icons);
+  border: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/* Wishlist Active State */
+.action-btn.active {
+  color: var(--text-primary);
+}
+
+.action-btn.active i.ph-fill {
+  color: var(--text-primary);
+}
+
+.pro .des h5 {
+  margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+}
+
+.pro .des h4 {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+}
+
+.status-badge{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: var(--spacing-xs);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--text-inverse);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  z-index: 5;
+}

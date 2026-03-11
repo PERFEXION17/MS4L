@@ -1,0 +1,99 @@
+/* Size Guide Modal */
+.sg-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 600px;
+  width: 90%;
+  background: var(--bg-canvas);
+  transform: translate(-50%, -45%);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+  z-index: 10001;
+}
+
+.sg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(2px);
+  transition: var(--transition);
+  z-index: 10000;
+}
+
+.sg-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sg-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+.sg-header {
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border)
+}
+
+.sg-header h3 {
+  color: var(--text-primary);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--spacing-wide);
+  text-transform: uppercase;
+}
+
+.sg-header button {
+  padding: var(--spacing-xs);
+  font-size: var(--font-size-icons);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sg-body {
+  padding: var(--spacing-md);
+}
+
+.sg-body p {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-ui);
+  color: var(--text-muted);
+  line-height: var(--line-height-body);
+}
+
+.sg-table {
+  width: 100%;
+  text-align: left;
+  font-size: var(--font-size-ui);
+  border-collapse: collapse;
+}
+
+.sg-table th,
+.sg-table td {
+  padding: var(--spacing-md);
+  border-bottom: var(--border);
+}
+.sg-table th {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+  font-size: var(--font-size-xs);
+}
+
+.sg-table td{
+  font-size: var(--font-size-xs);
+}
