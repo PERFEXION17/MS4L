@@ -1461,16 +1461,16 @@ export const products = [
     subCategory: "shaper-wear",
     silhouette: "shaping-thong",
     tags: [
-      SEARCH_TAGS.SEAMLESS, 
-      SEARCH_TAGS.HIGH_WAIST, 
-      "compression", 
-      "tummy-control", 
-      "invisible-finish"
+      SEARCH_TAGS.SEAMLESS,
+      SEARCH_TAGS.HIGH_WAIST,
+      "compression",
+      "tummy-control",
+      "invisible-finish",
     ],
     collections: [COLLECTIONS.BEST_SELLERS, COLLECTIONS.NEW_ARRIVALS],
 
     price: 11000,
-    priceUSD: 8.50,
+    priceUSD: 8.5,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
 
@@ -1478,41 +1478,41 @@ export const products = [
     lowStockWarning: false,
     crossSell: ["prod_0021", "prod_0010"],
 
-    sizeType: SIZE_TYPES.LETTER, 
+    sizeType: SIZE_TYPES.LETTER,
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     sizeChart: {
       S: 'UK 8 (Waist 25-26")',
       M: 'UK 10-12 (Waist 27-29")',
       L: 'UK 14 (Waist 30-32")',
       XL: 'UK 16 (Waist 33-35")',
-      "2XL": 'UK 18 (Waist 36-38")'
+      "2XL": 'UK 18 (Waist 36-38")',
     },
 
     composition: "78% Nylon, 22% Spandex",
     gsm: 280,
-    careInstructions: "Hand wash cold only. Lay flat to dry to maintain elasticity.",
+    careInstructions:
+      "Hand wash cold only. Lay flat to dry to maintain elasticity.",
 
     options: {
       sizes: ["S", "M", "L", "XL", "2XL"],
-      colors: [
-        { id: "onyx-black", label: "Onyx Black", hex: "#000000" },
-      ],
+      colors: [{ id: "onyx-black", label: "Onyx Black", hex: "#000000" }],
     },
 
     media: {
       "onyx-black": [
         "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-1.webp",
         "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-2.webp",
-        "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-3.webp"
+        "./assets/img/underwears/shapewear/shapewear-1-black-seamless-high-waist-sculpting-thong-3.webp",
       ],
     },
 
-    description: "Engineered for ultimate control without the bulk. This seamless high-waist thong provides 360-degree midsection compression while remaining completely invisible under your most form-fitting Sapphire Signature dresses.",
+    description:
+      "Engineered for ultimate control without the bulk. This seamless high-waist thong provides 360-degree midsection compression while remaining completely invisible under your most form-fitting Sapphire Signature dresses.",
     details: [
       "Ultra-high waistband with anti-slip silicone lining",
       "Reinforced front panel for targeted tummy smoothing",
       "Thong back design to eliminate visible panty lines (VPL)",
-      "Breathable, sweat-wicking foundation fabric"
+      "Breathable, sweat-wicking foundation fabric",
     ],
 
     releaseDate: "2026-03-08",
@@ -1527,51 +1527,51 @@ export const products = [
     subCategory: "shaper-wear",
     silhouette: "shaping-short",
     tags: [
-      SEARCH_TAGS.SEAMLESS, 
-      SEARCH_TAGS.HIGH_WAIST, 
-      "compression", 
-      "anti-chafing", 
-      "thigh-sculpting"
+      SEARCH_TAGS.SEAMLESS,
+      SEARCH_TAGS.HIGH_WAIST,
+      "compression",
+      "anti-chafing",
+      "thigh-sculpting",
     ],
     collections: [COLLECTIONS.BEST_SELLERS],
     price: 11000,
-    priceUSD: 8.50,
+    priceUSD: 8.5,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
     lowStockWarning: false,
     crossSell: ["prod_0025", "prod_0001"],
-    sizeType: SIZE_TYPES.LETTER, 
+    sizeType: SIZE_TYPES.LETTER,
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     sizeChart: {
       S: 'UK 8 (Waist 25-26")',
       M: 'UK 10-12 (Waist 27-29")',
       L: 'UK 14 (Waist 30-32")',
       XL: 'UK 16 (Waist 33-35")',
-      "2XL": 'UK 18 (Waist 36-38")'
+      "2XL": 'UK 18 (Waist 36-38")',
     },
     composition: "75% Nylon, 25% Spandex",
     gsm: 300,
-    careInstructions: "Hand wash cold. Avoid fabric softeners to preserve compression power.",
+    careInstructions:
+      "Hand wash cold. Avoid fabric softeners to preserve compression power.",
     options: {
       sizes: ["S", "M", "L", "XL", "2XL"],
-      colors: [
-        { id: "onyx-black", label: "Onyx Black", hex: "#000000" },
-      ],
+      colors: [{ id: "onyx-black", label: "Onyx Black", hex: "#000000" }],
     },
     media: {
       "onyx-black": [
         "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-1.webp",
         "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-2.webp",
-        "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-3.webp"
+        "./assets/img/underwears/shapewear/shapewear-2-black-seamless-high-waist-mid-thigh-short-3.webp",
       ],
     },
-    description: "The ultimate foundation for a flawless silhouette. These mid-thigh shorts provide intense core compression and targeted thigh sculpting, finished with sheer mesh panels for breathability and a smooth transition under clothing.",
+    description:
+      "The ultimate foundation for a flawless silhouette. These mid-thigh shorts provide intense core compression and targeted thigh sculpting, finished with sheer mesh panels for breathability and a smooth transition under clothing.",
     details: [
       "Extended high-waist coverage for total midsection control",
       "Sheer mesh thigh panels for targeted ventilation",
       "Laser-cut edges for a zero-line finish",
-      "Double-layered abdominal panel for maximum smoothing"
+      "Double-layered abdominal panel for maximum smoothing",
     ],
     releaseDate: "2026-03-08",
     rating: 4.8,
@@ -1585,50 +1585,50 @@ export const products = [
     subCategory: "panties",
     silhouette: "briefs",
     tags: [
-      SEARCH_TAGS.LACE, 
-      SEARCH_TAGS.HIGH_WAIST, 
-      "tummy-control", 
-      "floral-lace", 
-      "light-compression"
+      SEARCH_TAGS.LACE,
+      SEARCH_TAGS.HIGH_WAIST,
+      "tummy-control",
+      "floral-lace",
+      "light-compression",
     ],
     collections: [COLLECTIONS.NEW_ARRIVALS],
     price: 2200,
-    priceUSD: 2.00,
+    priceUSD: 2.0,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
     lowStockWarning: false,
     crossSell: ["prod_0025", "prod_0026"],
-    sizeType: SIZE_TYPES.LETTER, 
+    sizeType: SIZE_TYPES.LETTER,
     availableSizes: ["S", "M", "L", "XL"],
     sizeChart: {
       S: 'UK 8 (Waist 25-26")',
       M: 'UK 10-12 (Waist 27-29")',
       L: 'UK 14 (Waist 30-32")',
-      XL: 'UK 16 (Waist 33-35")'
+      XL: 'UK 16 (Waist 33-35")',
     },
     composition: "82% Polyamide, 18% Elastane",
     gsm: 240,
-    careInstructions: "Hand wash cold. Use a lingerie bag if machine washing on delicate cycle.",
+    careInstructions:
+      "Hand wash cold. Use a lingerie bag if machine washing on delicate cycle.",
     options: {
       sizes: ["S", "M", "L", "XL"],
-      colors: [
-        { id: "azure-blue", label: "Azure Blue", hex: "#87CEEB" },
-      ],
+      colors: [{ id: "azure-blue", label: "Azure Blue", hex: "#87CEEB" }],
     },
     media: {
       "azure-blue": [
         "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-1.webp",
         "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-2.webp",
-      "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-3.webp"
+        "./assets/img/underwears/panties/panties-1-blue-floral-lace-high-waist-shaping-brief-3.webp",
       ],
     },
-    description: "A beautiful fusion of elegance and functionality. This high-waist shaping brief features a smooth azure blue front panel for gentle tummy control, accented by delicate floral lace side panels for a feminine touch that doesn't sacrifice support.",
+    description:
+      "A beautiful fusion of elegance and functionality. This high-waist shaping brief features a smooth azure blue front panel for gentle tummy control, accented by delicate floral lace side panels for a feminine touch that doesn't sacrifice support.",
     details: [
       "Targeted light-to-medium compression for abdominal smoothing",
       "Sheer floral lace side panels for breathability and style",
       "Soft elasticated waistband designed to sit flat against the skin",
-      "Full back coverage with a flattering high-cut leg"
+      "Full back coverage with a flattering high-cut leg",
     ],
     releaseDate: "2026-03-08",
     rating: 4.7,
@@ -1646,11 +1646,11 @@ export const products = [
       "ribbed-texture",
       "gold-hardware",
       "daily-luxury",
-      "breathable"
+      "breathable",
     ],
     collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
     price: 2200,
-    priceUSD: 2.00,
+    priceUSD: 2.0,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
@@ -1662,29 +1662,28 @@ export const products = [
       S: 'UK 6-8 (Hips 34-36")',
       M: 'UK 10 (Hips 37-38")',
       L: 'UK 12-14 (Hips 39-41")',
-      XL: 'UK 16 (Hips 42-44")'
+      XL: 'UK 16 (Hips 42-44")',
     },
     composition: "47% Cotton, 47% Modal, 6% Spandex",
     gsm: 180,
     careInstructions: "Machine wash warm in a mesh bag. Tumble dry low.",
     options: {
       sizes: ["S", "M", "L", "XL"],
-      colors: [
-        { id: "soft-sand", label: "Soft Sand", hex: "#D9C5B2" },
-      ],
+      colors: [{ id: "soft-sand", label: "Soft Sand", hex: "#D9C5B2" }],
     },
     media: {
       "soft-sand": [
         "./assets/img/underwears/panties/panties-2-sand-ribbed-cotton-modal-brief-1.webp",
-        "./assets/img/underwears/panties/panties-2-sand-ribbed-cotton-modal-brief-2.webp"
+        "./assets/img/underwears/panties/panties-2-sand-ribbed-cotton-modal-brief-2.webp",
       ],
     },
-    description: "The ultimate everyday foundation. Crafted from a premium cotton-modal blend with a soft ribbed texture, this brief features a delicate lace-trim waistband and a signature gold heart charm for a touch of Sapphire elegance.",
+    description:
+      "The ultimate everyday foundation. Crafted from a premium cotton-modal blend with a soft ribbed texture, this brief features a delicate lace-trim waistband and a signature gold heart charm for a touch of Sapphire elegance.",
     details: [
       "Ultra-soft breathable ribbed fabric for all-day wear",
       "Intricate geometric lace waistband detail",
       "Signature 14K gold-plated heart charm at center front",
-      "Full back coverage with a mid-to-high rise fit"
+      "Full back coverage with a mid-to-high rise fit",
     ],
     releaseDate: "2026-03-08",
     rating: 4.9,
@@ -1698,49 +1697,48 @@ export const products = [
     subCategory: "panties",
     silhouette: "brief",
     tags: [
-      SEARCH_TAGS.HIGH_WAIST, 
+      SEARCH_TAGS.HIGH_WAIST,
       SEARCH_TAGS.SEAMLESS,
-      "sport-luxe", 
+      "sport-luxe",
       "breathable-mesh",
-      "daily-comfort"
+      "daily-comfort",
     ],
     collections: [COLLECTIONS.NEW_ARRIVALS],
     price: 2200,
-    priceUSD: 2.00,
+    priceUSD: 2.0,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
     lowStockWarning: false,
     crossSell: ["prod_0028", "prod_0001"],
-    sizeType: SIZE_TYPES.LETTER, 
+    sizeType: SIZE_TYPES.LETTER,
     availableSizes: ["S", "M", "L", "XL"],
     sizeChart: {
       S: 'UK 8 (Hips 34-36")',
       M: 'UK 10-12 (Hips 37-39")',
       L: 'UK 14 (Hips 40-42")',
-      XL: 'UK 16 (Hips 43-45")'
+      XL: 'UK 16 (Hips 43-45")',
     },
     composition: "90% Nylon, 10% Spandex",
     gsm: 160,
     careInstructions: "Machine wash cold. Tumble dry low. Do not iron.",
     options: {
       sizes: ["S", "M", "L", "XL"],
-      colors: [
-        { id: "cream-slate", label: "Cream & Slate", hex: "#F5F5DC" }
-      ],
+      colors: [{ id: "cream-slate", label: "Cream & Slate", hex: "#F5F5DC" }],
     },
     media: {
       "cream-slate": [
         "./assets/img/underwears/panties/panties-3-cream-linear-accent-high-waist-panty-1.webp",
-        "./assets/img/underwears/panties/panties-3-cream-linear-accent-high-waist-panty-2.webp"
-      ]
+        "./assets/img/underwears/panties/panties-3-cream-linear-accent-high-waist-panty-2.webp",
+      ],
     },
-    description: "Modern athletic aesthetics meet everyday comfort. This high-waist panty features contrast linear detailing and a micro-ribbed texture, offering a secure fit with a breathable, lightweight finish perfect for active days.",
+    description:
+      "Modern athletic aesthetics meet everyday comfort. This high-waist panty features contrast linear detailing and a micro-ribbed texture, offering a secure fit with a breathable, lightweight finish perfect for active days.",
     details: [
       "Contrast slate-grey linear detailing for a sporty silhouette",
       "Soft, high-rise waistband for a flattering, stay-put fit",
       "Moisture-wicking micro-mesh fabric panels",
-      "Seamless edges for a smooth look under leggings or jeans"
+      "Seamless edges for a smooth look under leggings or jeans",
     ],
     releaseDate: "2026-03-08",
     rating: 4.7,
@@ -1758,11 +1756,11 @@ export const products = [
       "gold-hardware",
       "v-hardware",
       "minimalist-luxury",
-      "low-rise"
+      "low-rise",
     ],
     collections: [COLLECTIONS.NEW_ARRIVALS],
     price: 2500,
-    priceUSD: 2.00,
+    priceUSD: 2.0,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
@@ -1774,29 +1772,29 @@ export const products = [
       S: 'UK 6-8 (Hips 34-36")',
       M: 'UK 10 (Hips 37-38")',
       L: 'UK 12-14 (Hips 39-41")',
-      XL: 'UK 16 (Hips 42-44")'
+      XL: 'UK 16 (Hips 42-44")',
     },
     composition: "92% Nylon, 8% Spandex",
     gsm: 170,
-    careInstructions: "Hand wash recommended to preserve hardware finish. If machine washing, use a delicate bag.",
+    careInstructions:
+      "Hand wash recommended to preserve hardware finish. If machine washing, use a delicate bag.",
     options: {
       sizes: ["S", "M", "L", "XL"],
-      colors: [
-        { id: "arctic-white", label: "Arctic White", hex: "#FFFFFF" },
-      ],
+      colors: [{ id: "arctic-white", label: "Arctic White", hex: "#FFFFFF" }],
     },
     media: {
       "arctic-white": [
         "./assets/img/underwears/panties/panties-4-white-ribbed-v-hardware-thong-1.webp",
-        "./assets/img/underwears/panties/panties-4-white-ribbed-v-hardware-thong-2.webp"
+        "./assets/img/underwears/panties/panties-4-white-ribbed-v-hardware-thong-2.webp",
       ],
     },
-    description: "Elevate your essentials with the Signature V-Hardware Thong. Featuring a clean ribbed texture and polished rose-gold 'V' hardware at the hips, this piece combines a sporty aesthetic with high-fashion detail.",
+    description:
+      "Elevate your essentials with the Signature V-Hardware Thong. Featuring a clean ribbed texture and polished rose-gold 'V' hardware at the hips, this piece combines a sporty aesthetic with high-fashion detail.",
     details: [
       "Premium micro-ribbed stretch fabric for a contoured fit",
       "Bespoke rose-gold plated 'V' hardware accents at the hips",
       "Seamless thong back for an invisible finish under clothing",
-      "Lined cotton gusset for superior all-day comfort"
+      "Lined cotton gusset for superior all-day comfort",
     ],
     releaseDate: "2026-03-08",
     rating: 4.8,
@@ -1814,11 +1812,11 @@ export const products = [
       "gold-hardware",
       "bold-color",
       "minimalist",
-      "low-rise"
+      "low-rise",
     ],
     collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
     price: 2200,
-    priceUSD: 2.00,
+    priceUSD: 2.0,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
@@ -1830,31 +1828,31 @@ export const products = [
       S: 'UK 6-8 (Hips 34-36")',
       M: 'UK 10 (Hips 37-38")',
       L: 'UK 12-14 (Hips 39-41")',
-      XL: 'UK 16 (Hips 42-44")'
+      XL: 'UK 16 (Hips 42-44")',
     },
     composition: "90% Nylon, 10% Spandex",
     gsm: 175,
-    careInstructions: "Hand wash cold to maintain the brilliance of the crimson dye and gold hardware.",
+    careInstructions:
+      "Hand wash cold to maintain the brilliance of the crimson dye and gold hardware.",
     options: {
       sizes: ["S", "M", "L", "XL"],
-      colors: [
-        { id: "crimson-red", label: "Crimson Red", hex: "#BC0000" }
-      ],
+      colors: [{ id: "crimson-red", label: "Crimson Red", hex: "#BC0000" }],
     },
     media: {
       "crimson-red": [
         "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-1.webp",
         "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-2.webp",
         "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-3.webp",
-        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-4.webp"
-      ]
+        "./assets/img/underwears/panties/panties-5-red-ribbed-gold-link-thong-4.webp",
+      ],
     },
-    description: "Make a vibrant statement with our Crimson Ribbed Thong. Designed with a flattering high-cut leg and accented by subtle circular gold-link hardware at the hips, this piece brings an opulent edge to your daily intimates.",
+    description:
+      "Make a vibrant statement with our Crimson Ribbed Thong. Designed with a flattering high-cut leg and accented by subtle circular gold-link hardware at the hips, this piece brings an opulent edge to your daily intimates.",
     details: [
       "Vibrant crimson rib-knit stretch fabric",
       "Delicate gold-link hardware connectors at the hip",
       "Ultra-slim waistband for a modern, minimalist fit",
-      "Cotton-lined gusset for breathable, all-day comfort"
+      "Cotton-lined gusset for breathable, all-day comfort",
     ],
     releaseDate: "2026-03-08",
     rating: 4.9,
@@ -1872,11 +1870,11 @@ export const products = [
       "t-shirt-bra",
       "daily-comfort",
       "moulded-cups",
-      "wire-free"
+      "wire-free",
     ],
     collections: [COLLECTIONS.BEST_SELLERS],
     price: 10000,
-    priceUSD: 7.50,
+    priceUSD: 7.5,
     currency: CURRENCY.NGN.code,
     discountPrice: null,
     inStock: true,
@@ -1889,16 +1887,15 @@ export const products = [
       "34B": "Underbust 29-30 in",
       "34C": "Underbust 29-30 in",
       "36C": "Underbust 31-32 in",
-      "38D": "Underbust 33-34 in"
+      "38D": "Underbust 33-34 in",
     },
     composition: "85% Polyamide, 15% Elastane",
     gsm: 210,
-    careInstructions: "Hand wash only. Do not wring or twist. Dry flat to maintain cup shape.",
+    careInstructions:
+      "Hand wash only. Do not wring or twist. Dry flat to maintain cup shape.",
     options: {
       sizes: ["32B", "34B", "34C", "36C", "38D"],
-      colors: [
-        { id: "magenta-berry", label: "Magenta Berry", hex: "#A4345D" }
-      ],
+      colors: [{ id: "magenta-berry", label: "Magenta Berry", hex: "#A4345D" }],
     },
     media: {
       "magenta-berry": [
@@ -1906,18 +1903,520 @@ export const products = [
         "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-2.webp",
         "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-3.webp",
         "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-4.webp",
-        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-5.webp"
-      ]
+        "./assets/img/underwears/bras/bras-1-magenta-seamless-contour-bra-5.webp",
+      ],
     },
-    description: "The ultimate invisible layer. Our Seamless Contour Bra features ultra-smooth, moulded cups and a wire-free design that provides natural lift and support without any visible lines, finished in a rich magenta berry hue.",
+    description:
+      "The ultimate invisible layer. Our Seamless Contour Bra features ultra-smooth, moulded cups and a wire-free design that provides natural lift and support without any visible lines, finished in a rich magenta berry hue.",
     details: [
       "Smooth, seamless finish for zero visibility under clothing",
       "Breathable, lightweight foam contour cups",
       "Adjustable straps and hook-and-eye back closure",
-      "Wide comfort wings for smooth back and side support"
+      "Wide comfort wings for smooth back and side support",
     ],
     releaseDate: "2026-03-08",
     rating: 4.9,
     reviewCount: 64,
-  }
+  },
+  {
+    id: "prod_0033",
+    slug: "classic-checkered-cotton-pajama-set",
+    name: "Classic Checkered Cotton Pajama Set",
+    category: CATEGORY_IDS.NIGHTWEAR,
+    subCategory: "pyjamas",
+    silhouette: "pyjama-set",
+    tags: [
+      "checkered-pattern",
+      "cotton-blend",
+      "unisex-style",
+      "loungewear",
+      "long-sleeve",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 18000,
+    priceUSD: 13.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0034", "prod_0035"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["M", "L", "XL", "2XL"],
+    sizeChart: {
+      M: "Chest 38-40 in, Waist 30-32 in",
+      L: "Chest 41-43 in, Waist 33-35 in",
+      XL: "Chest 44-46 in, Waist 36-38 in",
+      "2XL": "Chest 47-49 in, Waist 39-41 in",
+    },
+    composition: "65% Cotton, 35% Polyester",
+    gsm: 220,
+    careInstructions:
+      "Machine wash warm with similar colors. Tumble dry medium. Warm iron if needed.",
+    options: {
+      sizes: ["M", "L", "XL", "2XL"],
+      colors: [
+        { id: "slate-tan-check", label: "Slate & Tan Check", hex: "#4A5568" },
+      ],
+    },
+    media: {
+      "slate-tan-check": [
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-1-slate-tan-checkered-set-1.webp",
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-1-slate-tan-checkered-set-2.webp",
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-1-slate-tan-checkered-set-3.webp",
+      ],
+    },
+    description:
+      "Timeless comfort for quiet nights. This classic checkered pajama set is crafted from a breathable cotton blend, featuring a button-down long-sleeve top with notched lapels and matching straight-leg trousers with an elasticated waistband.",
+    details: [
+      "Traditional checkered pattern in slate and tan tones",
+      "Full button-front closure with contrast piping",
+      "Two functional patch pockets on the shirt",
+      "Relaxed fit trousers with an adjustable drawstring waist",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.8,
+    reviewCount: 29,
+  },
+  {
+    id: "prod_0034",
+    slug: "lavender-plum-checkered-pajama-set",
+    name: "Lavender & Plum Checkered Pajama Set",
+    category: CATEGORY_IDS.NIGHTWEAR,
+    subCategory: "pyjamas",
+    silhouette: "pyjama-set",
+    tags: [
+      "checkered-pattern",
+      "cotton-blend",
+      "pastel-tones",
+      "loungewear",
+      "long-sleeve",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 18000,
+    priceUSD: 13.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0033", "prod_0035"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["M", "L", "XL", "2XL"],
+    sizeChart: {
+      M: "Chest 38-40 in, Waist 30-32 in",
+      L: "Chest 41-43 in, Waist 33-35 in",
+      XL: "Chest 44-46 in, Waist 36-38 in",
+      "2XL": "Chest 47-49 in, Waist 39-41 in",
+    },
+    composition: "65% Cotton, 35% Polyester",
+    gsm: 220,
+    careInstructions:
+      "Machine wash warm with similar colors. Tumble dry medium. Warm iron if needed.",
+    options: {
+      sizes: ["M", "L", "XL", "2XL"],
+      colors: [
+        {
+          id: "lavender-plum-check",
+          label: "Lavender & Plum Check",
+          hex: "#D8BFD8",
+        },
+      ],
+    },
+    media: {
+      "lavender-plum-check": [
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-2-lavender-plum-checkered-set-1.webp",
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-2-lavender-plum-checkered-set-2.webp",
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-2-lavender-plum-checkered-set-3.webp",
+      ],
+    },
+    description:
+      "A softer take on a classic silhouette. This pajama set features a delicate lavender, plum, and cream checkered pattern on breathable cotton-blend fabric. Designed with a relaxed fit for maximum evening comfort.",
+    details: [
+      "Classic notched collar with full button-down front",
+      "Lavender and plum multi-tonal checkered weave",
+      "Matching straight-leg trousers with elasticated waistband",
+      "Dual front patch pockets for added functionality",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.7,
+    reviewCount: 15,
+  },
+  {
+    id: "prod_0035",
+    slug: "heritage-checkered-pyjama-set",
+    name: "Heritage Checkered Pyjama Set",
+    category: CATEGORY_IDS.NIGHTWEAR,
+    subCategory: "pyjamas",
+    silhouette: "pyjama-set",
+    tags: [
+      "heritage-check",
+      "premium-cotton",
+      "button-down",
+      "loungewear",
+      "classic-fit",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
+    price: 18000,
+    priceUSD: 13.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0033", "prod_0034"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8-10 (Chest 34-35")',
+      M: 'UK 12 (Chest 36-37")',
+      L: 'UK 14-16 (Chest 38-40")',
+      XL: 'UK 18 (Chest 41-43")',
+    },
+    composition: "100% Brushed Cotton",
+    gsm: 240,
+    careInstructions:
+      "Machine wash cold. Line dry in shade to preserve color. Warm iron for a crisp finish.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        {
+          id: "honey-archive-check",
+          label: "Honey Archive Check",
+          hex: "#C5B358",
+        },
+      ],
+    },
+    media: {
+      "honey-archive-check": [
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-3-honey-heritage-check-set-1.webp",
+        "./assets/img/sleep-and-loungewear/pyjamas/pyjamas-3-honey-heritage-check-set-2.webp",
+      ],
+    },
+    description:
+      "A signature piece for refined relaxation. This heritage-inspired pyjama set is crafted from ultra-soft brushed cotton in a honey-toned archive check. The tailored shirt features a sharp notched collar and a structured fit that transitions effortlessly from sleep to lounge.",
+    details: [
+      "Signature honey, black, and red archive check pattern",
+      "Crisp button-down front with tonal buttons",
+      "Coordinating straight-leg pyjama bottoms with an elasticated waist",
+      "High-density brushed cotton for superior warmth and breathability",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 5.0,
+    reviewCount: 12,
+  },
+  {
+    id: "prod_0036",
+    slug: "nude-floral-lace-sculpt-panty",
+    name: "Nude Floral Lace High-Waist Panty",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "brief",
+    tags: [
+      SEARCH_TAGS.LACE,
+      SEARCH_TAGS.HIGH_WAIST,
+      "floral-lace",
+      "nude-palette",
+      "seamless-edges",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 2200,
+    priceUSD: 2.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0028", "prod_0032"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8 (Hips 34-36")',
+      M: 'UK 10-12 (Hips 37-39")',
+      L: 'UK 14 (Hips 40-42")',
+      XL: 'UK 16 (Hips 43-45")',
+    },
+    composition: "88% Nylon, 12% Spandex",
+    gsm: 190,
+    careInstructions:
+      "Hand wash cold with mild detergent. Do not bleach. Lay flat to dry.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "natural-nude", label: "Natural Nude", hex: "#E3C5AF" },
+        { id: "crimson-red", label: "Crimson Red", hex: "#990000" },
+      ],
+    },
+    media: {
+      "natural-nude": [
+        "./assets/img/underwears/panties/panties-6-nude-floral-lace-high-waist-panty-1.webp",
+        "./assets/img/underwears/panties/panties-6-nude-floral-lace-high-waist-panty-2.webp",
+        "./assets/img/underwears/panties/panties-6-nude-floral-lace-high-waist-panty-3.webp",
+      ],
+      "crimson-red": [
+        "./assets/img/underwears/panties/panties-6-red-floral-lace-high-waist-panty-1.webp",
+        "./assets/img/underwears/panties/panties-6-red-floral-lace-high-waist-panty-2.webp",
+        "./assets/img/underwears/panties/panties-6-red-floral-lace-high-waist-panty-3.webp",
+        "./assets/img/underwears/panties/panties-6-red-floral-lace-high-waist-panty-4.webp",
+        "./assets/img/underwears/panties/panties-6-red-floral-lace-high-waist-panty-5.webp",
+      ],
+    },
+    description:
+      "Elegant and invisible. This high-waist panty is crafted from intricate floral lace in a natural nude tone, featuring a multi-strap elasticated waistband for a secure, stay-put fit that remains discreet under any outfit.",
+    details: [
+      "Premium floral lace body for a delicate, feminine look",
+      "Four-tier elasticated waistband for enhanced comfort and stability",
+      "Seamless leg openings to eliminate panty lines",
+      "Breathable cotton-lined gusset",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.8,
+    reviewCount: 24,
+  },
+  {
+    id: "prod_0037",
+    slug: "midnight-orchid-lace-balconette-bra",
+    name: "Midnight Orchid Lace Balconette Bra",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "bras",
+    silhouette: "balconette",
+    tags: [
+      SEARCH_TAGS.LACE,
+      "floral-embroidery",
+      "underwired",
+      "balconette-fit",
+      "luxury-intimates",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS],
+    price: 10000,
+    priceUSD: 7.5,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: false,
+    lowStockWarning: true,
+    crossSell: ["prod_0036", "prod_0032"],
+    sizeType: SIZE_TYPES.BRA,
+    availableSizes: ["32B", "34B", "34C", "36C", "38D"],
+    sizeChart: {
+      "32B": "Underbust 27-28 in",
+      "34B": "Underbust 29-30 in",
+      "34C": "Underbust 29-30 in",
+      "36C": "Underbust 31-32 in",
+      "38D": "Underbust 33-34 in",
+    },
+    composition: "82% Polyamide, 12% Elastane, 6% Polyester",
+    gsm: 200,
+    careInstructions:
+      "Hand wash only in cool water. Use a delicate detergent and air dry to protect the lace and underwire.",
+    options: {
+      sizes: ["32B", "34B", "34C", "36C", "38D"],
+      colors: [
+        { id: "midnight-orchid", label: "Midnight Orchid", hex: "#3D2B56" },
+      ],
+    },
+    media: {
+      "midnight-orchid": [
+        "./assets/img/underwears/bras/bras-2-purple-orchid-lace-balconette-bra-1.webp",
+        "./assets/img/underwears/bras/bras-2-purple-orchid-lace-balconette-bra-2.webp",
+        "./assets/img/underwears/bras/bras-2-purple-orchid-lace-balconette-bra-3.webp",
+        "./assets/img/underwears/bras/bras-2-purple-orchid-lace-balconette-bra-4.webp",
+      ],
+    },
+    description:
+      "Exquisite craftsmanship meets alluring design. The Midnight Orchid Balconette Bra features delicate floral lace embroidery over contoured cups, providing a gentle lift and a structured silhouette in a rich, regal purple hue.",
+    details: [
+      "Contoured balconette cups with intricate floral lace overlay",
+      "Supportive underwire design for natural lift and shape",
+      "Double-strap architectural detail at the front for a modern edge",
+      "Sheer mesh wings for a breathable and smoothing fit",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.9,
+    reviewCount: 18,
+  },
+  {
+    id: "prod_0038",
+    slug: "oxblood-satin-lace-trim-bra",
+    name: "Oxblood Satin Lace-Trim Bra",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "bras",
+    silhouette: "full-cup",
+    tags: [
+      SEARCH_TAGS.LACE,
+      "satin-finish",
+      "underwired",
+      "bow-detail",
+      "luxury-intimates",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
+    price: 10000,
+    priceUSD: 7.5,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0031", "prod_0037"],
+    sizeType: SIZE_TYPES.BRA,
+    availableSizes: ["32B", "34B", "34C", "36C", "38D"],
+    sizeChart: {
+      "32B": "Underbust 27-28 in",
+      "34B": "Underbust 29-30 in",
+      "34C": "Underbust 29-30 in",
+      "36C": "Underbust 31-32 in",
+      "38D": "Underbust 33-34 in",
+    },
+    composition: "90% Polyester, 10% Spandex",
+    gsm: 210,
+    careInstructions:
+      "Hand wash cold. Use a lingerie bag if machine washing. Air dry only.",
+    options: {
+      sizes: ["32B", "34B", "34C", "36C", "38D"],
+      colors: [{ id: "oxblood", label: "Oxblood", hex: "#4A0E0E" }],
+    },
+    media: {
+      oxblood: [
+        "./assets/img/underwears/bras/bras-3-red-satin-lace-bra-1.webp",
+        "./assets/img/underwears/bras/bras-3-red-satin-lace-bra-2.webp",
+        "./assets/img/underwears/bras/bras-3-red-satin-lace-bra-3.webp",
+      ],
+    },
+    description:
+      "Indulge in pure opulence. This full-coverage bra combines a lustrous crimson satin body with intricate scalloped lace embroidery along the cups. Finished with a delicate central bow and underwired support for a perfect blend of elegance and lift.",
+    details: [
+      "Lustrous satin finish with soft floral lace overlays",
+      "Supportive underwire for a structured and lifted silhouette",
+      "Dainty bow accent at the center gore",
+      "Adjustable silk-touch straps for a personalized fit",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.9,
+    reviewCount: 42,
+  },
+  {
+    id: "prod_0039",
+    slug: "floral-lace-hipster",
+    name: "Floral Lace Hipster",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "hipster",
+    tags: [
+      SEARCH_TAGS.LACE,
+      "floral-embroidery",
+      "scalloped-trim",
+      "pastel-tones",
+      "soft-mesh",
+    ],
+    collections: [COLLECTIONS.BEST_SELLERS],
+    price: 2200,
+    priceUSD: 2.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0032", "prod_0036"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8 (Hips 34-36")',
+      M: 'UK 10-12 (Hips 37-39")',
+      L: 'UK 14 (Hips 40-42")',
+      XL: 'UK 16 (Hips 43-45")',
+    },
+    composition: "85% Polyamide, 15% Elastane",
+    gsm: 160,
+    careInstructions:
+      "Hand wash cold. Use a lingerie bag for machine washing. Lay flat to dry to maintain lace integrity.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "sky-blue", label: "Sky Blue", hex: "#AED9E0" },
+        { id: "midnight-black", label: "Midnight Black", hex: "#000000" },
+      ],
+    },
+    media: {
+      "sky-blue": [
+        "./assets/img/underwears/panties/panties-7-sky-blue-lace-hipster-1.webp",
+        "./assets/img/underwears/panties/panties-7-sky-blue-lace-hipster-2.webp",
+        "./assets/img/underwears/panties/panties-7-sky-blue-lace-hipster-3.webp",
+      ],
+      "midnight-black": [
+        "./assets/img/underwears/panties/panties-7-black-lace-hipster-1.webp",
+        "./assets/img/underwears/panties/panties-7-black-lace-hipster-2.webp",
+        "./assets/img/underwears/panties/panties-7-black-lace-hipster-3.webp",
+      ],
+    },
+    description:
+      "Effortless charm for everyday wear. This hipster panty is crafted from soft, sky blue floral lace with a delicate scalloped edge. The wide lace waistband provides a comfortable, no-dig fit while the sheer mesh back offers a feminine finish.",
+    details: [
+      "Intricate floral lace overlay with scalloped detailing",
+      "Comfort-stretch lace waistband for a flattering hipster fit",
+      "Sheer breathable mesh panels for all-day freshness",
+      "Cotton-lined gusset for superior comfort",
+    ],
+    releaseDate: "2026-03-11",
+    rating: 4.7,
+    reviewCount: 15,
+  },
+  {
+    id: "prod_0040",
+    slug: "starlight-diamante-lace-brief",
+    name: "Starlight Diamante Lace Brief",
+    category: CATEGORY_IDS.INTIMATES,
+    subCategory: "panties",
+    silhouette: "brief",
+    tags: [
+      SEARCH_TAGS.LACE,
+      "diamante-detail",
+      "scalloped-edge",
+      "glamour",
+      "evening-wear",
+    ],
+    collections: [COLLECTIONS.NEW_ARRIVALS, COLLECTIONS.BEST_SELLERS],
+    price: 2200,
+    priceUSD: 2.0,
+    currency: CURRENCY.NGN.code,
+    discountPrice: null,
+    inStock: true,
+    lowStockWarning: false,
+    crossSell: ["prod_0038", "prod_0037"],
+    sizeType: SIZE_TYPES.LETTER,
+    availableSizes: ["S", "M", "L", "XL"],
+    sizeChart: {
+      S: 'UK 8 (Hips 34-36")',
+      M: 'UK 10-12 (Hips 37-39")',
+      L: 'UK 14 (Hips 40-42")',
+      XL: 'UK 16 (Hips 43-45")',
+    },
+    composition: "82% Nylon, 18% Elastane",
+    gsm: 195,
+    careInstructions:
+      "Hand wash only in cold water. Turn inside out to protect diamante embellishments. Do not tumble dry.",
+    options: {
+      sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { id: "garnet-red", label: "Garnet Red", hex: "#7B001C" },
+        { id: "midnight-black", label: "Midnight Black", hex: "#000000" },
+      ],
+    },
+    media: {
+      "garnet-red": [
+        "./assets/img/underwears/panties/panties-8-garnet-red-starlight-lace-brief-1.webp",
+        "./assets/img/underwears/panties/panties-8-garnet-red-starlight-lace-brief-2.webp",
+        "./assets/img/underwears/panties/panties-8-garnet-red-starlight-lace-brief-3.webp",
+      ],
+      "midnight-black": [
+        "./assets/img/underwears/panties/panties-8-black-starlight-lace-brief-1.webp",
+        "./assets/img/underwears/panties/panties-8-black-starlight-lace-brief-2.webp",
+        "./assets/img/underwears/panties/panties-8-black-starlight-lace-brief-3.webp",
+        "./assets/img/underwears/panties/panties-8-black-starlight-lace-brief-4.webp",
+      ],
+    },
+    description:
+      "Dazzle from the base layer up. The Starlight Brief features a sophisticated v-pattern of heat-sealed diamantes on a soft microfibre front, framed by exquisite floral lace side panels and a cheeky scalloped back finish.",
+    details: [
+      "Signature diamante 'starlight' embellishment on the front panel",
+      "Delicate floral lace wings with scalloped edges",
+      "Low-rise fit with high-stretch side panels for a comfortable grip",
+      "Cotton-lined gusset for all-day wearability",
+    ],
+    releaseDate: "2026-03-12",
+    rating: 4.9,
+    reviewCount: 18,
+  },
 ];
