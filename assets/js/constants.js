@@ -1,7 +1,7 @@
 export const CATEGORY_IDS = {
   ACTIVEWEAR: "activewear", // Updated from "gym-sets" to broader term
   LINGERIE: "lingerie",
-  NIGHTWEAR: "nightwear",
+  NIGHTWEAR: "sleep-wears",
   INTIMATES: "intimates",
   TEXTILES: "textiles",
 };
