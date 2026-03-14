@@ -19,7 +19,7 @@ export function initPDPPage() {
   currentProduct = products.find((p) => String(p.id) === String(productId));
 
   if (!currentProduct) {
-    container.innerHTML = `<div style="text-align:center; padding: 100px 20px;"><h2>Product not found.</h2><a href="shop.html">Return to Shop</a></div>`;
+    container.innerHTML = `<div class="empty-pdp"><h2>Product not found.</h2><a href="shop.html" class="btn-primary">Return to Shop</a></div>`;
     return;
   }
 
