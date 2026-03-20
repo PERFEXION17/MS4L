@@ -196,8 +196,6 @@ export function closeCartDrawer() {
   if (overlay) overlay.classList.remove("active");
 }
 
-// ... (Keep your existing renderCartPage, renderCheckoutPage, and Paystack logic here) ...
-
 // --- GLOBAL EXPORTS ---
 window.updateQty = (id, change) => updateCartItemQuantity(id, change);
 window.removeItem = (id) => removeFromCart(id);
