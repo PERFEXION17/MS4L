@@ -137,6 +137,7 @@
   margin-bottom: var(--spacing-xs);
   font-size: var(--font-size-xs);
   color: var(--text-muted);
+  text-transform: capitalize;
 }
 
 /* Qty & Remove Row */

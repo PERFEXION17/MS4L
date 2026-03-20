@@ -4,7 +4,6 @@
 /* 2. Global Components */
 @import 'components/navbar.css';
 @import 'components/footer.css';
-@import 'components/buttons.css';
 @import 'components/cards.css';
 @import 'components/modals.css';
 
@@ -13,3 +12,4 @@
 @import 'pages/cart.css';
 @import 'pages/shop.css';
 @import 'pages/wishlist.css';
+@import 'pages/checkout.css';
