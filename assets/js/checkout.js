@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hideLoading();
         localStorage.setItem("lastOrderRef", response.reference);
         localStorage.removeItem("cart");
-        window.location.href = `thankyou.html?ref=${response.reference}`;
+        window.location.href = `thank-you.html?ref=${response.reference}`;
       },
       onClose: () => {
         hideLoading();
