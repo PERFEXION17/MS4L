@@ -200,6 +200,13 @@ small {
   cursor: pointer;
 }
 
+.payment-message.error{
+  margin-top: var(--spacing-xs);
+  color: var(--status-error);
+  font-size: var(--font-size-xs);
+  font-style: italic;
+}
+
 .legal-text {
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-xl);

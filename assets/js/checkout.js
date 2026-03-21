@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const itemsList = document.getElementById("cart-items-list");
   const form = document.getElementById("checkout-form");
   const stateSelect = document.getElementById("state");
-  const summaryHeaderTally = document.getElementById('order-summary-tally')
+  const summaryHeaderTally = document.getElementById("order-summary-tally");
 
   const requiredFields = document.querySelectorAll("#checkout-form [required]");
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Kano: 4500,
     Kaduna: 4200,
     Abuja: 3500,
-    Plateau: 1000, 
+    Plateau: 1000,
     default: 5000,
   };
 
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     totalDisplay.textContent = format(grandTotal);
     if (mobileTotalDisplay) mobileTotalDisplay.textContent = format(grandTotal);
 
-    summaryHeaderTally.textContent = format(grandTotal)
+    summaryHeaderTally.textContent = format(grandTotal);
 
     // Sync mobile pay button state
     if (mobilePayBtn) mobilePayBtn.disabled = payBtn.disabled;
@@ -184,18 +184,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-// Replace your checkFormValidity with:
-function checkFormValidity() {
-  const allValid = Array.from(requiredFields).every(f => f.checkValidity());
-  
-  payBtn.disabled = !allValid;
-  payBtn.classList.toggle("active", allValid);     // ← this line was missing
+  // Replace your checkFormValidity with:
+  function checkFormValidity() {
+    const allValid = Array.from(requiredFields).every((f) => f.checkValidity());
 
-  if (mobilePayBtn) {
-    mobilePayBtn.disabled = !allValid;
-    mobilePayBtn.classList.toggle("active", allValid);
+    payBtn.disabled = !allValid;
+    payBtn.classList.toggle("active", allValid); // ← this line was missing
+
+    if (mobilePayBtn) {
+      mobilePayBtn.disabled = !allValid;
+      mobilePayBtn.classList.toggle("active", allValid);
+    }
   }
-}
 
   requiredFields.forEach((field) => {
     field.addEventListener("input", () => {
@@ -304,7 +304,13 @@ function checkFormValidity() {
       },
       onClose: () => {
         hideLoading();
-        // Optional: showToast("Payment window closed")
+        const msgEl = document.createElement("p");
+        msgEl.className = "payment-message error";
+        msgEl.textContent =
+          "Payment was not completed. Please try again.";
+        payBtn.parentNode.insertBefore(msgEl, payBtn.nextSibling);
+        // auto-remove after 8s or on next submit
+        setTimeout(() => msgEl.remove(), 8000);
       },
     });
 
@@ -320,6 +326,5 @@ function checkFormValidity() {
     });
   }
 });
-
 
 // pk_live_988acbd343f21914562810ef81e1bb35db912df7;
