@@ -13,9 +13,6 @@
   --brand-main: #050505; /* Primary Buttons */
   --brand-soft: #ebddd6; /* Accents / Hover fills */
 
-  --border-light: #e5e5e5; /* Subtle dividers */
-  --border-hardware: #a8a9ad; /* Input borders */
-
   --status-error: #8b0000; /* Out of Stock */
   --status-success: #2e5c43; /* Added to Cart */
   --status-warning: #c5a059; /* Low Stock / Best Seller */
@@ -48,6 +45,7 @@
   --font-weight-light: 400; 
   
   --border: 1px solid rgba(0, 0, 0, 0.1);
+  --border-light: 1px solid rgba(255, 255, 255, 0.1);
   --transition: all 0.3s ease-in-out;
 }
 
