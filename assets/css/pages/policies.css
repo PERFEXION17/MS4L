@@ -1,0 +1,36 @@
+.policies-container {
+  margin-top: 180px;
+  padding: 0 var(--spacing-md);
+  max-width: 800px;
+  min-height: 70vh;
+}
+
+.policies-container h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-family: var(--ff-body);
+  font-size: var(--font-size-ui);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing-wide);
+}
+
+.policies-container h4 {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+  font-family: var(--ff-body);
+  font-size: var(--font-size-ui);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--spacing-wide);
+}
+
+.policies-container p,
+.policies-container li {
+  font-size: var(--font-size-ui);
+  line-height: 1.7;
+}
+
+.strong{
+  font-weight: var(--font-weight-bold);
+}
