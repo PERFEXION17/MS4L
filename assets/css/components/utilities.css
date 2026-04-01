@@ -1,0 +1,24 @@
+/* MailerLite Success Message */
+
+.newsletter-success {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(46, 92, 67, 0.1); /* soft green success tint */
+  border: 1px solid var(--status-success);
+  color: var(--status-success);
+  border-radius: 0;
+  font-size: var(--font-size-body);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

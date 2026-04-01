@@ -29,6 +29,8 @@ import {
   addToCartFromWishlist,
 } from "./wishlist.js";
 
+import { mailerSuccessMsg } from "./utilities.js";
+
 // --- 3. PRELOADER ---
 window.addEventListener("load", hidePreloader);
 
@@ -71,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // F. One-off Helpers
   handleIntroModal();
+  mailerSuccessMsg();
 });
 
 // --- 5. HELPER FUNCTIONS ---
