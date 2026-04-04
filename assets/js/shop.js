@@ -9,6 +9,7 @@ import {
 // NEW: Import PAGE_DESCRIPTIONS
 import { COLLECTIONS, PAGE_DESCRIPTIONS } from "./constants.js";
 import { initFilters, openFilterDrawer } from "./filters.js";
+import { showSkeleton } from "./utilities.js";
 
 // --- STATE ---
 let currentQuickProduct = null;
@@ -35,17 +36,21 @@ export function initShopPage() {
     filterBtn.onclick = openFilterDrawer;
   }
 
-  // 4. INITIALIZE FILTERS
+  // 4. Show skeleton BEFORE initializing filters
+  showSkeleton(container, 8, "product");
+
+  // 5. INITIALIZE FILTERS with skeleton support
   initFilters(products, (filteredList) => {
-    // A. Render the Grid
+    // Render the real grid using your existing renderGrid function
     renderGrid(container, filteredList);
 
-    // B. Update Header (Title + Description + Count)
+    // Update Header (Title + Description + Count)
     updatePageHeader(filteredList.length);
 
     const pageCount = document.getElementById("page-count");
-    if (pageCount)
+    if (pageCount) {
       pageCount.textContent = `${filteredList.length} products found`;
+    }
   });
 }
 

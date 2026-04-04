@@ -6,6 +6,7 @@
 @import 'components/footer.css';
 @import 'components/cards.css';
 @import 'components/modals.css';
+@import 'components/utilities.css';
 
 /* 4. Page Specifics */
 @import 'pages/pdp.css';

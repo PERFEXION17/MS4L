@@ -22,3 +22,72 @@
     transform: translateY(0);
   }
 }
+
+/* ==========================================
+   PREMIUM SKELETON LOADING – MS4L
+   Elegant shimmer, Lounge-inspired
+========================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 25%,
+    #f5f5f5 50%,
+    var(--bg-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.8s infinite ease-in-out;
+  border-radius: 0;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Common skeleton shapes */
+.skeleton-line {
+  height: 16px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.skeleton-line-sm {
+  height: 12px;
+  margin-bottom: 8px;
+}
+
+.skeleton-image {
+  background: var(--bg-surface);
+  border-radius: 0;
+}
+
+/* Product card skeleton */
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.skeleton-card .skeleton-image {
+  aspect-ratio: 3 / 4; /* typical for lingerie */
+  width: 100%;
+}
+
+/* Fade-in when real content loads */
+.real-content {
+  animation: fadeInContent 0.45s ease-out forwards;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
