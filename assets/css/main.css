@@ -9,6 +9,7 @@
 @import 'components/utilities.css';
 
 /* 4. Page Specifics */
+@import 'pages/index.css';
 @import 'pages/pdp.css';
 @import 'pages/cart.css';
 @import 'pages/shop.css';

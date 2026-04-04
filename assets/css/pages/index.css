@@ -1,0 +1,162 @@
+main {
+  margin-top: 130px;
+  max-width: 100%;
+}
+
+.index-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xs);
+}
+
+.index-text {
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.index-text h3 {
+  color: var(--text-inverse);
+  font-family: var(--ff-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--spacing-header);
+}
+
+._3-4 .index-text h3 {
+  font-size: var(--font-size-h3);
+}
+
+.index-text a {
+  color: var(--text-inverse);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.index-text a:hover {
+  text-decoration: none;
+}
+
+._16-9 {
+  padding-left: var(--spacing-md);
+  grid-column: 1/-1;
+  aspect-ratio: 16/9;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+._3-4 {
+  padding-left: var(--spacing-md);
+  aspect-ratio: 3/4;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.new-in {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-new-in-2.webp);
+}
+
+.panty {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-panty-1.webp);
+}
+
+.intimate {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-intimate-1.webp);
+}
+
+.sleep-wear {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-sleep-wear-1.webp);
+}
+
+.active-wear {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-active-wear-1.webp);
+}
+
+.gentleman {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: url(/assets/img/index/index-gentleman-1.webp);
+}
+
+.ms4l-text {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xs);
+}
+
+.ms4l-text h2 {
+  color: var(text-primary);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--spacing-wide);
+}
+
+.ms4l-text span {
+  font-family: var(--ff-body);
+  font-size: var(--font-size-ui);
+  font-weight: var(--font-weight-bold);
+}
+
+.ms4l-text p{
+  max-width: 80%;
+  margin-top: var(--spacing-xs);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 60px;
+  }
+
+  .index-text {
+    margin-bottom: var(--spacing-md);
+  }
+
+  ._16-9 {
+    padding-left: var(--spacing-xs);
+  }
+
+  ._3-4 {
+    padding-left: var(--spacing-xs);
+  }
+
+  ._3-4 .index-text h3 {
+    font-size: var(--font-size-ui);
+  }
+
+  .index-text a {
+    font-size: var(--font-size-xs);
+  }
+
+  .new-in .index-text h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  .ms4l-text p{
+    max-width: 100%;
+  }
+}
