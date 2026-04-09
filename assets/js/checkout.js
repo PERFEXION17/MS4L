@@ -90,15 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const deliveryFees = {
-    Lagos: 2500,
-    FCT: 3500,
-    Rivers: 4000,
-    Oyo: 3800,
-    Kano: 4500,
-    Kaduna: 4200,
-    Abuja: 3500,
-    Plateau: 1000,
-    default: 5000,
+    default: 0,
   };
 
   states.forEach((state) => {
@@ -244,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const amountInKobo = updateTotals() * 100; // latest grand total
 
     const handler = PaystackPop.setup({
-      key: "pk_test_d20590ef86fe4669a36f97288826af15ca69c90b",
+      key: "pk_live_988acbd343f21914562810ef81e1bb35db912df7",
       email,
       amount: amountInKobo,
       currency: "NGN",
@@ -306,8 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hideLoading();
         const msgEl = document.createElement("p");
         msgEl.className = "payment-message error";
-        msgEl.textContent =
-          "Payment was not completed. Please try again.";
+        msgEl.textContent = "Payment was not completed. Please try again.";
         payBtn.parentNode.insertBefore(msgEl, payBtn.nextSibling);
         // auto-remove after 8s or on next submit
         setTimeout(() => msgEl.remove(), 8000);
@@ -327,4 +318,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// pk_live_988acbd343f21914562810ef81e1bb35db912df7;
+// pk_test_d20590ef86fe4669a36f97288826af15ca69c90b;
