@@ -29,12 +29,11 @@ import {
   addToCartFromWishlist,
 } from "./wishlist.js";
 
+import { initSearch } from "./search.js";
+
 import { mailerSuccessMsg } from "./utilities.js";
 
-// --- 3. PRELOADER ---
-window.addEventListener("load", hidePreloader);
-
-// --- 4. GLOBAL APP INITIALIZATION ---
+// --- GLOBAL APP INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🚀 Main Engine Starting...");
 
@@ -43,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSearchToggle();
   setupCollapsibleSections();
   setupModalClosers();
+  initSearch();
 
   // B. NEW: Slide-Out Cart Toggles
   const cartToggleBtn = document.getElementById("cart-drawer-toggle");

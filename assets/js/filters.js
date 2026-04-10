@@ -1,8 +1,11 @@
+// assets/js/filters.js
 import { COLLECTIONS } from "./constants.js";
 
-// --- STATE ---
-let contextProducts = []; // The "Base" list based on URL (e.g., all Lingerie)
-let activeParams = {}; // Stores URL params to decide what filters to hide
+// ────────────────────────────────────────────────
+// STATE
+// ────────────────────────────────────────────────
+let contextProducts = [];
+let activeParams = {};
 
 let activeFilters = {
   collections: [],
@@ -11,15 +14,17 @@ let activeFilters = {
   sizes: [],
   minRating: 0,
   maxPrice: 1000000,
+  searchTerm: "", // Always a string
 };
 
 let onFilterChangeCallback = null;
 
-// --- INITIALIZATION ---
+// ────────────────────────────────────────────────
+// INITIALIZATION
+// ────────────────────────────────────────────────
 export function initFilters(allProducts, callback) {
   onFilterChangeCallback = callback;
 
-  // 1. ANALYZE URL CONTEXT
   const params = new URLSearchParams(window.location.search);
   activeParams = {
     category: params.get("category"),
@@ -29,15 +34,12 @@ export function initFilters(allProducts, callback) {
     search: params.get("search"),
   };
 
-  // 2. ESTABLISH BASE CONTEXT (Filter Master List -> Page List)
+  // Build base context with improved search
   contextProducts = allProducts.filter((p) => {
     if (activeParams.search) {
-      const term = activeParams.search.toLowerCase();
-      return (
-        p.name.toLowerCase().includes(term) ||
-        p.tags.some((t) => t.toLowerCase().includes(term))
-      );
+      return matchesSearch(p, activeParams.search);
     }
+
     if (activeParams.collection)
       return p.collections.includes(activeParams.collection);
     if (activeParams.subCategory)
@@ -46,60 +48,81 @@ export function initFilters(allProducts, callback) {
       return p.silhouette === activeParams.silhouette;
     if (activeParams.category) return p.category === activeParams.category;
 
-    return true; // "All Products" page
+    return true;
   });
 
-  // 3. SET DYNAMIC PRICE MAX
   if (contextProducts.length > 0) {
-    const max = Math.max(...contextProducts.map((p) => p.price));
-    activeFilters.maxPrice = max;
+    activeFilters.maxPrice = Math.max(...contextProducts.map((p) => p.price));
   }
 
-  // 4. SETUP UI
   injectFilterDrawerHTML();
-  renderFilterOptions(); // This now uses activeParams to decide what to show
-
-  // 5. INITIAL RUN
+  renderFilterOptions();
   runFilterLogic();
 }
 
-// --- LOGIC ENGINE ---
+// ────────────────────────────────────────────────
+// IMPROVED SEARCH MATCHING (this fixes "lingerie", "panty", "panties" etc.)
+// ────────────────────────────────────────────────
+function matchesSearch(product, term) {
+  if (!term) return true;
+
+  const searchTerm = term.toLowerCase().trim();
+
+  // Search in more fields + more forgiving matching
+  const fieldsToSearch = [
+    product.name || "",
+    product.category || "",
+    product.subCategory || "",
+    product.silhouette || "",
+    product.description || "",
+    ...(product.tags || []),
+  ];
+
+  return fieldsToSearch.some((field) => {
+    if (!field) return false;
+    const text = String(field).toLowerCase();
+    return text.includes(searchTerm);
+  });
+}
+
+// ────────────────────────────────────────────────
+// FILTER LOGIC ENGINE
+// ────────────────────────────────────────────────
 function runFilterLogic() {
-  // We filter the CONTEXT list
   const finalResults = contextProducts.filter((p) => {
-    // A. Price
+    // Price filter
     if (p.price > activeFilters.maxPrice) return false;
 
-    // B. Collections
+    // Collections
     if (activeFilters.collections.length > 0) {
-      const hasMatch = activeFilters.collections.some((c) =>
-        p.collections.includes(c),
-      );
-      if (!hasMatch) return false;
+      if (!activeFilters.collections.some((c) => p.collections.includes(c)))
+        return false;
     }
 
-    // C. SubCategories (Only applies if user selects them in filter)
+    // Sub Categories
     if (activeFilters.subCategories.length > 0) {
       if (!activeFilters.subCategories.includes(p.subCategory)) return false;
     }
 
-    // D. Colors (OR Logic)
+    // Colors
     if (activeFilters.colors.length > 0) {
       const pColors = p.options.colors.map((c) => c.id);
-      const hasMatch = activeFilters.colors.some((c) => pColors.includes(c));
-      if (!hasMatch) return false;
+      if (!activeFilters.colors.some((c) => pColors.includes(c))) return false;
     }
 
-    // E. Sizes (OR Logic)
+    // Sizes
     if (activeFilters.sizes.length > 0) {
-      const hasMatch = activeFilters.sizes.some((s) =>
-        p.availableSizes.includes(s),
-      );
-      if (!hasMatch) return false;
+      if (!activeFilters.sizes.some((s) => p.availableSizes.includes(s)))
+        return false;
     }
 
-    // F. Ratings
+    // Rating
     if (p.rating && p.rating < activeFilters.minRating) return false;
+
+    // Search term (using improved matcher)
+    if (activeFilters.searchTerm) {
+      if (!matchesSearch(p, activeFilters.searchTerm)) return false;
+    }
 
     return true;
   });
@@ -107,7 +130,23 @@ function runFilterLogic() {
   if (onFilterChangeCallback) onFilterChangeCallback(finalResults);
 }
 
-// --- DOM GENERATOR ---
+// ────────────────────────────────────────────────
+// GLOBAL SEARCH (always redirects to shop.html)
+// ────────────────────────────────────────────────
+export function performSearch(searchTerm) {
+  const term = (searchTerm || "").trim();
+
+  if (!term) {
+    window.location.href = "shop.html";
+    return;
+  }
+
+  window.location.href = `shop.html?search=${encodeURIComponent(term)}`;
+}
+
+// ────────────────────────────────────────────────
+// FILTER DRAWER & UI (unchanged from your original)
+// ────────────────────────────────────────────────
 function injectFilterDrawerHTML() {
   if (document.querySelector(".filter-drawer")) return;
 
@@ -118,10 +157,7 @@ function injectFilterDrawerHTML() {
             <h3>Filters</h3>
             <button class="filter-close-btn" id="filter-close"><i class="ph-thin ph-x"></i></button>
         </div>
-        
-        <div class="filter-body" id="filter-body">
-            </div>
-
+        <div class="filter-body" id="filter-body"></div>
         <div class="filter-footer">
             <button class="btn-clear-filters" id="btn-clear-filters">Clear All</button>
             <button class="btn-apply-filters" id="btn-apply-filters">Apply</button>
@@ -130,20 +166,18 @@ function injectFilterDrawerHTML() {
 
   document.body.insertAdjacentHTML("beforeend", html);
 
-  // Event Listeners
   document.getElementById("filter-close").onclick = closeFilterDrawer;
   document.getElementById("filter-overlay").onclick = closeFilterDrawer;
   document.getElementById("btn-apply-filters").onclick = closeFilterDrawer;
 
   document.getElementById("btn-clear-filters").onclick = () => {
-    // Reset State
     activeFilters.subCategories = [];
     activeFilters.colors = [];
     activeFilters.sizes = [];
     activeFilters.collections = [];
     activeFilters.minRating = 0;
+    activeFilters.searchTerm = "";
 
-    // Reset UI (Uncheck boxes)
     renderFilterOptions();
     runFilterLogic();
   };
@@ -151,8 +185,8 @@ function injectFilterDrawerHTML() {
 
 function renderFilterOptions() {
   const body = document.getElementById("filter-body");
+  if (!body) return;
 
-  // 1. EXTRACT DATA FROM CONTEXT
   const uniqueSubCats = [
     ...new Set(contextProducts.map((p) => p.subCategory).filter(Boolean)),
   ];
@@ -160,7 +194,6 @@ function renderFilterOptions() {
     ...new Set(contextProducts.flatMap((p) => p.availableSizes)),
   ];
 
-  // Colors Map
   const colorMap = new Map();
   contextProducts.forEach((p) => {
     p.options.colors.forEach((c) => {
@@ -168,10 +201,9 @@ function renderFilterOptions() {
     });
   });
 
-  // 2. BUILD HTML
   let html = "";
 
-  // A. Collections (Always Show)
+  // Collections
   html += `
     <div class="filter-group">
         <span class="filter-title">Collections</span>
@@ -179,16 +211,11 @@ function renderFilterOptions() {
         <label class="filter-row"><input type="checkbox" onchange="toggleArr('collections', 'best-sellers')"> Best Sellers</label>
     </div>`;
 
-  // B. Sub Categories (SMART DISPLAY)
-  // Only show if:
-  // 1. We have subcategories to show AND
-  // 2. We are NOT already on a specific subCategory page AND
-  // 3. We are NOT on a silhouette page
+  // Sub Category
   const shouldShowSubCats =
     uniqueSubCats.length > 0 &&
     !activeParams.subCategory &&
     !activeParams.silhouette;
-
   if (shouldShowSubCats) {
     html += `<div class="filter-group"><span class="filter-title">Sub Category</span>`;
     uniqueSubCats.forEach((s) => {
@@ -197,7 +224,7 @@ function renderFilterOptions() {
     html += `</div>`;
   }
 
-  // C. Price
+  // Price Slider
   html += `
     <div class="filter-group">
         <span class="filter-title">Max Price: <span id="f-price-val">₦${activeFilters.maxPrice.toLocaleString()}</span></span>
@@ -206,7 +233,7 @@ function renderFilterOptions() {
         </div>
     </div>`;
 
-  // D. Colors
+  // Colors
   if (colorMap.size > 0) {
     html += `<div class="filter-group"><span class="filter-title">Colour</span><div class="filter-colors-grid">`;
     colorMap.forEach((hex, id) => {
@@ -215,7 +242,7 @@ function renderFilterOptions() {
     html += `</div></div>`;
   }
 
-  // E. Sizes
+  // Sizes
   if (uniqueSizes.length > 0) {
     html += `<div class="filter-group"><span class="filter-title">Size</span><div class="filter-sizes-grid">`;
     uniqueSizes.forEach((s) => {
@@ -224,7 +251,7 @@ function renderFilterOptions() {
     html += `</div></div>`;
   }
 
-  // F. Ratings
+  // Rating
   html += `
     <div class="filter-group">
         <span class="filter-title">Rating</span>
@@ -235,7 +262,7 @@ function renderFilterOptions() {
 
   body.innerHTML = html;
 
-  // Attach Price Listener
+  // Price range live update
   const range = document.getElementById("f-price-range");
   const label = document.getElementById("f-price-val");
   if (range) {
@@ -248,8 +275,9 @@ function renderFilterOptions() {
   }
 }
 
-// --- GLOBAL HELPERS ---
-
+// ────────────────────────────────────────────────
+// GLOBAL HELPERS
+// ────────────────────────────────────────────────
 window.toggleArr = (key, val) => {
   const idx = activeFilters[key].indexOf(val);
   if (idx > -1) activeFilters[key].splice(idx, 1);
@@ -267,7 +295,6 @@ window.setRating = (val) => {
   runFilterLogic();
 };
 
-// --- DRAWER CONTROLS ---
 export function openFilterDrawer() {
   const d = document.getElementById("filter-drawer");
   const o = document.getElementById("filter-overlay");

@@ -52,7 +52,7 @@ export const SEARCH_TAGS = {
   COTTON: "cotton",
   SILK: "silk",
   RHINESTONE: "rhinestone",
-
+  RIB_KNIT: 'rib-knit',
   SEAMLESS: "seamless",
   HIGH_WAIST: "high-waist",
   STRAPPY: "strappy",
